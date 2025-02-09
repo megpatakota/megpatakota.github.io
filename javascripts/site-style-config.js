@@ -1,24 +1,23 @@
-// tailwind-config.js
 tailwind.config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'Roboto', 'Montserrat', 'sans-serif'],  // Dynamic Font Family from Tailwind
+                sans: ['Inter', 'Roboto', 'Montserrat', 'sans-serif'],
             },
             colors: {
-                primary: '#005f73',
-                key_info_text: '#ffffff',
-                secondary: '#005f73',
-                project_box: '#e6ecef',
-                buttons: '#005f73',
-                buttons_text: '#ffffff',
-                primary_text: '#f7f1de',
-                text_color: '#333333',
-                hover_color: '#002c3d',
-                hover_text: '#002c3d',
-                bg: '#005f73',               // Dark navy background for depth and contrast
-                header_text: '#005f73',       // Warm, muted orange for header text accents
-            }
+                primary: '#ffffff',           // Clean white
+                secondary: '#005f73',        // Professional teal
+                tertiary: '#808080',         
+                highlight: '#005f73',        // Bright yellow for emphasis
+                social_buttons: '#4e148c',   // Bright yellow for social buttons
+                buttons: '#e2cfea',          // Deep navy for buttons
+                buttons_hover: '#e9ecef', 
+                bg: '#F1FAEE',               // Soft muted white for the main background
+                text_primary: '#1D3557',     // Strong dark text
+                text_secondary: '#005f73',
+                text_tertiary: '#808080',        // Subtle muted text for balance
+                header_text: '#4e148c',     
+            },
         }
     }
 };

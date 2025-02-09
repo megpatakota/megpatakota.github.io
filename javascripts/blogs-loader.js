@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <h3 class="text-xl font-normal mb-2 text-primary">${article.title}</h3>
                     <p class="text-gray-600 mb-4">${article.description}</p>
                     <a href="${article.link}" target="_blank" rel="noopener noreferrer" 
-                       class="text-buttons hover:text-secondary font-semibold transition duration-300">
+                       class="text-secondary hover:text-secondary font-semibold transition duration-300">
                        Read More →
                     </a>
                 </div>
