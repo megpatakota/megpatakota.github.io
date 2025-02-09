@@ -6,10 +6,10 @@ tailwind.config = {
             },
             colors: {
                 primary: '#ffffff',           // Clean white
-                secondary: '#005f73',        // Professional teal
+                secondary: '#005f73',        
                 tertiary: '#808080',         
-                highlight: '#005f73',        // Bright yellow for emphasis
-                social_buttons: '#4e148c',   // Bright yellow for social buttons
+                highlight: '#005f73',       
+                social_buttons: '#4e148c',   
                 buttons: '#e2cfea',          // Deep navy for buttons
                 buttons_hover: '#e9ecef', 
                 bg: '#F1FAEE',               // Soft muted white for the main background
