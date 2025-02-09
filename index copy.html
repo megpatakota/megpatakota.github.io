@@ -37,29 +37,10 @@
             transform: translateY(-100%);
             transition: transform 0.1s ease-in-out;
         }
-
-
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-
-        /* Button Hover Effects */
-        a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 
-<body class="bg-buttons_text text-gray-1000 font-sans">
+<body class="bg-buttons_text text-gray-800 font-sans">
     <!-- Header -->
     <header class="bg-header text-primary py-3 md:py-5 fixed top-0 w-full z-50">
         <nav class="container mx-auto flex justify-between items-center px-4">
@@ -85,104 +66,47 @@
             </ul>
         </nav>
     </header>
-
+    
 
     <!-- Hero Section -->
     <section id="hero" class="relative mt-20 py-16">
         <canvas id="hero-canvas"></canvas>
-        <!-- Background image with overlay -->
+        <!-- Background image with low opacity overlay -->
         <div class="absolute inset-0 bg-primary opacity-100"></div>
         <div class="absolute inset-0 bg-cover"
-            style="background-image: url('./logos/header_image.png'); opacity: 0.3; background-position: 30% 20%;">
+            style="background-image: url('./logos/header_image.png'); opacity: 0.4; background-position: 30% 20%;">
         </div>
 
-        <!-- Hero Content -->
-        <div class="container relative mx-auto text-center z-10 mt-16">
-            <!-- Headline -->
-            <h1 class="text-5xl md:text-5xl font-bold text-text_primary mb-6 leading-tight">
-                Building AI & Data Science Solutions
-            </h1>
-
-            <!-- Rotating Title -->
-            <h2
-                class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-600 mb-8 drop-shadow-lg">
-                <span id="role-text">AI Engineer</span>
-            </h2>
-
-
-            <!-- Tagline -->
-            <p class="text-base md:text-m text-text_tertiary mb-8 max-w-2xl mx-auto leading-relaxed">
-                Helping businesses, researchers, and startups transform AI ideas into reality with cutting-edge
-                solutions and actionable insights.
-            </p>
-
-            <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                class="w-full flex justify-center">
-                <button id="collaborate-button" class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 
-                        text-white py-4 px-8 
-                        rounded-lg text-lg font-semibold tracking-wide transition-transform duration-300 ease-in-out transform 
-                         focus:outline-none focus:ring-4 focus:ring-pink-300">
+        <!-- Content with new font and styles -->
+        <div class="container relative mx-auto text-center z-10 mt-12">
+            <h2 class="text-3xl font-bold text-key_info_text mb-6">Principal Data Scientist, Mishcon De Reya</h2>
+            <h2 class="text-3xl font-bold text-key_info_text mb-6">AI Researcher, University of Oxford</h2>
+            <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer" class="w-1/2">
+                <button id="collaborate-button" class="inline-flex items-center justify-center bg-buttons 
+                        text-buttons_text py-4 px-4 
+                        rounded-full text-lg transition-all duration-300 ease-in-out border-none 
+                        cursor-pointer w-2/5 hover:bg-hover_color hover:-translate-y-1 hover:shadow-md">
                     <span>Let's Collaborate</span>
-                    <i class="fas fa-handshake ml-3 text-xl"></i>
+                    <i class="fas fa-handshake ml-4"></i>
                 </button>
             </a>
 
-            <!-- Call-to-Action Buttons -->
             <div class="flex justify-center gap-6 mt-10">
-                <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-linkedin text-4xl"></i>
+                    class="bg-buttons_text text-buttons hover:bg-buttons hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-full">
+                    <i class="fab fa-linkedin text-2xl"></i>
                 </a>
-
-                <!-- Email -->
                 <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fas fa-envelope text-4xl"></i>
+                    class="bg-buttons_text text-buttons hover:bg-buttons hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-full">
+                    <i class="fas fa-envelope text-2xl"></i>
                 </a>
-
-                <!-- GitHub -->
                 <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-github text-4xl"></i>
+                    class="bg-buttons_text text-buttons hover:bg-buttons hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-full">
+                    <i class="fab fa-github text-2xl"></i>
                 </a>
             </div>
-
         </div>
-
-        <!-- Curved Divider (Bottom) -->
-        <!-- <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-16 text-secondary" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path
-                    d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,112C672,128,768,128,864,122.7C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-                    fill="#F1FAEE"></path>
-            </svg>
-        </div> -->
-
-    </section>
-
-    <!-- Rotating Text Effect with Fade Animation -->
-    <script>
-        const roles = [
-            "Freelance AI Consultant",
-            "Machine Learning Engineer",
-            "AI Researcher at Oxford",
-            "Data Science Strategist",
-            "Graph AI Specialist",
-            "LLM Developer"
-        ];
-        let index = 0;
-        function rotateText() {
-            document.getElementById("role-text").textContent = roles[index];
-            index = (index + 1) % roles.length;
-        }
-        setInterval(rotateText, 2500);
-    </script>
-
-
-    </div>
     </section>
 
     <!-- Projects Section -->
