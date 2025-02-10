@@ -27,6 +27,7 @@ function injectLinkedInStyles() {
         border-radius: 6px;
         background-color: #fff;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
       }
   
       /* The actual scrolling container */
@@ -41,7 +42,7 @@ function injectLinkedInStyles() {
       /* LinkedIn post "card" */
       .linkedin-card {
         flex: 0 0 auto;
-        width: 500px; /* Adjust as needed for card width */
+        width: 400px; /* Adjust as needed for card width */
         border: 1px solid #ddd;
         border-radius: 5px;
         background-color: #f9f9f9;
