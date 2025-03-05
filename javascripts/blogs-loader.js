@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             articleCard.innerHTML = `
                 <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-contain">
                 <div class="p-6">
-                    <h3 class="text-xl font-normal mb-2 text-primary">${article.title}</h3>
+                    <h3 class="text-xl font-normal mb-2 text-secondary">${article.title}</h3>
                     <p class="text-gray-600 mb-4">${article.description}</p>
                     <a href="${article.link}" target="_blank" rel="noopener noreferrer" 
                        class="text-secondary hover:text-secondary font-semibold transition duration-300">

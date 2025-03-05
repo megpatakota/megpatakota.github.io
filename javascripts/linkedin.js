@@ -42,7 +42,7 @@ function injectLinkedInStyles() {
       /* LinkedIn post "card" */
       .linkedin-card {
         flex: 0 0 auto;
-        width: 400px; /* Adjust as needed for card width */
+        width: 350px; /* Adjust as needed for card width */
         border: 1px solid #ddd;
         border-radius: 5px;
         background-color: #f9f9f9;
@@ -63,7 +63,7 @@ function injectLinkedInStyles() {
       /* A fixed-height container to ensure text starts at the same spot */
       .image-container {
         width: 100%;
-        height: 140px; /* Adjust as needed for desired image area height */
+        height: 100px; /* Adjust as needed for desired image area height */
         background-color: #fafafa;
         display: flex;
         align-items: center;
@@ -114,13 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
             image: 'logos/MDR.png',
             link: 'https://www.linkedin.com/posts/megpatakota_datascience-ml-dataanalytics-activity-7180863044602728448-JQ2Z'
         },
+        {
+            title: 'Collaboration with the University of Oxford',
+            text: 'AI and climate litigation coming together.',
+            image: 'logos/oxford.png',
+            link: 'https://www.linkedin.com/posts/jake-rutherford_im-happy-to-share-that-im-starting-a-new-ugcPost-7112808986248114176-slxd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB1H5D4BwtfRSWOxcQtjEs7zT0LaVw-7rmQ'
+        },
         // Add or remove items here. If fewer than 4, we'll auto-duplicate them below.
     ];
 
     // If fewer than 4 items, duplicate them so there's enough width to scroll
-    if (linkedInPosts.length < 4) {
+    if (linkedInPosts.length < 5) {
         const original = [...linkedInPosts];
-        while (linkedInPosts.length < 4) {
+        while (linkedInPosts.length < 5) {
             linkedInPosts = linkedInPosts.concat(original);
         }
     }
@@ -156,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
       <!-- Text container (padded) -->
       <div class="p-4">
-        <h2 class="text-header_text text-lg font-semibold mb-1 text-center">${post.title}</h2>
-        <p class="text-sm text-gray-700 text-center">
+        <h2 class="text-header_text text-m font-semibold mb-1 text-center">${post.title}</h2>
+        <p class="text-xs text-gray-700 text-center">
           ${post.text}
         </p>
       </div>
