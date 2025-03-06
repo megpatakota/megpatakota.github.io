@@ -13,7 +13,7 @@
         .collab-card {
             flex: 0 0 auto;
             background-color: white;
-            border-radius: 0.5rem;
+            border-radius: 0rem; /* creates curved borders */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 2rem;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -24,10 +24,10 @@
             /* removes max-width constraints */
         }
 
-        .collab-card:hover {
+        /* .collab-card:hover {
             transform: translateY(-0.5rem);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
+        } */
 
 
         .fade-in {
@@ -55,11 +55,11 @@
 <section id="collabs" class="bg-white py-5">
     <h2 class="text-4xl text-center text-text_primary ">Collaborations</h2>
     <!-- <p class="text-center text-gray-600">Current and Historic</p> -->
-    <hr class="my-4 border-t-2 border-gray-100">
+    <hr class="my-2 border-t-2 border-gray-100">
 </section>
 
 <body class="bg-gray-100">
-    <section class="py-1">
+    <section class="py-4 px-4 ">
                     <!-- collabs container -->
             <div class="collabs-scroll" id="collabContainer">
                 <!-- CLARA collab -->
