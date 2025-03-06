@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .scroll-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .projects-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+
+        .projects-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 1rem 0;
+        }
+
+        .projects-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            flex: 0 0 auto;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 100%;
+            min-width: 100%;       /* removes width constraints */
+            max-width: none;       /* removes max-width constraints */
+        }
+
+        .project-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            border: none;
+            outline: none;
+        }
+
+        .scroll-button.left {
+            left: 0;
+        }
+
+        .scroll-button.right {
+            right: 0;
+        }
+    </style>
+</head>
+<section id="projects" class="bg-white py-5">
+    <h2 class="text-4xl text-center text-text_primary ">Collaborations</h2>
+    <p class="text-center text-gray-600">Current and Historic</p>
+    <hr class="my-4 border-t-2 border-gray-100">
+</section>
+<body class="bg-gray-100">
+    <section class="py-1">
+        <div class="scroll-container">
+            <div class="projects-wrapper">
+                <!-- Fade edges -->
+                <div class="fade-edge left"></div>
+                <div class="fade-edge right"></div>
+
+                <!-- Scroll buttons -->
+                <!-- <button class="scroll-button left" id="scrollLeft" aria-label="Scroll left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-button right" id="scrollRight" aria-label="Scroll right">
+                    <i class="fas fa-chevron-right"></i>
+                </button> -->
+
+                <!-- Projects container -->
+                <div class="projects-scroll" id="collabContainer">
+                <!-- CLARA Project -->
+                <div
+                    class="project-card bg-project_box rounded-lg shadow-lg p-8 min-w-[200px] max-w-[450px]">
+                    <h2 class="text-2xl font-bold mb-4 text-center">CLARA: CLimate Accountability Research Assistant
+                    </h2>
+                    <p class="mb-6">Uses the power of AI to support in climate research. The tool for academics,
+                        litigators, and climate enthusiasts.</p>
+                    <div class="flex flex-col items-center space-y-4">
+                        <a href="https://clara-research.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center bg-buttons text-buttons_text px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
+                            Register Today!
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </a>
+                        <div class="mt-4 flex items-center space-x-4">
+                            <img src="logos/ssme_logo.png" alt="CLARA Logo" class="h-16 object-contain">
+                        </div>
+                        <p class="text-s font-semibold text-center text-primary bg-gradient-to-r from-blue-500 to-red-600 mb-8 drop-shadow-lg">In collaboration with University of Oxford.</p>
+                        <!-- class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-600 mb-8 drop-shadow-lg"> -->
+
+                    </div>
+                </div>
+
+ </div>
+    </section>
+    <script src="./javascripts/animations.js"></script>
+
+</body>
+
+</html>

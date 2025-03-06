@@ -10,7 +10,7 @@
 
 // 1. Inject CSS for the carousel and fixed-height image container
 function injectLinkedInStyles() {
-    const styles = `
+  const styles = `
       /* Overall carousel container */
       .scroll-container {
         position: relative;
@@ -80,77 +80,83 @@ function injectLinkedInStyles() {
       }
     `;
 
-    const styleSheet = document.createElement('style');
-    styleSheet.type = 'text/css';
-    styleSheet.textContent = styles;
-    document.head.appendChild(styleSheet);
+  const styleSheet = document.createElement('style');
+  styleSheet.type = 'text/css';
+  styleSheet.textContent = styles;
+  document.head.appendChild(styleSheet);
 }
 
 // 2. Build the carousel on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-    injectLinkedInStyles();
+  injectLinkedInStyles();
 
-    // The container in test.html where we insert the carousel
-    const container = document.getElementById('linkedin-container');
+  // The container in test.html where we insert the carousel
+  const container = document.getElementById('linkedin-container');
 
-    // Hardcoded LinkedIn-like posts (replace with real data if desired)
-    // Adjust images/logos as you see fit
-    let linkedInPosts = [
-        {
-            title: 'Guest speaker at UCL, MSc Business Analytics',
-            text: 'Shared insights on RAG and how I’m applying it to build an AI chatbot product at the University of Oxford',
-            image: 'logos/lecture.jpeg',
-            link: 'https://www.linkedin.com/feed/update/urn:li:activity:7292680568645779456/'
-        },
-        {
-            title: 'GraphRAG Tool, CLARA MVP is live!',
-            text: 'AI chatbot developed in collaboration with the University of Oxford as an assistant for climate litigation',
-            image: 'logos/ssme_logo.png',
-            link: 'https://www.linkedin.com/feed/update/urn:li:activity:7187092382994026497/'
-        },
-        {
-            title: 'Promoted to a Principal Data Scientist',
-            text: 'Excited to take data science and analytics at MDR to the next level',
-            image: 'logos/MDR.png',
-            link: 'https://www.linkedin.com/posts/megpatakota_datascience-ml-dataanalytics-activity-7180863044602728448-JQ2Z'
-        },
-        {
-            title: 'Collaboration with the University of Oxford',
-            text: 'AI and climate litigation coming together.',
-            image: 'logos/oxford.png',
-            link: 'https://www.linkedin.com/posts/jake-rutherford_im-happy-to-share-that-im-starting-a-new-ugcPost-7112808986248114176-slxd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB1H5D4BwtfRSWOxcQtjEs7zT0LaVw-7rmQ'
-        },
-        // Add or remove items here. If fewer than 4, we'll auto-duplicate them below.
-    ];
+  // Hardcoded LinkedIn-like posts (replace with real data if desired)
+  // Adjust images/logos as you see fit
+  let linkedInPosts = [
+    {
+      title: '✨Public Launch of CLARA',
+      text: 'Our AI Tool is now available for free to all users! In collaboration with University of Oxford',
+      image: 'logos/clara_live.png',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7303436968514715650/'
+    },
+    {
+      title: 'Guest speaker at UCL, MSc Business Analytics',
+      text: 'Shared insights on RAG and how I’m applying it to build an AI chatbot product at the University of Oxford',
+      image: 'logos/lecture.jpeg',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7292680568645779456/'
+    },
+    {
+      title: 'GraphRAG Tool, CLARA MVP is live!',
+      text: 'AI chatbot developed in collaboration with the University of Oxford as an assistant for climate litigation',
+      image: 'logos/ssme_logo.png',
+      link: 'https://www.linkedin.com/feed/update/urn:li:activity:7187092382994026497/'
+    },
+    {
+      title: 'Promoted to a Principal Data Scientist',
+      text: 'Excited to take data science and analytics at MDR to the next level',
+      image: 'logos/MDR.png',
+      link: 'https://www.linkedin.com/posts/megpatakota_datascience-ml-dataanalytics-activity-7180863044602728448-JQ2Z'
+    },
+    {
+      title: 'Collaboration with the University of Oxford',
+      text: 'AI and climate litigation coming together.',
+      image: 'logos/oxford.png',
+      link: 'https://www.linkedin.com/posts/jake-rutherford_im-happy-to-share-that-im-starting-a-new-ugcPost-7112808986248114176-slxd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB1H5D4BwtfRSWOxcQtjEs7zT0LaVw-7rmQ'
+    },
+    // Add or remove items here. If fewer than 4, we'll auto-duplicate them below.
+  ];
 
-    // If fewer than 4 items, duplicate them so there's enough width to scroll
-    if (linkedInPosts.length < 5) {
-        const original = [...linkedInPosts];
-        while (linkedInPosts.length < 5) {
-            linkedInPosts = linkedInPosts.concat(original);
-        }
+  // If fewer than 4 items, duplicate them so there's enough width to scroll
+  if (linkedInPosts.length < 5) {
+    const original = [...linkedInPosts];
+    while (linkedInPosts.length < 5) {
+      linkedInPosts = linkedInPosts.concat(original);
     }
+  }
 
-    // Build our DOM structure
-    const scrollContainer = document.createElement('div');
-    scrollContainer.className = 'scroll-container';
+  // Build our DOM structure
+  const scrollContainer = document.createElement('div');
+  scrollContainer.className = 'scroll-container';
 
-    const wrapper = document.createElement('div');
-    wrapper.className = 'linkedin-wrapper';
+  const wrapper = document.createElement('div');
+  wrapper.className = 'linkedin-wrapper';
 
-    const scrollArea = document.createElement('div');
-    scrollArea.className = 'linkedin-scroll';
-    scrollArea.id = 'linkedin-scroll-area';
+  const scrollArea = document.createElement('div');
+  scrollArea.className = 'linkedin-scroll';
+  scrollArea.id = 'linkedin-scroll-area';
 
-    // Create a card for each post
-    linkedInPosts.forEach((post) => {
-        const card = document.createElement('a');
-        card.className = 'linkedin-card';
-        card.href = post.link;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
+  // Create a card for each post
+  linkedInPosts.forEach((post) => {
+    const card = document.createElement('a');
+    card.className = 'linkedin-card';
+    card.href = post.link;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
 
-        card.innerHTML = `
+    card.innerHTML = `
       <!-- Fixed-height image container -->
       <div class="h-[100px] w-full flex items-center justify-center bg-gray-100 overflow-hidden">
         <img
@@ -169,15 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-        scrollArea.appendChild(card);
-    });
+    scrollArea.appendChild(card);
+  });
 
-    wrapper.appendChild(scrollArea);
-    scrollContainer.appendChild(wrapper);
-    container.appendChild(scrollContainer);
+  wrapper.appendChild(scrollArea);
+  scrollContainer.appendChild(wrapper);
+  container.appendChild(scrollContainer);
 
-    // Start auto-scrolling
-    initializeAutoScroll();
+  // Start auto-scrolling
+  initializeAutoScroll();
 });
 
 /**
@@ -185,23 +191,23 @@ document.addEventListener('DOMContentLoaded', () => {
  * When reaching the far right, it jumps back to the start for a rolling effect.
  */
 function initializeAutoScroll() {
-    const scrollArea = document.getElementById('linkedin-scroll-area');
-    if (!scrollArea) {
-        console.warn('LinkedIn scroll area not found.');
-        return;
+  const scrollArea = document.getElementById('linkedin-scroll-area');
+  if (!scrollArea) {
+    console.warn('LinkedIn scroll area not found.');
+    return;
+  }
+
+  // Control how fast the carousel scrolls
+  const scrollStep = 1;   // px per "tick"
+  const scrollDelay = 30; // ms delay between each move
+
+  setInterval(() => {
+    if (scrollArea.scrollLeft >= (scrollArea.scrollWidth - scrollArea.clientWidth)) {
+      // Jump back to the start
+      scrollArea.scrollLeft = 0;
+    } else {
+      // Scroll to the right by 'scrollStep'
+      scrollArea.scrollLeft += scrollStep;
     }
-
-    // Control how fast the carousel scrolls
-    const scrollStep = 1;   // px per "tick"
-    const scrollDelay = 30; // ms delay between each move
-
-    setInterval(() => {
-        if (scrollArea.scrollLeft >= (scrollArea.scrollWidth - scrollArea.clientWidth)) {
-            // Jump back to the start
-            scrollArea.scrollLeft = 0;
-        } else {
-            // Scroll to the right by 'scrollStep'
-            scrollArea.scrollLeft += scrollStep;
-        }
-    }, scrollDelay);
+  }, scrollDelay);
 }
