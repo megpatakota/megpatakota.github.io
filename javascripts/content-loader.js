@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     loadContent('technical-skills.html', 'technical-skills-container');
     loadContent('projects.html', 'projects-container', initializeProjectScroll);
+    loadContent('collab.html', 'collab-container', initializeProjectScroll);
 });
 
 function loadContent(file, containerId, callback) {
