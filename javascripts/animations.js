@@ -281,7 +281,7 @@ window.initializeProjectScroll = initializeProjectScroll;
 // Initialize Everything When DOM is Ready
 document.addEventListener('DOMContentLoaded', () => {
     // Only call functions if their necessary elements exist
-    createAnimatedBackground();
+    //createAnimatedBackground();
     createInteractiveElements();
     createHeaderScrollBehavior();
     createCTAButtonInteractivity();
