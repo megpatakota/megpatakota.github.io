@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-<script>
-  (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
-    'cwr',
-    '1d5ae548-1e85-46f2-b42e-8b15f35e5d9a',
-    '1.0.0',
-    'eu-west-2',
-    'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
-    {
-      sessionSampleRate: 1,
-      identityPoolId: "eu-west-2:c8ce8bbc-733d-4668-a5b2-4810c92dee69",
-      endpoint: "https://dataplane.rum.eu-west-2.amazonaws.com",
-      telemetries: ["performance","errors","http"],
-      allowCookies: true,
-      enableXRay: false
-    }
-  );
-</script>
+    <script>
+        (function (n, i, v, r, s, c, x, z) { x = window.AwsRumClient = { q: [], n: n, i: i, v: v, r: r, c: c }; window[n] = function (c, p) { x.q.push({ c: c, p: p }); }; z = document.createElement('script'); z.async = true; z.src = s; document.head.insertBefore(z, document.head.getElementsByTagName('script')[0]); })(
+            'cwr',
+            '1d5ae548-1e85-46f2-b42e-8b15f35e5d9a',
+            '1.0.0',
+            'eu-west-2',
+            'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
+            {
+                sessionSampleRate: 1,
+                identityPoolId: "eu-west-2:c8ce8bbc-733d-4668-a5b2-4810c92dee69",
+                endpoint: "https://dataplane.rum.eu-west-2.amazonaws.com",
+                telemetries: ["performance", "errors", "http"],
+                allowCookies: true,
+                enableXRay: false
+            }
+        );
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meg Patakota - Data Science & Research</title>
@@ -78,14 +78,14 @@
 <body class="bg-buttons_text text-gray-1000 font-sans">
     <!-- Header -->
     <header class="bg-header text-primary py-3 md:py-5 fixed top-0 w-full z-50">
-            <nav class="container mx-auto flex justify-between items-center px-4">
-                <!-- Flex container for logo and text -->
-                <div class="flex items-center">
-                    <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
-                    <h1 class="text-2xl md:text-2xl font-bold tracking-wide text-header_text">
-                        Meghana Patakota
-                    </h1>
-                </div>
+        <nav class="container mx-auto flex justify-between items-center px-4">
+            <!-- Flex container for logo and text -->
+            <div class="flex items-center">
+                <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
+                <h1 class="text-2xl md:text-2xl font-bold tracking-wide text-header_text">
+                    Meghana Patakota
+                </h1>
+            </div>
             <ul class="flex space-x-4 md:space-x-4 font-semibold text-sm md:text-base text-header_text">
                 <li>
                     <a href="#projects" class="px-0 py-2 rounded-md transition duration-300 hover:shadow-md">
@@ -125,7 +125,7 @@
 
             <!-- Rotating Title -->
             <h2
-                class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-600 mb-8 drop-shadow-lg">
+                class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-600 drop-shadow-lg">
                 <span id="role-text">AI Engineer</span>
             </h2>
 
@@ -185,13 +185,13 @@
 
     <!-- Rotating Text Effect with Fade Animation -->
     <script>
-const roles = [
-    "Principal Data Scientist & Manager",
-    "AI Researcher at University of Oxford",
-    "Freelance Data Science Consultant",
-    "Data Analytics Expert Advisor",
-    "Data Strategist",
-];
+        const roles = [
+            "Principal Data Scientist & Manager",
+            "AI Researcher at University of Oxford",
+            "Freelance Data Science Consultant",
+            "Data Analytics Expert Advisor",
+            "Data Strategist",
+        ];
 
         let index = 0;
         function rotateText() {
@@ -205,19 +205,19 @@ const roles = [
     </div>
     </section>
 
-    
+
     <!--Linkedin Section-->
-    <section class="bg-gray-200 py-8">
+    <section class="bg-gray-200">
         <div id="linkedin-container"></div>
     </section>
-    
+
     <!-- Collab Section -->
-    <section class="bg-gray-200 py-8">
+    <section class="bg-gray-200 py-2">
         <div id="collab-container"></div>
     </section>
 
     <!-- Projects Section -->
-    <section class="bg-gray-200 py-8">
+    <section class="bg-gray-200 py-2">
         <div id="projects-container"></div>
     </section>
 
@@ -241,7 +241,7 @@ const roles = [
     </section>
 
     <!-- Footer -->
-    <section id="get-in-touch" class="py-5 bg-gradient-to-r from-primary to-social_buttons">
+    <section id="get-in-touch" class="py-5 bg-gradient-to-r from-blue-500 to-red-600 ">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-white mb-4">Get in Touch</h2>
             <p class="text-sm text-white mb-6">Looking for data solutions or have a question? I'd love to hear from you!

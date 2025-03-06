@@ -130,9 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // If fewer than 4 items, duplicate them so there's enough width to scroll
-  if (linkedInPosts.length < 5) {
+  if (linkedInPosts.length < 10) {
     const original = [...linkedInPosts];
-    while (linkedInPosts.length < 5) {
+    while (linkedInPosts.length < 10) {
       linkedInPosts = linkedInPosts.concat(original);
     }
   }
@@ -167,8 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     
       <!-- Text container (padded) -->
-      <div class="p-4">
-        <h2 class="text-header_text text-m font-semibold mb-1 text-center">${post.title}</h2>
+      <div class="p-0">
+        <h2 class="gradient-text text-m font-semibold text-center">${post.title}</h2>
         <p class="text-xs text-gray-700 text-center">
           ${post.text}
         </p>
