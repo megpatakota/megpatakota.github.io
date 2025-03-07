@@ -68,7 +68,7 @@
     <!-- Header -->
     <header class="bg-header text-primary py-7 md:py-5 fixed top-0 w-full z-50 shadow-md">
         <nav class="container mx-auto flex flex-row justify-between items-center px-4 relative">
-
+    
             <!-- Left: Logo and Title -->
             <div class="flex items-center">
                 <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
@@ -76,50 +76,55 @@
                     MEGHANA PATAKOTA
                 </h1>
             </div>
-
-            <!-- Right: Call-to-Action Buttons -->
-            <div class="flex space-x-0 mt-0 md:mt-0">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-linkedin text-3xl md:text-4xl"></i>
-                </a>
-                <!-- Email -->
-                <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fas fa-envelope text-3xl md:text-4xl"></i>
-                </a>
-                <!-- GitHub -->
-                <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-github text-3xl md:text-4xl"></i>
-                </a>
+    
+            <!-- Right: Call-to-Action Buttons + Hamburger Menu -->
+            <div class="flex items-center space-x-4">
+                
+                <!-- Call-to-Action Buttons -->
+                <div class="flex space-x-2">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        <i class="fab fa-linkedin text-2xl md:text-3xl"></i>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:megpatakota@icloud.com" aria-label="Email"
+                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        <i class="fas fa-envelope text-2xl md:text-3xl"></i>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        <i class="fab fa-github text-2xl md:text-3xl"></i>
+                    </a>
+                </div>
+    
+                <!-- Always Visible Hamburger Menu -->
+                <div class="relative">
+                    <button id="menu-toggle" class="text-header_text focus:outline-none">
+                        <i class="fas fa-bars text-3xl"></i>
+                    </button>
+    
+                    <!-- Dropdown Menu -->
+                    <ul id="menu"
+                        class="hidden absolute right-0 mt-2 w-40 bg-white text-gray-900 shadow-lg rounded-lg overflow-hidden">
+                        <li class="hover:bg-gray-200">
+                            <a href="#projects" class="block w-full px-6 py-3 text-center">Projects</a>
+                        </li>
+                        <li class="hover:bg-gray-200">
+                            <a href="#blogs" class="block w-full px-6 py-3 text-center">Blog</a>
+                        </li>
+                        <li class="hover:bg-gray-200">
+                            <a href="#technicalskills" class="block w-full px-6 py-3 text-center">Skills</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- Always Visible Hamburger Menu -->
-            <div class="relative">
-                <button id="menu-toggle" class="text-header_text focus:outline-none">
-                    <i class="fas fa-bars text-3xl"></i>
-                </button>
-
-                <!-- Dropdown Menu -->
-                <ul id="menu"
-                    class="hidden absolute right-0 mt-2 w-48 bg-white text-gray-900 shadow-lg rounded-lg overflow-hidden">
-                    <li class="hover:bg-gray-200">
-                        <a href="#projects" class="block w-full px-6 py-3 text-right">Projects</a>
-                    </li>
-                    <li class="hover:bg-gray-200">
-                        <a href="#blogs" class="block w-full px-6 py-3 text-right">Blog</a>
-                    </li>
-                    <li class="hover:bg-gray-200">
-                        <a href="#technicalskills" class="block w-full px-6 py-3 text-right">Skills</a>
-                    </li>
-                </ul>
-            </div>
-
+    
         </nav>
     </header>
+    
 
 
     <!-- Hero Section -->
