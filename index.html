@@ -32,21 +32,10 @@
         #hero {
             position: relative;
             overflow: hidden;
-            min-height: 500px;
+            min-height: 400px;
             /* Ensure minimum height for visibility */
         }
 
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            /* Place canvas above the background but below content */
-            pointer-events: none;
-            /* Allow clicks to pass through */
-        }
 
         /* Hiding the header when scrolling */
         .header-hidden {
@@ -77,16 +66,38 @@
 
 <body class="bg-buttons_text text-gray-1000 font-sans">
     <!-- Header -->
-    <header class="bg-header text-primary py-3 md:py-5 fixed top-0 w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center px-4">
-            <!-- Flex container for logo and text -->
+    <header class="bg-header text-primary flex-col md:flex-row py-3 md:py-5 fixed top-0 w-full z-50">
+        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+
+            <!-- Right: Call-to-Action Buttons -->
+            <div class="flex space-x-0 mt-0 md:mt-0">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <!-- Email -->
+                <a href="mailto:megpatakota@icloud.com" aria-label="Email"
+                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
+                    <i class="fas fa-envelope text-3xl"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+            </div>
+            <!-- Left: Logo and Title -->
             <div class="flex items-center">
                 <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
-                <h1 class="text-2xl md:text-2xl font-bold tracking-wide text-header_text">
+                <h1 class="text-3xl md:text-2xl font-semibold tracking-wide text-header_text">
                     Meghana Patakota
                 </h1>
             </div>
-            <ul class="flex space-x-4 md:space-x-4 font-semibold text-sm md:text-base text-header_text">
+
+            <!-- Center: Navigation Links -->
+            <ul class="flex space-x-6 text-m md:text-base text-header_text mt-2 md:mt-0">
                 <li>
                     <a href="#projects" class="px-0 py-2 rounded-md transition duration-300 hover:shadow-md">
                         Projects
@@ -103,21 +114,20 @@
                     </a>
                 </li>
             </ul>
+
         </nav>
     </header>
-
-
     <!-- Hero Section -->
-    <section id="hero" class="relative mt-20 py-16">
-        <canvas id="hero-canvas"></canvas>
-        <!-- Background image with overlay -->
-        <div class="absolute inset-0 bg-primary opacity-100"></div>
-        <div class="absolute inset-0 bg-cover"
+    <section id="hero" class="relative pt-16 pb-16 mt-20 md:mt-10">
+
+        <!-- Background image with overlay - positioned with margin-top to move it down -->
+        <div class="absolute inset-x-0 top-16 bottom-0 bg-primary opacity-100"></div>
+        <div class="absolute inset-x-0 top-16 bottom-0 bg-cover"
             style="background-image: url('./logos/header_image.png'); opacity: 0.3; background-position: 30% 20%;">
         </div>
 
         <!-- Hero Content -->
-        <div class="container relative mx-auto text-left z-10 mt-16 pl-8">
+        <div class="container relative mx-auto text-left z-10 pt-16 pl-8">
             <!-- Headline -->
             <h1 class="text-5xl md:text-5xl font-bold text-text_primary mb-6 leading-tight">
                 Building AI & Data Science Solutions
@@ -129,9 +139,8 @@
                 <span>AI, ML, Analytics, Reporting</span>
             </h2>
 
-
             <!-- Tagline -->
-            <p class="text-base md:text-m text-text_tertiary mb-8 mx-auto">
+            <p class="text-base md:text-m text-text_tertiary mb-8 max-w-2xl">
                 Helping businesses transform AI ideas into reality with cutting-edge
                 solutions and actionable insights.
             </p>
@@ -139,50 +148,15 @@
             <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
                 class="w-8 items-center justify-center">
                 <button id="collaborate-button" class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 
-                        text-white py-4 px-8 
-                        rounded-lg text-lg font-semibold tracking-wide transition-transform duration-300 ease-in-out transform 
-                        hover:-translate-y-1 hover:shadow-xl">
+                    text-white py-4 px-8 
+                    rounded-lg text-lg font-semibold tracking-wide transition-transform duration-300 ease-in-out transform 
+                    hover:-translate-y-1 hover:shadow-xl">
                     <span>Work With Me</span>
                     <i class="fas fa-handshake ml-3 text-xl"></i>
                 </button>
             </a>
-
-            <!-- Call-to-Action Buttons -->
-            <div class="flex justify-left gap-6 mt-10">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-linkedin text-4xl"></i>
-                </a>
-
-                <!-- Email -->
-                <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fas fa-envelope text-4xl"></i>
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                    class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-4 rounded-md">
-                    <i class="fab fa-github text-4xl"></i>
-                </a>
-            </div>
-
         </div>
-
-        <!-- Curved Divider (Bottom) -->
-        <!-- <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-16 text-secondary" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path
-                    d="M0,64L48,58.7C96,53,192,43,288,53.3C384,64,480,96,576,112C672,128,768,128,864,122.7C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-                    fill="#F1FAEE"></path>
-            </svg>
-        </div> -->
-
     </section>
-
     <!-- Rotating Text Effect with Fade Animation -->
     <script>
         const roles = [
