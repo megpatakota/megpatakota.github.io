@@ -211,6 +211,7 @@ function initializeAutoScroll() {
     }
   }, scrollDelay);
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
@@ -218,6 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (menuToggle && menu) {
       menuToggle.addEventListener("click", function () {
           menu.classList.toggle("hidden");
+      });
+      
+      // Add event listeners to all menu items to close the menu when clicked
+      const menuItems = menu.querySelectorAll('a');
+      menuItems.forEach(item => {
+          item.addEventListener('click', function() {
+              menu.classList.add('hidden');
+          });
       });
   }
 });
