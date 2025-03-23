@@ -61,7 +61,7 @@
             <!-- Left: Logo and Title -->
             <div class="flex items-center">
                 <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
-                <h1 class="text-2xl md:text-3xl tracking-wide text-primary">
+                <h1 class="text-2xl md:text-3xl tracking-wide text-header_text">
                     MEGHANA PATAKOTA
                 </h1>
             </div>
@@ -73,25 +73,25 @@
                     <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fab fa-linkedin text-2xl md:text-3xl"></i>
                     </a>
                     <!-- Email -->
                     <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fas fa-envelope text-2xl md:text-3xl"></i>
                     </a>
                     <!-- GitHub -->
                     <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub"
-                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fab fa-github text-2xl md:text-3xl"></i>
                     </a>
                 </div>
 
                 <!-- Always Visible Hamburger Menu -->
                 <div class="relative">
-                    <button id="menu-toggle" class="text-primary focus:outline-none">
+                    <button id="menu-toggle" class="text-header_text focus:outline-none">
                         <i class="fas fa-bars text-3xl"></i>
                     </button>
 
@@ -164,7 +164,7 @@
 
 
     <!-- Blogs Section -->
-    <section id="blogs" class="bg-bg_cover py-8">
+    <section id="blogs" class="bg-bg_dark py-8">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-center text-dark_text_primary ">Blog Posts</h2>
             <p class="text-center text-dark_text_secondary">Follow medium for more!</p>
@@ -181,40 +181,58 @@
     </section>
 
     <!-- Footer -->
-    <section id="get-in-touch" class="py-5 bg-black">
-
-    <!-- Footer -->
-    <section id="get-in-touch" class="bg-black">
-        <div class="container text-center">
-            <h2 class="text-2xl text-white mb-4">Get in Touch</h2>
-            <p class="text-sm text-white mb-6">Looking for data solutions or have a question? I'd love to hear from you!
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:megpatakota@icloud.com"
-                    class="inline-block bg-white text-text_secondary py-2 px-6 rounded-full text-sm transform hover:-translate-y-1 hover:shadow-md">
-                    <i class="fas fa-envelope mr-2"></i> Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                    class="inline-block bg-buttons text-text_button py-2 px-6 rounded-full text-sm transform hover:-translate-y-1 hover:shadow-md">
-                    <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
-                </a>
+    <footer class="bg-gray-900 py-8 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About Column -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <p class="text-sm text-gray-400 mb-4">I build AI & data solutions to help businesses transform ideas into reality with cutting-edge technologies and actionable insights.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="mailto:megpatakota@icloud.com" aria-label="Email" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#collabs" class="text-gray-400 hover:text-white transition-colors">Collaborations</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#blogs" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#technicalskills" class="text-gray-400 hover:text-white transition-colors">Technical Skills</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-sm text-gray-400 mb-4">Looking for data solutions or have a question? I'd love to hear from you!</p>
+                    <a href="mailto:megpatakota@icloud.com" class="inline-block bg-buttons text-text_button py-2 px-6 rounded-lg text-sm transform hover:-translate-y-1 hover:shadow-md transition-all">
+                        <i class="fas fa-envelope mr-2"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center">
+                <p class="text-xs text-gray-400">&copy; 2024 Meg Patakota. All rights reserved.</p>
             </div>
         </div>
-    </section>
-    <footer id="contact" class="bg-gray-900 text-xs text-dark_text_primary py-2">
-        <div class="container mx-auto text-center">
-            <!-- <p class="text-lg">Ready to collaborate? <a href="mailto:info@consultus.com"
-                    class="text-primary">Contact us!</a></p> -->
-            <p class="mt-1">&copy; 2024 Meg Patakota. All rights reserved.</p>
-        </div>
-
     </footer>
     <!-- Include scripts in the correct order -->
     <script src="./javascripts/animations.js"></script>
     <script src="./javascripts/content-loader.js"></script>
     <script src="./javascripts/blogs-loader.js"></script>
     <script src="./javascripts/linkedin.js"></script>
-
 
 </body>
 
