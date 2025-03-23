@@ -29,6 +29,14 @@ tailwind.config = {
         // Utility
         header: '#EEF8FC',   
         header_text : '#004E52',
+        
+        // Animation colors - simplified to 4 playful colors
+        animation: {
+          color1: '#F5C6DE',       // Playful pink
+          color2: '#C2E3F7',       // Playful blue
+          color3: '#E0C5F7',       // Playful purple
+          color4: '#BAE7C0',       // Playful mint
+        }
       },
     },
   }
