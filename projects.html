@@ -6,20 +6,8 @@
     <title>Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./javascripts/site-style-config.js"></script>
     <style>
-        .scroll-container {
-            position: relative;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .projects-wrapper {
-            position: relative;
-            overflow: hidden;
-            padding: 1rem 0;
-        }
-
         .projects-scroll {
             display: flex;
             gap: 2rem;
@@ -35,49 +23,21 @@
             display: none;
         }
 
-        .project-card {
-            flex: 0 0 auto;
-            width: 450px;
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .project-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-
         .scroll-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             width: 40px;
             height: 40px;
-            background-color: white;
             border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
             z-index: 10;
             border: none;
             outline: none;
         }
-
-        /* .scroll-button:hover {
-            background-color: #f8f9fa;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        } */
-
-        /* .scroll-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        } */
 
         .scroll-button.left {
             left: 0;
@@ -86,160 +46,132 @@
         .scroll-button.right {
             right: 0;
         }
-
-        /* .fade-edge {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 3rem;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .fade-edge.left {
-            left: 0;
-            background: linear-gradient(to right, white, transparent);
-        }
-
-        .fade-edge.right {
-            right: 0;
-            background: linear-gradient(to left, white, transparent);
-        } */
     </style>
 </head>
 
-<section id="projects" class="bg-white py-5">
-    <h2 class="text-4xl text-center text-text_primary ">Projects</h2>
-    <p class="text-center text-gray-600">Current and Historic Projects</p>
-    <!-- <hr class="my-4 border-t-2 border-gray-100"> -->
-</section>
 <body class="bg-gray-100">
+    <section id="projects" class="bg-white py-5">
+        <h2 class="text-4xl text-center text-text_primary">Projects</h2>
+        <p class="text-center text-gray-600">Current and Historic Projects</p>
+    </section>
+    
     <section class="py-1">
-        <div class="scroll-container">
-            <div class="projects-wrapper">
-                <!-- Fade edges -->
-                <div class="fade-edge left"></div>
-                <div class="fade-edge right"></div>
-
+        <div class="relative w-full mx-auto px-4">
+            <div class="relative overflow-hidden py-4">
                 <!-- Scroll buttons -->
-                <button class="scroll-button left" id="scrollLeft" aria-label="Scroll left">
+                <button class="scroll-button left bg-white shadow-md text-primary hover:bg-gray-100 transition-colors" id="scrollLeft" aria-label="Scroll left">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="scroll-button right" id="scrollRight" aria-label="Scroll right">
+                <button class="scroll-button right bg-white shadow-md text-primary hover:bg-gray-100 transition-colors" id="scrollRight" aria-label="Scroll right">
                     <i class="fas fa-chevron-right"></i>
                 </button>
 
                 <!-- Projects container -->
                 <div class="projects-scroll" id="projectsContainer">
 
-                <!-- Knowledge Graph Project -->
-                <div class="project-card bg-project_box rounded-lg shadow-lg p-8 min-w-[200px] max-w-[450px]">
-                    <h2 class="text-2xl font-bold mb-4 text-center">Knowledge Graph on Climate Cases</h2>
-                    <p class="mb-6">A dynamic graph database visualizing climate case relationships, connecting document
-                        chunks with key entities to reveal legal patterns.</p>
-                    <div class="flex flex-col items-center space-y-4">
-                        <a href="https://github.com/megpatakota/knowledge-graph-climate-cases" target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center bg-buttons text-buttons_text px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
-                            View on GitHub
-                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
-                            </svg>
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="mt-4 text-center">Explore the intersection of climate litigation and data science through
-                        an interactive graph model.</p>
-                </div>
-
-
-                <!-- Breathe London Project -->
-                <div class="project-card bg-project_box rounded-lg shadow-lg p-8 min-w-[200px] max-w-[450px]">
-                    <h2 class="text-2xl font-bold mb-4 text-center">Breathe London Data Access Tool - Python Wrapper
-                    </h2>
-                    <p class="mb-6">Simplifies access to Breathe London air quality data, enabling developers to easily
-                        integrate this valuable information into their applications without writing complex API logic
-                        from scratch.</p>
-                    <div class="flex flex-col items-center space-y-4">
-                        <a href="https://github.com/meg-patakota/breathe_london_data" target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center bg-buttons text-buttons_text px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
-                            View on GitHub
-                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
-                            </svg>
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="mt-4 text-center">To all those sustainability and data enthusiasts. Feel free to
-                        contribute to my repo.</p>
-                </div>
-
-                <!-- Climate Patent Project -->
-                <div class="project-card bg-project_box rounded-lg shadow-lg p-8 min-w-[200px] max-w-[450px]">
-                    <h2 class="text-2xl font-bold mb-4 text-center">Text Classification with DeBERTa (climate patent
-                        domain focused)</h2>
-                    <p class="mb-6">Utilizes the DeBERTa model for classifying patent data into climate change
-                        mitigation technologies, as defined by the IPCC (Intergovernmental Panel on Climate Change)
-                        classification system.</p>
-                    <div class="flex flex-col items-center space-y-4">
-                        <a href="https://github.com/megpatakota/text_classification_climate_patent" target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center bg-buttons text-buttons_text px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
-                            View on GitHub
-                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
-                            </svg>
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="mt-4 text-center">The tool assists in identifying technologies that contribute to climate
-                        change mitigation efforts, leveraging advanced machine learning techniques.</p>
-                </div>
-
-                <!-- CompanyMatch Project -->
-                <div class="project-card bg-project_box rounded-lg shadow-lg p-8 min-w-[200px] max-w-[450px]">
-                    <h2 class="text-2xl font-bold mb-4 text-center">CompanyMatch: Intelligent Company Name
-                        Reconciliation</h2>
-                    <p class="mb-6">Bridging the gap between diverse company databases and official registries with
-                        advanced matching & AI.</p>
-                    <div class="flex flex-col items-center space-y-4">
-                        <div class="flex justify-center">
-                            <button
-                                class="bg-gray-200 text-gray-700 px-6 py-3 rounded-full text-lg font-normal cursor-not-allowed">
-                                Coming Soon...
-                            </button>
+                    <!-- Knowledge Graph Project -->
+                    <div class="flex-none w-[450px] bg-primary rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h2 class="text-2xl font-bold mb-4 text-center text-dark_text_primary">Knowledge Graph on Climate Cases</h2>
+                        <p class="mb-6 text-dark_text_primary">A dynamic graph database visualizing climate case relationships, connecting document
+                            chunks with key entities to reveal legal patterns.</p>
+                        <div class="flex flex-col items-center space-y-4">
+                            <a href="https://github.com/megpatakota/knowledge-graph-climate-cases" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center bg-buttons text-text_button px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
+                                View on GitHub
+                                <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
                         </div>
+                        <p class="mt-4 text-center text-dark_text_primary">Explore the intersection of climate litigation and data science through
+                            an interactive graph model.</p>
                     </div>
-                    <p class="mt-4 text-center">Enhancing data accuracy for businesses, researchers, and regulatory
-                        compliance.</p>
+
+                    <!-- Breathe London Project -->
+                    <div class="flex-none w-[450px] bg-primary rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h2 class="text-2xl font-bold mb-4 text-center text-dark_text_primary">Breathe London Data Access Tool - Python Wrapper</h2>
+                        <p class="mb-6 text-dark_text_primary">Simplifies access to Breathe London air quality data, enabling developers to easily
+                            integrate this valuable information into their applications without writing complex API logic
+                            from scratch.</p>
+                        <div class="flex flex-col items-center space-y-4">
+                            <a href="https://github.com/meg-patakota/breathe_london_data" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center bg-buttons text-text_button px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
+                                View on GitHub
+                                <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="mt-4 text-center text-dark_text_primary">To all those sustainability and data enthusiasts. Feel free to
+                            contribute to my repo.</p>
+                    </div>
+
+                    <!-- Climate Patent Project -->
+                    <div class="flex-none w-[450px] bg-primary rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h2 class="text-2xl font-bold mb-4 text-center text-dark_text_primary">Text Classification with DeBERTa (climate patent domain focused)</h2>
+                        <p class="mb-6 text-dark_text_primary">Utilizes the DeBERTa model for classifying patent data into climate change
+                            mitigation technologies, as defined by the IPCC (Intergovernmental Panel on Climate Change)
+                            classification system.</p>
+                        <div class="flex flex-col items-center space-y-4">
+                            <a href="https://github.com/megpatakota/text_classification_climate_patent" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center bg-buttons text-text_button px-6 py-3 rounded-full text-lg font-normal transition duration-300 ease-in-out hover:bg-opacity-90 hover:transform hover:-translate-y-1">
+                                View on GitHub
+                                <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="mt-4 text-center text-dark_text_primary">The tool assists in identifying technologies that contribute to climate
+                            change mitigation efforts, leveraging advanced machine learning techniques.</p>
+                    </div>
+
+                    <!-- CompanyMatch Project -->
+                    <div class="flex-none w-[450px] bg-primary rounded-lg shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h2 class="text-2xl font-bold mb-4 text-center text-dark_text_primary">CompanyMatch: Intelligent Company Name Reconciliation</h2>
+                        <p class="mb-6 text-dark_text_primary">Bridging the gap between diverse company databases and official registries with
+                            advanced matching & AI.</p>
+                        <div class="flex flex-col items-center space-y-4">
+                            <div class="flex justify-center">
+                                <button
+                                    class="bg-gray-200 text-gray-700 px-6 py-3 rounded-full text-lg font-normal cursor-not-allowed">
+                                    Coming Soon...
+                                </button>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-center text-dark_text_primary">Enhancing data accuracy for businesses, researchers, and regulatory
+                            compliance.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <script src="./javascripts/animations.js"></script>
-
 </body>
-
 </html>

@@ -29,21 +29,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./javascripts/site-style-config.js"></script>
     <style>
-        #hero {
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-            /* Ensure minimum height for visibility */
-        }
-
-
         /* Hiding the header when scrolling */
         .header-hidden {
             transform: translateY(-100%);
             transition: transform 0.1s ease-in-out;
         }
-
-
 
         @keyframes typing {
             from {
@@ -55,57 +45,56 @@
             }
         }
 
-
-        /* Button Hover Effects */
-        a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* New styles for integrated header and hero */
+        .integrated-header {
+            background: transparent;
+            position: absolute;
+            box-shadow: none;
         }
     </style>
 </head>
 
 <body class="bg-buttons_text text-gray-1000 font-sans">
-    <!-- Header -->
-    <header class="bg-header text-primary py-7 md:py-5 fixed top-0 w-full z-50 shadow-md">
+    <!-- Header - Modified to be transparent and absolute -->
+    <header class="text-primary py-7 md:py-5 fixed top-0 w-full z-50 integrated-header">
         <nav class="container mx-auto flex flex-row justify-between items-center px-4 relative">
-    
             <!-- Left: Logo and Title -->
             <div class="flex items-center">
                 <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
-                <h1 class="text-3xl md:text-4xl font-semibold tracking-wide text-header_text">
+                <h1 class="text-2xl md:text-3xl tracking-wide text-primary">
                     MEGHANA PATAKOTA
                 </h1>
             </div>
-    
+
             <!-- Right: Call-to-Action Buttons + Hamburger Menu -->
             <div class="flex items-center space-x-4">
-                
                 <!-- Call-to-Action Buttons -->
                 <div class="flex space-x-2">
                     <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fab fa-linkedin text-2xl md:text-3xl"></i>
                     </a>
                     <!-- Email -->
                     <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fas fa-envelope text-2xl md:text-3xl"></i>
                     </a>
                     <!-- GitHub -->
-                    <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                        class="bg-primary text-social_buttons hover:bg-buttons_hover hover:text-buttons_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
+                    <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        class="text-primary hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
                         <i class="fab fa-github text-2xl md:text-3xl"></i>
                     </a>
                 </div>
-    
+
                 <!-- Always Visible Hamburger Menu -->
                 <div class="relative">
-                    <button id="menu-toggle" class="text-header_text focus:outline-none">
+                    <button id="menu-toggle" class="text-primary focus:outline-none">
                         <i class="fas fa-bars text-3xl"></i>
                     </button>
-    
+
                     <!-- Dropdown Menu -->
                     <ul id="menu"
                         class="hidden absolute right-0 mt-2 w-40 bg-white text-gray-900 shadow-lg rounded-lg overflow-hidden">
@@ -124,96 +113,61 @@
                     </ul>
                 </div>
             </div>
-    
         </nav>
     </header>
-    
 
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative pt-16 pb-16 mt-20 md:mt-10">
-
-        <!-- Background image with overlay - positioned with margin-top to move it down -->
-        <div class="absolute inset-x-0 top-16 bottom-0 bg-cover"
-            style="background-image: url('./logos/header_image.png'); opacity: 0.2; background-position: 30% 20%;">
+    <!-- Hero Section - Modified to start from the top of the page -->
+    <section
+        class="relative py-16 text-center min-h-screen flex flex-col justify-center items-center px-4 md:px-8">
+        <!-- Background image with overlay - adjusted to cover entire hero section -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('./logos/header_image.png'); opacity: 0.20; z-index: -1;">
         </div>
-
-        <!-- Hero Content -->
-        <div class="container relative mx-auto text-left z-10 pt-16 pl-8">
+        <div class="max-w-4xl mx-auto pt-24">
             <!-- Headline -->
-            <h1 class="text-5xl md:text-5xl font-bold text-text_primary mb-6 leading-tight">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl text-text_primary mb-8 font-bold">
                 Building AI & Data Solutions
             </h1>
 
             <!-- Rotating Title -->
-            <h2
-                class="text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-600 mb-8 drop-shadow-lg">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl text-text_secondary mb-10">
                 <span>AI, ML, Analytics, Reporting</span>
             </h2>
 
             <!-- Tagline -->
-            <p class="text-base md:text-m text-text_tertiary mb-8 max-w-2xl">
+            <p class="text-lg md:text-xl text-text_tertiary mb-12 max-w-2xl mx-auto">
                 Helping businesses transform AI ideas into reality with cutting-edge
                 solutions and actionable insights.
             </p>
 
             <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                class="w-8 items-center justify-center">
-                <button id="collaborate-button" class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 
-                    text-white py-4 px-8 
-                    rounded-lg text-lg font-semibold tracking-wide transition-transform duration-300 ease-in-out transform 
+                class="inline-block">
+                <button id="collaborate-button" class="inline-flex items-center justify-center bg-buttons 
+                    text-text_button py-4 px-8 rounded-lg text-lg tracking-wide transition-transform duration-300 ease-in-out transform 
                     hover:-translate-y-1 hover:shadow-xl">
-                    <span>Need Expert Help? Let’s Connect</span>
+                    <span>Need Expert Help? Let's Connect</span>
                     <i class="fas fa-handshake ml-3 text-xl"></i>
                 </button>
             </a>
         </div>
     </section>
-    <!-- Rotating Text Effect with Fade Animation -->
-    <script>
-        const roles = [
-            "Principal Data Scientist & Manager",
-            "AI Researcher at University of Oxford",
-            "Freelance Data Science Consultant",
-            "Data Analytics Expert Advisor",
-            "Data Strategist",
-        ];
-
-        let index = 0;
-        function rotateText() {
-            document.getElementById("role-text").textContent = roles[index];
-            index = (index + 1) % roles.length;
-        }
-        setInterval(rotateText, 2500);
-    </script>
-
-
-    </div>
-    </section>
-
-
-    <!--Linkedin Section-->
-    <section class="bg-gray-200 py-2">
-        <div id="linkedin-container"></div>
-    </section>
 
     <!-- Collab Section -->
-    <section class="bg-gray-200 py-2">
+    <section class="py-2" id="collabs">
         <div id="collab-container"></div>
     </section>
 
     <!-- Projects Section -->
-    <section class="bg-gray-200 py-2">
+    <section class="py-2">
         <div id="projects-container"></div>
     </section>
 
 
     <!-- Blogs Section -->
-    <section id="blogs" class="bbg-gray-200 py-8">
+    <section id="blogs" class="bg-bg_cover py-8">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl text-center text-text_primary ">Blog Posts</h2>
-            <p class="text-center text-gray-600">Follow medium for more!</p>
-            <hr class="my-4 border-t-2 border-gray-100">
+            <h2 class="text-4xl text-center text-dark_text_primary ">Blog Posts</h2>
+            <p class="text-center text-dark_text_secondary">Follow medium for more!</p>
             <div id="blogs-container">
                 <!-- Blog articles will be dynamically inserted here -->
             </div>
@@ -222,32 +176,35 @@
 
 
     <!-- Technical Skills Section -->
-    <section class="bg-gray-200 py-8">
+    <section class="py-8">
         <div id="technical-skills-container"></div>
     </section>
 
     <!-- Footer -->
-    <section id="get-in-touch" class="py-5 bg-gradient-to-r from-blue-500 to-red-600 ">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-white mb-4">Get in Touch</h2>
+    <section id="get-in-touch" class="py-5 bg-black">
+
+    <!-- Footer -->
+    <section id="get-in-touch" class="bg-black">
+        <div class="container text-center">
+            <h2 class="text-2xl text-white mb-4">Get in Touch</h2>
             <p class="text-sm text-white mb-6">Looking for data solutions or have a question? I'd love to hear from you!
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="mailto:megpatakota@icloud.com"
-                    class="inline-block bg-white text-text_secondary font-bold py-2 px-6 rounded-full text-sm hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md">
+                    class="inline-block bg-white text-text_secondary py-2 px-6 rounded-full text-sm transform hover:-translate-y-1 hover:shadow-md">
                     <i class="fas fa-envelope mr-2"></i> Email Me
                 </a>
                 <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                    class="inline-block bg-[#0077B5] text-white font-bold py-2 px-6 rounded-full text-sm hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md">
+                    class="inline-block bg-buttons text-text_button py-2 px-6 rounded-full text-sm transform hover:-translate-y-1 hover:shadow-md">
                     <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
                 </a>
             </div>
         </div>
     </section>
-    <footer id="contact" class="bg-gray-900 text-primary py-2">
+    <footer id="contact" class="bg-gray-900 text-xs text-dark_text_primary py-2">
         <div class="container mx-auto text-center">
             <!-- <p class="text-lg">Ready to collaborate? <a href="mailto:info@consultus.com"
-                    class="text-primary font-bold">Contact us!</a></p> -->
+                    class="text-primary">Contact us!</a></p> -->
             <p class="mt-1">&copy; 2024 Meg Patakota. All rights reserved.</p>
         </div>
 

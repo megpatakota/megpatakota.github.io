@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
       <!-- Text container (padded) -->
       <div class="p-0">
-        <h2 class="gradient-text text-m font-semibold text-center">${post.title}</h2>
+        <h2 class="text-text_primary text-m font-semibold text-center">${post.title}</h2>
         <p class="text-xs text-gray-700 text-center">
           ${post.text}
         </p>
