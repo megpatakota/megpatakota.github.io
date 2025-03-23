@@ -147,8 +147,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners
     window.addEventListener('mousemove', updateCursor, { passive: true });
     window.addEventListener('touchmove', updateCursor, { passive: true });
+    
+    // Only create bursts on click (not on page load)
     window.addEventListener('click', (e) => {
         createBurst(e.clientX, e.clientY);
+    });
+    
+    // Touch support for bursts
+    window.addEventListener('touchend', (e) => {
+        if (e.touches.length === 0 && e.changedTouches.length > 0) {
+            createBurst(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+        }
     });
     
     // Generate wave pattern
@@ -214,17 +223,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return angle;
     };
     
-    // Create a burst of particles - more fun burst effect
+    // Create a burst of particles - modified for sharper burst effect
     const burstParticles = [];
     function createBurst(x, y) {
-        const burstSize = 12 + Math.floor(Math.random() * 8);
+        const burstSize = 14 + Math.floor(Math.random() * 8);
         
         for (let i = 0; i < burstSize; i++) {
-            // Create playful burst pattern
-            const angle = (i / burstSize) * Math.PI * 2 + Math.random() * 0.5;
-            const speed = 0.5 + Math.random() * 1.5;
-            const size = 3 + Math.random() * 4; // Larger particles for more visible effect
-            const life = 50 + Math.random() * 50;
+            // Create sharper burst pattern with more consistent distribution
+            const angle = (i / burstSize) * Math.PI * 2 + Math.random() * 0.3; // Less randomness for sharper shape
+            const speed = 0.8 + Math.random() * 1.2; // Slightly more consistent speed
+            const size = 2.5 + Math.random() * 3; // Slightly smaller for sharper look
+            const life = 45 + Math.random() * 40; // Slightly shorter life
             
             burstParticles.push({
                 x: x,
@@ -234,9 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 size: size,
                 life: life,
                 maxLife: life,
-                // Wave parameters for playful motion
+                // Reduced wave parameters for less wobbly motion
                 waveParams: {
-                    amplitude: 0.04 + Math.random() * 0.06,
+                    amplitude: 0.02 + Math.random() * 0.04, // Less amplitude for sharper movement
                     frequency: 0.1 + Math.random() * 0.1,
                     phase: Math.random() * Math.PI * 2
                 },
@@ -254,28 +263,29 @@ document.addEventListener('DOMContentLoaded', () => {
             p.x += p.vx;
             p.y += p.vy;
             
-            // Add playful wave motion
-            const waveX = Math.sin(time * 0.001 + p.waveParams.phase) * p.waveParams.amplitude * 3;
-            const waveY = Math.cos(time * 0.001 + p.waveParams.phase + 1.3) * p.waveParams.amplitude * 2;
+            // Add slight wave motion - reduced for sharper appearance
+            const waveX = Math.sin(time * 0.001 + p.waveParams.phase) * p.waveParams.amplitude * 2;
+            const waveY = Math.cos(time * 0.001 + p.waveParams.phase + 1.3) * p.waveParams.amplitude;
             
             p.x += waveX;
             p.y += waveY;
             
-            p.vx *= 0.98;
-            p.vy *= 0.98;
+            // Slightly slower deceleration for more directed motion
+            p.vx *= 0.985;
+            p.vy *= 0.985;
             
             p.life--;
             
-            // Draw with fun glow effect
+            // Draw with crisp glow effect
             const alpha = (p.life / p.maxLife) * p.color.a;
             ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${alpha})`;
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
             
-            // Add playful glow
-            const glowAlpha = alpha * 0.6;
-            const glowSize = p.size * 2.2;
+            // Add sharper glow - smaller glow radius
+            const glowAlpha = alpha * 0.7; // Higher alpha for more defined glow
+            const glowSize = p.size * 1.8; // Smaller multiplier for tighter glow (was 2.2)
             const gradient = ctx.createRadialGradient(p.x, p.y, p.size * 0.5, p.x, p.y, glowSize);
             gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${glowAlpha})`);
             gradient.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
@@ -440,16 +450,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start animation
     animate();
     
-    // Create fun initial effects
-    setTimeout(() => {
-        createBurst(window.innerWidth / 2, window.innerHeight / 2);
-        
-        setTimeout(() => {
-            createBurst(window.innerWidth / 3, window.innerHeight / 3);
-        }, 400);
-        
-        setTimeout(() => {
-            createBurst(window.innerWidth * 2/3, window.innerHeight * 2/3);
-        }, 800);
-    }, 500);
+    // No automatic bursts on page load (removed the initial burst effects)
 });

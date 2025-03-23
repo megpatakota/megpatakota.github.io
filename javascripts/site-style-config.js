@@ -34,8 +34,8 @@ tailwind.config = {
         animation: {
           color1: '#F5C6DE',       // Playful pink
           color2: '#C2E3F7',       // Playful blue
-          color3: '#E0C5F7',       // Playful purple
-          color4: '#BAE7C0',       // Playful mint
+          color3: '#f3e7f6',       // Playful purple
+          // color4: '#BAE7C0',       // Playful mint
         }
       },
     },
