@@ -11,7 +11,8 @@ tailwind.config = {
         buttons: '#A4243B',        
         
         // Background colors
-        bg_dark: '#124559',       
+        bg_dark: '#124559',   
+        bg_light: '#f3e7f6',    
         
         // Text colors
         text_primary: '#22223B',    // Dark slate blue - main headings

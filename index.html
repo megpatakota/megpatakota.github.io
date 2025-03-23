@@ -56,65 +56,53 @@
 
 <body class="bg-buttons_text text-gray-1000 font-sans">
     <!-- Header - Modified to be transparent and absolute -->
-    <header class="text-primary py-7 md:py-5 fixed top-0 w-full z-50 integrated-header">
-        <nav class="container mx-auto flex flex-row justify-between items-center px-4 relative">
-            <!-- Left: Logo and Title -->
-            <div class="flex items-center">
-                <img src="logos/face.png" alt="Logo" class="w-9 h-8 mr-2 rounded-full">
-                <h1 class="text-2xl md:text-3xl tracking-wide text-header_text">
-                    MEGHANA PATAKOTA
-                </h1>
-            </div>
+    <!-- Updated Header Section -->
+<header class="fixed top-0 left-0 right-0 py-4 px-4 z-50">
+    <div class="mx-auto flex justify-between items-center bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md px-8 py-3 rounded-full text-gray-800 max-w-4xl">
+        <!-- Left: Logo and Name -->
+        <div class="flex items-center space-x-3">
+            <img src="logos/face.png" alt="Logo" class="w-8 h-8 rounded-full">
+            <span class="font-semibold text-lg">Meghana Patakota</span>
+        </div>
 
-            <!-- Right: Call-to-Action Buttons + Hamburger Menu -->
-            <div class="flex items-center space-x-4">
-                <!-- Call-to-Action Buttons -->
-                <div class="flex space-x-2">
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
-                        <i class="fab fa-linkedin text-2xl md:text-3xl"></i>
-                    </a>
-                    <!-- Email -->
-                    <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
-                        <i class="fas fa-envelope text-2xl md:text-3xl"></i>
-                    </a>
-                    <!-- GitHub -->
-                    <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub"
-                        class="text-header_text hover:-translate-y-1 hover:shadow-md transition duration-300 ease-in-out p-3 rounded-md">
-                        <i class="fab fa-github text-2xl md:text-3xl"></i>
-                    </a>
-                </div>
-
-                <!-- Always Visible Hamburger Menu -->
-                <div class="relative">
-                    <button id="menu-toggle" class="text-header_text focus:outline-none">
-                        <i class="fas fa-bars text-3xl"></i>
-                    </button>
-
-                    <!-- Dropdown Menu -->
-                    <ul id="menu"
-                        class="hidden absolute right-0 mt-2 w-40 bg-white text-gray-900 shadow-lg rounded-lg overflow-hidden">
-                        <li class="hover:bg-gray-200">
-                            <a href="#collabs" class="block w-full px-6 py-3 text-center">Collaborations</a>
-                        </li>
-                        <li class="hover:bg-gray-200">
-                            <a href="#projects" class="block w-full px-6 py-3 text-center">Projects</a>
-                        </li>
-                        <li class="hover:bg-gray-200">
-                            <a href="#blogs" class="block w-full px-6 py-3 text-center">Blog</a>
-                        </li>
-                        <li class="hover:bg-gray-200">
-                            <a href="#technicalskills" class="block w-full px-6 py-3 text-center">Skills</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Middle: Navigation Links (Hidden on small screens, shown on md and up) -->
+        <nav class="hidden md:flex gap-8 font-medium">
+            <a href="#collabs" class="hover:text-black transition">Collaborations</a>
+            <a href="#projects" class="hover:text-black transition">Projects</a>
+            <a href="#blogs" class="hover:text-black transition">Blog</a>
+            <a href="#technicalskills" class="hover:text-black transition">Skills</a>
         </nav>
-    </header>
+
+        <!-- Right: Social Links & Hamburger -->
+        <div class="flex items-center space-x-4">
+            <!-- Social Icons -->
+            <div class="hidden md:flex gap-4">
+                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="hover:text-black transition">
+                    <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:megpatakota@icloud.com" class="hover:text-black transition">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="https://github.com/megpatakota" target="_blank" class="hover:text-black transition">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="relative md:hidden">
+                <button id="menu-toggle" class="text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="menu" class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg overflow-hidden">
+                    <li class="hover:bg-gray-100"><a href="#collabs" class="block px-4 py-2">Collaborations</a></li>
+                    <li class="hover:bg-gray-100"><a href="#projects" class="block px-4 py-2">Projects</a></li>
+                    <li class="hover:bg-gray-100"><a href="#blogs" class="block px-4 py-2">Blog</a></li>
+                    <li class="hover:bg-gray-100"><a href="#technicalskills" class="block px-4 py-2">Skills</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
 
     <!-- Hero Section - Modified to start from the top of the page -->
     <section
@@ -153,7 +141,7 @@
     </section>
 
     <!-- Collab Section -->
-    <section class="py-2" id="collabs">
+    <section class="py-2  bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md" id="collabs">
         <div id="collab-container"></div>
     </section>
 
@@ -164,10 +152,10 @@
 
 
     <!-- Blogs Section -->
-    <section id="blogs" class="bg-bg_dark py-8">
+    <section id="blogs" class=" bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md py-8">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl text-center text-dark_text_primary ">Blog Posts</h2>
-            <p class="text-center text-dark_text_secondary">Follow medium for more!</p>
+            <h2 class="text-4xl text-center text-text_primary ">Blog Posts</h2>
+            <p class="text-center text-text_secondary">Follow medium for more!</p>
             <div id="blogs-container">
                 <!-- Blog articles will be dynamically inserted here -->
             </div>
