@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- We don't need these styles/scripts since they're loaded in the parent document -->
+</head>
+<body>
+    <div class="container mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center6">
+            <!-- Profile Image -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-animation_color1 to-animation_color2 rounded-full blur-md opacity-50 transform scale-110"></div>
+                    <div class="relative rounded-full overflow-hidden border-4 border-white shadow-xl w-64 h-64">
+                        <img src="./logos/profile.jpeg" alt="Meghana Patakota" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bio Information -->
+            <div class="md:col-span-8">
+                <h2 class="text-4xl text-text_primary font-bold mb-2">Meghana Patakota</h2>
+                <h3 class="text-xl text-buttons opacity-90 font-light mb-4">AI & Data Science</h3>
+                
+                <p class="text-text_tertiary mb-6 text-lg leading-relaxed">
+                    I transform complex data challenges into intelligent solutions. As a freelance data scientist and AI expert, 
+                    I architect custom machine learning systems, implement scalable data pipelines, and deliver AI-driven insights 
+                    that create measurable business impact.
+                </p>
+                
+                <!-- Tech Focus Areas -->
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="px-3 py-1 bg-animation_color3/20 text-text_secondary rounded-full text-sm">Machine Learning</span>
+                    <span class="px-3 py-1 bg-animation_color2/20 text-text_secondary rounded-full text-sm">Large Language Models</span>
+                    <span class="px-3 py-1 bg-animation_color1/20 text-text_secondary rounded-full text-sm">Data Architecture</span>
+                    <span class="px-3 py-1 bg-animation_color3/20 text-text_secondary rounded-full text-sm">Knowledge Graphs</span>
+                    <span class="px-3 py-1 bg-animation_color2/20 text-text_secondary rounded-full text-sm">Cloud Solutions</span>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="p-4 rounded-lg border border-animation_color3/30 bg-white/50">
+                        <p class="font-bold text-3xl text-buttons">3+</p>
+                        <p class="text-text_tertiary text-sm uppercase tracking-wider">Years Experience</p>
+                    </div>
+                    <div class="p-4 rounded-lg border border-animation_color2/30 bg-white/50">
+                        <p class="font-bold text-3xl text-buttons">1</p>
+                        <p class="text-text_tertiary text-sm uppercase tracking-wider">MVP Delivered</p>
+                    </div>
+                    <div class="p-4 rounded-lg border border-animation_color1/30 bg-white/50">
+                        <p class="font-bold text-3xl text-buttons">10+</p>
+                        <p class="text-text_tertiary text-sm uppercase tracking-wider">Tech Stack</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- What I Do Section -->
+        <div class="py-6">
+            <h3 class="text-2xl text-text_secondary font-semibold mb-8 pb-2 border-b border-animation_color2/30">What I Do</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-buttons text-2xl mb-4"><i class="fas fa-robot"></i></div>
+                    <h4 class="text-xl text-text_secondary font-medium mb-2">AI Development</h4>
+                    <p class="text-text_tertiary">Custom AI solutions including chatbots, recommendation systems, and predictive models that automate processes and enhance decision-making.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-buttons text-2xl mb-4"><i class="fas fa-database"></i></div>
+                    <h4 class="text-xl text-text_secondary font-medium mb-2">Data Engineering</h4>
+                    <p class="text-text_tertiary">End-to-end data pipelines, ETL processes, and database architecture that transform raw data into actionable resources.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-buttons text-2xl mb-4"><i class="fas fa-chart-network"></i></div>
+                    <h4 class="text-xl text-text_secondary font-medium mb-2">Analytics Solutions</h4>
+                    <p class="text-text_tertiary">Advanced analytics dashboards and visualization tools that translate complex data into clear business intelligence.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tech Stack Section -->
+        <div class='py-6'>
+            <h3 class="text-2xl text-text_secondary font-semibold mb-8 pb-2 border-b border-animation_color2/30">My Tech Stack</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color3/10 flex items-center justify-center mb-2">
+                        <i class="fab fa-python text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">Python</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color2/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-brain text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">TensorFlow/PyTorch</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color1/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-database text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">SQL/NoSQL</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color3/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-cloud text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">AWS/Azure</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color2/10 flex items-center justify-center mb-2">
+                        <i class="fab fa-docker text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">Docker/Kubernetes</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color1/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-code-branch text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">Git/CI-CD</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color3/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-comments text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">LLMs/NLP</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-animation_color2/10 flex items-center justify-center mb-2">
+                        <i class="fas fa-project-diagram text-2xl text-buttons"></i>
+                    </div>
+                    <span class="text-text_secondary">Knowledge Graphs</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education & Experience -->
+        <div class="py-6">
+            <h3 class="text-2xl text-text_secondary font-semibold mb-8 pb-2 border-b border-animation_color2/30">Background</h3>
+            
+            <!-- Current Roles -->
+            <div class="mb-8">
+                <h4 class="text-lg text-buttons mb-4 font-medium">Current Roles</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 mb-3 flex items-center justify-center">
+                            <i class="fas fa-briefcase text-3xl text-buttons"></i>
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">Independent AI Consultant</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center">
+                        <div class="w-26 h-26 mb-3 flex items-center justify-center">
+                            <img src="./logos/mdr.png" alt="Mishcon" class="h-12 object-contain">
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">Principal Data Scientist</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center">
+                        <div class="w-26 h-26 mb-3 flex items-center justify-center">
+                            <img src="./logos/oxford.png" alt="Oxford" class="h-12 object-contain">
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">AI Researcher</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Quick Facts -->
+            <div class="mb-8">
+                <h4 class="text-lg text-buttons mb-4 font-medium">Education</h4>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-animation_color1/10 flex items-center justify-center">
+                            <img src="logos/UCL.png" alt="UCL" class="w-20 h-20 object-contain">
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">MSc Business Analytics</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-animation_color2/10 flex items-center justify-center">
+                            <img src="logos/bristol.png" alt="Bristol" class="w-20 h-20 object-contain">
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">MSc Accounting & Finance</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-animation_color3/10 flex items-center justify-center">
+                            <img src="logos/buffalo.png" alt="Buffalo" class="w-20 h-20 object-contain">
+                        </div>
+                        <p class="font-medium text-text_secondary text-center">BSc Business Administration</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

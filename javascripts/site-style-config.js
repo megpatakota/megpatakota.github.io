@@ -3,7 +3,7 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       colors: {
         // Brand colors
