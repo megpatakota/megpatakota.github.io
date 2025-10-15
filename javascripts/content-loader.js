@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadContent('projects.html', 'projects-container', initializeProjectScroll);
     loadContent('collab.html', 'collab-container', initializeProjectScroll);
     loadContent('io/about-me.html', 'about-container');  // Fixed path and container ID
+    loadContent('articles.html', 'articles-container');
 });
 
 function loadContent(file, containerId, callback) {

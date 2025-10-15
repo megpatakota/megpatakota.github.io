@@ -19,24 +19,24 @@ function injectBlogsStyles() {
         position: relative;
         width: 100%;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
 
     .blogs-wrapper {
         position: relative;
         overflow: hidden;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
 
     .blogs-scroll {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
         overflow-x: auto;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
 
     .blogs-scroll::-webkit-scrollbar {
@@ -45,17 +45,16 @@ function injectBlogsStyles() {
 
     .blog-card {
         flex: 0 0 auto;
-        width: 450px; /* Adjust the width as needed */
+        width: 350px;
         background-color: white;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0.75rem;
+        transition: transform 0.2s ease;
     }
 
     .blog-card:hover {
-        transform: translateY(-0.5rem) scale(1.05);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
     }
 
     .scroll-button {
@@ -131,13 +130,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             articleCard.className = 'blog-card';
 
             articleCard.innerHTML = `
-                <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-contain">
-                <div class="p-6">
-                    <h3 class="text-xl font-normal mb-2 text-secondary">${article.title}</h3>
-                    <p class="text-gray-600 mb-4">${article.description}</p>
+                <img src="${article.image}" alt="${article.title}" class="w-full h-32 object-cover rounded">
+                <div class="p-3">
+                    <h3 class="text-lg font-medium mb-2 text-secondary line-clamp-2">${article.title}</h3>
                     <a href="${article.link}" target="_blank" rel="noopener noreferrer" 
-                       class="text-secondary hover:text-secondary font-semibold transition duration-300">
-                       Read More →
+                       class="text-secondary hover:text-secondary font-medium text-sm">
+                       Read →
                     </a>
                 </div>
             `;
@@ -201,49 +199,24 @@ function initializeBlogsScroll() {
     const container = document.getElementById('blogsScrollContainer');
     const leftButton = document.getElementById('blogsScrollLeft');
     const rightButton = document.getElementById('blogsScrollRight');
-    const scrollAmount = 400; // Adjust this value to control scroll distance
+    const scrollAmount = 300;
 
     if (!container || !leftButton || !rightButton) {
         console.warn('Blogs scroll elements not found.');
-        return; // Ensure elements exist before continuing
+        return;
     }
 
-    // Scroll buttons click handlers with circular scrolling
     leftButton.addEventListener('click', () => {
-        if (container.scrollLeft <= 0) {
-            // At the beginning, scroll to the end
-            container.scrollTo({
-                left: container.scrollWidth - container.clientWidth,
-                behavior: 'smooth'
-            });
-        } else {
-            // Scroll left by scrollAmount
-            container.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        container.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
     });
 
     rightButton.addEventListener('click', () => {
-        const maxScrollLeft = container.scrollWidth - container.clientWidth;
-        if (container.scrollLeft >= maxScrollLeft) {
-            // At the end, scroll back to the beginning
-            container.scrollTo({
-                left: 0,
-                behavior: 'smooth'
-            });
-        } else {
-            // Scroll right by scrollAmount
-            container.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }
+        container.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
     });
-    // Update button states on scroll
-    container.addEventListener('scroll', updateScrollButtons);
-
-    // Update button states on window resize
-    window.addEventListener('resize', updateScrollButtons);
 }

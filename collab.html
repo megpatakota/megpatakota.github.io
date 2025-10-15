@@ -29,63 +29,58 @@
 </head>
 
 <body>
-    <section class="collabs text-text_primary py-10 px-4" id="collabContainer">
-        <h2 class="text-4xl text-center text-text_primary">Research Collaboration</h2>
-        <p class="text-center text-text_secondary mb-6">Active Work</p>
+    <section class="collabs text-text_primary py-0 px-0" id="collabContainer">
+        <!-- CLARA collab -->
+        <div class="bg-white py-8 px-6 rounded-lg shadow-lg min-w-[300px] w-full max-w-[90%] mx-auto">
+            <h2 class="text-4xl text-center text-text_primary">Research Collaboration</h2>
+            <p class="text-center text-text_secondary mb-6">Active Work</p>
+            <h2 class="text-2xl md:text-3xl font-semibold text-center mb-4">
+                CLARA: CLimate Accountability Research Assistant
+            </h2>
+            <p class="text-center mb-8">
+                An advanced AI research agent powered by Large Language Models (LLMs) and hybrid GraphRAG technology,
+                significantly enhancing archival research for scholarship, investigative journalism, and legal evidence
+                preparation.
+            </p>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <img src="logos/clara_h.png" alt="Oxford SSEE"
+                    class="h-20 md:h-24 object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </div>
 
-        
-        <!-- Container to center the card -->
-        <div class="flex justify-center items-center">
-            <!-- CLARA collab -->
-            <div class="bg-white py-8 px-6 rounded-lg shadow-lg min-w-[300px] w-full max-w-[90%] mx-auto">
-                <h2 class="text-2xl md:text-3xl font-semibold text-center mb-4">
-                    CLARA: CLimate Accountability Research Assistant
-                </h2>
-                <p class="text-center mb-8">
-                    An advanced AI research agent powered by Large Language Models (LLMs) and hybrid GraphRAG technology,
-                    significantly enhancing archival research for scholarship, investigative journalism, and legal evidence
-                    preparation.
-                </p>
-                <div class="flex justify-center items-center space-x-4 mb-8">
-                    <img src="logos/clara_h.png" alt="Oxford SSEE"
-                        class="h-20 md:h-24 object-contain opacity-90 hover:opacity-100 transition-opacity">
+            <p class="italic text-center mb-6">
+                Supporting scholarship, journalism, and legal evidence preparation—accessible to all users, expert or
+                not.
+            </p>
+
+            <div class="flex justify-center mb-6">
+                <a href="https://clara-research.com" target="_blank"
+                    class="btn-register inline-flex items-center bg-buttons text-text_button px-6 py-3 rounded-full font-medium transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                    Try CLARA for Free!
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Feature icons - made responsive for mobile -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center mb-4 py-3">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-search text-buttons mb-2 text-xl"></i>
+                    <span>Advanced semantic search</span>
                 </div>
-
-                <p class="italic text-center mb-6">
-                    Supporting scholarship, journalism, and legal evidence preparation—accessible to all users, expert or
-                    not.
-                </p>
-
-                <div class="flex justify-center mb-6">
-                    <a href="https://clara-research.com" target="_blank"
-                        class="btn-register inline-flex items-center bg-buttons text-text_button px-6 py-3 rounded-full font-medium transition duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                        Try CLARA for Free!
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                            </path>
-                        </svg>
-                    </a>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-project-diagram text-buttons mb-2 text-xl"></i>
+                    <span>Advanced knowledge graph</span>
                 </div>
-                
-                <!-- Feature icons - made responsive for mobile -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center mb-4 py-3">
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-search text-buttons mb-2 text-xl"></i>
-                        <span>Advanced semantic search</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-project-diagram text-buttons mb-2 text-xl"></i>
-                        <span>Advanced knowledge graph</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-book text-buttons mb-2 text-xl"></i>
-                        <span>Deep document analysis</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-brain text-buttons mb-2 text-xl"></i>
-                        <span>Autonomous strategies</span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-book text-buttons mb-2 text-xl"></i>
+                    <span>Deep document analysis</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-brain text-buttons mb-2 text-xl"></i>
+                    <span>Autonomous strategies</span>
                 </div>
             </div>
         </div>
