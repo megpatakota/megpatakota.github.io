@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             articleCard.className = 'blog-card';
 
             articleCard.innerHTML = `
-                <img src="${article.image}" alt="${article.title}" class="w-full h-32 object-cover rounded">
+                <img src="${article.image}" alt="${article.title}" class="w-3/5 h-auto max-h-32 object-cover rounded mx-auto block">
                 <div class="p-3">
                     <h3 class="text-lg font-medium mb-2 text-secondary line-clamp-2">${article.title}</h3>
                     <a href="${article.link}" target="_blank" rel="noopener noreferrer" 
