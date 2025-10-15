@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Get colors from Tailwind config - simplified to 4 colors
     const getAnimationColors = () => {
-        // Default playful colors if config not available
+        // Default subtle colors if config not available
         const defaultColors = [
-            { r: 245, g: 198, b: 222, a: 0.7 }, // Pink
-            { r: 194, g: 227, b: 247, a: 0.7 }, // Blue
-            { r: 224, g: 197, b: 247, a: 0.7 }, // Purple
-            { r: 186, g: 231, b: 192, a: 0.7 }  // Mint
+            { r: 245, g: 198, b: 222, a: 0.3 }, // Subtle Pink
+            { r: 194, g: 227, b: 247, a: 0.3 }, // Subtle Blue
+            { r: 224, g: 197, b: 247, a: 0.3 }, // Subtle Purple
+            { r: 186, g: 231, b: 192, a: 0.3 }  // Subtle Mint
         ];
         
         try {
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             Object.keys(colors.animation).forEach(key => {
                 if (colors.animation[key].startsWith('#')) {
                     const { r, g, b } = hexToRgb(colors.animation[key]);
-                    // Slightly higher opacity for more fun appearance
-                    paletteColors.push({ r, g, b, a: 0.65 + Math.random() * 0.15 });
+                    // Much lower opacity for subtle appearance
+                    paletteColors.push({ r, g, b, a: 0.25 + Math.random() * 0.1 });
                 }
             });
             
@@ -87,22 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    // Configuration - more playful settings
+    // Configuration - slower and more subtle settings
     const config = {
-        particleCount: 100,         // Good number for balance
-        trailLength: 18,            // Longer trails for fun effect
-        waveAmplitude: 1.2,         // Higher amplitude for more playful motion
-        waveFrequency: 0.018,       // Slightly higher frequency
-        waveSpeed: 0.0003,          // Same speed for nice flow
-        cursorInfluence: 180,       // Larger influence radius
-        cursorStrength: 0.8,        // Stronger cursor effect for fun interaction
-        speedRange: { min: 0.3, max: 0.9 }, // Balanced speed
+        particleCount: 60,          // Fewer particles for subtlety
+        trailLength: 12,            // Shorter trails for cleaner look
+        waveAmplitude: 0.8,         // Lower amplitude for subtle motion
+        waveFrequency: 0.012,       // Lower frequency for slower waves
+        waveSpeed: 0.00015,         // Much slower speed
+        cursorInfluence: 120,       // Smaller influence radius
+        cursorStrength: 0.4,        // Weaker cursor effect
+        speedRange: { min: 0.15, max: 0.4 }, // Much slower speeds
         colorPalette: getAnimationColors(),
         // Wave motion parameters
         waveMotion: {
             layers: 2,              // Fewer layers for cleaner look
-            phaseShift: 0.6,        // More pronounced phase shift
-            verticalFactor: 2.8     // Higher vertical stretching for playful waves
+            phaseShift: 0.4,        // Less pronounced phase shift
+            verticalFactor: 1.8     // Lower vertical stretching for subtle waves
         }
     };
     
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reset() {
             this.x = Math.random() * window.innerWidth;
             this.y = Math.random() * window.innerHeight;
-            this.size = 1.5 + Math.random() * 2.5; // Slightly larger for visibility
+            this.size = 0.8 + Math.random() * 1.2; // Much thinner lines
             this.speed = config.speedRange.min + Math.random() * (config.speedRange.max - config.speedRange.min);
             // Use one of the 4 colors
             this.color = config.colorPalette[Math.floor(Math.random() * config.colorPalette.length)];
@@ -428,8 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Animation loop
     function animate() {
-        // Clear with slight fade for visible trails
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.03)'; // Very light fade for longer trails
+        // Clear with very subtle fade for minimal trails
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.015)'; // Much lighter fade for subtle trails
         ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
         
         // Update and draw particles
@@ -441,8 +441,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update and draw burst particles
         updateBurstParticles(time);
         
-        // Slower time increment for half speed
-        time += 0.5;
+        // Much slower time increment for subtle animation
+        time += 0.2;
         
         requestAnimationFrame(animate);
     }
