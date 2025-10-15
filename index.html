@@ -59,21 +59,21 @@
     <!-- Updated Header Section -->
     <header class="fixed top-0 left-0 right-0 py-4 px-4 z-50">
         <div
-            class="mx-auto flex justify-between items-center bg-white shadow-md px-8 py-3 rounded-full text-gray-800 max-w-4xl">
+            class="mx-auto flex justify-between items-center bg-white shadow-md px-8 py-3 rounded-full text-gray-800 max-w-xl">
             <!-- <div class="mx-auto flex justify-between items-center bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md px-8 py-3 rounded-full text-gray-800 max-w-4xl"> -->
             <!-- Left: Logo and Name -->
             <div class="flex items-center space-x-3">
-                <img src="logos/face.png" alt="Logo" class="w-9 h-8 rounded-full">
-                <span class="font-semibold text-lg">Meghana Patakota</span>
+                <!-- <img src="logos/face.png" alt="Logo" class="w-9 h-8 rounded-full"> -->
+                <span class="font-semibold text-xl">Meghana Patakota</span>
             </div>
 
-            <!-- Middle: Navigation Links (Hidden on small screens, shown on md and up) -->
-            <nav class="hidden md:flex gap-8 font-medium">
+            <!-- Middle: Navigation Links (Hidden on small screens, shown on md and up) This is the bit that shows navigation links on top bar-->
+            <nav class="hidden md:flex gap-4 font-medium">
                 <!-- <a href="#about" class="hover:text-black transition">About</a> -->
-                <a href="#articles" class="hover:text-black transition">Articles</a>
+                <!-- <a href="#articles" class="hover:text-black transition">Articles</a>
                 <a href="#collabs" class="hover:text-black transition">Collaborations</a>
                 <a href="#projects" class="hover:text-black transition">Projects</a>
-                <a href="#blogs" class="hover:text-black transition">Blog</a>
+                <a href="#blogs" class="hover:text-black transition">Blog</a> -->
                 <!-- <a href="#technicalskills" class="hover:text-black transition">Skills</a> -->
             </nav>
 
@@ -94,15 +94,16 @@
                 </div>
 
                 <!-- Hamburger Menu -->
-                <div class="relative md:hidden">
-                    <button id="menu-toggle" class="text-xl">
-                        <i class="fas fa-bars"></i>
+                <div class="relative">
+                    <button id="menu-toggle" class="text-xxl">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                     <ul id="menu"
                         class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg overflow-hidden">
                         <li class="hover:bg-gray-100"><a href="#about" class="block px-4 py-2">About</a></li>
                         <li class="hover:bg-gray-100"><a href="#collabs" class="block px-4 py-2">Collaborations</a></li>
-                        <li class="hover:bg-gray-100"><a href="#projects" class="block px-4 py-2">Projects</a></li>
+                        <li class="hover:bg-gray-100"><a href="#articles" class="block px-4 py-2">Articles</a></li>
+                        <!-- <li class="hover:bg-gray-100"><a href="#projects" class="block px-4 py-2">Projects</a></li> -->
                         <li class="hover:bg-gray-100"><a href="#blogs" class="block px-4 py-2">Blog</a></li>
                         <!-- <li class="hover:bg-gray-100"><a href="#technicalskills" class="block px-4 py-2">Skills</a></li> -->
                     </ul>
@@ -159,14 +160,14 @@
     </section>
 
     <!-- Articles Section -->
-    <section id="articles" class="bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md py-8">
+    <section id="articles" class="bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md">
         <div id="articles-container"></div>
     </section>
 
     <!-- Blogs Section -->
-    <section id="blogs" class="bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md py-4">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl text-center text-text_primary mb-2">Blog</h2>
+    <section id="blogs" class="bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] shadow-md">
+        <div class="container mx-auto">
+            <h2 class="text-2xl text-center text-text_primary mb-2">Blog Posts</h2>
             <div id="blogs-container">
                 <!-- Blog articles will be dynamically inserted here -->
             </div>
