@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./javascripts/site-style-config.js"></script>
+    <link rel="stylesheet" href="./styles/articles.css">
+</head>
+
+<!-- Articles Section -->
+<body>
+    <section class="articles py-6 px-4" id="articlesContainer">
+        <h2 class="text-3xl text-center text-text_primary mb-2">Articles</h2>
+        
+        <div class="scroll-container">
+            <div class="articles-wrapper">
+                <!-- Scroll buttons -->
+                <button class="scroll-button left" id="articlesScrollLeft" aria-label="Scroll left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-button right" id="articlesScrollRight" aria-label="Scroll right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Articles container -->
+                <div class="articles-scroll" id="articlesScrollContainer">
+                    
+                    <!-- SQL Article Card -->
+                    <a href="articles/sql-beyond-select.html" class="article-card">
+                        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&h=400&fit=crop" alt="SQL Development">
+                        <div class="p-6">
+                            <h3 class="text-xl font-normal mb-2 text-text_primary">Beyond SELECT: SQL as a Full Development Platform</h3>
+                            <p class="text-gray-600 mb-3 text-sm line-clamp-2">Most developers treat SQL as just a query language. Discover the hidden capabilities that transform SQL into a complete development platform.</p>
+                            <span class="text-buttons hover:text-buttons font-medium text-sm">
+                                Read →
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Add more article cards here as needed -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize scroll functionality
+        function initializeArticlesScroll() {
+            const container = document.getElementById('articlesScrollContainer');
+            const leftButton = document.getElementById('articlesScrollLeft');
+            const rightButton = document.getElementById('articlesScrollRight');
+            const scrollAmount = 300;
+
+            if (!container || !leftButton || !rightButton) {
+                console.warn('Articles scroll elements not found.');
+                return;
+            }
+
+            leftButton.addEventListener('click', () => {
+                if (container.scrollLeft <= 0) {
+                    container.scrollTo({
+                        left: container.scrollWidth - container.clientWidth,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    container.scrollBy({
+                        left: -scrollAmount,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+
+            rightButton.addEventListener('click', () => {
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                if (container.scrollLeft >= maxScrollLeft) {
+                    container.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    container.scrollBy({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initializeArticlesScroll);
+    </script>
+    <script src="./javascripts/animations.js"></script>
+</body>
+</html>
