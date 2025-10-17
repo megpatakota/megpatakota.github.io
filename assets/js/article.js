@@ -30,5 +30,3 @@ if (mobileMenuButton && mobileMenu) {
         });
     });
 }
-
-
