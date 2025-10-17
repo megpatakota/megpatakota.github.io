@@ -88,6 +88,10 @@ class ViewTracker {
 
     trackView() {
         try {
+            // Send view data to server
+            this.sendViewToServer();
+            
+            // Also keep local tracking for immediate display
             const views = this.getViews();
             const viewKey = `viewed_${this.currentPage}`;
             
@@ -121,6 +125,29 @@ class ViewTracker {
             this.saveViews(viewsForStorage);
         } catch (error) {
             console.warn('View tracking failed:', error);
+        }
+    }
+
+    async sendViewToServer() {
+        try {
+            const response = await fetch('/api/track-view', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    page: this.currentPage,
+                    sessionId: this.sessionId,
+                    userAgent: navigator.userAgent,
+                    timestamp: new Date().toISOString()
+                })
+            });
+
+            if (!response.ok) {
+                console.warn('Failed to send view to server:', response.status);
+            }
+        } catch (error) {
+            console.warn('Error sending view to server:', error);
         }
     }
 

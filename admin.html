@@ -255,12 +255,17 @@
             }
             
             showDashboard() {
+                console.log('Showing dashboard...');
                 document.getElementById('login-screen').style.display = 'none';
                 document.getElementById('dashboard-content').classList.add('authenticated');
                 
                 // Initialize dashboard if not already done
                 if (!window.dashboard) {
+                    console.log('Creating new dashboard instance...');
                     window.dashboard = new AnalyticsDashboard();
+                    console.log('Dashboard instance created:', window.dashboard);
+                } else {
+                    console.log('Dashboard already exists:', window.dashboard);
                 }
             }
             
@@ -333,25 +338,60 @@
                     }
                 ];
                 
-                this.init();
+                // Initialize asynchronously
+                this.init().catch(error => {
+                    console.error('Error initializing dashboard:', error);
+                });
             }
             
-            init() {
-                this.loadData();
+            async init() {
+                console.log('Dashboard init started...');
+                await this.loadData();
+                console.log('Data loaded, displaying...');
                 this.displayData();
+                console.log('Dashboard init completed');
             }
             
-            loadData() {
+            async loadData() {
+                try {
+                    // Try to load from server first
+                    const response = await fetch('/api/get-analytics');
+                    if (response.ok) {
+                        this.serverData = await response.json();
+                        console.log('Loaded server analytics:', this.serverData);
+                    } else {
+                        console.warn('Failed to load server analytics:', response.status);
+                        this.serverData = null;
+                    }
+                } catch (error) {
+                    console.warn('Error loading server analytics:', error);
+                    this.serverData = null;
+                }
+
+                // Also load local data as fallback
                 try {
                     const stored = localStorage.getItem('megpatakota_page_views');
                     this.viewData = stored ? JSON.parse(stored) : {};
                 } catch (error) {
-                    console.warn('Failed to load analytics data:', error);
+                    console.warn('Failed to load local analytics data:', error);
                     this.viewData = {};
                 }
             }
             
             getPageStats(slug) {
+                // Use server data if available, otherwise fall back to local data
+                if (this.serverData && this.serverData.pages && this.serverData.pages[slug]) {
+                    const serverStats = this.serverData.pages[slug];
+                    return {
+                        totalViews: serverStats.totalViews || 0,
+                        uniqueUsers: serverStats.uniqueUsers || 0,
+                        firstView: serverStats.firstView,
+                        lastView: serverStats.lastView,
+                        pageType: this.getPageType(slug)
+                    };
+                }
+
+                // Fallback to local data
                 const viewKey = `viewed_${slug}`;
                 const data = this.viewData[viewKey];
                 
@@ -373,8 +413,24 @@
                     pageType: data.pageType || 'unknown'
                 };
             }
+
+            getPageType(slug) {
+                const page = this.pages.find(p => p.slug === slug);
+                return page ? page.type : 'unknown';
+            }
             
             getTotalStats() {
+                // Use server data if available
+                if (this.serverData && this.serverData.totals) {
+                    return {
+                        totalPages: this.serverData.totals.totalPages || 0,
+                        pagesWithViews: Object.keys(this.serverData.pages || {}).length,
+                        totalViews: this.serverData.totals.totalViews || 0,
+                        totalUniqueUsers: this.serverData.totals.totalUniqueUsers || 0
+                    };
+                }
+
+                // Fallback to local data calculation
                 let totalViews = 0;
                 let totalUniqueUsers = new Set();
                 let pagesWithViews = 0;
@@ -479,8 +535,8 @@
                 }).join('');
             }
             
-            refreshData() {
-                this.loadData();
+            async refreshData() {
+                await this.loadData();
                 this.displayData();
             }
             
@@ -515,21 +571,45 @@
         }
         
         // Global functions for buttons
-        function refreshData() {
-            window.dashboard.refreshData();
+        async function refreshData() {
+            console.log('Refresh button clicked, dashboard exists:', !!window.dashboard);
+            if (window.dashboard) {
+                const button = document.querySelector('button[onclick="refreshData()"]');
+                if (button) {
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Refreshing...';
+                    button.disabled = true;
+                    
+                    try {
+                        await window.dashboard.refreshData();
+                    } finally {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                    }
+                } else {
+                    await window.dashboard.refreshData();
+                }
+            } else {
+                console.error('Dashboard instance not found!');
+            }
         }
         
         function clearAllData() {
-            window.dashboard.clearAllData();
+            if (window.dashboard) {
+                window.dashboard.clearAllData();
+            }
         }
         
         function exportData() {
-            window.dashboard.exportData();
+            if (window.dashboard) {
+                window.dashboard.exportData();
+            }
         }
         
         // Store dashboard instance globally for button access
         document.addEventListener('DOMContentLoaded', function() {
-            window.dashboard = new AnalyticsDashboard();
+            // Dashboard will be created after authentication
+            // Don't create it here to avoid conflicts
         });
     </script>
 </body>

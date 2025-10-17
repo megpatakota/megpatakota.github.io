@@ -1,0 +1,15 @@
+{
+  "name": "megpatakota-analytics",
+  "version": "1.0.0",
+  "description": "Simple analytics system for megpatakota.co.uk",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo 'Static site - no start script needed'",
+    "build": "echo 'No build step required'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

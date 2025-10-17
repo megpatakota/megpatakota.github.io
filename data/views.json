@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1760739256818-ucwyrqi1e",
+    "page": "home",
+    "sessionId": "test-123",
+    "userAgent": "test",
+    "ip": "::1",
+    "timestamp": "2025-10-17T22:14:16.818Z",
+    "date": "2025-10-17"
+  },
+  {
+    "id": "1760739383681-qzbo1mmlv",
+    "page": "article_data-science-evolution",
+    "sessionId": "mgvern638q8lubkglui",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15",
+    "ip": "::1",
+    "timestamp": "2025-10-17T22:16:23.307Z",
+    "date": "2025-10-17"
+  },
+  {
+    "id": "1760739476605-gpgj6l3o1",
+    "page": "article_data-science-evolution",
+    "sessionId": "mgvern638q8lubkglui",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15",
+    "ip": "::1",
+    "timestamp": "2025-10-17T22:17:56.255Z",
+    "date": "2025-10-17"
+  },
+  {
+    "id": "1760739614018-7nvrharya",
+    "page": "article_data-science-evolution",
+    "sessionId": "mgvern638q8lubkglui",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15",
+    "ip": "::1",
+    "timestamp": "2025-10-17T22:20:13.609Z",
+    "date": "2025-10-17"
+  }
+]
