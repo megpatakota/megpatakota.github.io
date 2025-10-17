@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond SELECT: SQL as a Full Development Platform - Meg Patakota</title>
+    <title>The Evolution of Data Science - Meg Patakota</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -79,99 +79,60 @@
             
             <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
                 <div class="article-content">
-                    <h1>Beyond SELECT: SQL as a Full Development Platform</h1>
+                    <h1>The Evolution of Data Science</h1>
 
-                    <p class="text-sm text-gray-500 mb-8">
-                        <i class="far fa-calendar mr-2"></i>Analytics Insights • SQL Development
+                    <p class="text-sm text-gray-500 mb-4">
+                        <i class="far fa-calendar mr-2"></i>Career Reflections • Data Science
                     </p>
+                    
+                    <div class="bg-buttons/5 border-l-4 border-buttons rounded-r-lg p-4 mb-8">
+                        <p class="text-sm text-text_secondary">
+                            <i class="fab fa-linkedin text-buttons mr-2"></i>
+                            <strong>Originally published on LinkedIn</strong> • 
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7378884224822693888/" 
+                               target="_blank" 
+                               class="text-buttons hover:underline font-semibold">
+                                View original post and join the discussion
+                            </a>
+                        </p>
+                    </div>
 
-                    <p>Most developers treat SQL as a query language—a tool for extracting data with SELECT statements,
-                        perhaps joining a few tables, maybe throwing in a UNION when things get complicated. But this view
-                        sells SQL dramatically short.</p>
+                    <p>Remember when we all wanted to be data scientists (DS)? 🤔</p>
+                    
+                    <p><em>Reflections on the many meanings of data science that I have come across over the years.</em></p>
 
-                    <p>If you're doing SQL properly, you're not just querying databases. You're building systems.</p>
+                    <p>Five years ago, data science was the dream job for everyone that entered the world of Python 🐍</p>
+                    
+                    <p>The pitch was irresistible: build machine learning models 🤖, create predictive analytics 📈, do all the cool technical stuff that would transform businesses. Then reality hit. 💥</p>
+                    
+                    <p>For many who made it into those coveted roles, the day-to-day looked... different. Less time building ML models, more time cleaning data 🧹. Processing it. Analyzing it. Curating it. Dashboarding! Trying to make sense of information scattered across systems in a dozen different formats.</p>
+                    
+                    <p>It turns out most companies' data just wasn't ready for the predictive analytics dream yet. The foundation needed to be built first. 🏗️</p>
 
-                    <h2>The Hidden Capabilities of Modern SQL</h2>
+                    <h2>So what's changed?</h2>
 
-                    <h3>Data Definition and Structure</h3>
-                    <p>SQL isn't just for reading data—it's for architecting it. Creating tables and views is fundamental,
-                        but it's the strategic use of views that separates novice from experienced practitioners. Views can
-                        encapsulate complex business logic, abstract away schema changes, and provide security boundaries
-                        that protect sensitive data while keeping it accessible to authorized queries.</p>
-
-                    <h3>Access Control and Security</h3>
-                    <p>Permissions aren't an afterthought; they're part of the data model. Setting granular permissions on
-                        tables and views allows you to implement the principle of least privilege at the database level.
-                        This means your application layer doesn't bear the full burden of security—your data tier becomes an
-                        active participant in access control.</p>
-
-                    <h3>Procedural Logic and Automation</h3>
-                    <p>Modern SQL supports stored procedures, functions, and triggers (what some systems call macros or
-                        routines). These aren't relics from the 1990s—they're powerful tools for:</p>
-                    <ul>
-                        <li>Enforcing business rules consistently across applications</li>
-                        <li>Reducing network overhead by processing data where it lives</li>
-                        <li>Creating reusable logic that multiple systems can leverage</li>
-                        <li>Implementing complex calculations that would be inefficient in application code</li>
-                    </ul>
-
-                    <h3>Code Organization and Maintainability</h3>
-                    <p>Professional SQL development means treating your database code like any other codebase. This
-                        includes:</p>
-
-                    <p><strong>Modular SQL with unit testing:</strong> Just as you wouldn't ship application code without
-                        tests, production SQL deserves the same rigor. Frameworks for testing SQL logic exist across
-                        platforms, allowing you to validate that your stored procedures, functions, and complex queries
-                        behave correctly.</p>
-
-                    <p><strong>CTEs (Common Table Expressions) for readability:</strong> CTEs transform tangled subqueries
-                        into readable, sequential logic. Instead of nested SELECT statements that require mental stack
-                        traces to parse, CTEs let you name intermediate results and build queries that read like a story.
-                    </p>
-
-                    <p>CTEs can serve multiple purposes depending on your needs:</p>
-                    <ul>
-                        <li>Temporary result sets that improve query organization</li>
-                        <li>Recursive queries for hierarchical data</li>
-                        <li>A foundation for aggregate functions that build on each other</li>
-                        <li>Reusable expressions within a single query</li>
-                    </ul>
-
-                    <h3>Production Optimization</h3>
-                    <p>For production systems, performance isn't optional—it's existential. Materialized views (or
-                        materialized tables, depending on your database system) pre-compute expensive queries and store the
-                        results. This trades storage space for query speed, turning multi-second analytical queries into
-                        millisecond lookups.</p>
-
-                    <p>The strategic use of materialization can mean the difference between a dashboard that users avoid and
-                        one they rely on daily.</p>
-
-                    <h2>The Competitive Advantage</h2>
-                    <p>Developers who master these SQL capabilities become force multipliers. They don't just fetch
-                        data—they architect data systems that are secure, performant, maintainable, and testable. They solve
-                        problems at the right layer of the stack, rather than forcing every solution through application
-                        code.</p>
-
-                    <p>SQL is not a stepping stone to "real" programming. It's a full-featured development platform that's
-                        been battle-tested for decades. The question isn't whether SQL can handle complex requirements—it's
-                        whether you know enough SQL to use it properly.</p>
+                    <p>These days, I'm noticing something interesting. We are seeing ML Engineers, Research Engineers and AI Engineers roles becoming more prominent which once were seen to be part of a DS role.</p>
+                    
+                    <p>Companies are still hiring data scientists, but the role has quietly evolved. It's become more... honest, maybe? The expectations of a DS seem to better reflect what the work actually involves.</p>
+                    
+                    <p>Today's data scientists often wear multiple hats 🎩 a bit of data engineering here 🔧, some analysis there 📊, and now with AI everywhere, maybe some prompt engineering or model fine-tuning too. The role has expanded to meet companies where they actually are in their data journey, not where the hype said they should be.</p>
+                    
+                    <p>Maybe that's actually the story here, not that data science failed to live up to expectations, but that it matured into something more grounded and, arguably, more valuable. 🌱</p>
 
                     <hr>
 
-                    <p class="text-sm italic text-center text-gray-600">What SQL capabilities have transformed how you build
-                        systems? I'm always interested in hearing how developers leverage the full power of their database
-                        platforms.</p>
+                    <p class="text-sm italic text-center text-gray-600">I'm curious what others have experienced. Did your data science role evolve like this? Or did you find something completely different? 💬</p>
 
                     <!-- Share section -->
                     <div class="mt-12 pt-8 border-t border-gray-300">
                         <p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p>
                         <div class="flex justify-center gap-6">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://megpatakota.com/articles/sql-beyond-select.html"
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://megpatakota.com/articles/data-science-evolution.html"
                                 target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
                                 <i class="fab fa-linkedin text-2xl"></i>
                                 <span class="font-semibold">LinkedIn</span>
                             </a>
-                            <a href="https://twitter.com/intent/tweet?url=https://megpatakota.com/articles/sql-beyond-select.html&text=Beyond%20SELECT:%20SQL%20as%20a%20Full%20Development%20Platform"
+                            <a href="https://twitter.com/intent/tweet?url=https://megpatakota.com/articles/data-science-evolution.html&text=The%20Evolution%20of%20Data%20Science"
                                 target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
                                 <i class="fab fa-twitter text-2xl"></i>
                                 <span class="font-semibold">Twitter</span>
@@ -251,3 +212,4 @@
 </body>
 
 </html>
+

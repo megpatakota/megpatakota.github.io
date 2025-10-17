@@ -1,0 +1,75 @@
+/* Article Page Styles */
+
+.gradient-bg {
+    background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
+}
+
+/* Article Content Typography */
+.article-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #22223B;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.article-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #22223B;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #68505B;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-content p {
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    color: #4E6A51;
+}
+
+.article-content ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+    color: #4E6A51;
+}
+
+.article-content pre {
+    background: #f8f9fa;
+    border-left: 4px solid #A4243B;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.article-content code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #22223B;
+}
+
+.article-content strong {
+    color: #22223B;
+    font-weight: 600;
+}
+
+.article-content hr {
+    margin: 2.5rem 0;
+    border-color: #e5e7eb;
+}
+
+

@@ -1,37 +1,106 @@
-# Meghana Patakota - Professional Portfolio
+# Meg Patakota - Data Analytics & Consulting Portfolio
 
-Welcome to the GitHub repository for [Meghana Patakota's](https://www.megpatakota.com) professional portfolio website! This project showcases a collection of my work in data science, AI research, and insights from my blog, all in an interactive, elegant, and responsive layout.
+Welcome to my professional portfolio website! This site showcases my expertise in data analytics, business intelligence, and data exploration, with a focus on practical, results-driven solutions.
 
+🌐 **Live Site**: [megpatakota.com](https://www.megpatakota.com)
 
-## 💼 Sections
+## 📁 Project Structure
 
-- **About** - A quick overview of my professional background and areas of expertise.
-- **Projects** - Interactive cards highlighting my significant data science and AI projects.
-- **Blog** - Medium articles integrated with hover effects and smooth scrolling for intuitive access to my insights and articles.
-- **Technical Skills** - A rundown of my key technical skills, presented in a clean, scrollable section.
+```
+megpatakota.github.io/
+├── index.html                 # Main portfolio site
+├── articles/                  # Blog articles and insights
+│   └── sql-beyond-select.html
+├── assets/                    # All site assets
+│   ├── css/
+│   │   ├── main.css          # Main site styles
+│   │   └── article.css       # Article page styles
+│   ├── js/
+│   │   ├── main.js           # Main site JavaScript
+│   │   ├── article.js        # Article page JavaScript
+│   │   └── site-style-config.js  # Tailwind color configuration
+│   └── images/
+│       └── logos/            # Company and university logos
+└── README.md
+```
+
+## 💼 About This Site
+
+This is a modern, responsive portfolio website showcasing:
+
+- **Services**: Data Analytics, BI, Data Exploration, Analytics Engineering
+- **Experience**: Work with Oxford, Google DeepMind, Mishcon de Reya, Marsh
+- **Live Projects**: CLARA Research Assistant (1.2M+ documents)
+- **Insights**: Technical articles on SQL, analytics, and data science
+- **Process**: Agile, iterative approach to project delivery
 
 ## 🔧 Tech Stack
 
-- **HTML5 & CSS3**: For the structural and visual foundation.
-- **JavaScript**: Enabling interactivity, including animations and dynamic loading.
-- **Tailwind CSS**: Powering a modern, responsive design with utility-first styling.
-- **Font Awesome**: Providing scalable icons across navigation and social links.
-- **RSS-to-JSON API**: Seamlessly pulling Medium articles into the Blog section.
+- **HTML5 & CSS3**: Semantic structure and modern styling
+- **Tailwind CSS**: Utility-first responsive design
+- **JavaScript (Vanilla)**: Interactive components and navigation
+- **Font Awesome**: Professional icons throughout
+- **FormSubmit**: Contact form integration
+- **GitHub Pages**: Static site hosting
 
-## 📫 Connect with Me
+## 🎨 Design Features
 
-- **Email**: [meg.patakota@icloud.com](mailto:meg.patakota@icloud.com)
+- **Fully Responsive**: Optimized for mobile, tablet, and desktop
+- **Modern UI**: Gradient backgrounds, smooth transitions, hover effects
+- **Clean Typography**: Inter font family for professional look
+- **Accessible**: Semantic HTML, proper contrast, keyboard navigation
+- **Fast Loading**: Minimal dependencies, optimized assets
+
+## 📫 Connect
+
+- **Email**: [megpatakota@icloud.com](mailto:megpatakota@icloud.com)
 - **LinkedIn**: [linkedin.com/in/megpatakota](https://www.linkedin.com/in/megpatakota/)
 - **GitHub**: [github.com/megpatakota](https://github.com/megpatakota)
 
-## 🌟 Key Features
+## 🚀 Key Sections
 
-- **Responsive Design:** A polished layout that seamlessly adapts to any device, from mobile to desktop, for optimal user experience.
-- **Dynamic Sections:** Blogs, projects, and technical skills are dynamically fetched and displayed, ensuring easy updates and a cohesive design.
-- **Circular Scrolling:** Smooth, circular scrolling for projects and blogs sections, providing continuous navigation without interruption.
-- **Interactive Animations:** Subtle animations that bring a professional touch, enhancing user engagement.
-- **Accessible and User-Friendly:** Font sizes, navigation styles, and hover effects are carefully crafted to provide a high-quality, accessible browsing experience.
+### Services
+Comprehensive data analytics and BI solutions including:
+- Business Intelligence & Dashboards (Power BI, Tableau, Looker)
+- Data Exploration & Analysis
+- Analytics Engineering & ETL
+- Data Strategy & Consulting
+- Predictive Analytics & ML
+- Training & Workshops
+
+### How I Work
+Agile, iterative 4-step process:
+1. **Discover** - Understand goals and define scope
+2. **Build** - Develop in short, focused cycles
+3. **Test** - Validate and optimize
+4. **Refine** - Gather feedback and iterate
+
+### Projects
+- **CLARA**: AI research assistant with 1.2M+ documents (Live & Active)
+- **Climate Litigation Graph**: Knowledge graph for climate cases
+- **Climate Patent Classification**: NLP-based text classification
+- **Breathe London Data Tool**: Python API wrapper
+
+## 📝 Articles
+
+Technical writing on:
+- SQL as a full development platform
+- Analytics best practices
+- Data engineering patterns
+
+## 🛠️ Development
+
+This site is built with vanilla HTML/CSS/JS for simplicity and performance. The modular structure makes it easy to:
+
+- **Add Articles**: Create new HTML files in `articles/` directory
+- **Update Styles**: Modify `assets/css/main.css` or `assets/css/article.css`
+- **Add Features**: Extend `assets/js/main.js` or `assets/js/article.js`
+- **Change Colors**: Update Tailwind config in `assets/js/site-style-config.js`
+
+## 📄 License
+
+© 2024 Meg Patakota. All rights reserved.
 
 ---
 
-Thank you for visiting my portfolio repository! Explore the code, and feel free to reach out if you'd like to collaborate on an exciting project.
+**Built with ❤️ and lots of data**
