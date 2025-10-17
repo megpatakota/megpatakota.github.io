@@ -29,8 +29,63 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
     });
 });
 
-// Form will submit directly to FormSubmit service
-// No additional form handling needed as it's configured in HTML
+// Contact Form - AJAX submission with notification
+const contactForm = document.getElementById('contactForm');
+const successToast = document.getElementById('successToast');
+const errorToast = document.getElementById('errorToast');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        
+        // Show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+        
+        // Submit form via AJAX
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Show success notification
+            showToast(successToast);
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        })
+        .catch(error => {
+            // Show error notification
+            showToast(errorToast);
+            
+            // Reset button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        });
+    });
+}
+
+// Function to show and auto-hide toast notifications
+function showToast(toastElement) {
+    toastElement.classList.remove('hidden');
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        toastElement.classList.add('hidden');
+    }, 5000);
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
