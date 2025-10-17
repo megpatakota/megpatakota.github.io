@@ -82,85 +82,209 @@
                     <h1>Beyond SELECT: SQL as a Full Development Platform</h1>
 
                     <p class="text-sm text-gray-500 mb-8">
-                        <i class="far fa-calendar mr-2"></i>Technical Deep Dive • SQL Development
+                        <i class="far fa-calendar mr-2"></i>5 min read • SQL Development
                     </p>
 
-                    <p>Most developers treat SQL as a query language—a tool for extracting data with SELECT statements,
-                        perhaps joining a few tables, maybe throwing in a UNION when things get complicated. But this view
-                        sells SQL dramatically short.</p>
+                    <p>If you're a data scientist or analyst, there's a good chance SQL isn't your favorite part of the job. 
+                        Maybe you'd rather be in Python building models, or in R doing statistical analysis, or literally 
+                        anywhere else. But here you are, writing SQL queries because that's where the data lives.</p>
 
-                    <p>If you're doing SQL properly, you're not just querying databases. You're building systems.</p>
+                    <p>And if we're being honest, you probably think of SQL as that thing you do to get data out of 
+                        databases. You write SELECT statements, maybe join a few tables, possibly GROUP BY some columns 
+                        if you're feeling fancy. It's a means to an end and an end in itself, grabbing the data and getting back to the real work.</p>
 
-                    <h2>The Hidden Capabilities of Modern SQL</h2>
+                    <p>Here's what nobody tells you: that's not SQL. That's just the tip of the iceberg.</p>
 
-                    <h3>Data Definition and Structure</h3>
-                    <p>SQL isn't just for reading data—it's for architecting it. Creating tables and views is fundamental,
-                        but it's the strategic use of views that separates novice from experienced practitioners. Views can
-                        encapsulate complex business logic, abstract away schema changes, and provide security boundaries
-                        that protect sensitive data while keeping it accessible to authorized queries.</p>
+                    <p>When you're doing production-grade SQL: the kind that powers actual business systems. You're not 
+                        just querying databases. You're building infrastructure that needs to be fast, reliable, and 
+                        maintainable. And whether you like SQL or not, understanding what it can actually do will make 
+                        your life significantly easier.</p>
 
-                    <h3>Access Control and Security</h3>
-                    <p>Permissions aren't an afterthought; they're part of the data model. Setting granular permissions on
-                        tables and views allows you to implement the principle of least privilege at the database level.
-                        This means your application layer doesn't bear the full burden of security—your data tier becomes an
-                        active participant in access control.</p>
+                    <p>Let me show you what I mean.</p>
 
-                    <h3>Procedural Logic and Automation</h3>
-                    <p>Modern SQL supports stored procedures, functions, and triggers (what some systems call macros or
-                        routines). These aren't relics from the 1990s—they're powerful tools for:</p>
+                    <h2>The Reality Check: SQL in Production</h2>
+
+                    <p>Let's talk about what production-grade SQL actually looks like not the pristine examples from 
+                        tutorials, but the messy, real-world systems that need to handle millions of rows while your 
+                        CEO refreshes a dashboard asking why the numbers don't match yesterday's report.</p>
+
+                    <h3>Views: Your Secret Weapon for Staying Sane</h3>
+                    <p>Views get dismissed as "just saved queries," which is like calling a car "just a fancy chair with 
+                        wheels." Yes, technically true, but you're missing the point.</p>
+
+                    <p>Here's what views actually do for you in production:</p>
+                    
+                    <p><strong>They hide your mistakes.</strong> Remember that time you realized your table structure was 
+                        completely wrong six months into the project? Views let you fix it without breaking every query in 
+                        your codebase. Change the underlying tables, update the view, and everything keeps working.</p>
+
+                    <p><strong>They enforce security without thinking about it.</strong> Create a view that filters out 
+                        sensitive columns or rows that users shouldn't see. Grant permissions on the view, not the table. 
+                        Now security happens at the data layer, not in application code that someone will inevitably forget 
+                        to update.</p>
+
+                    <p><strong>They make complex logic reusable.</strong> That monster query with five CTEs and a window 
+                        function? Put it in a view. Now you can reference it anywhere without copy-pasting 80 lines of SQL 
+                        and praying you don't miss a comma.</p>
+
+                    <h3>Stored Procedures: Less Scary Than You Think</h3>
+                    <p>I know, I know. Stored procedures have a reputation. They're "hard to test," "impossible to version 
+                        control," "that thing the DBA from 1997 used to love."</p>
+
+                    <p>But here's the thing: when you need to update 2 million rows based on complex business logic, doing 
+                        it in a stored procedure beats pulling all that data into Python, processing it, and pushing it back. 
+                        It's faster, it's safer, and it doesn't crash your application server when memory runs out.</p>
+
+                    <p>The trick is knowing when to use them. Good use cases:</p>
                     <ul>
-                        <li>Enforcing business rules consistently across applications</li>
-                        <li>Reducing network overhead by processing data where it lives</li>
-                        <li>Creating reusable logic that multiple systems can leverage</li>
-                        <li>Implementing complex calculations that would be inefficient in application code</li>
+                        <li>Batch operations that touch lots of rows</li>
+                        <li>Complex calculations that would require multiple round trips</li>
+                        <li>Operations that need to be atomic (all or nothing)</li>
+                        <li>Logic that multiple applications need to share</li>
                     </ul>
 
-                    <h3>Code Organization and Maintainability</h3>
-                    <p>Professional SQL development means treating your database code like any other codebase. This
-                        includes:</p>
+                    <p>Bad use cases: Everything else. Don't put your entire business logic in stored procedures. Your 
+                        coworkers will not thank you.</p>
 
-                    <p><strong>Modular SQL with unit testing:</strong> Just as you wouldn't ship application code without
-                        tests, production SQL deserves the same rigor. Frameworks for testing SQL logic exist across
-                        platforms, allowing you to validate that your stored procedures, functions, and complex queries
-                        behave correctly.</p>
+                    <h3>CTEs: Making Your Query Readable (Including to Future You)</h3>
+                    <p>Common Table Expressions are the difference between SQL that makes sense and SQL that makes you 
+                        question your career choices at 3 AM when production is down.</p>
 
-                    <p><strong>CTEs (Common Table Expressions) for readability:</strong> CTEs transform tangled subqueries
-                        into readable, sequential logic. Instead of nested SELECT statements that require mental stack
-                        traces to parse, CTEs let you name intermediate results and build queries that read like a story.
-                    </p>
+                    <p>Instead of this nightmare:</p>
+                    <pre>SELECT a.* FROM (
+    SELECT b.* FROM (
+        SELECT c.* FROM table1 c
+        WHERE c.status = 'active'
+    ) b JOIN table2 ON ...
+) a WHERE ...</pre>
 
-                    <p>CTEs can serve multiple purposes depending on your needs:</p>
-                    <ul>
-                        <li>Temporary result sets that improve query organization</li>
-                        <li>Recursive queries for hierarchical data</li>
-                        <li>A foundation for aggregate functions that build on each other</li>
-                        <li>Reusable expressions within a single query</li>
-                    </ul>
+                    <p>You get this:</p>
+                    <pre>WITH active_records AS (
+    SELECT * FROM table1 
+    WHERE status = 'active'
+),
+joined_data AS (
+    SELECT * FROM active_records
+    JOIN table2 ON ...
+)
+SELECT * FROM joined_data WHERE ...</pre>
 
-                    <h3>Production Optimization</h3>
-                    <p>For production systems, performance isn't optional—it's existential. Materialized views (or
-                        materialized tables, depending on your database system) pre-compute expensive queries and store the
-                        results. This trades storage space for query speed, turning multi-second analytical queries into
-                        millisecond lookups.</p>
+                    <p>Future you will actually understand what's happening. Present you can debug it. Your coworkers 
+                        might even leave positive comments in the code review.</p>
 
-                    <p>The strategic use of materialization can mean the difference between a dashboard that users avoid and
-                        one they rely on daily.</p>
+                    <h3>Macros: Don't Repeat Yourself</h3>
+                    <p>If you're using modern SQL tools like dbt, you have access to macros—basically functions that 
+                        generate SQL code. They're incredibly useful when you find yourself writing the same logic over 
+                        and over.</p>
 
-                    <h2>The Competitive Advantage</h2>
-                    <p>Developers who master these SQL capabilities become force multipliers. They don't just fetch
-                        data—they architect data systems that are secure, performant, maintainable, and testable. They solve
-                        problems at the right layer of the stack, rather than forcing every solution through application
-                        code.</p>
+                    <p>Let's say you constantly need to filter for active customers. Instead of copying this everywhere:</p>
+                    <pre>WHERE status = 'active' 
+  AND deleted_at IS NULL 
+  AND last_login > CURRENT_DATE - INTERVAL '90 days'</pre>
 
-                    <p>SQL is not a stepping stone to "real" programming. It's a full-featured development platform that's
-                        been battle-tested for decades. The question isn't whether SQL can handle complex requirements—it's
-                        whether you know enough SQL to use it properly.</p>
+                    <p>You can create a macro:</p>
+                    <pre>{% macro active_customers() %}
+    status = 'active' 
+    AND deleted_at IS NULL 
+    AND last_login > CURRENT_DATE - INTERVAL '90 days'
+{% endmacro %}
+
+-- Then use it:
+SELECT * FROM customers
+WHERE {{ active_customers() }}</pre>
+
+                    <p>Now when the definition of "active" changes (and it will), you update it once instead of hunting 
+                        through 47 different queries.</p>
+
+                    <h3>Modules: Organizing Your SQL Like Code</h3>
+                    <p>Stop putting all your SQL in one giant file. Seriously, stop.</p>
+
+                    <p>Organize your SQL into modules—separate files grouped by purpose. A typical structure might look 
+                        like:</p>
+                    <pre>sql/
+  ├── staging/          # Raw data cleanup
+  │   ├── stg_customers.sql
+  │   └── stg_orders.sql
+  ├── marts/            # Business logic
+  │   ├── fct_sales.sql
+  │   └── dim_customers.sql
+  └── utils/            # Reusable functions
+      └── date_helpers.sql</pre>
+
+                    <p>Each file does one thing. You can test each piece independently. You can find the code you need 
+                        without scrolling through 3,000 lines of SQL. And when someone asks "where's the customer logic?" 
+                        you can actually point them to a specific place.</p>
+
+                    <h3>Performance: Where Theory Meets Reality</h3>
+                    <p>Here's what nobody tells you about production SQL: that query that runs in 50ms on your laptop with 
+                        10,000 rows will take 30 seconds in production with 50 million rows. And your users will absolutely 
+                        notice.</p>
+
+                    <p><strong>Materialized views</strong> are your insurance policy against angry users. They pre-compute 
+                        expensive aggregations and store the results. Yes, they take up space. Yes, you need to refresh them. 
+                        But they turn "we need to wait for the dashboard to load" into "the dashboard loads instantly."</p>
+
+                    <p>The trade-off is real: you're exchanging storage space and occasional refresh time for consistent 
+                        query performance. In production, this is almost always worth it.</p>
+
+                    <p><strong>Indexes</strong> are the other half of the performance equation. They're like the table of 
+                        contents in a book—sure, you can read every page to find what you want, but having an index makes 
+                        it a lot faster. The catch? Every index slows down writes (INSERT, UPDATE, DELETE) a little bit. 
+                        You need to find the balance for your workload.</p>
+
+                    <h3>Testing: Yes, You Need It</h3>
+                    <p>If your SQL isn't tested, it's not production-grade. Full stop.</p>
+
+                    <p>This doesn't mean you need a full testing framework day one, but tools like <strong>sqlfluff</strong> 
+                        for linting and <strong>sqlt</strong> (SQL Test) for unit testing exist for a reason. Here's what a 
+                        simple SQL test might look like:</p>
+
+                    <pre>-- Test that sales aggregation is correct
+WITH test_data AS (
+    SELECT 100 as expected_total
+),
+actual_data AS (
+    SELECT SUM(amount) as actual_total
+    FROM sales_summary
+    WHERE date = '2024-01-01'
+)
+SELECT 
+    CASE 
+        WHEN expected_total = actual_total THEN 'PASS'
+        ELSE 'FAIL: Expected ' || expected_total || ' but got ' || actual_total
+    END as test_result
+FROM test_data, actual_data;</pre>
+
+                    <p>Not fancy, but it works. You can run these tests before deploying changes and catch issues before 
+                        your users do. The databases that don't collapse six months in are the ones where someone wrote 
+                        tests. Be that someone.</p>
+
+                    <h2>The Real Skill: Knowing What Belongs Where</h2>
+                    <p>Production-grade SQL isn't about using every feature your database offers. It's about knowing where 
+                        each piece of logic belongs.</p>
+
+                    <p>Data validation? Database constraints.<br>
+                    Complex multi-step calculations? Stored procedures.<br>
+                    Repeated business logic? Views.<br>
+                    Application-specific stuff? Keep it in the application.</p>
+
+                    <p>The developers who make systems that actually work don't force everything through one layer. They 
+                        use the right tool at the right layer. Sometimes that's SQL. Sometimes it's not. The skill is 
+                        knowing which.</p>
+
+                    <h2>It's Just Another Programming Language</h2>
+                    <p>SQL isn't a stepping stone to "real" development. It's not a necessary evil you tolerate until you 
+                        can hide behind an ORM. It's a legitimate programming language that's been running production systems 
+                        since before most of us were born.</p>
+
+                    <p>The question isn't whether SQL can handle production requirements. It's whether you know enough SQL 
+                        to use it properly when it matters.</p>
 
                     <hr>
 
-                    <p class="text-sm italic text-center text-gray-600">What SQL capabilities have transformed how you build
-                        systems? I'm always interested in hearing how developers leverage the full power of their database
-                        platforms.</p>
+                    <p class="text-sm italic text-center text-gray-600">What's your biggest production SQL war story? 
+                        I'm always curious about the real-world challenges people face with their databases. Drop me a line—
+                        I'd love to hear about it.</p>
 
                     <!-- Share section -->
                     <div class="mt-12 pt-8 border-t border-gray-300">
