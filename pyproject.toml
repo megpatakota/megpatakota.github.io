@@ -1,0 +1,7 @@
+[project]
+name = "megpatakota-analytics"
+version = "1.0.2"
+description = "Simple analytics system for megpatakota.co.uk using Python"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

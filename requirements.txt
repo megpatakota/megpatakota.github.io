@@ -1,2 +1,3 @@
 # Python dependencies for Vercel serverless functions
-# No external dependencies needed - using built-in modules only
+# Using built-in modules only - no external dependencies needed
+# This file is required by Vercel even if empty
