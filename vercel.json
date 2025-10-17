@@ -2,8 +2,8 @@
   "buildCommand": "echo 'No build required'",
   "outputDirectory": ".",
   "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node@3.0.0"
+    "api/**/*.py": {
+      "runtime": "python3.9"
     }
   },
   "env": {
