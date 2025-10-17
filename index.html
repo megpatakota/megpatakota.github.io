@@ -14,113 +14,10 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./javascripts/site-style-config.js"></script>
+    <script src="./assets/js/site-style-config.js"></script>
     
-    <style>
-        * {
-            scroll-behavior: smooth;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
-        }
-        
-        .soft-gradient-bg {
-            background: linear-gradient(135deg, #fef7e2 0%, #f3e7f6 100%);
-        }
-        
-        .gradient-border {
-            position: relative;
-            background: white;
-            border-radius: 1rem;
-        }
-        
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 1rem;
-            padding: 2px;
-            background: linear-gradient(135deg, #A4243B, #68505B);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-        }
-        
-        .process-step {
-            position: relative;
-        }
-        
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #A4243B, transparent);
-        }
-        
-        .process-step:last-child::after {
-            display: none;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes shimmer {
-            0%, 100% { 
-                filter: grayscale(1) brightness(1);
-                opacity: 0.7;
-            }
-            50% { 
-                filter: grayscale(0.3) brightness(1.1);
-                opacity: 0.85;
-            }
-        }
-        
-        .logo-shimmer {
-            animation: shimmer 4s ease-in-out infinite;
-        }
-        
-        .logo-shimmer:nth-child(1) { animation-delay: 0s; }
-        .logo-shimmer:nth-child(2) { animation-delay: 1s; }
-        .logo-shimmer:nth-child(3) { animation-delay: 2s; }
-        .logo-shimmer:nth-child(4) { animation-delay: 3s; }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-        
-        @media (max-width: 768px) {
-            .process-step::after {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body class="font-sans bg-white text-text_primary">
@@ -160,10 +57,9 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
                 <a href="#services" class="block py-2 hover:text-buttons transition border-b border-gray-200">Services</a>
                 <a href="#process" class="block py-2 hover:text-buttons transition border-b border-gray-200">How I Work</a>
-                <a href="#clara" class="block py-2 hover:text-buttons transition border-b border-gray-200">CLARA Project</a>
-                <a href="#portfolio" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
+                <a href="#clara" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
                 <a href="#insights" class="block py-2 hover:text-buttons transition border-b border-gray-200">Insights</a>
-                <a href="#testimonials" class="block py-2 hover:text-buttons transition border-b border-gray-200">About</a>
+                <!-- <a href="#testimonials" class="block py-2 hover:text-buttons transition border-b border-gray-200">About</a> -->
                 <a href="#contact" class="block py-3 px-6 text-center gradient-bg text-white rounded-full font-semibold hover:opacity-90 transition mt-4">
                     Get in Touch
                 </a>
@@ -210,7 +106,7 @@
                             <i class="fas fa-calendar-check mr-2"></i>
                             Book a Free Consultation
                         </a>
-                        <a href="#portfolio" class="border-2 border-buttons text-buttons px-8 py-4 rounded-full font-semibold text-center hover:bg-buttons hover:text-white transition">
+                        <a href="#clara" class="border-2 border-buttons text-buttons px-8 py-4 rounded-full font-semibold text-center hover:bg-buttons hover:text-white transition">
                             View My Work
                         </a>
                     </div>
@@ -234,7 +130,7 @@
                 
                 <div class="relative floating max-w-md mx-auto">
                     <div class="gradient-border p-6">
-                        <img src="./logos/profile.jpeg" alt="Meg Patakota" class="rounded-2xl shadow-2xl w-full">
+                        <img src="./assets/images/logos/profile.jpeg" alt="Meg Patakota" class="rounded-2xl shadow-2xl w-full">
                     </div>
                     <!-- Floating badges -->
                     <div class="absolute -top-3 -right-3 bg-white rounded-xl shadow-lg p-3 hidden lg:block">
@@ -270,19 +166,19 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl mx-auto">
                 <!-- Oxford - 2+ years -->
                 <div class="logo-shimmer grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 flex items-center justify-center">
-                    <img src="./logos/oxford.png" alt="University of Oxford" class="h-16 md:h-20 object-contain w-full">
+                    <img src="./assets/images/logos/oxford.png" alt="University of Oxford" class="h-16 md:h-20 object-contain w-full">
                 </div>
                 <!-- Mishcon - 3+ years -->
                 <div class="logo-shimmer grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 flex items-center justify-center">
-                    <img src="./logos/MDR.png" alt="Mishcon de Reya" class="h-16 md:h-20 object-contain w-full">
+                    <img src="./assets/images/logos/MDR.png" alt="Mishcon de Reya" class="h-16 md:h-20 object-contain w-full">
                 </div>
                 <!-- DeepMind - 6 months -->
                 <div class="logo-shimmer grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 flex items-center justify-center">
-                    <img src="./logos/deepmind.png" alt="Google DeepMind" class="h-16 md:h-20 object-contain w-full">
+                    <img src="./assets/images/logos/deepmind.png" alt="Google DeepMind" class="h-16 md:h-20 object-contain w-full">
                 </div>
                 <!-- Marsh - 1 year -->
                 <div class="logo-shimmer grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 flex items-center justify-center">
-                    <img src="./logos/marsh.png" alt="Marsh" class="h-16 md:h-20 object-contain w-full">
+                    <img src="./assets/images/logos/marsh.png" alt="Marsh" class="h-16 md:h-20 object-contain w-full">
                 </div>
             </div>
             
@@ -294,15 +190,15 @@
                 <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-60">
                     <!-- UCL -->
                     <div class="grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="./logos/ucl.png" alt="University College London" class="h-10 md:h-12 object-contain" title="MSc Business Analytics">
+                        <img src="./assets/images/logos/ucl.png" alt="University College London" class="h-10 md:h-12 object-contain" title="MSc Business Analytics">
                     </div>
                     <!-- Bristol -->
                     <div class="grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="./logos/bristol.png" alt="University of Bristol" class="h-10 md:h-12 object-contain" title="MSc Accounting & Finance">
+                        <img src="./assets/images/logos/bristol.png" alt="University of Bristol" class="h-10 md:h-12 object-contain" title="MSc Accounting & Finance">
                     </div>
                     <!-- Buffalo -->
                     <div class="grayscale hover:grayscale-0 transition-all duration-300">
-                        <img src="./logos/buffalo.png" alt="University at Buffalo" class="h-10 md:h-12 object-contain" title="BSc Business Administration">
+                        <img src="./assets/images/logos/buffalo.png" alt="University at Buffalo" class="h-10 md:h-12 object-contain" title="BSc Business Administration">
                     </div>
                 </div>
             </div>
@@ -491,137 +387,86 @@
                 </div>
             </div>
             
-            <!-- Circular Process Visualization -->
-            <div class="relative max-w-4xl mx-auto mb-12">
-                <!-- Center text -->
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="text-center bg-white rounded-full p-8 shadow-lg border-2 border-buttons/20 max-w-xs">
-                        <i class="fas fa-sync text-buttons text-4xl mb-2"></i>
-                        <p class="font-bold text-text_primary text-lg">Continuous</p>
-                        <p class="text-text_tertiary text-sm">Iterative Cycle</p>
+            <!-- Process Flow - Compact Design -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="grid md:grid-cols-4 gap-4">
+                    <!-- Step 1: Discover -->
+                    <div class="relative bg-white rounded-xl p-5 shadow-md border-t-4 border-buttons hover:shadow-lg transition">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-12 h-12 bg-buttons rounded-lg flex items-center justify-center text-white mb-3">
+                                <i class="fas fa-search text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-text_primary mb-2">Discover</h3>
+                            <p class="text-xs text-text_tertiary leading-relaxed">Understand your goals, define scope, and set success criteria together</p>
+                        </div>
+                        <!-- Desktop Arrow Right -->
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-buttons z-10">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Arrow Down -->
+                    <div class="flex justify-center md:hidden">
+                        <i class="fas fa-arrow-down text-xl text-buttons"></i>
+                    </div>
+                    
+                    <!-- Step 2: Build -->
+                    <div class="relative bg-white rounded-xl p-5 shadow-md border-t-4 border-text_secondary hover:shadow-lg transition">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-12 h-12 bg-text_secondary rounded-lg flex items-center justify-center text-white mb-3">
+                                <i class="fas fa-code text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-text_primary mb-2">Build</h3>
+                            <p class="text-xs text-text_tertiary leading-relaxed">Develop in short cycles with working increments and regular check-ins</p>
+                        </div>
+                        <!-- Desktop Arrow Right -->
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-text_secondary z-10">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Arrow Down -->
+                    <div class="flex justify-center md:hidden">
+                        <i class="fas fa-arrow-down text-xl text-text_secondary"></i>
+                    </div>
+                    
+                    <!-- Step 3: Test -->
+                    <div class="relative bg-white rounded-xl p-5 shadow-md border-t-4 border-text_tertiary hover:shadow-lg transition">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-12 h-12 bg-text_tertiary rounded-lg flex items-center justify-center text-white mb-3">
+                                <i class="fas fa-vial text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-text_primary mb-2">Test</h3>
+                            <p class="text-xs text-text_tertiary leading-relaxed">Validate with real data, address edge cases, optimize performance</p>
+                        </div>
+                        <!-- Desktop Arrow Right -->
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-text_tertiary z-10">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Arrow Down -->
+                    <div class="flex justify-center md:hidden">
+                        <i class="fas fa-arrow-down text-xl text-text_tertiary"></i>
+                    </div>
+                    
+                    <!-- Step 4: Refine -->
+                    <div class="relative bg-white rounded-xl p-5 shadow-md border-t-4 border-buttons hover:shadow-lg transition">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-buttons to-text_secondary rounded-lg flex items-center justify-center text-white mb-3">
+                                <i class="fas fa-sync text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-text_primary mb-2">Refine</h3>
+                            <p class="text-xs text-text_tertiary leading-relaxed">Gather feedback, adjust priorities, plan the next iteration</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Circular layout -->
-                <div class="grid grid-cols-2 gap-8 relative" style="padding: 3rem;">
-                    <!-- Top Left: Discovery -->
-                    <div class="relative">
-                        <div class="bg-gradient-to-br from-buttons/5 to-buttons/10 border-2 border-buttons/30 rounded-xl p-6 hover:shadow-xl transition h-full">
-                            <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-buttons rounded-full flex items-center justify-center text-white mr-3 flex-shrink-0">
-                                    <i class="fas fa-search"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-text_primary">Discover</h3>
-                            </div>
-                            <ul class="space-y-2 text-sm text-text_tertiary">
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Understand goals & needs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Define MVP scope</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Set success criteria</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Arrow pointing right -->
-                        <div class="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 text-buttons text-2xl">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Top Right: Build -->
-                    <div class="relative">
-                        <div class="bg-gradient-to-br from-text_secondary/5 to-text_secondary/10 border-2 border-text_secondary/30 rounded-xl p-6 hover:shadow-xl transition h-full">
-                            <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-text_secondary rounded-full flex items-center justify-center text-white mr-3 flex-shrink-0">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-text_primary">Build</h3>
-                            </div>
-                            <ul class="space-y-2 text-sm text-text_tertiary">
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_secondary mr-2 mt-1 text-xs"></i>
-                                    <span>Develop in short sprints</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_secondary mr-2 mt-1 text-xs"></i>
-                                    <span>Show progress weekly</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_secondary mr-2 mt-1 text-xs"></i>
-                                    <span>Working increments</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Arrow pointing down -->
-                        <div class="hidden md:block absolute left-1/2 -bottom-4 transform -translate-x-1/2 text-text_secondary text-2xl">
-                            <i class="fas fa-arrow-down"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom Right: Test -->
-                    <div class="relative md:col-start-2 md:row-start-2">
-                        <div class="bg-gradient-to-br from-text_tertiary/5 to-text_tertiary/10 border-2 border-text_tertiary/30 rounded-xl p-6 hover:shadow-xl transition h-full">
-                            <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-text_tertiary rounded-full flex items-center justify-center text-white mr-3 flex-shrink-0">
-                                    <i class="fas fa-vial"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-text_primary">Test</h3>
-                            </div>
-                            <ul class="space-y-2 text-sm text-text_tertiary">
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_tertiary mr-2 mt-1 text-xs"></i>
-                                    <span>Validate with real data</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_tertiary mr-2 mt-1 text-xs"></i>
-                                    <span>Address edge cases</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-text_tertiary mr-2 mt-1 text-xs"></i>
-                                    <span>Performance tuning</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Arrow pointing left -->
-                        <div class="hidden md:block absolute -left-4 top-1/2 transform -translate-y-1/2 text-text_tertiary text-2xl">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom Left: Refine -->
-                    <div class="relative md:row-start-2">
-                        <div class="bg-gradient-to-br from-buttons/10 to-text_secondary/5 border-2 border-buttons/20 rounded-xl p-6 hover:shadow-xl transition h-full">
-                            <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-gradient-to-br from-buttons to-text_secondary rounded-full flex items-center justify-center text-white mr-3 flex-shrink-0">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <h3 class="text-lg font-bold text-text_primary">Refine</h3>
-                            </div>
-                            <ul class="space-y-2 text-sm text-text_tertiary">
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Gather feedback</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Adjust priorities</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-circle text-buttons mr-2 mt-1 text-xs"></i>
-                                    <span>Plan next iteration</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Arrow pointing up -->
-                        <div class="hidden md:block absolute left-1/2 -top-4 transform -translate-x-1/2 text-buttons text-2xl">
-                            <i class="fas fa-arrow-up"></i>
-                        </div>
+                <!-- Loop indicator -->
+                <div class="flex justify-center mt-6">
+                    <div class="bg-buttons/10 text-buttons px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                        <i class="fas fa-redo"></i>
+                        <span>Repeat cycle until complete</span>
                     </div>
                 </div>
             </div>
@@ -736,88 +581,13 @@
                     </div>
                     
                     <div class="relative h-full min-h-[400px] bg-gradient-to-br from-buttons to-text_secondary flex items-center justify-center p-8">
-                        <img src="./logos/clara_h.png" alt="CLARA" class="w-full max-w-md object-contain opacity-90">
+                        <img src="./assets/images/logos/clara_h.png" alt="CLARA" class="w-full max-w-md object-contain opacity-90">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
                             <div class="flex items-center text-green-600 font-semibold text-sm">
                                 <i class="fas fa-circle animate-pulse mr-2 text-xs"></i>
                                 Live Now
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 px-6 soft-gradient-bg">
-        <div class="container mx-auto max-w-7xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Projects & Research</h2>
-                <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
-                    From live production systems to open-source contributions
-                </p>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2">
-                    <div class="h-32 bg-gradient-to-br from-text_secondary/80 to-text_tertiary/80 flex items-center justify-center text-white">
-                        <i class="fas fa-brain text-4xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center flex-wrap gap-2 mb-3">
-                            <span class="bg-text_secondary/10 text-text_secondary px-2 py-1 rounded-full text-xs font-semibold">Knowledge Graph</span>
-                            <span class="bg-text_tertiary/10 text-text_tertiary px-2 py-1 rounded-full text-xs font-semibold">Neo4j</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-text_primary">Climate Litigation Graph</h3>
-                        <p class="text-text_tertiary text-sm mb-3 line-clamp-3">
-                            Dynamic graph database visualizing climate case relationships and legal patterns.
-                        </p>
-                        <a href="https://github.com/megpatakota/knowledge-graph-climate-cases" target="_blank" class="text-buttons font-semibold hover:underline flex items-center text-sm">
-                            View on GitHub <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2">
-                    <div class="h-32 bg-gradient-to-br from-text_tertiary/80 to-buttons/80 flex items-center justify-center text-white">
-                        <i class="fas fa-language text-4xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center flex-wrap gap-2 mb-3">
-                            <span class="bg-text_tertiary/10 text-text_tertiary px-2 py-1 rounded-full text-xs font-semibold">NLP</span>
-                            <span class="bg-buttons/10 text-buttons px-2 py-1 rounded-full text-xs font-semibold">DeBERTa</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-text_primary">Climate Patent Classification</h3>
-                        <p class="text-text_tertiary text-sm mb-3 line-clamp-3">
-                            Text classification system for IPCC climate tech categories using advanced NLP.
-                        </p>
-                        <a href="https://github.com/megpatakota/text_classification_climate_patent" target="_blank" class="text-buttons font-semibold hover:underline flex items-center text-sm">
-                            View on GitHub <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition hover:-translate-y-2">
-                    <div class="h-32 bg-gradient-to-br from-buttons/60 to-text_secondary/60 flex items-center justify-center text-white">
-                        <i class="fas fa-wind text-4xl"></i>
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center flex-wrap gap-2 mb-3">
-                            <span class="bg-buttons/10 text-buttons px-2 py-1 rounded-full text-xs font-semibold">API</span>
-                            <span class="bg-text_secondary/10 text-text_secondary px-2 py-1 rounded-full text-xs font-semibold">Python</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2 text-text_primary">Breathe London Data Tool</h3>
-                        <p class="text-text_tertiary text-sm mb-3 line-clamp-3">
-                            Python wrapper for accessing Breathe London air quality data seamlessly.
-                        </p>
-                        <a href="https://github.com/meg-patakota/breathe_london_data" target="_blank" class="text-buttons font-semibold hover:underline flex items-center text-sm">
-                            View on GitHub <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -923,7 +693,7 @@
                     <div class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border border-buttons/10 hover:shadow-xl transition-all duration-300">
                         <div class="flex items-center flex-wrap gap-2 mb-4">
                             <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">SQL</span>
-                            <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-sm font-semibold">Analytics</span>
+                            <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-sm font-semibold">Technical</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-text_primary group-hover:text-buttons transition-colors">
                             Beyond SELECT: SQL as a Development Platform
@@ -937,23 +707,35 @@
                     </div>
                 </a>
                 
-                <!-- LinkedIn Profile -->
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="group">
-                    <div class="bg-gradient-to-br from-text_secondary/5 to-text_tertiary/5 rounded-2xl p-8 border border-text_secondary/10 hover:shadow-xl transition-all duration-300">
+                <!-- Data Science Evolution Article -->
+                <a href="articles/data-science-evolution.html" class="group">
+                    <div class="bg-gradient-to-br from-text_tertiary/5 to-buttons/5 rounded-2xl p-8 border border-text_tertiary/10 hover:shadow-xl transition-all duration-300">
                         <div class="flex items-center flex-wrap gap-2 mb-4">
-                            <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-sm font-semibold">LinkedIn</span>
-                            <span class="bg-text_tertiary/10 text-text_tertiary px-3 py-1 rounded-full text-sm font-semibold">Professional</span>
+                            <span class="bg-text_tertiary/10 text-text_tertiary px-3 py-1 rounded-full text-sm font-semibold">Career</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">Reflections</span>
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-text_primary group-hover:text-buttons transition-colors">
-                            Follow My Professional Journey
+                            The Evolution of Data Science
                         </h3>
                         <p class="text-text_tertiary mb-4">
-                            Connect with me on LinkedIn for updates on projects, insights, and professional milestones.
+                            Reflections on how data science roles have evolved over the years—from ML hype to grounded reality.
                         </p>
                         <div class="flex items-center text-buttons font-semibold">
-                            Visit LinkedIn <i class="fab fa-linkedin ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            Read Article <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
                     </div>
+                </a>
+            </div>
+            
+            <!-- GitHub Link -->
+            <div class="text-center mt-12">
+                <p class="text-text_tertiary text-sm mb-3">
+                    More projects & open-source work
+                </p>
+                <a href="https://github.com/megpatakota" target="_blank" class="inline-flex items-center gap-2 text-text_secondary hover:text-buttons transition font-medium">
+                    <i class="fab fa-github"></i>
+                    <span>View GitHub Profile</span>
+                    <i class="fas fa-external-link-alt text-xs"></i>
                 </a>
             </div>
         </div>
@@ -1077,8 +859,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text_primary">Let's Work Together</h2>
                 <p class="text-xl text-text_tertiary">
-                    Fill out the form below or email me directly at 
-                    <a href="mailto:megpatakota@icloud.com" class="text-buttons font-semibold">megpatakota@icloud.com</a>
+                    Fill out the form below
                 </p>
             </div>
             
@@ -1166,8 +947,7 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><a href="#services" class="hover:text-white transition">Services</a></li>
                         <li><a href="#process" class="hover:text-white transition">How I Work</a></li>
-                        <li><a href="#clara" class="hover:text-white transition">CLARA Project</a></li>
-                        <li><a href="#portfolio" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="#clara" class="hover:text-white transition">Projects</a></li>
                         <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
@@ -1189,49 +969,8 @@
         </div>
     </footer>
     
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            const icon = this.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                const icon = mobileMenuButton.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-        
-        // Form will submit directly to FormSubmit service
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
