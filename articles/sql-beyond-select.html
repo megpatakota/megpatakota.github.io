@@ -6,139 +6,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond SELECT: SQL as a Full Development Platform - Meg Patakota</title>
 
-    <!-- Font Awesome Import -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Tailwind CSS Configuration -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../javascripts/site-style-config.js"></script>
-
-    <link rel="stylesheet" href="../styles/articles.css">
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
+        }
+        
+        .article-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #22223B;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #22223B;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #68505B;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            color: #4E6A51;
+        }
+        
+        .article-content ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+            color: #4E6A51;
+        }
+        
+        .article-content pre {
+            background: #f8f9fa;
+            border-left: 4px solid #A4243B;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .article-content code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #22223B;
+        }
+        
+        .article-content strong {
+            color: #22223B;
+            font-weight: 600;
+        }
+        
+        .article-content hr {
+            margin: 2.5rem 0;
+            border-color: #e5e7eb;
+        }
+    </style>
 </head>
 
-<body class="bg-buttons_text text-gray-1000 font-sans">
+<body class="font-sans bg-white text-text_primary">
+    
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 py-4 px-4 z-50">
-        <div
-            class="mx-auto flex justify-between items-center bg-white shadow-md px-8 py-3 rounded-full text-gray-800 max-w-4xl">
-            <!-- Left: Logo and Name -->
-            <div class="flex items-center space-x-3">
-                <img src="../logos/face.png" alt="Logo" class="w-9 h-8 rounded-full">
-                <span class="font-semibold text-lg">Meghana Patakota</span>
-            </div>
-
-            <!-- Middle: Navigation Links -->
-            <nav class="hidden md:flex gap-8 font-medium">
-                <a href="../index.html#about" class="hover:text-black transition">About</a>
-                <a href="../index.html#collabs" class="hover:text-black transition">Collaborations</a>
-                <a href="../index.html#projects" class="hover:text-black transition">Projects</a>
-                <a href="../index.html#blogs" class="hover:text-black transition">Blog</a>
-                <a href="../index.html#articles" class="hover:text-black transition">Articles</a>
-            </nav>
-
-            <!-- Right: Social Links & Hamburger -->
-            <div class="flex items-center space-x-4">
-                <!-- Social Icons -->
-                <div class="hidden md:flex gap-4">
-                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                        class="hover:text-black transition">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="mailto:megpatakota@icloud.com" class="hover:text-black transition">
-                        <i class="fas fa-envelope text-xl"></i>
-                    </a>
-                    <a href="https://github.com/megpatakota" target="_blank" class="hover:text-black transition">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../freelance.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                        MP
+                    </div>
+                    <span class="font-bold text-xl">Meg Patakota</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../freelance.html#services" class="hover:text-buttons transition">Services</a>
+                    <a href="../freelance.html#process" class="hover:text-buttons transition">How I Work</a>
+                    <a href="../freelance.html#portfolio" class="hover:text-buttons transition">Projects</a>
+                    <a href="../freelance.html#testimonials" class="hover:text-buttons transition">About</a>
                 </div>
-
-                <!-- Hamburger Menu -->
-                <div class="relative md:hidden">
-                    <button id="menu-toggle" class="text-xl">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul id="menu"
-                        class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg overflow-hidden">
-                        <li class="hover:bg-gray-100"><a href="../index.html#about" class="block px-4 py-2">About</a>
-                        </li>
-                        <li class="hover:bg-gray-100"><a href="../index.html#collabs"
-                                class="block px-4 py-2">Collaborations</a></li>
-                        <li class="hover:bg-gray-100"><a href="../index.html#projects"
-                                class="block px-4 py-2">Projects</a></li>
-                        <li class="hover:bg-gray-100"><a href="../index.html#blogs" class="block px-4 py-2">Blog</a>
-                        </li>
-                        <li class="hover:bg-gray-100"><a href="../index.html#articles"
-                                class="block px-4 py-2">Articles</a></li>
-                    </ul>
-                </div>
+                
+                <!-- Desktop CTA -->
+                <a href="../freelance.html#contact" class="hidden md:block gradient-bg text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    Get in Touch
+                </a>
+                
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-        </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="../freelance.html#services" class="block py-2 hover:text-buttons transition border-b border-gray-200">Services</a>
+                <a href="../freelance.html#process" class="block py-2 hover:text-buttons transition border-b border-gray-200">How I Work</a>
+                <a href="../freelance.html#portfolio" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
+                <a href="../freelance.html#testimonials" class="block py-2 hover:text-buttons transition border-b border-gray-200">About</a>
+                <a href="../freelance.html#contact" class="block py-3 px-6 text-center gradient-bg text-white rounded-full font-semibold hover:opacity-90 transition mt-4">
+                    Get in Touch
+                </a>
+            </div>
+        </nav>
     </header>
-
+    
     <!-- Spacing for fixed header -->
-    <section class="py-10"></section>
-
+    <div class="h-20"></div>
+    
     <!-- Article Content -->
-    <section class="bg-gradient-to-r from-[#fef7e2] to-[#f3e7f6] py-10">
-        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12 mx-4">
+    <section class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
             <!-- Back button -->
-            <a href="../index.html#articles"
-                class="inline-flex items-center text-buttons hover:text-opacity-80 mb-6 transition">
+            <a href="../freelance.html" class="inline-flex items-center text-buttons hover:text-opacity-80 mb-8 transition font-semibold">
                 <i class="fas fa-arrow-left mr-2"></i>
-                Back to Articles
+                Back to Home
             </a>
+            
+            <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="article-content">
+                    <h1>Beyond SELECT: SQL as a Full Development Platform</h1>
 
-            <div class="article-content">
-                <h1>Beyond SELECT: SQL as a Full Development Platform</h1>
+                    <p class="text-sm text-gray-500 mb-8">
+                        <i class="far fa-calendar mr-2"></i>Analytics Insights • SQL Development
+                    </p>
 
-                <p class="text-sm text-gray-500 mb-6">
-                    <i class="far fa-calendar mr-2"></i>Published on your website
-                </p>
+                    <p>Most developers treat SQL as a query language—a tool for extracting data with SELECT statements,
+                        perhaps joining a few tables, maybe throwing in a UNION when things get complicated. But this view
+                        sells SQL dramatically short.</p>
 
-                <p>Most developers treat SQL as a query language—a tool for extracting data with SELECT statements,
-                    perhaps joining a few tables, maybe throwing in a UNION when things get complicated. But this view
-                    sells SQL dramatically short.</p>
+                    <p>If you're doing SQL properly, you're not just querying databases. You're building systems.</p>
 
-                <p>If you're doing SQL properly, you're not just querying databases. You're building systems.</p>
+                    <h2>The Hidden Capabilities of Modern SQL</h2>
 
-                <h2>The Hidden Capabilities of Modern SQL</h2>
+                    <h3>Data Definition and Structure</h3>
+                    <p>SQL isn't just for reading data—it's for architecting it. Creating tables and views is fundamental,
+                        but it's the strategic use of views that separates novice from experienced practitioners. Views can
+                        encapsulate complex business logic, abstract away schema changes, and provide security boundaries
+                        that protect sensitive data while keeping it accessible to authorized queries.</p>
 
-                <h3>Data Definition and Structure</h3>
-                <p>SQL isn't just for reading data—it's for architecting it. Creating tables and views is fundamental,
-                    but it's the strategic use of views that separates novice from experienced practitioners. Views can
-                    encapsulate complex business logic, abstract away schema changes, and provide security boundaries
-                    that protect sensitive data while keeping it accessible to authorized queries.</p>
+                    <h3>Access Control and Security</h3>
+                    <p>Permissions aren't an afterthought; they're part of the data model. Setting granular permissions on
+                        tables and views allows you to implement the principle of least privilege at the database level.
+                        This means your application layer doesn't bear the full burden of security—your data tier becomes an
+                        active participant in access control.</p>
 
-                <h3>Access Control and Security</h3>
-                <p>Permissions aren't an afterthought; they're part of the data model. Setting granular permissions on
-                    tables and views allows you to implement the principle of least privilege at the database level.
-                    This means your application layer doesn't bear the full burden of security—your data tier becomes an
-                    active participant in access control.</p>
+                    <h3>Procedural Logic and Automation</h3>
+                    <p>Modern SQL supports stored procedures, functions, and triggers (what some systems call macros or
+                        routines). These aren't relics from the 1990s—they're powerful tools for:</p>
+                    <ul>
+                        <li>Enforcing business rules consistently across applications</li>
+                        <li>Reducing network overhead by processing data where it lives</li>
+                        <li>Creating reusable logic that multiple systems can leverage</li>
+                        <li>Implementing complex calculations that would be inefficient in application code</li>
+                    </ul>
 
-                <h3>Procedural Logic and Automation</h3>
-                <p>Modern SQL supports stored procedures, functions, and triggers (what some systems call macros or
-                    routines). These aren't relics from the 1990s—they're powerful tools for:</p>
-                <ul>
-                    <li>Enforcing business rules consistently across applications</li>
-                    <li>Reducing network overhead by processing data where it lives</li>
-                    <li>Creating reusable logic that multiple systems can leverage</li>
-                    <li>Implementing complex calculations that would be inefficient in application code</li>
-                </ul>
+                    <h3>Code Organization and Maintainability</h3>
+                    <p>Professional SQL development means treating your database code like any other codebase. This
+                        includes:</p>
 
-                <h3>Code Organization and Maintainability</h3>
-                <p>Professional SQL development means treating your database code like any other codebase. This
-                    includes:</p>
+                    <p><strong>Modular SQL with unit testing:</strong> Just as you wouldn't ship application code without
+                        tests, production SQL deserves the same rigor. Frameworks for testing SQL logic exist across
+                        platforms, allowing you to validate that your stored procedures, functions, and complex queries
+                        behave correctly.</p>
 
-                <p><strong>Modular SQL with unit testing:</strong> Just as you wouldn't ship application code without
-                    tests, production SQL deserves the same rigor. Frameworks for testing SQL logic exist across
-                    platforms, allowing you to validate that your stored procedures, functions, and complex queries
-                    behave correctly.</p>
+                    <p><strong>CTEs (Common Table Expressions) for readability:</strong> CTEs transform tangled subqueries
+                        into readable, sequential logic. Instead of nested SELECT statements that require mental stack
+                        traces to parse, CTEs let you name intermediate results and build queries that read like a story.
+                    </p>
 
-                <p><strong>CTEs (Common Table Expressions) for readability:</strong> CTEs transform tangled subqueries
-                    into readable, sequential logic. Instead of nested SELECT statements that require mental stack
-                    traces to parse, CTEs let you name intermediate results and build queries that read like a story.
-                </p>
-
-                <pre><code>-- Instead of nested chaos
+                    <pre><code>-- Instead of nested chaos
 SELECT * FROM (
   SELECT user_id, COUNT(*) as order_count 
   FROM (SELECT * FROM orders WHERE status = 'completed') 
@@ -156,137 +217,144 @@ user_order_counts AS (
 )
 SELECT * FROM user_order_counts WHERE order_count > 5;</code></pre>
 
-                <p>CTEs can serve multiple purposes depending on your needs:</p>
-                <ul>
-                    <li>Temporary result sets that improve query organization</li>
-                    <li>Recursive queries for hierarchical data</li>
-                    <li>A foundation for aggregate functions that build on each other</li>
-                    <li>Reusable expressions within a single query</li>
-                </ul>
+                    <p>CTEs can serve multiple purposes depending on your needs:</p>
+                    <ul>
+                        <li>Temporary result sets that improve query organization</li>
+                        <li>Recursive queries for hierarchical data</li>
+                        <li>A foundation for aggregate functions that build on each other</li>
+                        <li>Reusable expressions within a single query</li>
+                    </ul>
 
-                <h3>Production Optimization</h3>
-                <p>For production systems, performance isn't optional—it's existential. Materialized views (or
-                    materialized tables, depending on your database system) pre-compute expensive queries and store the
-                    results. This trades storage space for query speed, turning multi-second analytical queries into
-                    millisecond lookups.</p>
+                    <h3>Production Optimization</h3>
+                    <p>For production systems, performance isn't optional—it's existential. Materialized views (or
+                        materialized tables, depending on your database system) pre-compute expensive queries and store the
+                        results. This trades storage space for query speed, turning multi-second analytical queries into
+                        millisecond lookups.</p>
 
-                <p>The strategic use of materialization can mean the difference between a dashboard that users avoid and
-                    one they rely on daily.</p>
+                    <p>The strategic use of materialization can mean the difference between a dashboard that users avoid and
+                        one they rely on daily.</p>
 
-                <h2>The Competitive Advantage</h2>
-                <p>Developers who master these SQL capabilities become force multipliers. They don't just fetch
-                    data—they architect data systems that are secure, performant, maintainable, and testable. They solve
-                    problems at the right layer of the stack, rather than forcing every solution through application
-                    code.</p>
+                    <h2>The Competitive Advantage</h2>
+                    <p>Developers who master these SQL capabilities become force multipliers. They don't just fetch
+                        data—they architect data systems that are secure, performant, maintainable, and testable. They solve
+                        problems at the right layer of the stack, rather than forcing every solution through application
+                        code.</p>
 
-                <p>SQL is not a stepping stone to "real" programming. It's a full-featured development platform that's
-                    been battle-tested for decades. The question isn't whether SQL can handle complex requirements—it's
-                    whether you know enough SQL to use it properly.</p>
+                    <p>SQL is not a stepping stone to "real" programming. It's a full-featured development platform that's
+                        been battle-tested for decades. The question isn't whether SQL can handle complex requirements—it's
+                        whether you know enough SQL to use it properly.</p>
 
-                <hr class="my-8 border-t border-gray-300">
+                    <hr>
 
-                <p class="text-sm italic text-center text-gray-600">What SQL capabilities have transformed how you build
-                    systems? I'm always interested in hearing how developers leverage the full power of their database
-                    platforms.</p>
+                    <p class="text-sm italic text-center text-gray-600">What SQL capabilities have transformed how you build
+                        systems? I'm always interested in hearing how developers leverage the full power of their database
+                        platforms.</p>
 
-                <!-- Share section -->
-                <div class="mt-12 pt-8 border-t border-gray-300">
-                    <p class="text-center text-gray-600 mb-4">Share this article</p>
-                    <div class="flex justify-center gap-4">
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://megpatakota.com/articles/sql-beyond-select.html"
-                            target="_blank" class="text-buttons hover:text-opacity-80 transition">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=https://megpatakota.com/articles/sql-beyond-select.html&text=Beyond%20SELECT:%20SQL%20as%20a%20Full%20Development%20Platform"
-                            target="_blank" class="text-buttons hover:text-opacity-80 transition">
-                            <i class="fab fa-twitter text-2xl"></i>
-                        </a>
+                    <!-- Share section -->
+                    <div class="mt-12 pt-8 border-t border-gray-300">
+                        <p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p>
+                        <div class="flex justify-center gap-6">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://megpatakota.com/articles/sql-beyond-select.html"
+                                target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                                <span class="font-semibold">LinkedIn</span>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://megpatakota.com/articles/sql-beyond-select.html&text=Beyond%20SELECT:%20SQL%20as%20a%20Full%20Development%20Platform"
+                                target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
+                                <i class="fab fa-twitter text-2xl"></i>
+                                <span class="font-semibold">Twitter</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-8 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- About Column -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">About</h3>
-                    <p class="text-sm text-gray-400 mb-4">I build AI & data solutions to help businesses transform ideas
-                        into reality with cutting-edge technologies and actionable insights.</p>
+    <footer class="bg-text_primary text-white py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                            MP
+                        </div>
+                        <span class="font-bold text-xl">Meg Patakota</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Data Analytics & Exploration Consultant helping businesses unlock the power of their data 
+                        through innovative analytics solutions.
+                    </p>
                     <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer"
-                            aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
+                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="mailto:megpatakota@icloud.com" aria-label="Email"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fas fa-envelope text-xl"></i>
+                        <a href="https://github.com/megpatakota" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer"
-                            aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fab fa-github text-xl"></i>
+                        <a href="mailto:megpatakota@icloud.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
+                
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="../index.html#about"
-                                class="text-gray-400 hover:text-white transition-colors">About</a></li>
-                        <li><a href="../index.html#collabs"
-                                class="text-gray-400 hover:text-white transition-colors">Collaborations</a></li>
-                        <li><a href="../index.html#projects"
-                                class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="../index.html#blogs"
-                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="../index.html#articles"
-                                class="text-gray-400 hover:text-white transition-colors">Articles</a></li>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../freelance.html#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="../freelance.html#process" class="hover:text-white transition">How I Work</a></li>
+                        <li><a href="../freelance.html#clara" class="hover:text-white transition">CLARA Project</a></li>
+                        <li><a href="../freelance.html#portfolio" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="../freelance.html#contact" class="hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
+                
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
-                    <p class="text-sm text-gray-400 mb-4">Looking for data solutions or have a question? I'd love to
-                        hear from you!</p>
-                    <a href="mailto:megpatakota@icloud.com"
-                        class="inline-block bg-buttons text-text_button py-2 px-6 rounded-lg text-sm transform hover:-translate-y-1 hover:shadow-md transition-all">
-                        <i class="fas fa-envelope mr-2"></i> Get in Touch
-                    </a>
+                    <h3 class="font-bold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../freelance.html#services" class="hover:text-white transition">Analytics & BI</a></li>
+                        <li><a href="../freelance.html#services" class="hover:text-white transition">Data Exploration</a></li>
+                        <li><a href="../freelance.html#services" class="hover:text-white transition">Analytics Engineering</a></li>
+                        <li><a href="../freelance.html#services" class="hover:text-white transition">Consulting</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-gray-800 mt-8 pt-6 text-center">
-                <p class="text-xs text-gray-400">&copy; 2024 Meg Patakota. All rights reserved.</p>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Meg Patakota. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    
     <script>
         // Mobile menu toggle
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.getElementById("menu-toggle");
-            const menu = document.getElementById("menu");
-
-            if (menuToggle && menu) {
-                menuToggle.addEventListener("click", function () {
-                    menu.classList.toggle("hidden");
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
-
-                // Close menu when clicking outside
-                document.addEventListener("click", function (event) {
-                    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                        menu.classList.add("hidden");
-                    }
-                });
-            }
-        });
+            });
+        }
     </script>
 </body>
 
