@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Simple analytics system for megpatakota.co.uk",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "echo 'Static site - no start script needed'",
     "build": "echo 'No build step required'",
     "deploy": "vercel --prod"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }
