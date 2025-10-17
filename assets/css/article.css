@@ -72,30 +72,10 @@
     border-color: #e5e7eb;
 }
 
-/* View Counter Styles */
+/* View Counter Styles - Subtle bottom display */
 #view-count, #unique-users {
     transition: transform 0.2s ease-in-out;
-    color: #A4243B;
-}
-
-.view-counter {
-    background: rgba(164, 36, 59, 0.1);
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(164, 36, 59, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.view-counter > div {
-    display: flex;
-    align-items: center;
-}
-
-.view-counter i {
-    color: #A4243B;
-    font-size: 0.875rem;
+    color: #9CA3AF; /* Very light gray */
 }
 
 

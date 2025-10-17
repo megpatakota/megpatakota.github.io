@@ -50,6 +50,8 @@ class ViewTracker {
         } else if (path.includes('/articles/')) {
             const match = path.match(/\/articles\/([^\/]+)\.html$/);
             return match ? `article_${match[1]}` : null;
+        } else if (path === '/admin.html' || path.includes('/admin.html')) {
+            return 'admin';
         } else {
             // For other pages, use the filename without extension
             const match = path.match(/\/([^\/]+)\.html$/);
@@ -126,6 +128,7 @@ class ViewTracker {
         const path = window.location.pathname;
         if (path === '/' || path === '/index.html') return 'home';
         if (path.includes('/articles/')) return 'article';
+        if (path === '/admin.html' || path.includes('/admin.html')) return 'admin';
         return 'page';
     }
 
@@ -203,7 +206,7 @@ class ViewTracker {
         const viewCountElement = document.getElementById('view-count');
         const uniqueUsersElement = document.getElementById('unique-users');
         
-        // Only show counters on article pages
+        // Only show counters on article pages (not on admin or other pages)
         if (!viewCountElement || this.getPageType() !== 'article') return;
 
         const stats = this.getPageStats();
