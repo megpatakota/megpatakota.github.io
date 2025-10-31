@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Production‑Ready Analytics Stack - Meg Patakota</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/site-style-config.js"></script>
+    
+    <!-- Article Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+    
+    <!-- SEO -->
+    <meta name="description" content="A friendly, hands-on guide to a modern analytics stack using PostgreSQL, dbt, Docker, and migrations—designed for learning and clarity.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                        MP
+                    </div>
+                    <span class="font-bold text-xl">Meg Patakota</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html#services" class="hover:text-buttons transition">Services</a>
+                    <a href="../index.html#process" class="hover:text-buttons transition">How I Work</a>
+                    <a href="../index.html#clara" class="hover:text-buttons transition">Projects</a>
+                    <a href="../index.html#blog" class="hover:text-buttons transition">Blog</a>
+                </div>
+                
+                <!-- Desktop CTA -->
+                <a href="../index.html#contact" class="hidden md:block gradient-bg text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    Get in Touch
+                </a>
+                
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="../index.html#services" class="block py-2 hover:text-buttons transition border-b border-gray-200">Services</a>
+                <a href="../index.html#process" class="block py-2 hover:text-buttons transition border-b border-gray-200">How I Work</a>
+                <a href="../index.html#clara" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
+                <a href="../index.html#blog" class="block py-2 hover:text-buttons transition border-b border-gray-200">Blog</a>
+                <a href="../index.html#contact" class="block py-3 px-6 text-center gradient-bg text-white rounded-full font-semibold hover:opacity-90 transition mt-4">
+                    Get in Touch
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Spacing for fixed header -->
+    <div class="h-20"></div>
+    
+    <!-- Article Content -->
+    <section class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Back button -->
+            <a href="../index.html" class="inline-flex items-center text-buttons hover:text-opacity-80 mb-8 transition font-semibold">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Home
+            </a>
+            
+            <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="article-content">
+                    <h1>Building a Production‑Ready Analytics Stack</h1>
+
+                    <p class="text-sm text-gray-500 mb-8">
+                        <i class="far fa-calendar mr-2"></i>6 min read • Analytics Engineering
+                    </p>
+
+                    <p>If you’ve looked at PostgreSQL, dbt, Docker, and migrations and thought, “How do these fit together in a real system?”, this is a practical primer in analytics engineering. We’ll connect the dots with an engineer’s lens—clear architecture, versioned migrations, testable transformations, and reproducible environments—showing the path from raw data to analytics‑ready tables.</p>
+
+                    <p>It’s a lightweight 101 for people new to this area—and for teams graduating from ad‑hoc SQL to something reliable. Friendly tone, engineering rigor.</p>
+
+                    <div class="bg-buttons/5 border-l-4 border-buttons rounded-r-lg p-4 my-6">
+                        <p class="font-semibold mb-1">Who this is for</p>
+                        <ul class="list-disc ml-6 text-text_secondary">
+                            <li>Early‑career analytics engineers formalizing their first stack</li>
+                            <li>Analysts moving from notebooks to layered, version‑controlled models</li>
+                            <li>Engineers who want a minimal, reproducible starter they can run locally</li>
+                        </ul>
+                    </div>
+
+                    <p>We’ll reference ideas from <em>Beyond SELECT: SQL as a Full Development Platform</em> (<a href="https://megpatakota.com/articles/sql-beyond-select.html" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>)—but you don’t need to read that first.</p>
+
+                    <!-- Repo CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 my-6">
+                        <a href="https://github.com/megpatakota/analytics_pipeline_production_grade" target="_blank" rel="noopener noreferrer" class="gradient-bg text-white px-6 py-3 rounded-full font-semibold text-center hover:opacity-90 transition flex items-center justify-center">
+                            <i class="fab fa-github mr-2"></i>
+                            View Project Repository
+                        </a>
+                        <a href="#" class="border-2 border-buttons text-buttons px-6 py-3 rounded-full font-semibold text-center hover:bg-buttons hover:text-white transition">
+                            Read Getting Started (coming soon)
+                        </a>
+                    </div>
+
+                    <hr>
+
+                    <h2>Why This Matters: The Production Reality</h2>
+
+                    <p>You'll hit this pattern on any data project: ingest raw data, clean/transform it, and roll analytics-ready tables. The design choice is whether it scales and stays maintainable.</p>
+
+                    <p>In practice, many teams stumble because raw and analytics layers blur, tests are missing, and changes are brittle. You end up with slow dashboards and “quick fixes” that quietly become the system.</p>
+
+                    <p>This guide offers a minimal, realistic reference you can run locally—clear layers, simple tests, and tools that scale with you.</p>
+
+                    <hr>
+
+                    <h2>What's inside (and why)</h2>
+
+                    <h3>Engineering Design Principles</h3>
+                    <ul>
+                        <li><strong>Layered architecture</strong>: raw → staging → marts. Each layer has a single responsibility.</li>
+                        <li><strong>Declarative transformations</strong>: models as code, documented and testable.</li>
+                        <li><strong>Versioned schema</strong>: migrations are idempotent, transactional, and auditable.</li>
+                        <li><strong>Reproducible environments</strong>: Dockerized services with explicit resource limits.</li>
+                        <li><strong>Automated data quality</strong>: constraints in raw, tests in staging/marts.</li>
+                    </ul>
+
+                    <h3>Three Layers, Each with a Job</h3>
+
+                    <p><strong>Raw:</strong> PostgreSQL tables with constraints for integrity. No business logic.</p>
+
+                    <p><strong>Staging:</strong> Views that clean and standardize. Naming conventions and type casting.</p>
+
+                    <p><strong>Marts:</strong> Denormalized, indexed tables for BI.</p>
+
+                    <p>Why layers: fixes to Raw don't cascade; Staging is testable; Marts stay fast without touching raw data.</p>
+
+                    <h3>Why These Specific Tools?</h3>
+
+                    <p><strong>PostgreSQL</strong> is the database. Mature, robust, with strong constraints and concurrency; great defaults and clear operational playbooks.</p>
+
+                    <p><strong>Flyway</strong> manages schema migrations. Version‑controlled SQL with transactional safety and repeatable scripts. Prevents drift and keeps environments reproducible.</p>
+
+                    <p><strong>dbt</strong> transforms data with SQL and templating. Declarative models, built‑in tests, lineage, and incremental materializations.</p>
+
+                    <p><strong>Docker</strong> makes environments reproducible and CI‑ready; compose ties the services together locally.</p>
+
+                    <p><strong>pgAdmin</strong> provides a UI for inspection and exploration when you don’t want to script everything.</p>
+
+                    <p>Together, they cover version control, automated tests, reproducibility, and separation of concerns.</p>
+
+                    <hr>
+
+                    <h2>Where Production Hits Reality</h2>
+
+                    <p>Here's what nobody tells you about production-grade pipelines: that incremental model that runs in seconds on your laptop with 10,000 rows can time out at 50 million. And your dashboard users will absolutely notice.</p>
+
+                    <p>The project emphasizes techniques that matter in production systems:</p>
+
+                    <div class="bg-buttons/5 border-l-4 border-buttons rounded-r-lg p-4 my-6">
+                        <p class="font-semibold mb-2">Defaults and trade‑offs</p>
+                        <ul class="list-disc ml-6 text-text_secondary">
+                            <li>Favor incremental over full refresh when data grows beyond dev scale</li>
+                            <li>Choose constraints in raw over guardrails in application code</li>
+                            <li>Index for read patterns; measure write cost explicitly</li>
+                            <li>Automate VACUUM/ANALYZE after heavy writes to stabilize plans</li>
+                        </ul>
+                    </div>
+
+                    <h3>Incremental Models: Your Insurance Policy Against Timeouts</h3>
+
+                    <p>Example: <code>fact_sales</code> uses dbt incremental materialization to process only new rows since the last run. Maintains indexes automatically.</p>
+
+                    <p>In production, you can't just full refresh everything when it gets big. Incremental updates are essential.</p>
+
+                    <h3>Indexes: Where Theory Meets Query Plans</h3>
+
+                    <p>Add them on keys, dates, and frequently filtered columns. Trade write cost for query speed. Every index slows down writes a little—find the balance.</p>
+
+                    <h3>Maintenance That Happens Automatically</h3>
+
+                    <p>A service runs <code>VACUUM (ANALYZE)</code> after transformations to keep stats fresh, avoid bloat, and ensure the planner isn't guessing.</p>
+
+                    <h3>Tests: Yes, You Actually Need Them</h3>
+
+                    <p>dbt tests catch nulls and duplicates before your users do. If transformations aren't tested, they're not production-grade.</p>
+
+                    <h3>Resource Management</h3>
+
+                    <p>Docker resource limits prevent one service from starving others. Postgres memory tuning prevents OOM crashes when those multi-join queries land.</p>
+
+                    <h3>Guarantees When Things Break</h3>
+
+                    <p>Migrations are transactional—if a schema change fails halfway, it rolls back. Environment files keep credentials out of code. dbt's dependency graph means if staging fails, marts don't even try to run.</p>
+
+                    <h3>Data Quality Checks</h3>
+
+                    <p>Constraints in raw tables reject invalid data at the source: negative prices, null SKUs, out-of-range dates, invalid statuses.</p>
+
+                    <p>Automated tests catch logic errors before they hit production: duplicate keys, missing joins, aggregation mistakes, null values, invalid ranges.</p>
+
+                    <p>Incremental models only process records newer than the last successful run. For late-arriving data, re-run a recent window without reprocessing everything.</p>
+
+                    <p>If something fails, Docker volumes persist your data. Fix the code and restart—no wiped databases.</p>
+
+                    <hr>
+
+                    <h2>Why These Production Choices Actually Matter</h2>
+
+                    <p>You've probably built pipelines that "work"—until they don't. Here's what real production systems do differently:</p>
+
+                    <p><strong>Your laptop pipeline:</strong> Runs sequentially, uses views for performance, no tests. Works with 10K rows.</p>
+
+                    <p><strong>Production reality:</strong> Same queries time out at 50M rows. Incremental models process only new data. Tests catch bad joins before dashboards break. Maintenance runs automatically to prevent query degradation.</p>
+
+                    <hr>
+
+                    <h2>Who Should Care About This?</h2>
+
+                    <p><strong>Data Engineers:</strong> Separation, migrations, orchestration. Standard patterns.</p>
+
+                    <p><strong>Analytics Engineers:</strong> dbt workflows, tests, incremental patterns. Production realities.</p>
+
+                    <p><strong>Data Analysts:</strong> Clean, understood inputs that reduce ad-hoc fixes.</p>
+
+                    <hr>
+
+                    <h2>What you'll learn by poking around</h2>
+
+                    <p>SQL isn’t just SELECTs. Production work adds:</p>
+
+                    <ul>
+                        <li><strong>Incremental models and safe rebuilds</strong> to avoid timeouts and costs</li>
+                        <li><strong>Tests before deploy</strong> to catch issues early</li>
+                        <li><strong>Automated maintenance</strong> to keep planner stats current</li>
+                        <li><strong>Separated logic</strong> to ease changes</li>
+                        <li><strong>Version control and docs</strong> to keep knowledge current</li>
+                    </ul>
+
+                    <div class="bg-buttons/5 border-l-4 border-buttons rounded-r-lg p-4 my-8">
+                        <p class="font-semibold mb-2">Note</p>
+                        <ul class="list-disc ml-6 text-text_secondary">
+                            <li>This is a demonstration setup and learning guide.</li>
+                            <li>Tables start empty by design. Run the setup and explore the structure.</li>
+                            <li>A sample analytics dashboard built on these models will be added next.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Getting started: first‑run checklist</h3>
+                    <ul>
+                        <li>Start services with Docker and confirm Postgres/pgAdmin are healthy</li>
+                        <li>Run Flyway to apply baseline schema and constraints</li>
+                        <li>Execute dbt models (staging then marts); review lineage in docs</li>
+                        <li>Run dbt tests; fix failures before changing model logic</li>
+                        <li>Inspect plans; add indexes where query patterns demand it</li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>Where to take it next</h2>
+
+                    <p>If this resonates, fork the repo, bring your own data, and adapt it. Pick patterns that fit your domain:</p>
+
+                    <ul>
+                        <li>Dimensions, partitioning, late-arriving logic</li>
+                        <li>Broader tests and macros</li>
+                        <li>Orchestration scheduling and monitoring</li>
+                        <li>Staging for multiple sources and ID mapping</li>
+                    </ul>
+
+                    <p>You'll start building pipelines the way production systems are built—layers, tests, and automation—not ad-hoc scripts. For the deeper "why," read <em>Beyond SELECT: SQL as a Full Development Platform</em> (<a href="https://megpatakota.com/articles/sql-beyond-select.html" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>).</p>
+
+                    <hr>
+
+                    <h2>Further Reading & Resources</h2>
+
+                    <p>The concepts in this project draw from proven industry practices. Here are resources to dive deeper:</p>
+
+                    <h3>Project Repository</h3>
+                    <ul>
+                        <li><a href="https://github.com/megpatakota/analytics_pipeline_production_grade" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">Analytics Pipeline (Production‑Ready)</a> — Source code, docs, and commands</li>
+                    </ul>
+
+                    <h3>Core Documentation</h3>
+                    <ul>
+                        <li><a href="https://docs.getdbt.com/" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">dbt Documentation</a> — Official dbt docs</li>
+                        <li><a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">PostgreSQL Documentation</a> — SQL reference and optimization</li>
+                        <li><a href="https://flywaydb.org/documentation/" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">Flyway Documentation</a> — Database migrations</li>
+                    </ul>
+
+                    <h3>dbt Best Practices</h3>
+                    <ul>
+                        <li><a href="https://docs.getdbt.com/guides/best-practices" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">dbt Best Practices Guide</a> — Layered architecture</li>
+                        <li><a href="https://docs.getdbt.com/docs/build/incremental-models" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">Incremental Models in dbt</a> — Scaling large datasets</li>
+                        <li><a href="https://docs.getdbt.com/docs/build/tests" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">dbt Testing</a> — Data quality checks</li>
+                    </ul>
+
+                    <h3>Production Pipeline Practices</h3>
+                    <ul>
+                        <li><a href="https://medium.com/@raj.busint/six-best-practices-for-building-robust-data-pipelines-4e5b18741378" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">Data Pipeline Best Practices (Medium)</a> — Practical guidance</li>
+                        <li><a href="https://www.secoda.co/blog/10-best-practices-to-build-data-pipelines" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline">10 Best Practices (Secoda)</a> — Guidelines</li>
+                    </ul>
+
+                    <p class="italic text-text_secondary">The difference between a working prototype and a production system comes down to these practices. Learn them, implement them, and avoid the 3am failures.</p>
+
+                    <!-- Share section -->
+                    <div class="mt-12 pt-8 border-t border-gray-300">
+                        <p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p>
+                        <div class="flex justify-center gap-6">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://megpatakota.com/articles/analytics-stack.html"
+                                target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                                <span class="font-semibold">LinkedIn</span>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://megpatakota.com/articles/analytics-stack.html&text=Building%20a%20Production%E2%80%91Ready%20Analytics%20Stack"
+                                target="_blank" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
+                                <i class="fab fa-twitter text-2xl"></i>
+                                <span class="font-semibold">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text_primary text-white py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                            MP
+                        </div>
+                        <span class="font-bold text-xl">Meg Patakota</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Data Analytics & Exploration Consultant helping businesses unlock the power of their data 
+                        through innovative analytics solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/megpatakota" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:megpatakota@icloud.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../index.html#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="../index.html#process" class="hover:text-white transition">How I Work</a></li>
+                        <li><a href="../index.html#clara" class="hover:text-white transition">CLARA Project</a></li>
+                        <li><a href="../index.html#clara" class="hover:text-white transition">Projects</a></li>
+                        <li><a href="../index.html#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../index.html#services" class="hover:text-white transition">Analytics & BI</a></li>
+                        <li><a href="../index.html#services" class="hover:text-white transition">Data Exploration</a></li>
+                        <li><a href="../index.html#services" class="hover:text-white transition">Analytics Engineering</a></li>
+                        <li><a href="../index.html#services" class="hover:text-white transition">Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p class="mb-3">&copy; 2024 Meg Patakota. All rights reserved.</p>
+                <p class="text-sm">
+                    <a href="mailto:megpatakota@icloud.com?subject=Website Feedback/Feature Request&body=Hi Meg,%0D%0A%0D%0AI have some feedback about your website:%0D%0A%0D%0A" 
+                       class="text-gray-500 hover:text-white transition inline-flex items-center gap-1">
+                        <i class="fas fa-comment-dots text-xs"></i>
+                        <span>Website Feedback & Feature Requests</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Article JavaScript -->
+    <script src="../assets/js/article.js"></script>
+</body>
+
+</html>
+
+
