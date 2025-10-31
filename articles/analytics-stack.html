@@ -98,9 +98,9 @@
                         <i class="far fa-calendar mr-2"></i>6 min read • Analytics Engineering
                     </p>
 
-                    <p>If you’ve looked at PostgreSQL, dbt, Docker, and migrations and thought, “How do these fit together in a real system?”, this is a practical primer in analytics engineering. We’ll connect the dots with an engineer’s lens—clear architecture, versioned migrations, testable transformations, and reproducible environments—showing the path from raw data to analytics‑ready tables.</p>
+                    <p>If you’ve looked at PostgreSQL, dbt, Docker, and migrations and thought, “How do these fit together in a real system?”, this is a practical primer in analytics engineering. We’ll connect the dots with an engineer’s lens: clear architecture, versioned migrations, testable transformations, and reproducible environments; showing the path from raw data to analytics‑ready tables.</p>
 
-                    <p>It’s a lightweight 101 for people new to this area—and for teams graduating from ad‑hoc SQL to something reliable. Friendly tone, engineering rigor.</p>
+                    <p>It’s a lightweight 101 for people new to this area and for teams graduating from ad‑hoc SQL to something reliable. Friendly tone, engineering rigor.</p>
 
                     <div class="bg-buttons/5 border-l-4 border-buttons rounded-r-lg p-4 my-6">
                         <p class="font-semibold mb-1">Who this is for</p>
@@ -111,7 +111,7 @@
                         </ul>
                     </div>
 
-                    <p>We’ll reference ideas from <em>Beyond SELECT: SQL as a Full Development Platform</em> (<a href="https://megpatakota.com/articles/sql-beyond-select.html" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>)—but you don’t need to read that first.</p>
+                    <p>We’ll reference ideas from <em>Analytics Pipeline Production Grade</em> (<a href="https://github.com/megpatakota/analytics_pipeline_production_grade/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>)—but you don’t need to read that first.</p>
 
                     <!-- Repo CTA -->
                     <div class="flex flex-col sm:flex-row gap-4 my-6">
@@ -132,7 +132,7 @@
 
                     <p>In practice, many teams stumble because raw and analytics layers blur, tests are missing, and changes are brittle. You end up with slow dashboards and “quick fixes” that quietly become the system.</p>
 
-                    <p>This guide offers a minimal, realistic reference you can run locally—clear layers, simple tests, and tools that scale with you.</p>
+                    <p>This guide offers a minimal, realistic reference you can run locally: clear layers, simple tests, and tools that scale with you.</p>
 
                     <hr>
 
@@ -213,7 +213,7 @@
 
                     <h3>Guarantees When Things Break</h3>
 
-                    <p>Migrations are transactional—if a schema change fails halfway, it rolls back. Environment files keep credentials out of code. dbt's dependency graph means if staging fails, marts don't even try to run.</p>
+                    <p>Migrations are transactional if a schema change fails halfway, it rolls back. Environment files keep credentials out of code. dbt's dependency graph means if staging fails, marts don't even try to run.</p>
 
                     <h3>Data Quality Checks</h3>
 
@@ -223,13 +223,12 @@
 
                     <p>Incremental models only process records newer than the last successful run. For late-arriving data, re-run a recent window without reprocessing everything.</p>
 
-                    <p>If something fails, Docker volumes persist your data. Fix the code and restart—no wiped databases.</p>
 
                     <hr>
 
                     <h2>Why These Production Choices Actually Matter</h2>
 
-                    <p>You've probably built pipelines that "work"—until they don't. Here's what real production systems do differently:</p>
+                    <p>You've probably built pipelines that "work" until they don't. Here's what real production systems do differently:</p>
 
                     <p><strong>Your laptop pipeline:</strong> Runs sequentially, uses views for performance, no tests. Works with 10K rows.</p>
 
@@ -290,7 +289,7 @@
                         <li>Staging for multiple sources and ID mapping</li>
                     </ul>
 
-                    <p>You'll start building pipelines the way production systems are built—layers, tests, and automation—not ad-hoc scripts. For the deeper "why," read <em>Beyond SELECT: SQL as a Full Development Platform</em> (<a href="https://megpatakota.com/articles/sql-beyond-select.html" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>).</p>
+                    <p>You'll start building pipelines the way production systems are built—layers, tests, and automation—not ad-hoc scripts. For the deeper "why," read <em>Analytics Pipeline Production Grade</em> (<a href="https://github.com/megpatakota/analytics_pipeline_production_grade/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="text-buttons hover:underline font-semibold">link</a>).</p>
 
                     <hr>
 
