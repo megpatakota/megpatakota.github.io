@@ -7,7 +7,7 @@
 
 /* Gradient Text Utility */
 .gradient-text {
-    background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
+    background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -15,12 +15,52 @@
 
 /* Gradient Background Utility */
 .gradient-bg {
-    background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #6366F1 100%);
 }
 
-/* Soft Gradient Background */
+/* Tech gradient - indigo to cyan */
+.tech-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+}
+
+/* Soft Gradient Background - Light sections */
 .soft-gradient-bg {
-    background: linear-gradient(135deg, #fef7e2 0%, #f3e7f6 100%);
+    background: linear-gradient(135deg, #F8FAFC 0%, #E0E7FF 50%, #CFFAFE 100%);
+}
+
+/* Dark Hero Background */
+.hero-dark-bg {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+}
+
+/* Animated gradient background */
+.animated-gradient-bg {
+    background: linear-gradient(-45deg, #0F172A, #1E293B, #312E81, #1E293B);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Glow effects */
+.glow-indigo {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+}
+
+.glow-cyan {
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.3);
 }
 
 /* Gradient Border Component */
@@ -36,7 +76,7 @@
     inset: 0;
     border-radius: 1rem;
     padding: 2px;
-    background: linear-gradient(135deg, #A4243B, #68505B);
+    background: linear-gradient(135deg, #6366F1, #22D3EE);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -64,7 +104,7 @@
     right: -50%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #A4243B, transparent);
+    background: linear-gradient(90deg, #6366F1, transparent);
 }
 
 .process-step:last-child::after {
@@ -129,4 +169,152 @@
 
 .animate-slide-down {
     animation: slideDown 0.3s ease-out;
+}
+
+/* Modern Timeline Styles */
+.timeline-container {
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #6366F1 0%, #22D3EE 50%, #6366F1 100%);
+}
+
+@media (min-width: 768px) {
+    .timeline-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 16px;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #6366F1, #22D3EE);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #E0E7FF;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .timeline-dot {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.timeline-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.15);
+}
+
+/* Experience card glow effect */
+.exp-card-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-card-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.exp-card-glow:hover::before {
+    left: 100%;
+}
+
+/* Skill tag hover */
+.skill-tag {
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+/* Details/Summary Expand Animation */
+details summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary ~ * {
+    animation: expandDown 0.3s ease-out;
+}
+
+@keyframes expandDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chevron rotation for details */
+details summary i.fa-chevron-right {
+    transition: transform 0.2s ease;
+}
+
+details[open] summary i.fa-chevron-right {
+    transform: rotate(90deg);
+}
+
+/* Tech dots pattern */
+.tech-dots {
+    background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Glassmorphism card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Pulse ring animation */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    animation: pulse-ring 2s ease-out infinite;
 }

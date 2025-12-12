@@ -36,26 +36,20 @@
     <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition">
                     <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
                         MP
                     </div>
                     <span class="font-bold text-xl">Meg Patakota</span>
-                </div>
+                </a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="hover:text-buttons transition flex items-center">
-                        <i class="fas fa-home"></i>
-                    </a>
                     <a href="#experience" class="hover:text-buttons transition">Experience</a>
                     <a href="#skills" class="hover:text-buttons transition">Skills</a>
                     <a href="#education" class="hover:text-buttons transition">Education</a>
                     <a href="#projects" class="hover:text-buttons transition">Projects</a>
                     <a href="#testimonials" class="hover:text-buttons transition">References</a>
-                    <a href="portfolio.html" class="hover:text-buttons transition flex items-center">
-                        <i class="fas fa-user-circle text-xl"></i>
-                    </a>
                 </div>
                 
                 <!-- Desktop CTA -->
@@ -71,9 +65,6 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="index.html" class="block py-2 hover:text-buttons transition border-b border-gray-200 flex items-center">
-                    <i class="fas fa-home mr-2"></i>Home
-                </a>
                 <a href="#experience" class="block py-2 hover:text-buttons transition border-b border-gray-200">Experience</a>
                 <a href="#skills" class="block py-2 hover:text-buttons transition border-b border-gray-200">Skills</a>
                 <a href="#education" class="block py-2 hover:text-buttons transition border-b border-gray-200">Education</a>
@@ -86,415 +77,565 @@
         </nav>
     </header>
     
-    <!-- Hero Section -->
-    <section class="pt-32 pb-12 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 soft-gradient-bg opacity-40"></div>
+    <!-- Hero Section - Dark Tech Design -->
+    <section class="pt-40 pb-20 px-6 relative overflow-hidden animated-gradient-bg min-h-[70vh] flex items-center">
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 grid-pattern opacity-50"></div>
+        
+        <!-- Gradient Orbs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-buttons/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
         
         <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="text-center mb-16">
-                <div class="inline-block bg-buttons/10 text-buttons px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                    <i class="fas fa-user-tie mr-2"></i>Professional Portfolio
-                </div>
-                
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            <div class="text-center">
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-white">
                     Meghana Patakota
-                    <span class="gradient-text">Portfolio</span>
                 </h1>
                 
-                <p class="text-xl text-text_tertiary mb-8 leading-relaxed max-w-3xl mx-auto">
-                    Comprehensive technical background, detailed project implementations, 
-                    and in-depth professional experience across data science and AI research
+                <!-- Animated Role Text -->
+                <div class="mb-8">
+                    <p class="text-xl md:text-2xl font-medium">
+                        <span class="text-white/60">Data Scientist</span>
+                        <span class="text-white/40 mx-3">•</span>
+                        <span class="gradient-text">AI Researcher</span>
+                        <span class="text-white/40 mx-3">•</span>
+                        <span class="text-white/60">Analytics Leader</span>
+                    </p>
+                </div>
+                
+                <p class="text-lg text-white/60 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Building intelligent systems and data-driven solutions at the intersection of 
+                    <span class="text-accent">artificial intelligence</span>, <span class="text-buttons">cloud infrastructure</span>, and <span class="text-white/80">business strategy</span>
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                    <a href="#experience" class="gradient-bg text-white px-8 py-4 rounded-full font-semibold text-center hover:opacity-90 transition flex items-center justify-center">
-                        <i class="fas fa-briefcase mr-2"></i>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#experience" class="group tech-gradient text-white px-8 py-4 rounded-xl font-semibold text-center hover:shadow-lg hover:shadow-buttons/25 transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-rocket"></i>
                         View Experience
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="border-2 border-buttons text-buttons px-8 py-4 rounded-full font-semibold text-center hover:bg-buttons hover:text-white transition flex items-center justify-center">
-                        <i class="fab fa-linkedin mr-2"></i>
+                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="glass-card text-white px-8 py-4 rounded-xl font-semibold text-center hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fab fa-linkedin"></i>
                         Connect on LinkedIn
                     </a>
                 </div>
                 
-                <!-- Social Links & Location -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-text_tertiary">
-                    <div class="flex items-center gap-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-buttons mr-2"></i>
-                            <span>London, UK</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <a href="https://github.com/megpatakota" target="_blank" class="hover:text-buttons transition">
-                                <i class="fab fa-github text-lg"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="hover:text-buttons transition">
-                                <i class="fab fa-linkedin text-lg"></i>
-                            </a>
-                        </div>
+                <!-- Quick Stats -->
+                <div class="flex flex-wrap justify-center gap-8 mb-8">
+                    <div class="text-center">
+                        <p class="text-3xl md:text-4xl font-bold text-white">5+</p>
+                        <p class="text-sm text-white/50">Years Experience</p>
+                    </div>
+                    <div class="hidden sm:block w-px h-12 bg-white/20"></div>
+                    <div class="text-center">
+                        <p class="text-3xl md:text-4xl font-bold gradient-text">6</p>
+                        <p class="text-sm text-white/50">Organisations</p>
+                    </div>
+                    <div class="hidden sm:block w-px h-12 bg-white/20"></div>
+                    <div class="text-center">
+                        <p class="text-3xl md:text-4xl font-bold text-accent">4</p>
+                        <p class="text-sm text-white/50">Academic Degrees</p>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex items-center justify-center gap-4">
+                    <a href="https://github.com/megpatakota" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <div class="flex items-center gap-2 ml-4 text-white/40 text-sm">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>London, UK</span>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
     
     <!-- Experience Section -->
-    <section id="experience" class="pt-12 pb-20 px-6 bg-white">
+    <section id="experience" class="pt-16 pb-20 px-6 bg-white">
         <div class="container mx-auto max-w-6xl">
+            <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Detailed Professional Experience</h2>
-                <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
-                    Comprehensive technical background with detailed project implementations, 
-                    methodologies, and impact across academia and industry
+                <span class="inline-block px-4 py-2 bg-gradient-to-r from-buttons/10 to-accent/10 text-buttons rounded-full text-sm font-semibold mb-4 border border-buttons/20">
+                    <i class="fas fa-briefcase mr-2"></i>Career Journey
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-text_primary">Professional Experience</h2>
+                <p class="text-lg text-text_tertiary max-w-2xl mx-auto">
+                    Building data-driven solutions across consulting, tech giants, and academia
                 </p>
             </div>
             
-            <!-- Experience Timeline -->
-            <div class="space-y-12">
+            <!-- Modern Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-buttons via-accent to-buttons/20"></div>
+                
                 <!-- ERM -->
-                <div class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border-l-4 border-buttons">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">AI Solutions Manager</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/erm.png" alt="ERM" class="h-8 mr-3">
+                <div class="relative mb-12 md:mb-16">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-buttons rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)] md:ml-auto">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-buttons/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/erm.png" alt="ERM" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">AI Solutions Manager</h3>
+                                        <p class="text-sm text-text_tertiary">ERM • London, UK</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold whitespace-nowrap">
+                                    <i class="fas fa-circle text-[8px] animate-pulse mr-1"></i>Current
+                                </span>
                             </div>
-                            <p class="text-text_tertiary text-sm">London, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">Jan 2026 - Present</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                                <i class="fas fa-circle animate-pulse mr-1"></i>Current Role
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-briefcase text-buttons mr-2"></i>
-                                Key Responsibilities
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Translate business process pain points into technical requirements, assess automation feasibility, and coordinate delivery with developers. Facilitate stakeholder engagement between business users and technical teams, support process documentation, and maintain solution patterns repository for technology-enabled consulting workflow improvements.
+                            <p class="text-sm text-text_tertiary mb-4">Jan 2026 - Present</p>
+                            <p class="text-text_secondary mb-4 leading-relaxed">
+                                Translate business process pain points into technical requirements, assess automation feasibility, and coordinate delivery with developers. Facilitate stakeholder engagement and maintain solution patterns repository.
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Process Automation</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">AI Solutions</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Business Analysis</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Stakeholder Management</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Process Automation</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">AI Solutions</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Business Analysis</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Oxford AI Researcher -->
-                <div class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border-l-4 border-buttons">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">AI Researcher</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/oxford.png" alt="Oxford" class="h-8 mr-3">
+                <!-- Oxford -->
+                <div class="relative mb-12 md:mb-16">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-buttons rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)]">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-buttons/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/oxford.png" alt="Oxford" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">AI Researcher</h3>
+                                        <p class="text-sm text-text_tertiary">University of Oxford • Remote, UK</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold whitespace-nowrap">
+                                    <i class="fas fa-circle text-[8px] animate-pulse mr-1"></i>Current
+                                </span>
                             </div>
-                            <p class="text-text_tertiary text-sm">Remote, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">Sep 2023 - Present • 2+ years</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                                <i class="fas fa-circle animate-pulse mr-1"></i>Current Role
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-robot text-buttons mr-2"></i>
-                                CLARA: Corporate Litigation Research Assistant
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Co-created an autonomous agent to support corporate litigation and accountability research by searching a knowledge base of 1.2 million+ pages oflitigation-relevant archival documents.
-                            </p>
+                            <p class="text-sm text-text_tertiary mb-4">Sep 2023 - Present • 2+ years</p>
+                            
+                            <!-- Project Highlight -->
+                            <div class="mb-4 p-4 bg-bg_light/50 rounded-xl border border-buttons/10">
+                                <h4 class="font-semibold text-text_primary mb-2 flex items-center">
+                                    <i class="fas fa-robot text-buttons mr-2 text-sm"></i>CLARA: Corporate Litigation Research Assistant
+                                </h4>
+                                <p class="text-sm text-text_secondary">
+                                    Co-created an autonomous agent to support corporate litigation and accountability research by searching a knowledge base of 1.2 million+ pages of litigation-relevant archival documents.
+                                </p>
+                            </div>
+                            
+                            <!-- Expandable Details -->
+                            <details class="group mb-4">
+                                <summary class="cursor-pointer text-sm font-medium text-buttons hover:text-accent transition flex items-center gap-2">
+                                    <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+                                    View detailed breakdown
+                                </summary>
+                                <div class="mt-4 space-y-4 border-t border-gray-100 pt-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Infrastructure & Deployment</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Automated AWS-based deployments (ECR, ECS, Lambda)</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>GitHub Actions CI/CD pipeline</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Streamlit app for usage stats monitoring</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Data Pipeline</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>SageMaker for data processing</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Dagster for data pipeline orchestration</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>ETL for chatbot data analysis</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Docker</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">CI/CD</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">GraphRAG</span>
-                                <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">LLMs</span>
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Infrastructure & Deployment</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• Automated AWS-based deployments (ECR, ECS, Lambda)</li>
-                                    <li>• GitHub Actions CI/CD pipeline</li>
-                                    <li>• Streamlit app for usage stats monitoring</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Data Pipeline</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• SageMaker for data processing</li>
-                                    <li>• Dagster for data pipeline orchestration</li>
-                                    <li>• ETL for chatbot data analysis</li>
-                                </ul>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">AWS</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Docker</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">CI/CD</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">GraphRAG</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">LLMs</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Google DeepMind -->
-                <div class="bg-gradient-to-br from-text_secondary/5 to-text_tertiary/5 rounded-2xl p-8 border-l-4 border-text_secondary">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">Applied Data Scientist</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/deepmind.png" alt="DeepMind" class="h-8 mr-3">
-                            </div>
-                            <p class="text-text_tertiary text-sm">London, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">May 2025 - Oct 2025 • 6 months</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                                Core Analytics Group
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-chart-line text-text_secondary mr-2"></i>
-                                Analytics & AI Solutions
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Part of the Core Analytics Group, applying data analytics and AI to drive insights across people, culture, and organisational health.
-                            </p>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">Key Responsibilities</h5>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Worked with people, talent, performance & evaluation data</li>
-                                        <li>• Built secure, permission-aware data tables to support reporting</li>
-                                        <li>• MVP of 2 specialized AI agents with AI Studio</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">PLX Ecosystem & Tools</h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-xs font-semibold">PLX Scripts</span>
-                                        <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-xs font-semibold">PLX Workflows</span>
-                                        <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-xs font-semibold">GoogleSQL</span>
-                                        <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-xs font-semibold">F1 Query</span>
+                <div class="relative mb-12 md:mb-16">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)] md:ml-auto">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-accent/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/deepmind.png" alt="DeepMind" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">Applied Data Scientist</h3>
+                                        <p class="text-sm text-text_tertiary">Google DeepMind • London, UK</p>
                                     </div>
                                 </div>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold whitespace-nowrap">
+                                    Core Analytics Group
+                                </span>
+                            </div>
+                            <p class="text-sm text-text_tertiary mb-4">May 2025 - Oct 2025 • 6 months</p>
+                            
+                            <!-- Role Highlight -->
+                            <div class="mb-4 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                                <h4 class="font-semibold text-text_primary mb-2 flex items-center">
+                                    <i class="fas fa-chart-line text-blue-600 mr-2 text-sm"></i>Analytics & AI Solutions
+                                </h4>
+                                <p class="text-sm text-text_secondary">
+                                    Part of the Core Analytics Group, applying data analytics and AI to drive insights across people, culture, and organisational health.
+                                </p>
+                            </div>
+                            
+                            <!-- Expandable Details -->
+                            <details class="group mb-4">
+                                <summary class="cursor-pointer text-sm font-medium text-buttons hover:text-accent transition flex items-center gap-2">
+                                    <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+                                    View detailed breakdown
+                                </summary>
+                                <div class="mt-4 space-y-4 border-t border-gray-100 pt-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Key Responsibilities</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Worked with people, talent, performance & evaluation data</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Built secure, permission-aware data tables to support reporting</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>MVP of 2 specialized AI agents with AI Studio</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">PLX Ecosystem & Tools</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-code text-blue-500 text-xs mt-1"></i>PLX Scripts</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-project-diagram text-blue-500 text-xs mt-1"></i>PLX Workflows</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-database text-blue-500 text-xs mt-1"></i>GoogleSQL & F1 Query</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">PLX Scripts</span>
+                                <span class="skill-tag px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">PLX Workflows</span>
+                                <span class="skill-tag px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">GoogleSQL</span>
+                                <span class="skill-tag px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium">F1 Query</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Mishcon de Reya -->
-                <div class="bg-gradient-to-br from-text_tertiary/5 to-buttons/5 rounded-2xl p-8 border-l-4 border-text_tertiary">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">Principal Data Scientist</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/MDR.png" alt="Mishcon" class="h-8 mr-3">
-                            </div>
-                            <p class="text-text_tertiary text-sm">London, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">Feb 2022 - May 2025 • 3+ years</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
-                                Lead Data Analytics & Reporting Advisor
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-building text-text_tertiary mr-2"></i>
-                                Enterprise Data Transformation
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Served as the lead data science & analytics advisor to the firm, engaging with C-suite leadership to drive data-driven decision-making. Delivered the firm's first business operations KPIs report by capturing key KPIs across all functions.
-                            </p>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Cloud Infrastructure & Data Migration</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• Led SSRS to Power BI migration</li>
-                                    <li>• SQL Server to Azure Synapse cloud migration</li>
-                                    <li>• Single source of truth establishment</li>
-                                    <li>• 70% reduction in report redundancy</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Data Democratization & Self-Serve</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• Led Data Center of Excellence</li>
-                                    <li>• Self-serve analytics implementation</li>
-                                    <li>• Increased adoption of centralised reporting</li>
-                                    <li>• Cross-department data integration</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="grid md:grid-cols-2 gap-4 mt-4">
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Technical Leadership</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• C-suite stakeholder engagement</li>
-                                    <li>• Data strategy development</li>
-                                    <li>• Line management & mentoring</li>
-                                    <li>• Vendor & API integration</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white rounded-lg p-4 shadow-sm">
-                                <h5 class="font-semibold text-text_primary mb-2">Analytics & Insights</h5>
-                                <ul class="text-sm text-text_tertiary space-y-1">
-                                    <li>• Cerfied data models across 10+ functions</li>
-                                    <li>• Client segmentation (RFM)</li>
-                                    <li>• Time forecasting & ML exploration</li>
-                                    <li>• Data governance automation</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white rounded-lg p-6 shadow-sm mt-4">
-                            <h5 class="font-semibold text-text_primary mb-3">Cross-Department Data Integration</h5>
-                            <div class="grid md:grid-cols-3 gap-4">
-                                <div>
-                                    <h6 class="font-medium text-text_secondary mb-2">People & HR</h6>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Talent, performance, evaluation data</li>
-                                        <li>• Attrition & headcount analytics</li>
-                                        <li>• Gallagher system integration</li>
-                                    </ul>
+                <div class="relative mb-12 md:mb-16">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)]">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-accent/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/MDR.png" alt="Mishcon" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">Principal Data Scientist</h3>
+                                        <p class="text-sm text-text_tertiary">Mishcon de Reya • London, UK</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h6 class="font-medium text-text_secondary mb-2">Finance & Legal</h6>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Billing, debtors, cash receipts</li>
-                                        <li>• Legal matters data</li>
-                                        <li>• Matter partner analytics</li>
-                                    </ul>
+                                <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold whitespace-nowrap">
+                                    Lead Data Analytics & Reporting Advisor
+                                </span>
+                            </div>
+                            <p class="text-sm text-text_tertiary mb-4">Feb 2022 - May 2025 • 3+ years</p>
+                            
+                            <!-- Role Highlight -->
+                            <div class="mb-4 p-4 bg-purple-50/50 rounded-xl border border-purple-100">
+                                <h4 class="font-semibold text-text_primary mb-2 flex items-center">
+                                    <i class="fas fa-building text-purple-600 mr-2 text-sm"></i>Enterprise Data Transformation
+                                </h4>
+                                <p class="text-sm text-text_secondary">
+                                    Served as the lead data science & analytics advisor to the firm, engaging with C-suite leadership to drive data-driven decision-making. Delivered the firm's first business operations KPIs report by capturing key KPIs across all functions.
+                                </p>
+                            </div>
+                            
+                            <!-- Impact Metrics -->
+                            <div class="grid grid-cols-3 gap-2 mb-4">
+                                <div class="text-center p-3 bg-buttons/5 rounded-xl">
+                                    <p class="text-2xl font-bold text-buttons">70%</p>
+                                    <p class="text-xs text-text_tertiary">Report Reduction</p>
                                 </div>
-                                <div>
-                                    <h6 class="font-medium text-text_secondary mb-2">Business Development</h6>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Client segmentation & retention</li>
-                                        <li>• Marketing analytics framework</li>
-                                        <li>• HubSpot & GA4 integration</li>
-                                    </ul>
+                                <div class="text-center p-3 bg-buttons/5 rounded-xl">
+                                    <p class="text-2xl font-bold text-buttons">10+</p>
+                                    <p class="text-xs text-text_tertiary">Certified Models</p>
                                 </div>
+                                <div class="text-center p-3 bg-buttons/5 rounded-xl">
+                                    <p class="text-2xl font-bold text-buttons">20%</p>
+                                    <p class="text-xs text-text_tertiary">Self-Serve Adoption</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Expandable Details -->
+                            <details class="group mb-4">
+                                <summary class="cursor-pointer text-sm font-medium text-buttons hover:text-accent transition flex items-center gap-2">
+                                    <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+                                    View detailed breakdown
+                                </summary>
+                                <div class="mt-4 space-y-4 border-t border-gray-100 pt-4">
+                                    <!-- Cloud & Data -->
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Cloud Infrastructure & Data Migration</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Led SSRS to Power BI migration</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>SQL Server to Azure Synapse cloud migration</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Single source of truth establishment</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>70% reduction in report redundancy</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Data Democratization & Self-Serve</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Led Data Center of Excellence</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Self-serve analytics implementation</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Increased adoption of centralised reporting</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Cross-department data integration</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Leadership & Analytics -->
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Technical Leadership</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>C-suite stakeholder engagement</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Data strategy development</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Line management & mentoring</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Vendor & API integration</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Analytics & Insights</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Certified data models across 10+ functions</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Client segmentation (RFM)</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Time forecasting & ML exploration</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Data governance automation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Cross-Department Integration -->
+                                    <div class="p-4 bg-purple-50/30 rounded-xl border border-purple-100">
+                                        <h5 class="font-semibold text-text_primary mb-4 text-sm">Cross-Department Data Integration</h5>
+                                        <div class="grid md:grid-cols-3 gap-4">
+                                            <div>
+                                                <h6 class="font-medium text-purple-700 mb-2 text-sm">People & HR</h6>
+                                                <ul class="text-xs text-text_tertiary space-y-1">
+                                                    <li>• Talent, performance, evaluation data</li>
+                                                    <li>• Attrition & headcount analytics</li>
+                                                    <li>• Gallagher system integration</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-medium text-purple-700 mb-2 text-sm">Finance & Legal</h6>
+                                                <ul class="text-xs text-text_tertiary space-y-1">
+                                                    <li>• Billing, debtors, cash receipts</li>
+                                                    <li>• Legal matters data</li>
+                                                    <li>• Matter partner analytics</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h6 class="font-medium text-purple-700 mb-2 text-sm">Business Development</h6>
+                                                <ul class="text-xs text-text_tertiary space-y-1">
+                                                    <li>• Client segmentation & retention</li>
+                                                    <li>• Marketing analytics framework</li>
+                                                    <li>• HubSpot & GA4 integration</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-medium">Power BI</span>
+                                <span class="skill-tag px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-medium">Azure Synapse</span>
+                                <span class="skill-tag px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-medium">SQL Server</span>
+                                <span class="skill-tag px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-medium">Azure Data Factory</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- UCL Teaching Assistant -->
-                <div class="bg-gradient-to-br from-text_secondary/5 to-buttons/5 rounded-2xl p-8 border-l-4 border-text_secondary">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">Teaching Assistant</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/ucl.png" alt="UCL" class="h-8 mr-3">
+                <div class="relative mb-12 md:mb-16">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-text_tertiary rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)] md:ml-auto">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-text_tertiary/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/ucl.png" alt="UCL" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">Teaching Assistant</h3>
+                                        <p class="text-sm text-text_tertiary">UCL School of Management • London, UK</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold whitespace-nowrap">
+                                    MSc Business Analytics
+                                </span>
                             </div>
-                            <p class="text-text_tertiary text-sm">London, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">Oct 2021 - Feb 2025 • 3+ years (part-time)</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-text_secondary/10 text-text_secondary px-3 py-1 rounded-full text-sm font-semibold">
-                                MSc Business Analytics
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-chalkboard-teacher text-text_secondary mr-2"></i>
-                                Academic Support & Teaching
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Supported teaching and marking in MSc Business Analytics modules at UCL School of Management, working with academic module leads through delivery of small group teaching and coursework assessment.
-                            </p>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">Teaching Responsibilities</h5>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Seminar/workshop facilitation</li>
-                                        <li>• Weekly office hours</li>
-                                        <li>• Coursework assessment & marking</li>
-                                        <li>• Student feedback provision</li>
-                                    </ul>
+                            <p class="text-sm text-text_tertiary mb-4">Oct 2021 - Feb 2025 • 3+ years (part-time)</p>
+                            
+                            <!-- Role Highlight -->
+                            <div class="mb-4 p-4 bg-bg_light/50 rounded-xl border border-buttons/10">
+                                <h4 class="font-semibold text-text_primary mb-2 flex items-center">
+                                    <i class="fas fa-chalkboard-teacher text-buttons mr-2 text-sm"></i>Academic Support & Teaching
+                                </h4>
+                                <p class="text-sm text-text_secondary">
+                                    Supported teaching and marking in MSc Business Analytics modules at UCL School of Management, working with academic module leads through delivery of small group teaching and coursework assessment.
+                                </p>
+                            </div>
+                            
+                            <!-- Expandable Details -->
+                            <details class="group mb-4">
+                                <summary class="cursor-pointer text-sm font-medium text-buttons hover:text-accent transition flex items-center gap-2">
+                                    <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+                                    View detailed breakdown
+                                </summary>
+                                <div class="mt-4 space-y-4 border-t border-gray-100 pt-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Teaching Responsibilities</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Seminar/workshop facilitation</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Weekly office hours</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Coursework assessment & marking</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Student feedback provision</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Module Support</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-book text-buttons text-xs mt-1"></i>Marketing Analytics</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-book text-buttons text-xs mt-1"></i>Data Engineering</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-book text-buttons text-xs mt-1"></i>Programming with Python</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-book text-buttons text-xs mt-1"></i>Predictive Analytics</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">Module Support</h5>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Marketing Analytics</li>
-                                        <li>• Data Engineering</li>
-                                        <li>• Programming with Python</li>
-                                        <li>• Predictive Analytics</li>
-                                    </ul>
-                                </div>
+                            </details>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Marketing Analytics</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Data Engineering</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Python</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Predictive Analytics</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Marsh Data Analyst -->
-                <div class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border-l-4 border-buttons">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-text_primary mb-2">Data Analyst</h3>
-                            <div class="flex items-center text-text_secondary mb-2">
-                                <img src="./assets/images/logos/marsh.png" alt="Marsh" class="h-8 mr-3">
+                <div class="relative">
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-12 w-4 h-4 bg-text_tertiary/50 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-[calc(50%-2rem)]">
+                        <div class="timeline-card exp-card-glow bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-text_tertiary/30">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-bg_light rounded-xl flex items-center justify-center">
+                                        <img src="./assets/images/logos/marsh.png" alt="Marsh" class="h-8 w-auto object-contain">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-text_primary">Data Analyst</h3>
+                                        <p class="text-sm text-text_tertiary">Marsh • London, UK</p>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-semibold whitespace-nowrap">
+                                    Insurance Analytics
+                                </span>
                             </div>
-                            <p class="text-text_tertiary text-sm">London, UK</p>
-                            <p class="text-text_tertiary text-sm font-medium">Jun 2021 - Nov 2021 • 6 months</p>
-                        </div>
-                        <div class="mt-4 md:mt-0">
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">
-                                Insurance Analytics
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white rounded-lg p-6 shadow-sm">
-                            <h4 class="font-bold text-text_primary mb-3 flex items-center">
-                                <i class="fas fa-chart-line text-buttons mr-2"></i>
-                                Claims Analysis & Process Automation
-                            </h4>
-                            <p class="text-text_secondary mb-3">
-                                Focused on claims analysis and provided insights reports requested by clients upon analyzing data received via several insurance companies. Automated manual analysis processes using Python tools.
-                            </p>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">Key Achievements</h5>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• 50% reduction in report generation time</li>
-                                        <li>• Automated manual analysis processes</li>
-                                        <li>• Large insurance dataset manipulation</li>
-                                        <li>• Client insights report generation</li>
-                                    </ul>
+                            <p class="text-sm text-text_tertiary mb-4">Jun 2021 - Nov 2021 • 6 months</p>
+                            
+                            <!-- Role Highlight -->
+                            <div class="mb-4 p-4 bg-bg_light/50 rounded-xl border border-buttons/10">
+                                <h4 class="font-semibold text-text_primary mb-2 flex items-center">
+                                    <i class="fas fa-chart-line text-buttons mr-2 text-sm"></i>Claims Analysis & Process Automation
+                                </h4>
+                                <p class="text-sm text-text_secondary">
+                                    Focused on claims analysis and provided insights reports requested by clients upon analyzing data received via several insurance companies. Automated manual analysis processes using Python tools.
+                                </p>
+                            </div>
+                            
+                            <!-- Impact Metric -->
+                            <div class="mb-4 p-3 bg-accent/5 rounded-xl text-center">
+                                <p class="text-2xl font-bold text-accent">50%</p>
+                                <p class="text-xs text-text_tertiary">Reduction in report generation time</p>
+                            </div>
+                            
+                            <!-- Expandable Details -->
+                            <details class="group mb-4">
+                                <summary class="cursor-pointer text-sm font-medium text-buttons hover:text-accent transition flex items-center gap-2">
+                                    <i class="fas fa-chevron-right text-xs transition-transform group-open:rotate-90"></i>
+                                    View detailed breakdown
+                                </summary>
+                                <div class="mt-4 space-y-4 border-t border-gray-100 pt-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Key Achievements</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>50% reduction in report generation time</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Automated manual analysis processes</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Large insurance dataset manipulation</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-check text-accent text-xs mt-1"></i>Client insights report generation</li>
+                                            </ul>
+                                        </div>
+                                        <div class="p-4 bg-gray-50 rounded-xl">
+                                            <h5 class="font-semibold text-text_primary mb-3 text-sm">Technologies Used</h5>
+                                            <ul class="text-sm text-text_tertiary space-y-2">
+                                                <li class="flex items-start gap-2"><i class="fas fa-code text-buttons text-xs mt-1"></i>Microsoft Excel (VLOOKUP, Pivots, Macros)</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-code text-buttons text-xs mt-1"></i>Python (Pandas, PyExcel)</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-code text-buttons text-xs mt-1"></i>Data manipulation & cause-mapping</li>
+                                                <li class="flex items-start gap-2"><i class="fas fa-code text-buttons text-xs mt-1"></i>Cross-insurance company data analysis</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h5 class="font-semibold text-text_primary mb-2">Technologies Used</h5>
-                                    <ul class="text-sm text-text_tertiary space-y-1">
-                                        <li>• Microsoft Excel (VLOOKUP, Pivots, Macros)</li>
-                                        <li>• Python (Pandas, PyExcel)</li>
-                                        <li>• Data manipulation & cause-mapping</li>
-                                        <li>• Cross-insurance company data analysis</li>
-                                    </ul>
-                                </div>
+                            </details>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Python</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Pandas</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Excel</span>
+                                <span class="skill-tag px-3 py-1 bg-buttons/10 text-buttons rounded-full text-xs font-medium">Data Analysis</span>
                             </div>
                         </div>
                     </div>
@@ -741,7 +882,7 @@
                 <!-- CLARA Project -->
                 <div class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border border-buttons/20">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
                             <i class="fas fa-circle animate-pulse mr-1"></i>Live Project
                         </span>
                         <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">Oxford Research</span>
@@ -754,15 +895,15 @@
                     
                     <div class="space-y-3 mb-6">
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">End-to-end AWS deployment (ECS, ECR, Lambda, DynamoDB)</span>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">Automated CI/CD pipeline with Docker & GitHub Actions</span>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">Advanced data pipeline: OCR, entity extraction, embeddings</span>
                         </div>
                     </div>
@@ -803,15 +944,15 @@
                     
                     <div class="space-y-3 mb-6">
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">70% reduction in report redundancy</span>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">20% of business ops teams enabled for self-serve</span>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
                             <span class="text-sm text-text_tertiary">Cross-department data integration (HR, Finance, Legal)</span>
                         </div>
                     </div>
@@ -955,27 +1096,7 @@
                     View GitHub
                 </a>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <div class="bg-white/10 rounded-xl p-6">
-                    <h3 class="font-bold mb-4">Professional Inquiries</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>• Lead Analytics Engineer</li>
-                        <li>• Senior Data Scientist</li>
-                        <li>• Data Strategy Consulting</li>
-                        <li>• Technical Advisory</li>
-                    </ul>
-                </div>
-                <div class="bg-white/10 rounded-xl p-6">
-                    <h3 class="font-bold mb-4">Expertise Areas</h3>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>• Microsoft Analytics Stack</li>
-                        <li>• Data Democratization</li>
-                        <li>• ETL/ELT Pipeline Design</li>
-                        <li>• Cross-Department Integration</li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </section>
     
