@@ -101,4 +101,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Read more functionality for testimonials
+document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const blockquote = this.closest('blockquote');
+        const preview = blockquote.querySelector('.testimonial-preview');
+        const full = blockquote.querySelector('.testimonial-full');
+        
+        if (full.classList.contains('hidden')) {
+            // Show full text
+            full.classList.remove('hidden');
+            this.textContent = 'Read less';
+        } else {
+            // Hide full text
+            full.classList.add('hidden');
+            this.textContent = 'Read more';
+        }
+    });
+});
+
 
