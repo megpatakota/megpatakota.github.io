@@ -1,7 +1,7 @@
 /* Article Page Styles */
 
 .gradient-bg {
-    background: linear-gradient(135deg, #A4243B 0%, #68505B 100%);
+    background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
 }
 
 /* Article Content Typography */
@@ -35,7 +35,7 @@
 .article-content h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #68505B;
+    color: #1F2937;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
 }
@@ -67,7 +67,7 @@
 .article-content p {
     margin-bottom: 1.25rem;
     line-height: 1.75;
-    color: #4E6A51;
+    color: #4B5563;
 }
 
 .article-content ul {
@@ -79,12 +79,12 @@
 .article-content li {
     margin-bottom: 0.5rem;
     line-height: 1.75;
-    color: #4E6A51;
+    color: #4B5563;
 }
 
 .article-content pre {
-    background: #f8f9fa;
-    border-left: 4px solid #A4243B;
+    background: #f8fafc;
+    border-left: 4px solid #6366F1;
     padding: 1.25rem;
     border-radius: 0.5rem;
     overflow-x: auto;
