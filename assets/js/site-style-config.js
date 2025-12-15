@@ -1,4 +1,20 @@
 // site-style-config.js
+// Central configuration for all site styles - update colors here to change everywhere
+
+// CSS Custom Properties (for use in CSS files)
+document.documentElement.style.setProperty('--color-primary', '#0F172A');
+document.documentElement.style.setProperty('--color-buttons', '#6366F1');
+document.documentElement.style.setProperty('--color-accent', '#22D3EE');
+document.documentElement.style.setProperty('--color-bg-dark', '#0F172A');
+document.documentElement.style.setProperty('--color-bg-light', '#F8FAFC');
+document.documentElement.style.setProperty('--color-bg-card', '#1E293B');
+document.documentElement.style.setProperty('--color-text-primary', '#0F172A');
+document.documentElement.style.setProperty('--color-text-secondary', '#475569');
+document.documentElement.style.setProperty('--color-text-tertiary', '#64748B');
+document.documentElement.style.setProperty('--color-gradient-start', '#6366F1');
+document.documentElement.style.setProperty('--color-gradient-end', '#22D3EE');
+
+// Tailwind config
 tailwind.config = {
   theme: {
     extend: {

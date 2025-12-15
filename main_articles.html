@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles - Meg Patakota</title>
+    <title>Blogs - Meg Patakota</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,6 +16,15 @@
     <!-- Shared styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/article.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
 </head>
 
 <body class="font-sans bg-white text-text_primary">
@@ -23,32 +32,42 @@
     <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition group">
+                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
                         MP
                     </div>
-                    <span class="font-bold text-xl">Meg Patakota</span>
+                    <div class="hidden sm:block">
+                        <div class="text-xs text-text_tertiary font-medium uppercase tracking-wider">Portfolio</div>
+                        <div class="text-xs text-buttons font-semibold">Data • AI • Analytics</div>
+                    </div>
                 </a>
-                <div class="hidden md:flex space-x-6 text-sm font-medium text-text_tertiary">
-                    <a href="index.html#experience" class="hover:text-buttons transition">Experience</a>
-                    <a href="index.html#blog" class="hover:text-buttons transition">Blog</a>
-                    <a href="index.html#projects" class="hover:text-buttons transition">Projects</a>
-                    <a href="index.html#contact" class="hover:text-buttons transition">Contact</a>
-                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="index.html#experience" class="text-text_tertiary hover:text-buttons transition font-medium">Experience</a>
+                    <a href="main_articles.html" class="text-buttons font-medium">Blogs</a>
+                    <a href="index.html#projects" class="text-text_tertiary hover:text-buttons transition font-medium">Projects</a>
+                </nav>
+                
+                <!-- Desktop CTA -->
                 <a href="index.html#contact" class="hidden md:block gradient-bg text-white px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
                     Get in Touch
                 </a>
+                
+                <!-- Mobile Hamburger -->
                 <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3 text-sm">
-                <a href="index.html#experience" class="block py-2 hover:text-buttons transition border-b border-gray-200">Experience</a>
-                <a href="index.html#blog" class="block py-2 hover:text-buttons transition border-b border-gray-200">Blog</a>
-                <a href="index.html#projects" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
-                <a href="index.html#contact" class="block py-3 px-6 text-center gradient-bg text-white rounded-full font-semibold hover:opacity-90 transition mt-2">
-                    Get in Touch
-                </a>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="index.html#experience" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
+                <a href="main_articles.html" class="block py-2 text-buttons font-medium">Blogs</a>
+                <a href="index.html#education" class="block py-2 text-text_tertiary hover:text-buttons transition">Education</a>
+                <a href="index.html#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
+                <a href="index.html#testimonials" class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
+                <a href="index.html#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
             </div>
         </nav>
     </header>
@@ -58,17 +77,23 @@
 
     <main class="py-12 px-6">
         <div class="container mx-auto max-w-5xl">
+            <!-- Back button -->
+            <a href="index.html" class="inline-flex items-center text-buttons hover:text-accent mb-8 transition font-semibold">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Home
+            </a>
+            
             <div class="text-center mb-10">
-                <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-buttons/10 text-buttons text-sm font-semibold">
-                    <i class="fas fa-book-open"></i> Articles
-                </p>
+                <span class="inline-block px-4 py-2 bg-gradient-to-r from-buttons/10 to-accent/10 text-buttons rounded-full text-sm font-semibold mb-4 border border-buttons/20">
+                    <i class="fas fa-pen-fancy mr-2"></i>Blog Posts
+                </span>
                 <h1 class="text-3xl md:text-4xl font-bold mt-3 mb-2">Latest Writing</h1>
-                <p class="text-text_tertiary max-w-2xl mx-auto">A consistent look and feel for every article—analytics, SQL, and career reflections.</p>
+                <p class="text-text_tertiary max-w-2xl mx-auto">Insights on analytics stacks, AI workflows, and career reflections.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Analytics Stack -->
-                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-buttons/30 transition-all duration-300 hover:-translate-y-1">
                     <div class="flex items-center gap-2 text-xs font-semibold text-buttons mb-3">
                         <span class="bg-buttons/10 text-buttons px-2 py-1 rounded-full">Analytics</span>
                         <span class="text-text_tertiary">October 2025</span>
@@ -77,28 +102,28 @@
                     </div>
                     <h2 class="text-xl font-bold text-text_primary mb-2">Building a Production‑Ready Analytics Stack</h2>
                     <p class="text-text_secondary text-sm mb-4">A practical, production-minded scaffold with PostgreSQL, dbt, Flyway, Docker, and pgAdmin.</p>
-                    <a href="articles/analytics-stack.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-text_secondary transition">
+                    <a href="articles/analytics-stack.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-accent transition">
                         Read article <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </article>
 
                 <!-- Data Science Evolution -->
-                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-buttons/30 transition-all duration-300 hover:-translate-y-1">
                     <div class="flex items-center gap-2 text-xs font-semibold text-buttons mb-3">
-                        <span class="bg-text_secondary/10 text-text_secondary px-2 py-1 rounded-full">Career</span>
+                        <span class="bg-accent/10 text-accent px-2 py-1 rounded-full">Career</span>
                         <span class="text-text_tertiary">October 2024</span>
                         <span class="text-text_tertiary">•</span>
                         <span class="text-text_tertiary">3 min read</span>
                     </div>
                     <h2 class="text-xl font-bold text-text_primary mb-2">The Evolution of Data Science</h2>
                     <p class="text-text_secondary text-sm mb-4">How data science roles have shifted—from ML hype to the realities of productised analytics.</p>
-                    <a href="articles/data-science-evolution.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-text_secondary transition">
+                    <a href="articles/data-science-evolution.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-accent transition">
                         Read article <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </article>
 
                 <!-- SQL Beyond SELECT -->
-                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <article class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:border-buttons/30 transition-all duration-300 hover:-translate-y-1">
                     <div class="flex items-center gap-2 text-xs font-semibold text-buttons mb-3">
                         <span class="bg-buttons/10 text-buttons px-2 py-1 rounded-full">SQL</span>
                         <span class="text-text_tertiary">October 2024</span>
@@ -107,7 +132,7 @@
                     </div>
                     <h2 class="text-xl font-bold text-text_primary mb-2">Beyond SELECT: SQL as a Platform</h2>
                     <p class="text-text_secondary text-sm mb-4">Production-grade SQL: migrations, testing, CI/CD, and performance guardrails that keep systems stable.</p>
-                    <a href="articles/sql-beyond-select.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-text_secondary transition">
+                    <a href="articles/sql-beyond-select.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-accent transition">
                         Read article <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </article>
@@ -115,7 +140,7 @@
         </div>
     </main>
 
-    <!-- Footer (minimal) -->
+    <!-- Footer -->
     <footer class="bg-text_primary text-white py-10 px-6 mt-12">
         <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
@@ -135,7 +160,6 @@
         </div>
     </footer>
 
-    <script src="./assets/js/article.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
-

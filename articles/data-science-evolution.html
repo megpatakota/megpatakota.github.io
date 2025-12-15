@@ -38,23 +38,25 @@
     <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="../index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
+                <a href="../index.html" class="flex items-center space-x-3 hover:opacity-80 transition group">
+                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
                         MP
                     </div>
-                    <span class="font-bold text-xl">Meg Patakota</span>
+                    <div class="hidden sm:block">
+                        <div class="text-xs text-text_tertiary font-medium uppercase tracking-wider">Portfolio</div>
+                        <div class="text-xs text-buttons font-semibold">Data • AI • Analytics</div>
+                    </div>
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="../index.html#experience" class="hover:text-buttons transition font-medium">Experience</a>
-                    <a href="../index.html#blog" class="hover:text-buttons transition font-medium">Blog</a>
-                    <a href="../index.html#skills" class="hover:text-buttons transition font-medium">Skills</a>
-                    <a href="../index.html#projects" class="hover:text-buttons transition font-medium">Projects</a>
-                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#experience" class="text-text_tertiary hover:text-buttons transition font-medium">Experience</a>
+                    <a href="../main_articles.html" class="text-buttons font-medium">Blogs</a>
+                    <a href="../index.html#projects" class="text-text_tertiary hover:text-buttons transition font-medium">Projects</a>
+                </nav>
                 
                 <!-- Desktop CTA -->
-                <a href="../index.html#contact" class="hidden md:block gradient-bg text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                <a href="../index.html#contact" class="hidden md:block gradient-bg text-white px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
                     Get in Touch
                 </a>
                 
@@ -65,15 +67,12 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-                <a href="../index.html#experience" class="block py-2 hover:text-buttons transition border-b border-gray-200">Experience</a>
-                <a href="../index.html#blog" class="block py-2 hover:text-buttons transition border-b border-gray-200">Blog</a>
-                <a href="../index.html#skills" class="block py-2 hover:text-buttons transition border-b border-gray-200">Skills</a>
-                <a href="../index.html#projects" class="block py-2 hover:text-buttons transition border-b border-gray-200">Projects</a>
-                <a href="../index.html#testimonials" class="block py-2 hover:text-buttons transition border-b border-gray-200">References</a>
-                <a href="../index.html#contact" class="block py-3 px-6 text-center gradient-bg text-white rounded-full font-semibold hover:opacity-90 transition mt-4">
-                    Get in Touch
-                </a>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="../index.html#experience" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
+                <a href="../main_articles.html" class="block py-2 text-buttons font-medium">Blogs</a>
+                <a href="../index.html#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
+                <a href="../index.html#testimonials" class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
+                <a href="../index.html#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
             </div>
         </nav>
     </header>
@@ -160,70 +159,29 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-text_primary text-white py-12 px-6">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
-                            MP
-                        </div>
-                        <span class="font-bold text-xl">Meg Patakota</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Data Analytics & Exploration Consultant helping businesses unlock the power of their data 
-                        through innovative analytics solutions.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/megpatakota" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:megpatakota@icloud.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                
+    <footer class="bg-text_primary text-white py-10 px-6">
+        <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">MP</div>
                 <div>
-                    <h3 class="font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../index.html#services" class="hover:text-white transition">Services</a></li>
-                        <li><a href="../index.html#process" class="hover:text-white transition">How I Work</a></li>
-                        <li><a href="../index.html#clara" class="hover:text-white transition">CLARA Project</a></li>
-                        <li><a href="../index.html#clara" class="hover:text-white transition">Projects</a></li>
-                        <li><a href="../index.html#contact" class="hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="font-bold mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="../index.html#services" class="hover:text-white transition">Analytics & BI</a></li>
-                        <li><a href="../index.html#services" class="hover:text-white transition">Data Exploration</a></li>
-                        <li><a href="../index.html#services" class="hover:text-white transition">Analytics Engineering</a></li>
-                        <li><a href="../index.html#services" class="hover:text-white transition">Consulting</a></li>
-                    </ul>
+                    <p class="font-semibold">Meg Patakota</p>
+                    <p class="text-sm text-white/60">Data • AI • Analytics</p>
                 </div>
             </div>
-            
-            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
-                <p class="mb-3">&copy; 2024 Meg Patakota. All rights reserved.</p>
-                <p class="text-sm">
-                    <a href="mailto:megpatakota@icloud.com?subject=Website Feedback/Feature Request&body=Hi Meg,%0D%0A%0D%0AI have some feedback about your website:%0D%0A%0D%0A" 
-                       class="text-gray-500 hover:text-white transition inline-flex items-center gap-1">
-                        <i class="fas fa-comment-dots text-xs"></i>
-                        <span>Website Feedback & Feature Requests</span>
-                    </a>
-                </p>
+            <div class="flex items-center gap-3 text-sm text-white/70">
+                <a href="../index.html#experience" class="hover:text-white transition">Experience</a>
+                <span class="hidden sm:inline">•</span>
+                <a href="../main_articles.html" class="hover:text-white transition">Blogs</a>
+                <span class="hidden sm:inline">•</span>
+                <a href="../index.html#projects" class="hover:text-white transition">Projects</a>
+                <span class="hidden sm:inline">•</span>
+                <a href="../index.html#contact" class="hover:text-white transition">Contact</a>
             </div>
         </div>
     </footer>
     
-    <!-- Article JavaScript -->
-    <script src="../assets/js/article.js"></script>
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

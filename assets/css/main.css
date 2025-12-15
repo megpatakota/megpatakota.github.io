@@ -1,41 +1,59 @@
-/* Main Styles for Meg Patakota Portfolio */
+/* ==========================================================================
+   Main Styles for Meg Patakota Portfolio
+   
+   COLOR REFERENCE (update in site-style-config.js):
+   - Primary/Buttons: #6366F1 (Indigo) -> var(--color-buttons)
+   - Accent: #22D3EE (Cyan) -> var(--color-accent)
+   - Text Primary: #0F172A -> var(--color-text-primary)
+   - Text Secondary: #475569 -> var(--color-text-secondary)
+   - Text Tertiary: #64748B -> var(--color-text-tertiary)
+   - Background Light: #F8FAFC -> var(--color-bg-light)
+   - Background Dark: #0F172A -> var(--color-bg-dark)
+   ========================================================================== */
 
-/* Smooth scrolling */
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
 * {
     scroll-behavior: smooth;
 }
 
-/* Gradient Text Utility */
+/* ==========================================================================
+   GRADIENT UTILITIES
+   ========================================================================== */
+
+/* Gradient Text */
 .gradient-text {
-    background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, var(--color-accent, #22D3EE) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* Gradient Background Utility */
+/* Primary Gradient Background (buttons, badges) */
 .gradient-bg {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #6366F1 100%);
+    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, #8B5CF6 50%, var(--color-buttons, #6366F1) 100%);
 }
 
 /* Tech gradient - indigo to cyan */
 .tech-gradient {
-    background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, var(--color-accent, #22D3EE) 100%);
 }
 
 /* Soft Gradient Background - Light sections */
 .soft-gradient-bg {
-    background: linear-gradient(135deg, #F8FAFC 0%, #E0E7FF 50%, #CFFAFE 100%);
+    background: linear-gradient(135deg, var(--color-bg-light, #F8FAFC) 0%, #E0E7FF 50%, #CFFAFE 100%);
 }
 
 /* Dark Hero Background */
 .hero-dark-bg {
-    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+    background: linear-gradient(135deg, var(--color-bg-dark, #0F172A) 0%, #1E293B 50%, var(--color-bg-dark, #0F172A) 100%);
 }
 
 /* Animated gradient background */
 .animated-gradient-bg {
-    background: linear-gradient(-45deg, #0F172A, #1E293B, #312E81, #1E293B);
+    background: linear-gradient(-45deg, var(--color-bg-dark, #0F172A), #1E293B, #312E81, #1E293B);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
 }
@@ -46,7 +64,10 @@
     100% { background-position: 0% 50%; }
 }
 
-/* Grid pattern overlay */
+/* ==========================================================================
+   PATTERN OVERLAYS
+   ========================================================================== */
+
 .grid-pattern {
     background-image: 
         linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
@@ -54,7 +75,15 @@
     background-size: 50px 50px;
 }
 
-/* Glow effects */
+.tech-dots {
+    background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* ==========================================================================
+   GLOW & SHADOW EFFECTS
+   ========================================================================== */
+
 .glow-indigo {
     box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
 }
@@ -76,174 +105,30 @@
     inset: 0;
     border-radius: 1rem;
     padding: 2px;
-    background: linear-gradient(135deg, #6366F1, #22D3EE);
+    background: linear-gradient(135deg, var(--color-buttons, #6366F1), var(--color-accent, #22D3EE));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
 }
 
-/* Service Card Hover Effect */
+/* Glassmorphism card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   CARD STYLES
+   ========================================================================== */
+
 .service-card {
     transition: all 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-}
-
-/* Process Step Arrow */
-.process-step {
-    position: relative;
-}
-
-.process-step::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -50%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #6366F1, transparent);
-}
-
-.process-step:last-child::after {
-    display: none;
-}
-
-/* Floating Animation */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.floating {
-    animation: float 6s ease-in-out infinite;
-}
-
-/* Logo Shimmer Animation */
-@keyframes shimmer {
-    0%, 100% { 
-        filter: grayscale(1) brightness(1);
-        opacity: 0.7;
-    }
-    50% { 
-        filter: grayscale(0.3) brightness(1.1);
-        opacity: 0.85;
-    }
-}
-
-.logo-shimmer {
-    animation: shimmer 4s ease-in-out infinite;
-}
-
-.logo-shimmer:nth-child(1) { animation-delay: 0s; }
-.logo-shimmer:nth-child(2) { animation-delay: 1s; }
-.logo-shimmer:nth-child(3) { animation-delay: 2s; }
-.logo-shimmer:nth-child(4) { animation-delay: 3s; }
-
-/* Sequential logo fade wave */
-@keyframes logoFadeWave {
-    0% {
-        opacity: 0.3;
-        filter: grayscale(1);
-    }
-    15% {
-        opacity: 1;
-        filter: grayscale(0);
-    }
-    35% {
-        opacity: 1;
-        filter: grayscale(0);
-    }
-    50% {
-        opacity: 0.4;
-        filter: grayscale(1);
-    }
-    100% {
-        opacity: 0.3;
-        filter: grayscale(1);
-    }
-}
-
-.logo-wave {
-    animation: logoFadeWave 10s ease-in-out infinite;
-}
-
-.logo-wave-1 { animation-delay: 0s; }
-.logo-wave-2 { animation-delay: 2s; }
-.logo-wave-3 { animation-delay: 4s; }
-.logo-wave-4 { animation-delay: 6s; }
-.logo-wave-5 { animation-delay: 8s; }
-
-/* Stats Number Styling */
-.stat-number {
-    font-size: 3rem;
-    font-weight: 800;
-}
-
-/* Responsive: Hide process arrows on mobile */
-@media (max-width: 768px) {
-    .process-step::after {
-        display: none;
-    }
-}
-
-/* Toast Notification Animation */
-@keyframes slideDown {
-    from {
-        transform: translate(-50%, -100%);
-        opacity: 0;
-    }
-    to {
-        transform: translate(-50%, 0);
-        opacity: 1;
-    }
-}
-
-.animate-slide-down {
-    animation: slideDown 0.3s ease-out;
-}
-
-/* Modern Timeline Styles */
-.timeline-container {
-    position: relative;
-}
-
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, #6366F1 0%, #22D3EE 50%, #6366F1 100%);
-}
-
-@media (min-width: 768px) {
-    .timeline-container::before {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 16px;
-    width: 18px;
-    height: 18px;
-    background: linear-gradient(135deg, #6366F1, #22D3EE);
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #E0E7FF;
-    z-index: 10;
-}
-
-@media (min-width: 768px) {
-    .timeline-dot {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
 
 .timeline-card {
@@ -286,62 +171,87 @@
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
-/* Details/Summary Expand Animation */
-details summary {
-    list-style: none;
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
-details summary::-webkit-details-marker {
-    display: none;
+.floating {
+    animation: float 6s ease-in-out infinite;
 }
 
-details[open] summary ~ * {
-    animation: expandDown 0.3s ease-out;
-}
-
-@keyframes expandDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+/* Logo Shimmer Animation */
+@keyframes shimmer {
+    0%, 100% { 
+        filter: grayscale(1) brightness(1);
+        opacity: 0.7;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    50% { 
+        filter: grayscale(0.3) brightness(1.1);
+        opacity: 0.85;
     }
 }
 
-/* Chevron rotation for details */
-details summary i.fa-chevron-right {
-    transition: transform 0.2s ease;
+.logo-shimmer {
+    animation: shimmer 4s ease-in-out infinite;
 }
 
-details[open] summary i.fa-chevron-right {
-    transform: rotate(90deg);
+.logo-shimmer:nth-child(1) { animation-delay: 0s; }
+.logo-shimmer:nth-child(2) { animation-delay: 1s; }
+.logo-shimmer:nth-child(3) { animation-delay: 2s; }
+.logo-shimmer:nth-child(4) { animation-delay: 3s; }
+
+/* Sequential logo fade wave */
+@keyframes logoFadeWave {
+    0% { opacity: 0.3; filter: grayscale(1); }
+    15% { opacity: 1; filter: grayscale(0); }
+    35% { opacity: 1; filter: grayscale(0); }
+    50% { opacity: 0.4; filter: grayscale(1); }
+    100% { opacity: 0.3; filter: grayscale(1); }
 }
 
-/* Tech dots pattern */
-.tech-dots {
-    background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
+.logo-wave {
+    animation: logoFadeWave 10s ease-in-out infinite;
 }
 
-/* Glassmorphism card */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.logo-wave-1 { animation-delay: 0s; }
+.logo-wave-2 { animation-delay: 2s; }
+.logo-wave-3 { animation-delay: 4s; }
+.logo-wave-4 { animation-delay: 6s; }
+.logo-wave-5 { animation-delay: 8s; }
+
+/* Logo Highlight Animation */
+@keyframes logoHighlight {
+    0%, 100% { opacity: 0.5; filter: grayscale(0.2); }
+    20% { opacity: 1; filter: grayscale(0); }
+    40% { opacity: 0.5; filter: grayscale(0.2); }
 }
+
+@keyframes logoHighlightMiddle {
+    0%, 100% { opacity: 0.5; filter: grayscale(0.2); transform: scale(1); }
+    20% { opacity: 1; filter: grayscale(0); transform: scale(1.08); }
+    40% { opacity: 0.5; filter: grayscale(0.2); transform: scale(1); }
+}
+
+.logo-highlight {
+    animation: logoHighlight 12s ease-in-out infinite;
+}
+
+.logo-highlight-1 { animation-delay: 0s; }
+.logo-highlight-2 { animation-delay: 2.4s; }
+.logo-highlight-3 { animation-delay: 4.8s; animation-name: logoHighlightMiddle; }
+.logo-highlight-4 { animation-delay: 7.2s; }
+.logo-highlight-5 { animation-delay: 9.6s; }
 
 /* Pulse ring animation */
 @keyframes pulse-ring {
-    0% {
-        transform: scale(0.8);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
 }
 
 .pulse-ring::before {
@@ -353,14 +263,110 @@ details[open] summary i.fa-chevron-right {
     animation: pulse-ring 2s ease-out infinite;
 }
 
-/* Logo Marquee Animation */
+/* Toast Notification Animation */
+@keyframes slideDown {
+    from { transform: translate(-50%, -100%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Horizontal bounce animation for scroll indicator */
+@keyframes bounce-x {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.animate-bounce-x {
+    animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   TIMELINE STYLES
+   ========================================================================== */
+
+.timeline-container {
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-buttons, #6366F1) 0%, var(--color-accent, #22D3EE) 50%, var(--color-buttons, #6366F1) 100%);
+}
+
+@media (min-width: 768px) {
+    .timeline-container::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 16px;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, var(--color-buttons, #6366F1), var(--color-accent, #22D3EE));
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #E0E7FF;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .timeline-dot {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   PROCESS STEP STYLES
+   ========================================================================== */
+
+.process-step {
+    position: relative;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-buttons, #6366F1), transparent);
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .process-step::after {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   MARQUEE & SCROLL STYLES
+   ========================================================================== */
+
+/* Logo Marquee */
 .logo-marquee-container {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .logo-marquee {
-    animation: marquee 40s linear infinite;
+    animation: marquee 20s linear infinite;
     width: max-content;
 }
 
@@ -369,12 +375,8 @@ details[open] summary i.fa-chevron-right {
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* Education Marquee - manual scroll */
@@ -390,64 +392,14 @@ details[open] summary i.fa-chevron-right {
     margin: 0 auto;
 }
 
-/* Logo Highlight Animation - Sequential opacity pulse */
-.logo-highlight {
-    animation: logoHighlight 12s ease-in-out infinite;
-}
-
-.logo-highlight-1 { animation-delay: 0s; }
-.logo-highlight-2 { animation-delay: 2.4s; }
-.logo-highlight-3 { animation-delay: 4.8s; }
-.logo-highlight-4 { animation-delay: 7.2s; }
-.logo-highlight-5 { animation-delay: 9.6s; }
-
-/* Middle logo (3rd) gets extra emphasis */
-.logo-highlight-3 {
-    animation: logoHighlightMiddle 12s ease-in-out infinite;
-    animation-delay: 4.8s;
-}
-
-@keyframes logoHighlight {
-    0%, 100% {
-        opacity: 0.5;
-        filter: grayscale(0.2);
-    }
-    20% {
-        opacity: 1;
-        filter: grayscale(0);
-    }
-    40% {
-        opacity: 0.5;
-        filter: grayscale(0.2);
-    }
-}
-
-@keyframes logoHighlightMiddle {
-    0%, 100% {
-        opacity: 0.5;
-        filter: grayscale(0.2);
-        transform: scale(1);
-    }
-    20% {
-        opacity: 1;
-        filter: grayscale(0);
-        transform: scale(1.08);
-    }
-    40% {
-        opacity: 0.5;
-        filter: grayscale(0.2);
-        transform: scale(1);
-    }
-}
-
-/* Hide scrollbar for horizontal scroll sections */
+/* Hide scrollbar */
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari and Opera */
+    display: none;
 }
 
 /* Responsive horizontal scroll for cards on small screens */
@@ -477,7 +429,54 @@ details[open] summary i.fa-chevron-right {
     }
 }
 
-/* Line clamp utilities */
+/* Scroll hint styling */
+.scroll-hint {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-hint:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   DETAILS/SUMMARY STYLES
+   ========================================================================== */
+
+details summary {
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary ~ * {
+    animation: expandDown 0.3s ease-out;
+}
+
+@keyframes expandDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+details summary i.fa-chevron-right {
+    transition: transform 0.2s ease;
+}
+
+details[open] summary i.fa-chevron-right {
+    transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -490,28 +489,4 @@ details[open] summary i.fa-chevron-right {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-/* Horizontal bounce animation for scroll indicator */
-@keyframes bounce-x {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(4px);
-    }
-}
-
-.animate-bounce-x {
-    animation: bounce-x 1s ease-in-out infinite;
-}
-
-/* Scroll hint styling */
-.scroll-hint {
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.scroll-hint:hover {
-    opacity: 1;
 }
