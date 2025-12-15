@@ -491,3 +491,27 @@ details[open] summary i.fa-chevron-right {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Horizontal bounce animation for scroll indicator */
+@keyframes bounce-x {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+.animate-bounce-x {
+    animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* Scroll hint styling */
+.scroll-hint {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-hint:hover {
+    opacity: 1;
+}
