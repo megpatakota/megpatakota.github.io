@@ -142,6 +142,40 @@
 .logo-shimmer:nth-child(3) { animation-delay: 2s; }
 .logo-shimmer:nth-child(4) { animation-delay: 3s; }
 
+/* Sequential logo fade wave */
+@keyframes logoFadeWave {
+    0% {
+        opacity: 0.3;
+        filter: grayscale(1);
+    }
+    15% {
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    35% {
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    50% {
+        opacity: 0.4;
+        filter: grayscale(1);
+    }
+    100% {
+        opacity: 0.3;
+        filter: grayscale(1);
+    }
+}
+
+.logo-wave {
+    animation: logoFadeWave 10s ease-in-out infinite;
+}
+
+.logo-wave-1 { animation-delay: 0s; }
+.logo-wave-2 { animation-delay: 2s; }
+.logo-wave-3 { animation-delay: 4s; }
+.logo-wave-4 { animation-delay: 6s; }
+.logo-wave-5 { animation-delay: 8s; }
+
 /* Stats Number Styling */
 .stat-number {
     font-size: 3rem;
@@ -317,6 +351,56 @@ details[open] summary i.fa-chevron-right {
     border-radius: 50%;
     border: 2px solid currentColor;
     animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Logo Marquee Animation */
+.logo-marquee-container {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-marquee {
+    animation: marquee 20s linear infinite;
+    width: max-content;
+}
+
+.logo-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Logo Highlight Animation - Sequential opacity pulse */
+.logo-highlight {
+    animation: logoHighlight 5s ease-in-out infinite;
+}
+
+.logo-highlight-1 { animation-delay: 0s; }
+.logo-highlight-2 { animation-delay: 1s; }
+.logo-highlight-3 { animation-delay: 2s; }
+.logo-highlight-4 { animation-delay: 3s; }
+.logo-highlight-5 { animation-delay: 4s; }
+
+@keyframes logoHighlight {
+    0%, 100% {
+        opacity: 0.4;
+        filter: grayscale(0.3);
+    }
+    20% {
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    40% {
+        opacity: 0.4;
+        filter: grayscale(0.3);
+    }
 }
 
 /* Hide scrollbar for horizontal scroll sections */
