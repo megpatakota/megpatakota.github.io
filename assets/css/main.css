@@ -450,6 +450,33 @@ details[open] summary i.fa-chevron-right {
     display: none;  /* Chrome, Safari and Opera */
 }
 
+/* Responsive horizontal scroll for cards on small screens */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.25rem;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.25rem;
+}
+
+.horizontal-scroll > * {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+    .horizontal-scroll {
+        display: grid;
+        overflow: visible;
+        scroll-snap-type: none;
+        gap: 2rem;
+    }
+    .horizontal-scroll > * {
+        flex: unset;
+        scroll-snap-align: unset;
+    }
+}
+
 /* Line clamp utilities */
 .line-clamp-2 {
     display: -webkit-box;
