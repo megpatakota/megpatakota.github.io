@@ -88,25 +88,50 @@
 
     <!-- Hero Section - Modern Clean Design -->
     <section class="pt-24 pb-16 px-6 relative overflow-hidden bg-white min-h-screen flex items-center">
+        <!-- Data Particle Network Animation -->
+        <div class="absolute inset-0 pointer-events-none opacity-60">
+            <!-- Connection Lines -->
+            <div class="connection-line connection-line-1"></div>
+            <div class="connection-line connection-line-2"></div>
+            <div class="connection-line connection-line-3"></div>
+            <div class="connection-line connection-line-4"></div>
+            <div class="connection-line connection-line-5"></div>
+            <div class="connection-line connection-line-6"></div>
+            <div class="connection-line connection-line-7"></div>
+            <div class="connection-line connection-line-8"></div>
+            <!-- Data Particles -->
+            <div class="data-particle data-particle-1"></div>
+            <div class="data-particle data-particle-2"></div>
+            <div class="data-particle data-particle-3"></div>
+            <div class="data-particle data-particle-4"></div>
+            <div class="data-particle data-particle-5"></div>
+            <div class="data-particle data-particle-6"></div>
+            <div class="data-particle data-particle-7"></div>
+            <div class="data-particle data-particle-8"></div>
+            <div class="data-particle data-particle-9"></div>
+            <div class="data-particle data-particle-10"></div>
+            <div class="data-particle data-particle-11"></div>
+            <div class="data-particle data-particle-12"></div>
+        </div>
 
         <div class="container mx-auto max-w-7xl relative z-10">
             <!-- Mobile Layout: Text -> Image -> Buttons -->
             <div class="lg:hidden flex flex-col items-center text-center">
                 <!-- Text Content -->
-                <h1 class="text-5xl sm:text-6xl font-bold mb-8 leading-tight">
+                <h1 class="text-5xl sm:text-6xl font-bold mb-8 leading-tight fade-in-up">
                     <span class="block gradient-text pb-2">Hi, I am Meg</span>
                 </h1>
 
-                <p class="text-2xl sm:text-3xl text-text_primary font-semibold mb-6">
+                <p class="text-2xl sm:text-3xl text-text_primary font-semibold mb-6 fade-in-up-delay-1">
                     Strategic Advisor: AI, Data & Business Transformation
                 </p>
 
-                <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl mx-auto">
+                <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl mx-auto fade-in-up-delay-2">
                     Helping organizations build intelligent systems and unlock value from data.
                 </p>
 
                 <!-- Profile Image -->
-                <div class="relative max-w-lg w-full mb-10">
+                <div class="relative max-w-lg w-full mb-10 fade-in-up-delay-3">
                     <div class="relative bg-white rounded-[2rem] p-2 shadow-lg border border-gray-200">
                         <img src="./assets/images/logos/profile.jpeg" alt="Meghana Patakota"
                             class="rounded-[1.75rem] w-full h-auto">
@@ -128,7 +153,7 @@
                 </div>
 
                 <!-- CTA Buttons -->
-                <div class="flex flex-row gap-3 w-full max-w-md justify-center mb-20">
+                <div class="flex flex-row gap-3 w-full max-w-md justify-center mb-20 fade-in-up-delay-4">
                     <a href="#advisory-services"
                         class="group tech-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-buttons/30 transition-all duration-300 flex items-center justify-center gap-2">
                         <span>Advisory Focus</span>
@@ -146,19 +171,19 @@
             <div class="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left Content -->
                 <div class="text-left">
-                    <h1 class="text-7xl font-bold mb-8 leading-tight">
+                    <h1 class="text-7xl font-bold mb-8 leading-tight fade-in-up">
                         <span class="block gradient-text pb-2">Hi, I am Meg</span>
                     </h1>
 
-                    <p class="text-3xl text-text_primary font-semibold mb-6">
+                    <p class="text-3xl text-text_primary font-semibold mb-6 fade-in-up-delay-1">
                         Strategic Advisor: AI, Data & Business Transformation
                     </p>
 
-                    <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl">
+                    <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl fade-in-up-delay-2">
                         Helping organizations build intelligent systems and unlock value from data.
                     </p>
 
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 fade-in-up-delay-3">
                         <a href="#advisory-services"
                             class="group tech-gradient text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-buttons/30 transition-all duration-300 flex items-center justify-center gap-2">
                             <span>Advisory Focus</span>
@@ -173,7 +198,7 @@
                 </div>
 
                 <!-- Right Content - Profile Image -->
-                <div class="relative">
+                <div class="relative fade-in-up-delay-4">
                     <div class="relative max-w-lg mx-auto">
                         <div class="relative bg-white rounded-[2rem] p-2 shadow-lg border border-gray-200">
                             <img src="./assets/images/logos/profile.jpeg" alt="Meghana Patakota"
@@ -332,37 +357,53 @@
                 <h2 class="text-2xl md:text-3xl font-bold mb-2 text-text_primary">Advisory Focus</h2>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div class="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-buttons/10 flex items-center justify-center">
-                        <i class="fas fa-brain text-buttons"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 rounded-full bg-buttons/10 flex items-center justify-center">
+                            <i class="fas fa-brain text-buttons text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-base text-text_primary mb-2">AI & Data Strategy</h3>
+                            <p class="text-sm text-text_tertiary leading-relaxed">Build actionable roadmaps for AI adoption, assess feasibility, and align data initiatives with business goals.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-sm text-text_primary mb-1">AI & Data Strategy</h3>
-                    <p class="text-xs text-text_tertiary">Roadmaps & feasibility</p>
                 </div>
 
-                <div class="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-buttons/10 flex items-center justify-center">
-                        <i class="fas fa-cogs text-buttons"></i>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 rounded-full bg-buttons/10 flex items-center justify-center">
+                            <i class="fas fa-cogs text-buttons text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-base text-text_primary mb-2">Process Automation</h3>
+                            <p class="text-sm text-text_tertiary leading-relaxed">Design and deliver intelligent workflow solutions that reduce manual effort and improve operational efficiency.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-sm text-text_primary mb-1">Process Automation</h3>
-                    <p class="text-xs text-text_tertiary">Intelligent workflows</p>
                 </div>
 
-                <div class="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-buttons/10 flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-buttons"></i>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 rounded-full bg-buttons/10 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-buttons text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-base text-text_primary mb-2">Education Advisory</h3>
+                            <p class="text-sm text-text_tertiary leading-relaxed">Support universities and institutions in designing analytics programmes, curriculum development, and technical teaching.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-sm text-text_primary mb-1">Education Advisory</h3>
-                    <p class="text-xs text-text_tertiary">Programmes & curriculum</p>
                 </div>
 
-                <div class="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-buttons/10 flex items-center justify-center">
-                        <i class="fas fa-chart-line text-buttons"></i>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 rounded-full bg-buttons/10 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-buttons text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-base text-text_primary mb-2">Transformation</h3>
+                            <p class="text-sm text-text_tertiary leading-relaxed">Guide organizations through data and tech transformations with change management, stakeholder alignment, and adoption strategies.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-sm text-text_primary mb-1">Transformation</h3>
-                    <p class="text-xs text-text_tertiary">Change & alignment</p>
                 </div>
             </div>
 
@@ -479,7 +520,7 @@
 
                     <h3 class="text-2xl font-bold text-text_primary mb-3">Microsoft Analytics Platform Migration</h3>
                     <p class="text-text_secondary mb-4">
-                        Led enterprise-wide migration from legacy SSRS to Power BI, establishing data democratization
+                        Led enterprise-wide migration from legacy SSRS to Power BI at a leading international law firm, establishing data democratization
                         and self-serve analytics across all business functions.
                     </p>
 
