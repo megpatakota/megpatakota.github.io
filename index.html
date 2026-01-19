@@ -34,35 +34,39 @@
 <body class="font-sans bg-white text-text_primary">
 
     <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
-        <nav class="container mx-auto px-6 py-4">
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
+        <nav class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition group">
+                <a href="index.html" class="flex items-center space-x-2.5 hover:opacity-80 transition-opacity group">
                     <div
-                        class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
+                        class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-sm group-hover:scale-105 transition-transform">
                         MP
                     </div>
                     <div class="hidden sm:block">
-                        <div class="text-xs text-text_tertiary font-medium uppercase tracking-wider">Portfolio</div>
-                        <div class="text-xs text-buttons font-semibold">Data • AI • Analytics</div>
+                        <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
+                        <div class="text-xs text-text_tertiary">Data & AI Solutions</div>
                     </div>
                 </a>
 
                 <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center gap-6">
+                <nav class="hidden md:flex items-center gap-8">
                     <a href="#experience"
-                        class="text-text_tertiary hover:text-buttons transition font-medium">Experience</a>
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
                     <a href="main_articles.html"
-                        class="text-text_tertiary hover:text-buttons transition font-medium flex items-center gap-1">
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">
                         Blogs
                     </a>
                     <a href="#projects"
-                        class="text-text_tertiary hover:text-buttons transition font-medium">Projects</a>
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Projects</a>
+                    <a href="#contact"
+                        class="text-sm px-4 py-2 tech-gradient text-white rounded-lg font-medium hover:shadow-lg hover:shadow-buttons/25 transition-all">
+                        Contact
+                    </a>
                 </nav>
 
                 <!-- Hamburger Menu -->
                 <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
-                    <i class="fas fa-bars text-2xl"></i>
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
@@ -82,120 +86,92 @@
         </nav>
     </header>
 
-    <!-- Hero Section - Dark Tech Design -->
-    <section class="pt-40 pb-20 px-6 relative overflow-hidden animated-gradient-bg min-h-[70vh] flex items-center">
-        <!-- Grid Pattern Overlay -->
-        <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <!-- Hero Section - Modern Clean Design -->
+    <section class="pt-24 pb-16 px-6 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-center">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-buttons/10 to-accent/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-accent/10 to-buttons/5 rounded-full blur-3xl"></div>
 
-        <!-- Gradient Orbs -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-buttons/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #6366F1 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-center md:text-left">
+        <div class="container mx-auto max-w-7xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
                     <!-- Main Heading -->
-                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-white">
-                        Meghana Patakota
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-12 leading-tight">
+                        <span class="text-text_primary">Hi, I'm</span>
+                        <span class="block gradient-text mt-3 pb-2">Meghana</span>
                     </h1>
 
-                    <!-- Animated Role Text -->
-                    <div class="mb-8">
-                        <p class="text-xl md:text-2xl font-medium">
-                            <span class="text-white/60">Analytics Leader</span>
-                            <span class="text-white/40 mx-3">•</span>
-                            <span class="text-white/60">Data Scientist</span>
-                            <span class="text-white/40 mx-3">•</span>
-                            <span class="gradient-text">AI Solutions</span>
-                        </p>
-                    </div>
+                    <!-- Role Description -->
+                    <p class="text-xl sm:text-2xl text-text_secondary font-medium mb-6">
+                        Analytics Leader & AI Solutions Architect
+                    </p>
 
-                    <p class="text-lg text-white/60 mb-10 leading-relaxed">
-                        Building intelligent systems and data-driven solutions at the intersection of
-                        <span class="text-accent">artificial intelligence</span>, <span class="text-buttons">cloud
-                            infrastructure</span>, and <span class="text-white/80">business strategy</span>
+                    <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Building intelligent systems and data-driven solutions at the intersection of artificial intelligence, cloud infrastructure, and business strategy.
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-row flex-wrap gap-3 mb-10 justify-center md:justify-start">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
                         <a href="#experience"
-                            class="group tech-gradient text-white px-6 py-3 rounded-xl font-semibold text-center hover:shadow-lg hover:shadow-buttons/25 transition-all duration-300 flex items-center justify-center gap-2">
-                            <i class="fas fa-rocket"></i>
-                            View Experience
+                            class="group tech-gradient text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-buttons/30 transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>View My Work</span>
                             <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="#latest-articles"
-                            class="group glass-card text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
-                            <i class="fas fa-pen-fancy text-accent"></i>
-                            Read Articles
-                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                        <a href="#contact"
+                            class="group bg-white border-2 border-gray-200 text-text_primary px-8 py-4 rounded-xl font-semibold hover:border-buttons hover:text-buttons transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Get in Touch</span>
+                            <i class="fas fa-envelope text-sm"></i>
                         </a>
                     </div>
 
-                    <!-- Quick Stats -->
-                    <div class="flex flex-wrap gap-6 mb-8 justify-center md:justify-start">
-                        <div class="text-center md:text-left">
-                            <p class="text-3xl md:text-4xl font-bold text-white">5+</p>
-                            <p class="text-sm text-white/50">Years Experience</p>
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-8 justify-center lg:justify-start">
+                        <div>
+                            <p class="text-4xl font-bold gradient-text">5+</p>
+                            <p class="text-sm text-text_tertiary font-medium mt-1">Years Experience</p>
                         </div>
-                        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
-                        <div class="text-center md:text-left">
-                            <p class="text-3xl md:text-4xl font-bold gradient-text">6</p>
-                            <p class="text-sm text-white/50">Organisations</p>
+                        <div class="w-px bg-gray-200"></div>
+                        <div>
+                            <p class="text-4xl font-bold gradient-text">6</p>
+                            <p class="text-sm text-text_tertiary font-medium mt-1">Organizations</p>
                         </div>
-                        <div class="hidden sm:block w-px h-12 bg-white/20"></div>
-                        <div class="text-center md:text-left">
-                            <p class="text-3xl md:text-4xl font-bold text-accent">4</p>
-                            <p class="text-sm text-white/50">Academic Degrees</p>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="flex items-center gap-4 justify-center md:justify-start">
-                        <a href="https://github.com/megpatakota" target="_blank"
-                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                            class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <div class="flex items-center gap-2 ml-4 text-white/40 text-sm">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>London, UK</span>
+                        <div class="w-px bg-gray-200"></div>
+                        <div>
+                            <p class="text-4xl font-bold gradient-text">4</p>
+                            <p class="text-sm text-text_tertiary font-medium mt-1">Academic Degrees</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Profile Image -->
-                <div class="relative floating max-w-md mx-auto">
-                    <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-buttons/30 to-accent/30 rounded-3xl blur-2xl">
+                <!-- Right Content - Profile Image -->
+                <div class="relative order-1 lg:order-2">
+                    <div class="relative max-w-lg mx-auto">
+                        <!-- Glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-buttons/20 to-accent/20 rounded-[2.5rem] blur-3xl"></div>
+
+                        <!-- Main image container -->
+                        <div class="relative bg-white rounded-[2rem] p-2 shadow-2xl">
+                            <img src="./assets/images/logos/profile.jpeg" alt="Meghana Patakota"
+                                class="rounded-[1.75rem] w-full h-auto">
                         </div>
-                        <div class="relative glass-card rounded-3xl p-2 border border-white/20">
-                            <img src="./assets/images/logos/profile.jpeg" alt="Meg Patakota"
-                                class="rounded-2xl shadow-2xl w-full">
-                        </div>
-                    </div>
-                    <!-- Floating badges -->
-                    <div
-                        class="absolute -top-3 -right-3 glass-card rounded-xl shadow-lg p-3 hidden lg:block border border-white/20">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-chart-line text-2xl text-accent"></i>
-                            <div>
-                                <div class="font-bold text-sm text-white">Analytics Expert</div>
-                                <div class="text-xs text-white/60">Data & BI</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute -bottom-3 -left-3 glass-card rounded-xl shadow-lg p-3 hidden lg:block border border-white/20">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-robot text-2xl text-buttons"></i>
-                            <div>
-                                <div class="font-bold text-sm text-white">AI Researcher</div>
-                                <div class="text-xs text-white/60">Oxford</div>
+
+                        <!-- Social Links -->
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
+                            <a href="https://github.com/megpatakota" target="_blank"
+                                class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
+                                class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="flex items-center gap-2 ml-2 text-text_tertiary text-sm font-medium">
+                                <i class="fas fa-map-marker-alt text-buttons"></i>
+                                <span>London</span>
                             </div>
                         </div>
                     </div>
@@ -203,9 +179,12 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
-            <i class="fas fa-chevron-down"></i>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-text_tertiary">
+            <span class="text-xs font-medium uppercase tracking-wider">Scroll to explore</span>
+            <div class="w-6 h-10 rounded-full border-2 border-gray-300 flex justify-center p-1">
+                <div class="w-1.5 h-2 bg-gradient-to-b from-buttons to-accent rounded-full animate-bounce"></div>
+            </div>
         </div>
     </section>
 
