@@ -3,29 +3,29 @@
 
 // CSS Custom Properties (for use in CSS files)
 document.documentElement.style.setProperty('--color-primary', '#0F172A');
-document.documentElement.style.setProperty('--color-buttons', '#6366F1');
-document.documentElement.style.setProperty('--color-accent', '#22D3EE');
+document.documentElement.style.setProperty('--color-buttons', '#0e7490');
+document.documentElement.style.setProperty('--color-accent', '#0e7490');
 document.documentElement.style.setProperty('--color-bg-dark', '#0F172A');
 document.documentElement.style.setProperty('--color-bg-light', '#F8FAFC');
 document.documentElement.style.setProperty('--color-bg-card', '#1E293B');
 document.documentElement.style.setProperty('--color-text-primary', '#0F172A');
 document.documentElement.style.setProperty('--color-text-secondary', '#475569');
 document.documentElement.style.setProperty('--color-text-tertiary', '#64748B');
-document.documentElement.style.setProperty('--color-gradient-start', '#6366F1');
-document.documentElement.style.setProperty('--color-gradient-end', '#22D3EE');
+document.documentElement.style.setProperty('--color-gradient-start', '#0e7490');
+document.documentElement.style.setProperty('--color-gradient-end', '#0e7490');
 
 // Tailwind config
 tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
       },
       colors: {
         // Brand colors - Modern Tech Palette
         primary: '#0F172A',         // Slate 900 - Deep dark
-        buttons: '#6366F1',         // Indigo 500 - Primary accent
-        accent: '#22D3EE',          // Cyan 400 - Secondary accent
+        buttons: '#0e7490',         // Teal 600 - Primary accent
+        accent: '#0e7490',          // Teal 600 - Secondary accent
         
         // Background colors
         bg_dark: '#0F172A',         // Deep slate  
@@ -48,8 +48,8 @@ tailwind.config = {
         header_text: '#0F172A',
         
         // Gradient accents
-        gradient_start: '#6366F1',    // Indigo
-        gradient_end: '#22D3EE',      // Cyan
+        gradient_start: '#0e7490',    // Teal
+        gradient_end: '#0e7490',      // Teal
         
         // Animation colors - tech inspired
         animation: {

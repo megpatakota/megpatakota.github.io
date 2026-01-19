@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building AI Workflow Agents Without Code: A 2026 Guide - Meg Patakota</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/site-style-config.js"></script>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Article Styles -->
+    <link rel="stylesheet" href="../assets/css/article.css">
+
+    <style>
+        /* Rotate chevron when details is open */
+        details[open] > summary .fa-chevron-right {
+            transform: rotate(90deg);
+        }
+
+        /* Smooth transition for chevron rotation */
+        summary .fa-chevron-right {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        /* Better table styling for mobile */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+
+    <!-- SEO -->
+    <meta name="description" content="Everything you need to know about building AI workflow agents in 2026—from beginner-friendly platforms to advanced tools, all without writing code.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="flex items-center space-x-3 hover:opacity-80 transition group">
+                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
+                        MP
+                    </div>
+                    <div class="hidden sm:block">
+                        <div class="text-xs text-text_tertiary font-medium uppercase tracking-wider">Portfolio</div>
+                        <div class="text-xs text-buttons font-semibold">Data • AI • Analytics</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="../index.html#experience" class="text-text_tertiary hover:text-buttons transition font-medium">Experience</a>
+                    <a href="../main_articles.html" class="text-buttons font-medium">Blogs</a>
+                    <a href="../index.html#projects" class="text-text_tertiary hover:text-buttons transition font-medium">Projects</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <a href="../index.html#contact" class="hidden md:block gradient-bg text-white px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
+                    Get in Touch
+                </a>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
+                <a href="../index.html#experience" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
+                <a href="../main_articles.html" class="block py-2 text-buttons font-medium">Blogs</a>
+                <a href="../index.html#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
+                <a href="../index.html#testimonials" class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
+                <a href="../index.html#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Spacing for fixed header -->
+    <div class="h-20"></div>
+
+    <!-- Article Content -->
+    <section class="py-12 px-3 sm:px-6">
+        <div class="max-w-5xl mx-auto">
+            <!-- Back button -->
+            <a href="../index.html" class="inline-flex items-center text-buttons hover:text-opacity-80 mb-8 transition font-semibold">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Back to Home
+            </a>
+
+            <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="article-content">
+                    <h1>Building AI Workflow Agents Without Code: Your 2026 Resource Guide</h1>
+
+                    <p class="text-sm text-gray-500 mb-8">
+                        <i class="far fa-calendar mr-2"></i>12 min read • AI Automation
+                    </p>
+
+                    <p class="lead">Remember when automating workflows meant hiring developers or spending months learning to code? That world is gone.</p>
+
+                    <p>In 2026, anyone can build sophisticated AI agents that handle everything from customer support to data analysis—no programming required. This guide breaks down exactly what's available, what works, and what you actually need to know to get started.</p>
+
+                    <hr>
+
+                    <h2>What Are AI Workflow Agents, Really?</h2>
+
+                    <p>Think of AI workflow agents as digital assistants that can actually <em>do</em> things, not just answer questions. Unlike simple chatbots, these agents can:</p>
+
+                    <ul>
+                        <li><strong>Connect to your tools:</strong> Your email, CRM, databases, calendars, Slack—anything with an API</li>
+                        <li><strong>Make decisions:</strong> "Is this email urgent?" "Which team should handle this?" "Should I escalate this?"</li>
+                        <li><strong>Take actions:</strong> Send messages, create records, update spreadsheets, generate reports</li>
+                        <li><strong>Learn patterns:</strong> Improve over time based on feedback and outcomes</li>
+                    </ul>
+
+                    <p>The game-changer? You can build all of this by clicking buttons and filling in forms. No code necessary.</p>
+
+                    <hr>
+
+                    <h2>The Complete Platform Landscape</h2>
+
+                    <p>Let's break down what's actually out there right now, organized by what you're trying to accomplish.</p>
+
+                    <!-- Platform Selection Guide -->
+                    <details class="mb-6 bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-lg border border-indigo-200">
+                        <summary class="cursor-pointer p-4 font-semibold text-indigo-800 hover:bg-indigo-100 rounded-lg transition flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                            🎯 Decision Tree: Which platform should you start with?
+                        </summary>
+                        <div class="p-4 pt-0">
+                            <div class="bg-white rounded-lg p-4 space-y-3">
+                                <div class="text-center text-sm font-semibold text-gray-700 mb-4">Answer these questions to find your starting point</div>
+
+                                <!-- Question 1 -->
+                                <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+                                    <div class="font-semibold text-blue-800 mb-2">❓ Have you built any automation before?</div>
+                                    <div class="grid md:grid-cols-2 gap-2 text-sm">
+                                        <div class="bg-white rounded p-2">
+                                            <strong>No:</strong> → Start with <span class="text-blue-600 font-bold">Zapier</span>
+                                        </div>
+                                        <div class="bg-white rounded p-2">
+                                            <strong>Yes:</strong> → Continue ↓
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question 2 -->
+                                <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
+                                    <div class="font-semibold text-purple-800 mb-2">❓ Building a chatbot or conversational AI?</div>
+                                    <div class="grid md:grid-cols-2 gap-2 text-sm">
+                                        <div class="bg-white rounded p-2">
+                                            <strong>Yes:</strong> → Use <span class="text-purple-600 font-bold">Voiceflow</span> or <span class="text-purple-600 font-bold">Botpress</span>
+                                        </div>
+                                        <div class="bg-white rounded p-2">
+                                            <strong>No:</strong> → Continue ↓
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question 3 -->
+                                <div class="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-500">
+                                    <div class="font-semibold text-orange-800 mb-2">❓ Will it run thousands of times per month?</div>
+                                    <div class="grid md:grid-cols-2 gap-2 text-sm">
+                                        <div class="bg-white rounded p-2">
+                                            <strong>Yes:</strong> → Use <span class="text-orange-600 font-bold">Activepieces</span> (flat pricing)
+                                        </div>
+                                        <div class="bg-white rounded p-2">
+                                            <strong>No:</strong> → Continue ↓
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question 4 -->
+                                <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+                                    <div class="font-semibold text-green-800 mb-2">❓ Need complex logic with multiple AI models?</div>
+                                    <div class="grid md:grid-cols-2 gap-2 text-sm">
+                                        <div class="bg-white rounded p-2">
+                                            <strong>Yes:</strong> → Use <span class="text-green-600 font-bold">n8n</span> (most flexible)
+                                        </div>
+                                        <div class="bg-white rounded p-2">
+                                            <strong>No:</strong> → Use <span class="text-green-600 font-bold">Make</span> (good middle ground)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 bg-gray-100 rounded-lg p-3 text-xs text-gray-700">
+                                    <strong>Pro tip:</strong> Most people outgrow their first platform. That's okay! Start simple, learn the concepts, then migrate to something more powerful when you hit limits.
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <h3>Best for Complete Beginners</h3>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>What it is</th>
+                                    <th>Best for</th>
+                                    <th>Free Tier</th>
+                                    <th>Must Know</th>
+                                    <th>Good to Know</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Zapier</strong></td>
+                                    <td>The easiest entry point. Think "if this happens, then do that" but with AI sprinkled in.</td>
+                                    <td>Simple automations with occasional AI decisions (categorizing emails, summarizing text, extracting information)</td>
+                                    <td>100 tasks/month</td>
+                                    <td>Each action counts as a "task." A 5-step workflow running 20 times = 100 tasks. You'll hit limits faster than you think.</td>
+                                    <td>AI-powered features like "Formatter by Zapier" can summarize, translate, and extract data using GPT models.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Make</strong></td>
+                                    <td>Visual workflow builder with more control than Zapier, similar ease of use.</td>
+                                    <td>Multi-step workflows where you need branching logic ("if X, do Y, otherwise do Z")</td>
+                                    <td>1,000 operations/month</td>
+                                    <td>Operations count differently—each step including checks counts. More generous than Zapier for complex workflows.</td>
+                                    <td>Built-in OpenAI and Anthropic integrations. Drag and drop AI capabilities into your workflows.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Best for Building Actual AI Agents</h3>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>What it is</th>
+                                    <th>Best for</th>
+                                    <th>Free Tier</th>
+                                    <th>Must Know</th>
+                                    <th>Good to Know</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Relevance AI</strong></td>
+                                    <td>Purpose-built for creating AI agents that can have conversations, remember context, and take actions.</td>
+                                    <td>Customer support bots, research assistants, data analysis agents</td>
+                                    <td>Yes, with limitations on agent conversations</td>
+                                    <td>You're building agents that can hold conversations and make multi-step decisions. More powerful but slightly steeper learning curve than Zapier.</td>
+                                    <td>They have templates for common use cases. Start with a template, customize it. Don't build from scratch.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Voiceflow</strong></td>
+                                    <td>Originally for voice apps, now a full-featured conversation design platform.</td>
+                                    <td>Conversational agents—things that chat with users (support, sales, lead qualification)</td>
+                                    <td>Generous free plan for prototyping</td>
+                                    <td>Think of it as designing a conversation flow chart. Great visual interface.</td>
+                                    <td>Can deploy to websites, WhatsApp, Slack, wherever your users are.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Botpress</strong></td>
+                                    <td>Open-source conversational AI platform with a generous free tier.</td>
+                                    <td>Building chatbots that integrate with your existing systems</td>
+                                    <td>Fully functional free tier with their cloud hosting</td>
+                                    <td>More technical than Voiceflow, but still no-code. You'll deal with concepts like "intents" and "entities."</td>
+                                    <td>Open source means you can self-host if you outgrow the free tier. Community is very active.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Best for Power Users (Still No-Code)</h3>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>What it is</th>
+                                    <th>Best for</th>
+                                    <th>Free Tier</th>
+                                    <th>Must Know</th>
+                                    <th>Good to Know</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>n8n</strong></td>
+                                    <td>Open-source automation platform with powerful AI integrations.</td>
+                                    <td>Complex workflows combining multiple AI models and tools</td>
+                                    <td>Free to self-host forever, or $20/month for their cloud</td>
+                                    <td>Steeper learning curve but way more flexible. Can integrate with any AI model (OpenAI, Anthropic, Cohere, local models).</td>
+                                    <td>Huge template library. The community builds and shares workflows you can copy.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Activepieces</strong></td>
+                                    <td>Open-source alternative to Zapier with flat pricing.</td>
+                                    <td>High-volume workflows where per-task pricing gets expensive</td>
+                                    <td>10 workflows, unlimited executions (yes, really)</td>
+                                    <td>Newer platform, smaller integration library than Zapier/Make. But what's there works well.</td>
+                                    <td>$5 per workflow per month for paid plans. If you have workflows that run thousands of times, this is your platform.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Emerging Players to Watch</h3>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>What it is</th>
+                                    <th>Best for</th>
+                                    <th>Free Tier</th>
+                                    <th>Must Know</th>
+                                    <th>Good to Know</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Lindy.ai</strong></td>
+                                    <td>AI-first automation platform where you describe what you want in plain English.</td>
+                                    <td>People who want to skip the workflow builder entirely</td>
+                                    <td>Limited trial</td>
+                                    <td>This is the future—just tell it what you want, it builds the automation. But it's pricey ($49+/month).</td>
+                                    <td>Can create agents that learn from feedback. Truly autonomous behavior, not just following rules.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gumloop</strong></td>
+                                    <td>Visual AI workflow builder with focus on data processing.</td>
+                                    <td>Automations involving document processing, data extraction, content generation</td>
+                                    <td>Available</td>
+                                    <td>Credits-based system. Complex AI operations eat credits fast.</td>
+                                    <td>Has nodes for web scraping, PDF processing, image analysis—things other platforms charge extra for.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stack AI</strong></td>
+                                    <td>Platform for building and deploying AI workflows and chatbots.</td>
+                                    <td>Teams building multiple AI agents for different use cases</td>
+                                    <td>Yes, for small projects</td>
+                                    <td>Focuses on enterprise features—team collaboration, version control, monitoring.</td>
+                                    <td>Can connect to your own data sources (databases, APIs, files) and have AI query them naturally.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr>
+
+                    <h2>What You Can Actually Build (Real Examples)</h2>
+
+                    <p>Let's get concrete. Here's what people are actually building with these tools right now.</p>
+
+                    <!-- Collapsible Real Examples Section -->
+                    <details class="mb-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border-2 border-blue-300">
+                        <summary class="cursor-pointer p-5 font-bold text-blue-900 hover:bg-blue-100 rounded-lg transition flex items-center gap-3 text-lg">
+                            <i class="fas fa-chevron-right text-sm transition-transform"></i>
+                            Click to explore real-world automation examples
+                        </summary>
+                        <div class="p-6 pt-2 space-y-6">
+
+                    <!-- Example Flow Diagram -->
+                    <details class="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+                        <summary class="cursor-pointer p-4 font-semibold text-purple-800 hover:bg-purple-100 rounded-lg transition flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                            💡 Click to see: Complete Customer Support Automation Flow
+                        </summary>
+                        <div class="p-4 pt-0">
+                            <div class="bg-white rounded-lg p-4 space-y-3">
+                                <div class="text-center text-sm font-semibold text-gray-700 mb-4">From Email to Resolution (Automated)</div>
+
+                                <!-- Step 1 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                                    <div class="flex-1 bg-green-50 rounded-lg p-3 border-l-4 border-green-500">
+                                        <div class="font-semibold text-sm">TRIGGER: New email arrives</div>
+                                        <div class="text-xs text-gray-600">support@company.com receives message</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-gray-400">↓</div>
+
+                                <!-- Step 2 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                                    <div class="flex-1 bg-purple-50 rounded-lg p-3 border-l-4 border-purple-500">
+                                        <div class="font-semibold text-sm">AI: Analyze sentiment & urgency</div>
+                                        <div class="text-xs text-gray-600">Is customer frustrated? Is this urgent?</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-gray-400">↓</div>
+
+                                <!-- Step 3 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                                    <div class="flex-1 bg-purple-50 rounded-lg p-3 border-l-4 border-purple-500">
+                                        <div class="font-semibold text-sm">AI: Categorize topic</div>
+                                        <div class="text-xs text-gray-600">Billing / Technical / Refund / General</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-gray-400">↓</div>
+
+                                <!-- Decision Point -->
+                                <div class="bg-yellow-50 rounded-lg p-4 border-2 border-yellow-400 border-dashed">
+                                    <div class="font-semibold text-sm text-yellow-800 mb-2">🔀 DECISION POINT</div>
+                                    <div class="grid md:grid-cols-2 gap-3 text-xs">
+                                        <div class="bg-white rounded p-2 border-l-4 border-green-400">
+                                            <strong>If Simple:</strong> AI drafts response from knowledge base
+                                        </div>
+                                        <div class="bg-white rounded p-2 border-l-4 border-orange-400">
+                                            <strong>If Complex:</strong> Escalate to human agent
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-gray-400">↓</div>
+
+                                <!-- Step 4 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                                    <div class="flex-1 bg-blue-50 rounded-lg p-3 border-l-4 border-blue-500">
+                                        <div class="font-semibold text-sm">ACTION: Send response or notify team</div>
+                                        <div class="text-xs text-gray-600">Auto-reply to customer OR Slack message to support team</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-gray-400">↓</div>
+
+                                <!-- Step 5 -->
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                                    <div class="flex-1 bg-blue-50 rounded-lg p-3 border-l-4 border-blue-500">
+                                        <div class="font-semibold text-sm">ACTION: Log in CRM</div>
+                                        <div class="text-xs text-gray-600">Create ticket with category, urgency, and AI notes</div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 bg-gray-100 rounded-lg p-3 text-xs text-gray-700">
+                                    <strong>Result:</strong> Customer gets response in &lt;60 seconds. Your team only sees complex issues. Every interaction is logged automatically.
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <div class="space-y-6">
+                        <!-- Customer Support Assistant -->
+                        <div class="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-purple-300 transition">
+                            <div class="bg-gradient-to-r from-purple-50 to-blue-50 px-4 py-3 border-b border-gray-200">
+                                <h3 class="font-bold text-lg text-purple-900">Customer Support Assistant</h3>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">What it does</p>
+                                        <p class="text-sm text-gray-700">Monitors support email, categorizes by urgency and topic, drafts responses for common questions, escalates complex issues to humans.</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Build with</p>
+                                        <p class="text-sm text-gray-700 mb-2">Relevance AI or Voiceflow + Make</p>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Time to build</p>
+                                        <p class="text-sm text-gray-700">3-4 hours first time, 30 min after</p>
+                                    </div>
+                                </div>
+                                <details class="mt-2">
+                                    <summary class="text-sm font-semibold text-purple-700 cursor-pointer hover:text-purple-900">View must-have features →</summary>
+                                    <ul class="mt-2 space-y-1 text-sm text-gray-600 ml-4">
+                                        <li>• Sentiment analysis</li>
+                                        <li>• Topic classification</li>
+                                        <li>• Knowledge base integration</li>
+                                        <li>• Human escalation</li>
+                                    </ul>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Meeting Notes Assistant -->
+                        <div class="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-blue-300 transition">
+                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-3 border-b border-gray-200">
+                                <h3 class="font-bold text-lg text-blue-900">Meeting Notes Assistant</h3>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">What it does</p>
+                                        <p class="text-sm text-gray-700">Joins your Zoom meetings, transcribes everything, pulls out action items with owners, sends summaries to attendees.</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Build with</p>
+                                        <p class="text-sm text-gray-700 mb-2">Fireflies.ai + Make or Zapier</p>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Time to build</p>
+                                        <p class="text-sm text-gray-700">1-2 hours</p>
+                                    </div>
+                                </div>
+                                <details class="mt-2">
+                                    <summary class="text-sm font-semibold text-blue-700 cursor-pointer hover:text-blue-900">View must-have features →</summary>
+                                    <ul class="mt-2 space-y-1 text-sm text-gray-600 ml-4">
+                                        <li>• Speaker identification</li>
+                                        <li>• Action item extraction with assignees</li>
+                                        <li>• Summary generation (detailed + executive)</li>
+                                        <li>• Project management tool integration</li>
+                                    </ul>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Content Research & Writing Assistant -->
+                        <div class="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-green-300 transition">
+                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-3 border-b border-gray-200">
+                                <h3 class="font-bold text-lg text-green-900">Content Research & Writing Assistant</h3>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">What it does</p>
+                                        <p class="text-sm text-gray-700">Researches a topic, finds recent articles, summarizes key points, generates a draft post, suggests images.</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Build with</p>
+                                        <p class="text-sm text-gray-700 mb-2">n8n or Gumloop</p>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Time to build</p>
+                                        <p class="text-sm text-gray-700">4-6 hours</p>
+                                    </div>
+                                </div>
+                                <details class="mt-2">
+                                    <summary class="text-sm font-semibold text-green-700 cursor-pointer hover:text-green-900">View must-have features →</summary>
+                                    <ul class="mt-2 space-y-1 text-sm text-gray-600 ml-4">
+                                        <li>• Web search integration (Serper, SerpAPI)</li>
+                                        <li>• Content extraction and summarization</li>
+                                        <li>• Multiple LLM calls (research → outline → draft → polish)</li>
+                                        <li>• Fact-checking step (compare to sources)</li>
+                                    </ul>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Sales Lead Qualification Agent -->
+                        <div class="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-orange-300 transition">
+                            <div class="bg-gradient-to-r from-orange-50 to-amber-50 px-4 py-3 border-b border-gray-200">
+                                <h3 class="font-bold text-lg text-orange-900">Sales Lead Qualification Agent</h3>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">What it does</p>
+                                        <p class="text-sm text-gray-700">New lead fills form → enriches data from LinkedIn/company website → scores based on your criteria → assigns to right rep → sends personalized intro email.</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Build with</p>
+                                        <p class="text-sm text-gray-700 mb-2">Make or n8n + Clay (for enrichment)</p>
+                                        <p class="text-xs font-semibold text-gray-500 uppercase mb-1">Time to build</p>
+                                        <p class="text-sm text-gray-700">3-4 hours</p>
+                                    </div>
+                                </div>
+                                <details class="mt-2">
+                                    <summary class="text-sm font-semibold text-orange-700 cursor-pointer hover:text-orange-900">View must-have features →</summary>
+                                    <ul class="mt-2 space-y-1 text-sm text-gray-600 ml-4">
+                                        <li>• Data enrichment (company size, industry, tech stack)</li>
+                                        <li>• Scoring logic (company size, industry match, etc.)</li>
+                                        <li>• Round-robin or territory-based assignment</li>
+                                        <li>• Personalization in outreach</li>
+                                    </ul>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </details>
+
+                    <hr>
+
+                    <h2>The Must-Know Concepts</h2>
+
+                    <p>You don't need to be technical, but understanding these concepts will save you hours of frustration.</p>
+
+                    <h3>Triggers vs Actions vs AI Decisions</h3>
+
+                    <!-- Flow Diagram -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 mb-6 border border-blue-200">
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                            <div class="flex-1 bg-white rounded-lg p-4 shadow-sm border-2 border-green-400">
+                                <div class="text-2xl mb-2">⚡</div>
+                                <div class="font-bold text-green-700">TRIGGER</div>
+                                <div class="text-xs text-gray-600 mt-1">What starts it</div>
+                            </div>
+                            <div class="text-2xl text-gray-400 rotate-90 md:rotate-0">→</div>
+                            <div class="flex-1 bg-white rounded-lg p-4 shadow-sm border-2 border-purple-400">
+                                <div class="text-2xl mb-2">🤖</div>
+                                <div class="font-bold text-purple-700">AI DECISION</div>
+                                <div class="text-xs text-gray-600 mt-1">Agent decides</div>
+                            </div>
+                            <div class="text-2xl text-gray-400 rotate-90 md:rotate-0">→</div>
+                            <div class="flex-1 bg-white rounded-lg p-4 shadow-sm border-2 border-blue-400">
+                                <div class="text-2xl mb-2">⚙️</div>
+                                <div class="font-bold text-blue-700">ACTION</div>
+                                <div class="text-xs text-gray-600 mt-1">What it does</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <details class="mb-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <summary class="cursor-pointer p-4 font-semibold text-text_primary hover:bg-gray-100 rounded-lg transition flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                            Click to see detailed examples of each component
+                        </summary>
+                        <div class="p-4 pt-0 space-y-4">
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-green-400">
+                                <p class="font-semibold text-green-700 mb-2">Triggers (What starts the automation)</p>
+                                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                    <li>• New email received</li>
+                                    <li>• Form submission</li>
+                                    <li>• Scheduled time (every day at 9am)</li>
+                                    <li>• New row in spreadsheet</li>
+                                    <li>• Webhook from another service</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-purple-400">
+                                <p class="font-semibold text-purple-700 mb-2">AI Decisions (Where agent thinks)</p>
+                                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                    <li>• Categorize email as urgent/normal/spam</li>
+                                    <li>• Summarize a 10-page document</li>
+                                    <li>• Extract key information (names, dates, amounts)</li>
+                                    <li>• Generate personalized response</li>
+                                    <li>• Decide if human escalation needed</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border-l-4 border-blue-400">
+                                <p class="font-semibold text-blue-700 mb-2">Actions (What the automation does)</p>
+                                <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                    <li>• Send email or Slack message</li>
+                                    <li>• Create record in database/CRM</li>
+                                    <li>• Update spreadsheet row</li>
+                                    <li>• Post to social media</li>
+                                    <li>• Notify team member</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <h3>Prompting Your Agent</h3>
+                    <p>The AI is only as good as your instructions. Good prompts are specific, include examples, set constraints, and define edge cases.</p>
+
+                    <details class="mb-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <summary class="cursor-pointer p-4 font-semibold text-text_primary hover:bg-gray-100 rounded-lg transition flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                            See prompt examples: Bad vs Good
+                        </summary>
+                        <div class="p-4 pt-0 space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 rounded-lg p-4 border-l-4 border-red-400">
+                                    <div class="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                                        <span>❌</span> Bad Prompt
+                                    </div>
+                                    <div class="text-sm text-gray-700 bg-white p-3 rounded italic">
+                                        "Categorize this email"
+                                    </div>
+                                    <p class="text-xs text-red-600 mt-2">Too vague - AI doesn't know your categories</p>
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-400">
+                                    <div class="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                                        <span>✅</span> Good Prompt
+                                    </div>
+                                    <div class="text-sm text-gray-700 bg-white p-3 rounded">
+                                        "Categorize as: Billing, Technical, Refund, or General. Return only one word."
+                                    </div>
+                                    <p class="text-xs text-green-600 mt-2">Specific categories + format constraint</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                                <div class="font-semibold text-blue-800 mb-3">Four Rules for Better Prompts:</div>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600">1.</span>
+                                        <div>
+                                            <strong>Be Specific:</strong> Define exact categories, formats, or outcomes
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600">2.</span>
+                                        <div>
+                                            <strong>Give Examples:</strong> Show 2-3 examples of each expected output
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600">3.</span>
+                                        <div>
+                                            <strong>Set Constraints:</strong> "Return only one word" or "Respond in JSON format"
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-bold text-blue-600">4.</span>
+                                        <div>
+                                            <strong>Define Edge Cases:</strong> "If unclear, return 'unsure' and escalate to human"
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <h3>Error Handling</h3>
+                    <p>Your automations <em>will</em> fail. Plan for it:</p>
+                    <ul>
+                        <li><strong>Notify yourself:</strong> Send Slack/email when something breaks</li>
+                        <li><strong>Retry logic:</strong> Try 2-3 times before giving up</li>
+                        <li><strong>Fallback actions:</strong> If AI fails, what should happen?</li>
+                        <li><strong>Logging:</strong> Save failed attempts so you can debug</li>
+                    </ul>
+
+                    <h3>Testing & Iteration</h3>
+                    <p>Don't launch and forget. Run in "shadow mode" first:</p>
+
+                    <!-- Testing Timeline Diagram -->
+                    <div class="bg-gradient-to-r from-yellow-50 to-green-50 rounded-xl p-6 mb-6 border border-yellow-200">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-20 text-center">
+                                    <div class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold">Week 1</div>
+                                </div>
+                                <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
+                                    <div class="font-semibold text-gray-800">Shadow Mode</div>
+                                    <div class="text-sm text-gray-600">Runs but doesn't act, just logs what it would do</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-20 text-center">
+                                    <div class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-bold">Week 2</div>
+                                </div>
+                                <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
+                                    <div class="font-semibold text-gray-800">Review Mode</div>
+                                    <div class="text-sm text-gray-600">Takes action but you review everything first</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-20 text-center">
+                                    <div class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">Week 3</div>
+                                </div>
+                                <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
+                                    <div class="font-semibold text-gray-800">Live + Monitoring</div>
+                                    <div class="text-sm text-gray-600">Fully automated, daily spot-checks</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-20 text-center">
+                                    <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">Month 2+</div>
+                                </div>
+                                <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
+                                    <div class="font-semibold text-gray-800">Maintenance</div>
+                                    <div class="text-sm text-gray-600">Weekly check-ins, update edge cases</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2>The Cost Reality Check</h2>
+
+                    <p>Let's talk money because the pricing models are confusing as hell.</p>
+
+                    <h3>Free Tiers (What You Can Actually Do)</h3>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>Free Tier Limits</th>
+                                    <th>What this means in practice</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Zapier</strong></td>
+                                    <td>100 tasks/month</td>
+                                    <td>Roughly 5-10 small automations running a few times a day</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Make</strong></td>
+                                    <td>1,000 operations/month</td>
+                                    <td>2-3 medium complexity workflows running throughout the day</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>n8n</strong></td>
+                                    <td>Unlimited (self-hosted)</td>
+                                    <td>Requires a server (~$5/month on DigitalOcean). Truly unlimited usage.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Activepieces</strong></td>
+                                    <td>10 workflows, unlimited executions</td>
+                                    <td>Best free tier for high-volume automations. No anxiety about usage limits.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>When You'll Need to Pay</h3>
+                    <p>You'll hit free tier limits when:</p>
+                    <ul>
+                        <li>Automations run more than a few times per hour</li>
+                        <li>You build more than 3-4 active workflows</li>
+                        <li>You need premium integrations (Salesforce, HubSpot, etc.)</li>
+                        <li>You want advanced features (scheduling, team collaboration, version control)</li>
+                    </ul>
+
+                    <p><strong>Budget guideline:</strong> Most people end up spending $20-50/month once they're serious about automation. Teams might spend $100-200/month.</p>
+
+                    <h3>Hidden Costs</h3>
+                    <p><strong>AI API costs:</strong> If you're using OpenAI, Anthropic, or other AI APIs directly (not through the platform), those cost extra. Budget $10-30/month for moderate use.</p>
+                    <p><strong>Data enrichment:</strong> Tools like Clearbit, ZoomInfo charge per lookup. Can add up fast.</p>
+                    <p><strong>Premium integrations:</strong> Some platforms charge extra for Salesforce, SAP, enterprise tools.</p>
+
+                    <hr>
+
+                    <h2>Common Mistakes (Learn from Others' Pain)</h2>
+
+                    <div class="space-y-4">
+                        <details class="bg-red-50 rounded-lg border border-red-200">
+                            <summary class="cursor-pointer p-4 font-semibold text-red-700 hover:bg-red-100 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                                ❌ Building too complex too fast
+                            </summary>
+                            <div class="p-4 pt-0">
+                                <p class="text-gray-700 mb-3">Start with one trigger, one AI decision, one action. Get that working. Then add more.</p>
+                                <div class="bg-white rounded p-3 text-sm border-l-4 border-green-400">
+                                    <strong class="text-green-700">Better approach:</strong> Build a 3-step workflow that works perfectly, then duplicate and modify it for similar use cases.
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="bg-red-50 rounded-lg border border-red-200">
+                            <summary class="cursor-pointer p-4 font-semibold text-red-700 hover:bg-red-100 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                                ❌ Not testing with real data
+                            </summary>
+                            <div class="p-4 pt-0">
+                                <p class="text-gray-700 mb-3">Test data is always cleaner than production. Run your automation on actual messy, real-world inputs before going live.</p>
+                                <div class="bg-white rounded p-3 text-sm border-l-4 border-green-400">
+                                    <strong class="text-green-700">Better approach:</strong> Export 50 real examples from your system. Run the automation on all 50. Fix what breaks. Repeat.
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="bg-red-50 rounded-lg border border-red-200">
+                            <summary class="cursor-pointer p-4 font-semibold text-red-700 hover:bg-red-100 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                                ❌ Forgetting about rate limits
+                            </summary>
+                            <div class="p-4 pt-0">
+                                <p class="text-gray-700 mb-3">APIs have limits. If your automation calls the same API 100 times in 60 seconds, you'll get blocked. Add delays between calls.</p>
+                                <div class="bg-white rounded p-3 text-sm border-l-4 border-green-400">
+                                    <strong class="text-green-700">Better approach:</strong> Add 2-5 second delays between API calls. Use batch processing when possible. Check the API docs for limits.
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="bg-red-50 rounded-lg border border-red-200">
+                            <summary class="cursor-pointer p-4 font-semibold text-red-700 hover:bg-red-100 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                                ❌ No human review for high-stakes decisions
+                            </summary>
+                            <div class="p-4 pt-0">
+                                <p class="text-gray-700 mb-3">Automating email replies to customers? Have a human review for the first month. AI is good, not perfect.</p>
+                                <div class="bg-white rounded p-3 text-sm border-l-4 border-green-400">
+                                    <strong class="text-green-700">Better approach:</strong> Week 1-2: Human approves every action. Week 3-4: Spot check 20%. Month 2+: Review weekly reports.
+                                </div>
+                            </div>
+                        </details>
+
+                        <details class="bg-red-50 rounded-lg border border-red-200">
+                            <summary class="cursor-pointer p-4 font-semibold text-red-700 hover:bg-red-100 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs transition-transform"></i>
+                                ❌ Not documenting your logic
+                            </summary>
+                            <div class="p-4 pt-0">
+                                <p class="text-gray-700 mb-3">Write notes about why you set things up a certain way. Future you will thank present you.</p>
+                                <div class="bg-white rounded p-3 text-sm border-l-4 border-green-400">
+                                    <strong class="text-green-700">Better approach:</strong> Add a description field to every step. Screenshot your workflow. Keep a changelog of what you modified and why.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <hr>
+
+                    <h2>Where This Is All Heading</h2>
+
+                    <p>The trend is clear: less clicking, more describing.</p>
+
+                    <h3>Natural Language Automation</h3>
+                    <p>Tools like Lindy are pioneering this: you describe what you want in plain English, the system builds the automation. This will be standard within 12 months.</p>
+
+                    <h3>Multi-Agent Collaboration</h3>
+                    <p>Instead of one agent doing everything, you'll have teams of specialized agents. One researches, one drafts, one fact-checks, one publishes. Each does one thing really well.</p>
+
+                    <h3>Personal AI Workforces</h3>
+                    <p>Think "AI employees" not "automations." Each with their own role, context, and capabilities. You'll manage them like a team.</p>
+
+                    <h3>Autonomous Learning</h3>
+                    <p>Agents that improve from feedback without you updating them. Show it a better way once, it remembers forever.</p>
+
+                    <hr>
+
+                    <h2>Your Starting Point</h2>
+
+                    <p>Here's what I'd do if I were starting today:</p>
+
+                    <ol>
+                        <li><strong>Week 1:</strong> Sign up for Make or Zapier. Build one simple automation (email to Slack, form to sheet, anything). Goal: understand the interface.</li>
+                        <li><strong>Week 2:</strong> Add an AI component. Use ChatGPT integration to summarize or categorize something. See how AI fits into workflows.</li>
+                        <li><strong>Week 3:</strong> Build a real automation you'll actually use. Customer inquiry routing? Meeting note processing? Pick something that saves you 30+ minutes a week.</li>
+                        <li><strong>Week 4:</strong> Let it run. Fix what breaks. Notice edge cases. Update your prompts.</li>
+                        <li><strong>Month 2:</strong> Explore a more advanced platform (n8n, Relevance AI). Build something more ambitious.</li>
+                    </ol>
+
+                    <hr>
+
+                    <h2>Quick Reference: Start Here</h2>
+
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>If You Want To...</th>
+                                    <th>Start With</th>
+                                    <th>Why</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Just try automation</td>
+                                    <td>Zapier or Make</td>
+                                    <td>Easiest interface, best documentation, huge template library</td>
+                                </tr>
+                                <tr>
+                                    <td>Build a chatbot</td>
+                                    <td>Voiceflow or Botpress</td>
+                                    <td>Purpose-built for conversations, visual flow design</td>
+                                </tr>
+                                <tr>
+                                    <td>Complex AI workflows</td>
+                                    <td>n8n</td>
+                                    <td>Most flexible, works with any AI model, strong community</td>
+                                </tr>
+                                <tr>
+                                    <td>High-volume automations</td>
+                                    <td>Activepieces</td>
+                                    <td>Flat pricing means no anxiety about usage</td>
+                                </tr>
+                                <tr>
+                                    <td>Natural language setup</td>
+                                    <td>Lindy.ai</td>
+                                    <td>Describe what you want, it builds it. Pricey but magical.</td>
+                                </tr>
+                                <tr>
+                                    <td>Team collaboration</td>
+                                    <td>Stack AI</td>
+                                    <td>Built for teams, version control, shared templates</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <hr>
+
+                    <h2>Resources Worth Bookmarking</h2>
+
+                    <p><strong>Communities:</strong></p>
+                    <ul>
+                        <li>n8n Community Forum - best for troubleshooting complex workflows</li>
+                        <li>r/nocode and r/automation on Reddit - active communities sharing builds</li>
+                        <li>Zapier Community - great templates and use cases</li>
+                    </ul>
+
+                    <p><strong>Learning:</strong></p>
+                    <ul>
+                        <li>Make Academy (free courses)</li>
+                        <li>Zapier University (free certification)</li>
+                        <li>n8n YouTube channel (advanced patterns)</li>
+                    </ul>
+
+                    <p><strong>Inspiration:</strong></p>
+                    <ul>
+                        <li>IndieHackers - people sharing their automation setups</li>
+                        <li>Product Hunt - new automation tools launch constantly</li>
+                        <li>AI Valley newsletter - tracks AI automation tools</li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>Final Thoughts</h2>
+
+                    <p>The barrier to entry for building AI agents is effectively zero. The tools are ready. The AI models work. The question isn't "can I do this?" but "what am I waiting for?"</p>
+
+                    <p>Start small. Build something useful for yourself first. Then expand. You don't need to understand how transformers work or what temperature settings do. You just need to know what you want to automate and be willing to iterate until it works.</p>
+
+                    <p>The people winning with AI agents right now aren't the most technical. They're the ones who saw a repetitive task and thought "I bet an AI could do this"—then spent an afternoon making it happen.</p>
+
+                    <p>What will you build?</p>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text_primary text-white py-10 px-6 mt-12">
+        <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">MP</div>
+                <div>
+                    <p class="font-semibold">Meg Patakota</p>
+                    <p class="text-sm text-white/60">Data • AI • Analytics</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-white/70">
+                <a href="../index.html#experience" class="hover:text-white transition">Experience</a>
+                <span class="hidden sm:inline">•</span>
+                <a href="../index.html#projects" class="hover:text-white transition">Projects</a>
+                <span class="hidden sm:inline">•</span>
+                <a href="../index.html#contact" class="hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

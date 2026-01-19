@@ -23,22 +23,19 @@
    GRADIENT UTILITIES
    ========================================================================== */
 
-/* Gradient Text */
+/* Gradient Text - Dark Teal with Bluish Shade */
 .gradient-text {
-    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, var(--color-accent, #22D3EE) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #0e7490;
 }
 
 /* Primary Gradient Background (buttons, badges) */
 .gradient-bg {
-    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, #8B5CF6 50%, var(--color-buttons, #6366F1) 100%);
+    background: #0e7490;
 }
 
-/* Tech gradient - indigo to cyan */
+/* Tech gradient - teal */
 .tech-gradient {
-    background: linear-gradient(135deg, var(--color-buttons, #6366F1) 0%, var(--color-accent, #22D3EE) 100%);
+    background: #0e7490;
 }
 
 /* Soft Gradient Background - Light sections */
