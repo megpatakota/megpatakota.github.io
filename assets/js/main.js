@@ -110,21 +110,23 @@ document.querySelectorAll('.testimonial-toggle').forEach(btn => {
     });
 });
 
-// Scroll reveal animations
+// Scroll reveal animations — appear on enter, fade on exit
 (function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Stagger children
                 const children = entry.target.querySelectorAll('.reveal-child');
                 children.forEach((child, i) => {
                     setTimeout(() => child.classList.add('active'), 120 * i);
                 });
-                observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('active');
+                const children = entry.target.querySelectorAll('.reveal-child');
+                children.forEach(child => child.classList.remove('active'));
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
