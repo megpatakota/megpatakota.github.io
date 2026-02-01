@@ -109,3 +109,22 @@ document.querySelectorAll('.testimonial-toggle').forEach(btn => {
         btn.textContent = expanded ? 'Read more' : 'Read less';
     });
 });
+
+// Scroll reveal animations
+(function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Stagger children
+                const children = entry.target.querySelectorAll('.reveal-child');
+                children.forEach((child, i) => {
+                    setTimeout(() => child.classList.add('active'), 120 * i);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
