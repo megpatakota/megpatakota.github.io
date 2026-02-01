@@ -101,13 +101,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Read more functionality for testimonials – open LinkedIn recommendations
-const LINKEDIN_RECOMMENDATIONS_URL = 'https://www.linkedin.com/in/megpatakota/details/recommendations/?detailScreenTabIndex=0';
-
-document.querySelectorAll('.read-more-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        window.open(LINKEDIN_RECOMMENDATIONS_URL, '_blank', 'noopener');
+// Testimonial read more toggle
+document.querySelectorAll('.testimonial-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const quote = btn.previousElementSibling;
+        const expanded = quote.classList.toggle('line-clamp-5');
+        btn.textContent = expanded ? 'Read more' : 'Read less';
     });
 });
-
-

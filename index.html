@@ -74,14 +74,14 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex items-center gap-8">
+                    <a href="main_articles.html"
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Blogs</a>
                     <a href="experience.html"
                         class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
-                    <a href="main_articles.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">
-                        Blogs
-                    </a>
                     <a href="#projects"
                         class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Projects</a>
+                    <a href="#testimonials"
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Testimonials</a>
                     <a href="mailto:megpatakota@icloud.com"
                         class="text-sm px-4 py-2 tech-gradient text-white rounded-lg font-medium hover:shadow-lg hover:shadow-buttons/25 transition-all">
                         <i class="fas fa-envelope mr-1"></i>Contact
@@ -94,18 +94,14 @@
                 </button>
             </div>
 
-            <!-- Menu -->
-            <div id="mobile-menu" class="hidden mt-4 pb-4 space-y-2">
-                <a href="experience.html" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
-                <a href="main_articles.html"
-                    class="block py-2 text-text_tertiary hover:text-buttons transition flex items-center gap-2">
-                    Blogs
-                </a>
-                <a href="#education" class="block py-2 text-text_tertiary hover:text-buttons transition">Education</a>
-                <a href="#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
-                <a href="#testimonials"
-                    class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
-                <a href="#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute right-4 top-16 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 py-2 px-1 min-w-[160px] z-50">
+                <a href="main_articles.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Blogs</a>
+                <a href="#contact" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Contact</a>
+                <a href="#education" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Education</a>
+                <a href="experience.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Experience</a>
+                <a href="#projects" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Projects</a>
+                <a href="#testimonials" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Testimonials</a>
             </div>
         </nav>
     </header>
@@ -378,7 +374,7 @@
     <section id="advisory-services" class="py-12 px-6 lg:px-12 bg-gray-50">
         <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-2 text-text_primary">Advisory Focus</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-text_primary">Advisory Focus</h2>
                 <p class="text-text_tertiary max-w-2xl mx-auto text-base">
                     Areas of expertise honed across consulting, research, and enterprise environments
                 </p>
@@ -478,10 +474,10 @@
                 </div>
             </div>
 
-            <div class="text-center mt-8">
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="inline-flex items-center gap-2 text-buttons font-medium text-sm hover:text-accent transition-colors">
-                    <i class="fab fa-linkedin text-lg"></i>
-                    Let's Connect
+            <div class="text-center mt-8 flex justify-center gap-3">
+                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 tech-gradient text-white rounded-lg hover:shadow-lg hover:shadow-buttons/25 transition-all">
+                    <i class="fas fa-comments"></i>
+                    Let's connect for an intro call
                 </a>
             </div>
         </div>
@@ -495,7 +491,7 @@
     <section id="skills" class="py-20 px-6 soft-gradient-bg">
         <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Technical & Professional Skills</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical & Professional Skills</h2>
                 <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
                     Comprehensive expertise across data science, AI, and cloud technologies
                 </p>
@@ -507,123 +503,160 @@
     <!-- Blog Posts removed in favor of main_articles.html -->
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-6xl">
+    <section id="projects" class="py-20 px-2 md:px-4 bg-white">
+        <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
                 <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
                     Key projects showcasing technical expertise and business impact
                 </p>
             </div>
-            <div class="horizontal-scroll md:grid md:grid-cols-2 gap-8 scrollbar-hide">
-                <!-- CLARA Project -->
+            <div class="horizontal-scroll md:grid md:grid-cols-3 gap-6 scrollbar-hide">
+                <!-- Bath Spa University Advisory -->
                 <div
-                    class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-8 border border-buttons/20">
+                    class="bg-gradient-to-br from-buttons/5 to-text_tertiary/5 rounded-2xl p-6 border border-buttons/20">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="fas fa-circle animate-pulse mr-1"></i>Live Project
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-chalkboard-teacher mr-1"></i>Advisory
                         </span>
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">Oxford
-                            Research</span>
+                        <img src="./assets/images/logos/bsu.jpg" alt="Bath Spa University" class="h-14 rounded -mt-3 -mr-3">
                     </div>
 
-                    <h3 class="text-2xl font-bold text-text_primary mb-3">CLARA: Corporate Litigation Research Assistant
+                    <h3 class="text-xl font-bold text-text_primary mb-3">External Industry Advisor — New BSc Programme</h3>
+                    <p class="text-text_secondary mb-4">
+                        Appointed as External Advisor to Bath Spa University's Bath Business School, providing industry feedback on the new BSc Business Analytics programme curriculum.
+                    </p>
+
+                    <details class="mb-6">
+                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                            <span>Project details</span>
+                        </summary>
+                        <div class="space-y-3 mt-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Programme curriculum review & industry alignment</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Bridging academic theory with real-world analytics practice</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Advisory on data engineering, AI & business intelligence skills</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Business Analytics</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Curriculum Design</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Higher Education</span>
+                        </div>
+                    </details>
+
+                </div>
+
+                <!-- CLARA Project -->
+                <div
+                    class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-6 border border-buttons/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <a href="https://clara-research.com" target="_blank"
+                                class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-green-600 transition inline-flex items-center shadow-md shadow-green-500/30 ring-2 ring-green-400/50 animate-pulse-subtle">
+                                <i class="fas fa-circle animate-pulse mr-1.5 text-[8px]"></i>Live — Try Free
+                            </a>
+                            <a href="https://uk.linkedin.com/company/clara-research-ai?trk=public_post_feed-actor-name" target="_blank"
+                                class="bg-[#0a66c2]/10 text-[#0a66c2] px-3 py-1 rounded-full text-sm font-semibold hover:bg-[#0a66c2]/20 transition inline-flex items-center">
+                                <i class="fab fa-linkedin mr-1.5"></i>Follow
+                            </a>
+                        </div>
+                        <img src="./assets/images/logos/oxford_sq.png" alt="University of Oxford" class="h-14 rounded -mt-3 -mr-3">
+                    </div>
+
+                    <h3 class="text-xl font-bold text-text_primary mb-3">CLARA: Corporate Litigation Research Assistant
                     </h3>
                     <p class="text-text_secondary mb-4">
                         An advanced AI research agent powered by LLMs and hybrid GraphRAG technology, transforming how
                         researchers access and analyze 1.2M+ pages of litigation-relevant archival documents.
                     </p>
 
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">End-to-end AWS deployment (ECS, ECR, Lambda,
-                                DynamoDB)</span>
+                    <details class="mb-6">
+                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                            <span>Project details</span>
+                        </summary>
+                        <div class="space-y-3 mt-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">End-to-end AWS deployment (ECS, ECR, Lambda,
+                                    DynamoDB)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Automated CI/CD pipeline with Docker & GitHub
+                                    Actions</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Advanced data pipeline: OCR, entity extraction,
+                                    embeddings</span>
+                            </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">Automated CI/CD pipeline with Docker & GitHub
-                                Actions</span>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Docker</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">GraphRAG</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">LLMs</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Python</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">Advanced data pipeline: OCR, entity extraction,
-                                embeddings</span>
-                        </div>
-                    </div>
+                    </details>
 
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
-                        <span
-                            class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Docker</span>
-                        <span
-                            class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">GraphRAG</span>
-                        <span
-                            class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">LLMs</span>
-                        <span
-                            class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-                    </div>
-
-                    <div class="flex gap-3">
-                        <a href="https://clara-research.com" target="_blank"
-                            class="gradient-bg text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition flex items-center justify-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            Try For Free
-                        </a>
-                        <a href="https://www.linkedin.com/company/clara-research/" target="_blank"
-                            class="border-2 border-buttons text-buttons px-6 py-3 rounded-full font-semibold hover:bg-buttons hover:text-white transition flex items-center justify-center">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            LinkedIn
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Microsoft Analytics Platform -->
                 <div
-                    class="bg-gradient-to-br from-buttons/5 to-text_tertiary/5 rounded-2xl p-8 border border-buttons/20">
+                    class="bg-gradient-to-br from-buttons/5 to-text_tertiary/5 rounded-2xl p-6 border border-buttons/20">
                     <div class="flex items-center justify-between mb-4">
                         <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
                             <i class="fab fa-microsoft mr-1"></i>Enterprise
                         </span>
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-sm font-semibold">Data
-                            Democratization</span>
+                        <img src="./assets/images/logos/mdr_sq.png" alt="MDR" class="h-14 rounded -mt-3 -mr-3">
                     </div>
 
-                    <h3 class="text-2xl font-bold text-text_primary mb-3">Microsoft Analytics Platform Migration</h3>
+                    <h3 class="text-xl font-bold text-text_primary mb-3">Microsoft Analytics Platform Migration</h3>
                     <p class="text-text_secondary mb-4">
                         Led enterprise-wide migration from legacy SSRS to Power BI at a leading international law firm, establishing data democratization
                         and self-serve analytics across all business functions.
                     </p>
 
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">70% reduction in report redundancy</span>
+                    <details class="mb-6">
+                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
+                            <i class="fas fa-chevron-right text-[10px]"></i>
+                            <span>Project details</span>
+                        </summary>
+                        <div class="space-y-3 mt-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">70% reduction in report redundancy</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">20% of business ops teams enabled for
+                                    self-serve</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                                <span class="text-sm text-text_tertiary">Cross-department data integration (HR, Finance,
+                                    Legal)</span>
+                            </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">20% of business ops teams enabled for
-                                self-serve</span>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Power BI</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Azure Synapse</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">SQL Server</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">ETL/ELT</span>
+                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Data Governance</span>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                            <span class="text-sm text-text_tertiary">Cross-department data integration (HR, Finance,
-                                Legal)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Power
-                            BI</span>
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Azure
-                            Synapse</span>
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">SQL
-                            Server</span>
-                        <span
-                            class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">ETL/ELT</span>
-                        <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Data
-                            Governance</span>
-                    </div>
+                    </details>
 
                 </div>
             </div>
@@ -631,119 +664,79 @@
                 <i class="fas fa-arrow-left text-text_tertiary"></i>
                 <i class="fas fa-long-arrow-alt-right text-text_tertiary animate-bounce-x"></i>
             </div>
-        </div>
-    </section>
 
-    <!-- GitHub Projects Summary -->
-    <section class="py-12 px-6 bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">Open Source Projects</h2>
-                <p class="text-text_tertiary max-w-xl mx-auto">
-                    Additional projects and contributions available on GitHub
-                </p>
-            </div>
-
-            <div class="bg-white rounded-xl p-6 border border-gray-200">
-                <div class="text-center">
-                    <div
-                        class="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-buttons to-text_secondary rounded-full flex items-center justify-center">
-                        <i class="fab fa-github text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-text_primary mb-3">GitHub Portfolio</h3>
-                    <p class="text-text_secondary mb-4 text-sm max-w-lg mx-auto">
-                        Explore additional projects including AI-powered conversational agents,
-                        GenAI recommendation services, and environmental data tools.
-                    </p>
-
-                    <div
-                        class="flex flex-col sm:flex-row sm:justify-center gap-2 sm:gap-6 mb-4 text-sm text-text_tertiary">
-                        <span>10+ Repositories</span>
-                        <span class="hidden sm:inline">•</span>
-                        <span>5+ Languages</span>
-                        <span class="hidden sm:inline">•</span>
-                        <span>Active Contributions</span>
-                    </div>
-
-                    <a href="https://github.com/megpatakota" target="_blank"
-                        class="inline-flex items-center gap-2 text-buttons hover:text-text_secondary transition font-medium">
-                        <i class="fab fa-github"></i>
-                        <span>View GitHub Profile</span>
-                        <i class="fas fa-external-link-alt text-xs"></i>
-                    </a>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm mt-8">
+                <div class="flex items-center gap-2 text-text_secondary">
+                    <i class="fab fa-github text-lg"></i>
+                    <span>Explore 10+ projects spanning AI agents, generative AI, and intelligent data pipelines</span>
                 </div>
+                <a href="https://github.com/megpatakota" target="_blank"
+                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-700 transition text-sm">
+                    <i class="fab fa-github"></i>
+                    View GitHub
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Professional References Section -->
-    <section id="testimonials" class="py-20 px-6 bg-white">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6 bg-gray-50">
         <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Professional References</h2>
-                <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
-                    Available upon request from academic and industry leaders
-                </p>
-                <div
-                    class="scroll-hint flex justify-center items-center gap-2 text-xs text-text_tertiary mt-4 md:hidden">
-                    <i class="fas fa-arrow-left text-text_tertiary"></i>
-                    <i class="fas fa-long-arrow-alt-right text-text_tertiary animate-bounce-x"></i>
-                </div>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Testimonials</h2>
 
-            <div class="horizontal-scroll md:grid md:grid-cols-2 gap-8 scrollbar-hide">
-                <!-- Reference 1 -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="./assets/images/logos/ucl.png" alt="UCL School of Management"
-                            class="h-8 w-auto object-contain">
-                        <div>
-                            <h3 class="font-bold text-text_primary">Ex Programme Director</h3>
-                            <p class="text-sm text-text_tertiary">MSc Business Analytics, UCL School of Management</p>
+            <div class="horizontal-scroll md:grid md:grid-cols-3 gap-8 scrollbar-hide">
+                <div class="text-center">
+                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
+                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
+                        "It's been a privilege to see Meg's skills evolve over the last 5 years, as she moved from student to practitioner. Data Scientist, AI Researcher are worthy titles but putting aside her leading edge skills, her strength as a highly motivated, 'people centred' collaborator enables her to bring real value to any organisation, team or individual that she works with. I can't recommend her highly enough to any future collaborators."
+                    </blockquote>
+                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
+                    <div class="flex items-center justify-center gap-3">
+                        <img src="./assets/images/logos/ucl.png" alt="UCL" class="h-9 w-auto object-contain">
+                        <div class="text-left">
+                            <p class="font-semibold text-text_primary text-sm">Ex Programme Director</p>
+                            <p class="text-xs text-text_tertiary">MSc Business Analytics, UCL School of Management</p>
                         </div>
                     </div>
-
-                    <blockquote class="text-text_secondary italic leading-relaxed">
-                        <span class="testimonial-preview">"It's been a privilege to see Meg's skills evolve. Her
-                            strength as a 'people centred' collaborator enables her to bring real value..."</span>
-                        <span class="testimonial-full hidden"> to any organisation, team or individual that she works
-                            with. I can't recommend her highly enough to any future collaborators."</span>
-                        <button
-                            class="read-more-btn text-buttons hover:text-accent transition font-medium text-sm ml-1 cursor-pointer inline-block">Read
-                            more on LinkedIn</button>
-                    </blockquote>
                 </div>
 
-                <!-- Reference 2 -->
-                <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="./assets/images/logos/oxford.png" alt="Oxford Sustainable Law Programme"
-                            class="h-8 w-auto object-contain">
-                        <div>
-                            <h3 class="font-bold text-text_primary">Associate Professor</h3>
-                            <p class="text-sm text-text_tertiary">Climate Litigation Lab, Oxford</p>
+                <div class="text-center">
+                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
+                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
+                        "I highly recommend working with Meghana. Meg has worked with the multidisciplinary research group I lead at Oxford, the Climate Litigation Lab at the Oxford Sustainable Law Programme, for multiple years, and her contributions have been stellar. She is a great team member, personable and professional, brings impressive technical skills, acquires new skills quickly, and brings strategic leadership and direction to projects. Thank you Meg!"
+                    </blockquote>
+                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
+                    <div class="flex items-center justify-center gap-3">
+                        <img src="./assets/images/logos/oxford.png" alt="Oxford" class="h-9 w-auto object-contain">
+                        <div class="text-left">
+                            <p class="font-semibold text-text_primary text-sm">Associate Professor</p>
+                            <p class="text-xs text-text_tertiary">Climate Litigation Lab, Oxford</p>
                         </div>
                     </div>
+                </div>
 
-                    <blockquote class="text-text_secondary italic leading-relaxed">
-                        <span class="testimonial-preview">"I highly recommend working with Meghana. Her contributions
-                            have been stellar—personable, professional, with impressive technical skills..."</span>
-                        <span class="testimonial-full hidden"> She acquires new skills quickly and brings strategic
-                            leadership and direction to projects. Thank you Meg!"</span>
-                        <button
-                            class="read-more-btn text-buttons hover:text-accent transition font-medium text-sm ml-1 cursor-pointer inline-block">Read
-                            more on LinkedIn</button>
+                <div class="text-center">
+                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
+                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
+                        "Meg was a key part of the data team at Mishcon de Reya, and one of the strongest data scientists in the Firm. She is exceptional at solving problems and turning ideas into clear, measurable outcomes. Meg has a great mix of technical and business insight; she understands how a law firm works, and how to use AI and analytics to drive business value through data products. Her Power BI, Python data query and data manipulation skills are excellent and she helped bring on junior data scientists and reporting analysis. Meg has a great mix of data, business and people skills. Exactly what you want in a data team."
                     </blockquote>
+                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
+                    <div class="flex items-center justify-center gap-3">
+                        <img src="./assets/images/logos/mdr_sq.png" alt="Mishcon de Reya" class="h-9 w-auto object-contain">
+                        <div class="text-left">
+                            <p class="font-semibold text-text_primary text-sm">Head of Data</p>
+                            <p class="text-xs text-text_tertiary">Mishcon de Reya</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-text_primary text-white">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
             <p class="text-xl mb-8 text-gray-300">
                 Ready to discuss AI strategy, data transformation, or advisory engagements?
             </p>
