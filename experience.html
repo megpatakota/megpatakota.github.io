@@ -29,61 +29,12 @@
 
 <body class="font-sans bg-white text-text_primary">
 
-    <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2.5 hover:opacity-80 transition-opacity group">
-                    <div
-                        class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-sm group-hover:scale-105 transition-transform">
-                        MP
-                    </div>
-                    <div class="hidden sm:block">
-                        <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
-                        <div class="text-xs text-text_tertiary">Data & AI Solutions</div>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="experience.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
-                    <a href="main_articles.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">
-                        Blogs
-                    </a>
-                    <a href="index.html#projects"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Projects</a>
-                    <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                        class="text-sm px-4 py-2 tech-gradient text-white rounded-lg font-medium hover:shadow-lg hover:shadow-buttons/25 transition-all">
-                        Contact
-                    </a>
-                </nav>
-
-                <!-- Hamburger Menu -->
-                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Menu -->
-            <div id="mobile-menu" class="hidden mt-4 pb-4 space-y-2">
-                <a href="experience.html" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
-                <a href="main_articles.html"
-                    class="block py-2 text-text_tertiary hover:text-buttons transition flex items-center gap-2">
-                    Blogs
-                </a>
-                <a href="#education" class="block py-2 text-text_tertiary hover:text-buttons transition">Education</a>
-                <a href="index.html#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
-                <a href="#testimonials"
-                    class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
-                <a href="#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <!-- Shared Header -->
+    <div id="shared-header" data-article-page="false"></div>
+    <script src="./assets/js/header.js"></script>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-16 px-6 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section class="pt-24 pb-16 px-6 bg-gradient-to-br from-gray-50 via-white to-blue-50">
         <div class="container mx-auto max-w-6xl text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-text_primary">Professional Experience</h1>
             <p class="text-lg text-text_tertiary max-w-2xl mx-auto">
