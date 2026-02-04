@@ -9,9 +9,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../assets/js/site-style-config.js"></script>
@@ -34,63 +31,20 @@
 
 <body class="font-sans bg-white text-text_primary">
     
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="../index.html" class="flex items-center space-x-3 hover:opacity-80 transition group">
-                    <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
-                        MP
-                    </div>
-                    <div class="hidden sm:block">
-                        <div class="text-xs text-text_tertiary font-medium uppercase tracking-wider">Portfolio</div>
-                        <div class="text-xs text-buttons font-semibold">Data • AI • Analytics</div>
-                    </div>
-                </a>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-6">
-                    <a href="../index.html#experience" class="text-text_tertiary hover:text-buttons transition font-medium">Experience</a>
-                    <a href="../main_articles.html" class="text-buttons font-medium">Blogs</a>
-                    <a href="../index.html#projects" class="text-text_tertiary hover:text-buttons transition font-medium">Projects</a>
-                </nav>
-                
-                <!-- Desktop CTA -->
-                <a href="../index.html#contact" class="hidden md:block gradient-bg text-white px-5 py-2 rounded-full font-semibold hover:opacity-90 transition">
-                    Get in Touch
-                </a>
-                
-                <!-- Mobile Hamburger -->
-                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-2">
-                <a href="../index.html#experience" class="block py-2 text-text_tertiary hover:text-buttons transition">Experience</a>
-                <a href="../main_articles.html" class="block py-2 text-buttons font-medium">Blogs</a>
-                <a href="../index.html#projects" class="block py-2 text-text_tertiary hover:text-buttons transition">Projects</a>
-                <a href="../index.html#testimonials" class="block py-2 text-text_tertiary hover:text-buttons transition">References</a>
-                <a href="../index.html#contact" class="block py-2 text-text_tertiary hover:text-buttons transition">Contact</a>
-            </div>
-        </nav>
-    </header>
-    
-    <!-- Spacing for fixed header -->
-    <div class="h-20"></div>
-    
+    <!-- Shared Header -->
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../assets/js/header.js"></script>
+
     <!-- Article Content -->
-    <section class="py-12 px-6">
+    <section class="pt-2 pb-12 px-4 md:px-6">
         <div class="max-w-4xl mx-auto">
-            <!-- Back button -->
-            <a href="../index.html" class="inline-flex items-center text-buttons hover:text-opacity-80 mb-8 transition font-semibold">
-                <i class="fas fa-arrow-left mr-2"></i>
-                Back to Home
-            </a>
-            
-            <article class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <article class="bg-white rounded-2xl shadow-lg p-5 sm:p-8 md:p-12">
                 <div class="article-content">
+                    <!-- Breadcrumb -->
+                    <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
+                        <i class="fas fa-arrow-left mr-2 text-xs"></i>
+                        All Articles
+                    </a>
                     <h1>Beyond SELECT: SQL as a Full Development Platform</h1>
 
                     <p class="text-sm text-gray-500 mb-8">

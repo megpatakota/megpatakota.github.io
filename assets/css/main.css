@@ -1,6 +1,6 @@
 /* ==========================================================================
    Main Styles for Meg Patakota Portfolio
-   
+
    COLOR REFERENCE (update in site-style-config.js):
    - Primary/Buttons: #6366F1 (Indigo) -> var(--color-buttons)
    - Accent: #22D3EE (Cyan) -> var(--color-accent)
@@ -10,6 +10,15 @@
    - Background Light: #F8FAFC -> var(--color-bg-light)
    - Background Dark: #0F172A -> var(--color-bg-dark)
    ========================================================================== */
+
+/* ==========================================================================
+   FONTS - Centralized for entire site
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
 
 /* ==========================================================================
    BASE STYLES
