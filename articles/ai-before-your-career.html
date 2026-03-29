@@ -55,14 +55,14 @@
         .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
 
         /* Bullet dots */
-        .article-content ul { list-style: none; padding-left: 0; }
-        .article-content ul li { display: flex; align-items: flex-start; gap: 0.75rem; }
-        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; margin-top: 0.75rem; flex-shrink: 0; }
+        .article-content ul { list-style: none; padding-left: 1.25rem; }
+        .article-content ul li { display: list-item; list-style: none; position: relative; margin-bottom: 0.75rem; line-height: 1.75; }
+        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; position: absolute; left: -1.25rem; top: 0.6rem; }
 
         /* Ordered list */
-        .article-content ol { counter-reset: step; list-style: none; padding-left: 0; }
-        .article-content ol li { counter-increment: step; display: flex; align-items: flex-start; gap: 0.75rem; }
-        .article-content ol li::before { content: counter(step); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.6875rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem; }
+        .article-content ol { counter-reset: step; list-style: none; padding-left: 2.25rem; }
+        .article-content ol li { counter-increment: step; position: relative; margin-bottom: 1rem; line-height: 1.75; }
+        .article-content ol li::before { content: counter(step); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.6875rem; font-weight: 700; display: flex; align-items: center; justify-content: center; position: absolute; left: -2.25rem; top: 0.15rem; }
 
         /* Back to top */
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
@@ -178,17 +178,17 @@
                         <p>Ever had someone who's great to bounce ideas off? That's what AI should be. Not something that thinks for you -- something that makes your thinking faster and sharper. Ethan Mollick calls it a "cognitive tool".<a href="#ref-6" class="cite">6</a> Here's what that looks like in practice:</p>
 
                         <ul>
-                            <li><strong>Stress-test your ideas.</strong> Give it your argument. Ask it to poke holes. You'll be surprised how useful this is.</li>
-                            <li><strong>Get unstuck.</strong> Staring at a blank page? Let it generate a rough structure. Then throw most of it away and write it properly.</li>
-                            <li><strong>Learn faster.</strong> Ask it to explain something at three different levels of complexity. Way faster than Googling.</li>
-                            <li><strong>Catch your mistakes.</strong> Use it to review your logic before someone else does.</li>
+                            <li><strong>Stress-test your ideas.</strong> Paste your argument into Claude or ChatGPT. Ask it to poke holes. You'll be surprised how useful this is.</li>
+                            <li><strong>Get unstuck.</strong> Staring at a blank page? Open Gemini or ChatGPT and let it generate a rough structure. Then throw most of it away and write it properly.</li>
+                            <li><strong>Learn faster.</strong> Ask Claude to explain something at three different levels of complexity. Way faster than Googling.</li>
+                            <li><strong>Catch your mistakes.</strong> Paste your draft into ChatGPT or Copilot and ask it to review your logic before someone else does.</li>
                         </ul>
 
                         <p>Harvard Business School tested this. Consultants using AI were 25% faster and produced 40% better output -- but only when they stayed actively engaged. What happened when they just handed everything over and stopped thinking? Quality dropped.<a href="#ref-7" class="cite">7</a> Funny how that works.</p>
 
                         <h3>Know where it breaks</h3>
 
-                        <p>Here's the thing nobody tells you upfront: AI models are confident, articulate, and sometimes completely wrong. They'll fabricate information with the same tone they use when they're correct.<a href="#ref-8" class="cite">8</a> If you don't know this, you'll get burned.</p>
+                        <p>Ever read something that sounded completely authoritative and turned out to be nonsense? That's AI on a bad day. Models are confident, articulate, and sometimes completely wrong. They'll fabricate information with the same tone they use when they're right.<a href="#ref-8" class="cite">8</a> If you don't know this, you'll get burned.</p>
 
                         <ul>
                             <li><strong>It makes things up.</strong> Papers that don't exist. Quotes nobody said. Statistics from nowhere. Always verify.</li>
@@ -210,13 +210,13 @@
                             <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
                         </div>
 
-                        <p>Let's just say it directly. Using AI isn't cheating. Pretending you didn't use it is.</p>
+                        <p>Is using AI cheating? No. Pretending you didn't use it? That is.</p>
 
-                        <p>The professional world is already moving past the "is it OK?" question. Canva's 2025 hiring survey found 90% of hiring managers were fine with candidates using AI, but 73% wanted them to say so.<a href="#ref-9" class="cite">9</a> Here's how I think about it:</p>
+                        <p>The professional world has already moved past the "should we allow it?" debate. Canva's 2025 hiring survey found 90% of hiring managers were fine with candidates using AI, but 73% wanted them to say so.<a href="#ref-9" class="cite">9</a> So what does honest AI use actually look like?</p>
 
                         <ul>
                             <li><strong>Job applications:</strong> Used AI to tighten up your cover letter? Great. Had it write the whole thing and submitted it untouched? You're going to get caught in the interview.</li>
-                            <li><strong>At work:</strong> "I used Claude to structure the initial research, then I verified the sources and rewrote the analysis." That's a professional thing to say. It shows judgement.</li>
+                            <li><strong>At work:</strong> "I used Claude to structure the initial research, then I verified the sources and rewrote the analysis." Or "I used ChatGPT to draft the first version, then I rewrote it." That's a professional thing to say. It shows judgement.</li>
                             <li><strong>Your portfolio:</strong> If AI was part of the process, say so. Explain what it did and what you did. That's a strength, not a weakness.</li>
                         </ul>
 
@@ -230,7 +230,7 @@
                             <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
                         </div>
 
-                        <p>I talk to hiring managers across tech, consulting, finance, and the public sector. Here's what they actually value in graduates who use AI:</p>
+                        <p>I've talked to hiring managers across tech, consulting, finance, and the public sector. Here's what they actually value in graduates who use AI:</p>
 
                         <h3>Can you spot the nonsense?</h3>
                         <p>Critical evaluation. Can you look at AI output and tell what's good, what's wrong, and what's missing? This is the skill. The OECD called it one of the most important emerging capabilities for knowledge workers.<a href="#ref-12" class="cite">12</a></p>
@@ -244,6 +244,11 @@
                         <h3>Do you know when to stop using it?</h3>
                         <p>This one is underrated. Knowing when AI isn't the right tool -- when you need nuance, relationship, ethics, or original thinking -- is a sign of maturity.<a href="#ref-13" class="cite">13</a></p>
 
+                        <h3>Do you know about the ecosystem?</h3>
+                        <p>AI isn't just a chatbox. The real power is in the ecosystem around it. Browser extensions like Perplexity that search the web with citations. Copilot built into Word, Excel, and PowerPoint. Grammarly's AI rewriting. Notion AI for organising your notes. Claude's projects and artifacts. ChatGPT's plugins and custom GPTs that people build for specific tasks.</p>
+
+                        <p>Most students don't even know these exist. The ones who do are already working faster, writing better, and building things their peers can't. You don't need to use all of them -- just know what's out there so you can pick the right tool when it matters.</p>
+
                         <div class="callout">
                             <div class="callout-label"><i class="fas fa-lightbulb"></i> Key Insight</div>
                             <p>The graduates who stand out aren't the ones who use AI the most. They're the ones who use it with the most intention. They can explain what they used, why, and what they did differently because of it.</p>
@@ -251,37 +256,20 @@
 
                         <hr>
 
-                        <div class="mt-14 mb-5" id="section-5" data-toc="Building Your Portfolio">
+                        <div class="mt-14 mb-5" id="section-5" data-toc="Start This Week">
                             <span class="section-num">05</span>
-                            <h2 class="-mt-4">Building a Portfolio That Shows Real Thinking</h2>
-                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
-                        </div>
-
-                        <h3>Show the process</h3>
-                        <p>"I used AI to generate the initial data cleaning script, then I modified it to handle edge cases X and Y that the model missed." That sentence tells a hiring manager more than any polished final product ever will.</p>
-
-                        <h3>Build things that need judgement</h3>
-                        <p>Pick problems where AI couldn't do the whole thing. Use it to speed up the boring parts. The interesting parts? Those are yours.</p>
-
-                        <h3>Go deep on one tool</h3>
-                        <p>Rather than skimming five, pick one and really learn it. "I've used Claude extensively for research synthesis and I know exactly where it's great and where it falls over" is way more impressive than "I've tried everything."</p>
-
-                        <hr>
-
-                        <div class="mt-14 mb-5" id="section-6" data-toc="Start This Week">
-                            <span class="section-num">06</span>
                             <h2 class="-mt-4">What You Can Do This Week</h2>
                             <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
                         </div>
 
-                        <p>You don't need to wait until you graduate.</p>
+                        <p>You don't need a side project or a certification. You just need to start using AI in the work you're already doing. Here are five things you can try right now:</p>
 
                         <ol>
-                            <li><strong>Use it for something real.</strong> Not a toy example. An actual assignment, a real project, a genuine problem you're trying to solve.</li>
-                            <li><strong>Catch it lying.</strong> Seriously. The first time you fact-check an AI response and find it's confidently wrong, everything changes.</li>
-                            <li><strong>Write about it.</strong> A short post about how you used AI on a project is worth more than any certificate. It shows you can think, reflect, and communicate.</li>
-                            <li><strong>Ask people how they use it.</strong> In interviews, coffee chats, networking events. The answers will surprise you.</li>
-                            <li><strong>Get comfortable talking about it.</strong> Practice saying "I used AI to help with the first draft and then I restructured it based on..." That's a skill you'll need.</li>
+                            <li><strong>Use it on your next assignment.</strong> Not as an experiment. For real. Open ChatGPT, Claude, or Gemini and let it help you structure, research, or draft -- then notice where it was useful and where it wasn't.</li>
+                            <li><strong>Catch it lying.</strong> Ask ChatGPT a specific factual question about your subject. Then verify the answer. The first time you find it's confidently wrong? Everything changes. That healthy scepticism is the whole skill.</li>
+                            <li><strong>Talk about it.</strong> In a coffee chat, a networking event, an interview -- ask someone how they use AI day to day. Are they using Copilot? Claude? Internal tools? You'll learn more in ten minutes than in any online course.</li>
+                            <li><strong>Write a paragraph about what you noticed.</strong> Not a whole blog post. Just a few lines on LinkedIn about what worked and what didn't. "I tried using Claude for my dissertation research and here's what happened." That kind of reflection is rare and people notice it.</li>
+                            <li><strong>Get comfortable saying it out loud.</strong> "I used ChatGPT to help with the first draft and then I restructured it based on..." That sentence is going to come up a lot in your career. Start practising it now.</li>
                         </ol>
 
                         <hr>
