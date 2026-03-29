@@ -8,7 +8,7 @@ function getHeader(isArticlePage = false) {
     const experiencePath = isArticlePage ? '../experience.html' : 'experience.html';
 
     return `
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
+    <header id="site-header" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 transition-transform duration-300">
         <nav class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <a href="${indexPath}" class="flex items-center space-x-2.5 hover:opacity-80 transition-opacity group">
@@ -76,6 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     mobileMenu.classList.add('hidden');
                 }
             });
+        }
+
+        // Hide header on scroll down, show on scroll up
+        const header = document.getElementById('site-header');
+        if (header) {
+            let lastY = 0;
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        const y = window.scrollY;
+                        if (y > 80 && y > lastY) {
+                            header.style.transform = 'translateY(-100%)';
+                        } else {
+                            header.style.transform = 'translateY(0)';
+                        }
+                        lastY = y;
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
         }
     }
 });

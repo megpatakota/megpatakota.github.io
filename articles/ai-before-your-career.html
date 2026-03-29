@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use AI Before You Start Your Career - Meg Patakota</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/site-style-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+
+    <meta name="description" content="AI is already reshaping what employers expect. Here is how to use it well, use it honestly, and stand out because of it.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://megpatakota.co.uk/articles/ai-before-your-career.html">
+    <meta property="og:title" content="How to Use AI Before You Start Your Career">
+    <meta property="og:description" content="AI is already reshaping what employers expect. Here is how to use it well, use it honestly, and stand out because of it.">
+    <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+
+    <style>
+        /* Progress bar */
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
+
+        /* TOC */
+        .toc-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.375rem 0; font-size: 0.8125rem; color: var(--color-text-tertiary); transition: color 0.2s; cursor: pointer; }
+        .toc-link:hover, .toc-link.active { color: var(--color-text-primary); }
+        .toc-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d1d5db; background: white; transition: all 0.2s; flex-shrink: 0; }
+        .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
+        .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
+
+        /* Callout boxes */
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout-tip { border-color: #f59e0b; background: rgba(245,158,11,0.04); }
+        .callout-tip .callout-label { color: #d97706; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        /* Citations */
+        .cite { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; font-size: 0.5625rem; font-weight: 700; color: var(--color-buttons); background: rgba(14,116,144,0.1); border-radius: 50%; vertical-align: super; margin-left: 2px; text-decoration: none; transition: background 0.2s; }
+        .cite:hover { background: rgba(14,116,144,0.2); }
+
+        /* Section numbers */
+        .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
+
+        /* Bullet dots */
+        .article-content ul { list-style: none; padding-left: 0; }
+        .article-content ul li { display: flex; align-items: flex-start; gap: 0.75rem; }
+        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; margin-top: 0.75rem; flex-shrink: 0; }
+
+        /* Ordered list */
+        .article-content ol { counter-reset: step; list-style: none; padding-left: 0; }
+        .article-content ol li { counter-increment: step; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .article-content ol li::before { content: counter(step); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.6875rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem; }
+
+        /* Back to top */
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
+        #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
+
+        /* Ref list - override ol counter */
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; }
+        .ref-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            .section-num { font-size: 1.75rem; }
+            .callout { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+    <div id="progress-bar" style="width: 0%"></div>
+
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../assets/js/header.js"></script>
+
+    <section class="pt-8 pb-12 px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Header -->
+            <div class="mb-6">
+                <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i>
+                    All Articles
+                </a>
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="text-sm text-text_tertiary">29 March 2026</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">8 min read</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">AI</span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Career</span>
+                </div>
+                <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">
+                    How to Use AI Before You Start Your Career
+                </h1>
+                <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">
+                    AI is already reshaping what employers expect. Here is how to use it well, use it honestly, and stand out because of it.
+                </p>
+                <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Mobile TOC (inline, same style as sidebar) -->
+            <div class="xl:hidden mb-10" id="mobile-toc-wrapper">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-4">In this article</p>
+                <div class="relative" id="mobile-toc">
+                    <div class="toc-line"></div>
+                </div>
+            </div>
+
+            <!-- Layout: TOC sidebar + content -->
+            <div class="xl:flex xl:gap-12">
+                <!-- TOC (desktop) -->
+                <aside class="hidden xl:block w-56 shrink-0">
+                    <div class="sticky top-24">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-5">In this article</p>
+                        <div class="relative" id="toc">
+                            <div class="toc-line"></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content -->
+                <div class="flex-1 max-w-3xl">
+                    <article class="article-content">
+
+                        <p>AI isn't coming for your career. But someone who knows how to use it well? They might.</p>
+
+                        <p>If you're a student or recent graduate, here's a question worth sitting with: when you start your first role, will you know how to use AI? Not as a novelty. As an actual tool. Because the people sitting next to you already will.</p>
+
+                        <p>This isn't about becoming an AI expert. It's about knowing what these tools can actually do, where they fall apart, and how to use them without losing the thing that makes your work yours.</p>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-1" data-toc="The Reality Right Now">
+                            <span class="section-num">01</span>
+                            <h2 class="-mt-4">What's Actually Happening Right Now</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>Let's be specific. Microsoft's 2024 Work Trend Index found that 75% of knowledge workers were already using AI at work, and most of them brought their own tools rather than waiting for IT to roll something out.<a href="#ref-1" class="cite">1</a> LinkedIn flagged AI skills as the fastest-growing category in job postings globally.<a href="#ref-2" class="cite">2</a></p>
+
+                        <p>And this isn't just a tech thing. Think AI only matters if you're going into software? Law firms are using it for contract review. Consultancies for research synthesis. Marketing teams for first drafts. PwC surveyed 56,000 workers across 50 countries and the majority expected AI to reshape their role within three years.<a href="#ref-3" class="cite">3</a></p>
+
+                        <p>McKinsey found that by early 2024, 72% of organisations had adopted generative AI in at least one business function. That's nearly double the year before.<a href="#ref-5" class="cite">5</a> The WEF's Future of Jobs Report called AI the fastest-growing skill requirement globally.<a href="#ref-4" class="cite">4</a></p>
+
+                        <p>So the question isn't whether you'll use AI at work. It's whether you'll use it well.</p>
+
+                        <div class="callout">
+                            <div class="callout-label"><i class="fas fa-lightbulb"></i> Key Insight</div>
+                            <p>Think of AI literacy like spreadsheet literacy twenty years ago. You didn't need to be an Excel wizard, but you needed to be competent. Same thing is happening now. The people who treat it as optional are going to feel it.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-2" data-toc="Using AI Well">
+                            <span class="section-num">02</span>
+                            <h2 class="-mt-4">What "Using AI Well" Actually Looks Like</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <h3>A thinking partner, not a thinking replacement</h3>
+
+                        <p>Ever had someone who's great to bounce ideas off? That's what AI should be. Not something that thinks for you -- something that makes your thinking faster and sharper. Ethan Mollick calls it a "cognitive tool".<a href="#ref-6" class="cite">6</a> Here's what that looks like in practice:</p>
+
+                        <ul>
+                            <li><strong>Stress-test your ideas.</strong> Give it your argument. Ask it to poke holes. You'll be surprised how useful this is.</li>
+                            <li><strong>Get unstuck.</strong> Staring at a blank page? Let it generate a rough structure. Then throw most of it away and write it properly.</li>
+                            <li><strong>Learn faster.</strong> Ask it to explain something at three different levels of complexity. Way faster than Googling.</li>
+                            <li><strong>Catch your mistakes.</strong> Use it to review your logic before someone else does.</li>
+                        </ul>
+
+                        <p>Harvard Business School tested this. Consultants using AI were 25% faster and produced 40% better output -- but only when they stayed actively engaged. What happened when they just handed everything over and stopped thinking? Quality dropped.<a href="#ref-7" class="cite">7</a> Funny how that works.</p>
+
+                        <h3>Know where it breaks</h3>
+
+                        <p>Here's the thing nobody tells you upfront: AI models are confident, articulate, and sometimes completely wrong. They'll fabricate information with the same tone they use when they're correct.<a href="#ref-8" class="cite">8</a> If you don't know this, you'll get burned.</p>
+
+                        <ul>
+                            <li><strong>It makes things up.</strong> Papers that don't exist. Quotes nobody said. Statistics from nowhere. Always verify.</li>
+                            <li><strong>It predicts, not reasons.</strong> It generates what's statistically likely, not what's true. Big difference.</li>
+                            <li><strong>It doesn't know your context.</strong> Your company, your team, your situation -- it's guessing unless you tell it.</li>
+                            <li><strong>It can't replace expertise.</strong> It can summarise a legal case. It can't tell you if it applies to yours.</li>
+                        </ul>
+
+                        <div class="callout callout-tip">
+                            <div class="callout-label"><i class="fas fa-check-circle"></i> A Good Rule</div>
+                            <p>Don't submit anything you couldn't defend in a conversation. If someone asks "why did you write this?" and your honest answer is "the AI said so" -- that's a problem.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-3" data-toc="The Honesty Question">
+                            <span class="section-num">03</span>
+                            <h2 class="-mt-4">The Honesty Question</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>Let's just say it directly. Using AI isn't cheating. Pretending you didn't use it is.</p>
+
+                        <p>The professional world is already moving past the "is it OK?" question. Canva's 2025 hiring survey found 90% of hiring managers were fine with candidates using AI, but 73% wanted them to say so.<a href="#ref-9" class="cite">9</a> Here's how I think about it:</p>
+
+                        <ul>
+                            <li><strong>Job applications:</strong> Used AI to tighten up your cover letter? Great. Had it write the whole thing and submitted it untouched? You're going to get caught in the interview.</li>
+                            <li><strong>At work:</strong> "I used Claude to structure the initial research, then I verified the sources and rewrote the analysis." That's a professional thing to say. It shows judgement.</li>
+                            <li><strong>Your portfolio:</strong> If AI was part of the process, say so. Explain what it did and what you did. That's a strength, not a weakness.</li>
+                        </ul>
+
+                        <p>The Russell Group put out principles in 2023 saying AI literacy should be embedded into teaching, not banned.<a href="#ref-11" class="cite">11</a> The best employers I've spoken to don't ask <em>whether</em> candidates use AI. They ask <em>how</em>.</p>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-4" data-toc="What Employers Want">
+                            <span class="section-num">04</span>
+                            <h2 class="-mt-4">What Employers Actually Care About</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>I talk to hiring managers across tech, consulting, finance, and the public sector. Here's what they actually value in graduates who use AI:</p>
+
+                        <h3>Can you spot the nonsense?</h3>
+                        <p>Critical evaluation. Can you look at AI output and tell what's good, what's wrong, and what's missing? This is the skill. The OECD called it one of the most important emerging capabilities for knowledge workers.<a href="#ref-12" class="cite">12</a></p>
+
+                        <h3>Can you communicate with it?</h3>
+                        <p>Not "prompt engineering" in the buzzword sense. Just: can you give an AI tool clear context, iterate on what it gives back, and get something useful? It's really a communication skill.</p>
+
+                        <h3>Do you know where it fits?</h3>
+                        <p>Where does AI save time? Where does it add risk? The person who automates the right parts and does the rest with full attention beats the person who tries to automate everything.<a href="#ref-5" class="cite">5</a></p>
+
+                        <h3>Do you know when to stop using it?</h3>
+                        <p>This one is underrated. Knowing when AI isn't the right tool -- when you need nuance, relationship, ethics, or original thinking -- is a sign of maturity.<a href="#ref-13" class="cite">13</a></p>
+
+                        <div class="callout">
+                            <div class="callout-label"><i class="fas fa-lightbulb"></i> Key Insight</div>
+                            <p>The graduates who stand out aren't the ones who use AI the most. They're the ones who use it with the most intention. They can explain what they used, why, and what they did differently because of it.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-5" data-toc="Building Your Portfolio">
+                            <span class="section-num">05</span>
+                            <h2 class="-mt-4">Building a Portfolio That Shows Real Thinking</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <h3>Show the process</h3>
+                        <p>"I used AI to generate the initial data cleaning script, then I modified it to handle edge cases X and Y that the model missed." That sentence tells a hiring manager more than any polished final product ever will.</p>
+
+                        <h3>Build things that need judgement</h3>
+                        <p>Pick problems where AI couldn't do the whole thing. Use it to speed up the boring parts. The interesting parts? Those are yours.</p>
+
+                        <h3>Go deep on one tool</h3>
+                        <p>Rather than skimming five, pick one and really learn it. "I've used Claude extensively for research synthesis and I know exactly where it's great and where it falls over" is way more impressive than "I've tried everything."</p>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-6" data-toc="Start This Week">
+                            <span class="section-num">06</span>
+                            <h2 class="-mt-4">What You Can Do This Week</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>You don't need to wait until you graduate.</p>
+
+                        <ol>
+                            <li><strong>Use it for something real.</strong> Not a toy example. An actual assignment, a real project, a genuine problem you're trying to solve.</li>
+                            <li><strong>Catch it lying.</strong> Seriously. The first time you fact-check an AI response and find it's confidently wrong, everything changes.</li>
+                            <li><strong>Write about it.</strong> A short post about how you used AI on a project is worth more than any certificate. It shows you can think, reflect, and communicate.</li>
+                            <li><strong>Ask people how they use it.</strong> In interviews, coffee chats, networking events. The answers will surprise you.</li>
+                            <li><strong>Get comfortable talking about it.</strong> Practice saying "I used AI to help with the first draft and then I restructured it based on..." That's a skill you'll need.</li>
+                        </ol>
+
+                        <hr>
+
+                        <!-- References -->
+                        <div class="mt-14 pt-8 border-t border-gray-200">
+                            <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                            <ol class="ref-list">
+                                <li id="ref-1"><span class="ref-num">1</span><span><a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener noreferrer">Microsoft (2024). <em>2024 Work Trend Index Annual Report.</em></a></span></li>
+                                <li id="ref-2"><span class="ref-num">2</span><span><a href="https://economicgraph.linkedin.com/research/future-of-work-report-ai" target="_blank" rel="noopener noreferrer">LinkedIn Economic Graph (2023). <em>Future of Work Report: AI at Work.</em></a></span></li>
+                                <li id="ref-3"><span class="ref-num">3</span><span><a href="https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears.html" target="_blank" rel="noopener noreferrer">PwC (2024). <em>Global Workforce Hopes and Fears Survey 2024.</em></a></span></li>
+                                <li id="ref-4"><span class="ref-num">4</span><span><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">World Economic Forum (2025). <em>The Future of Jobs Report 2025.</em></a></span></li>
+                                <li id="ref-5"><span class="ref-num">5</span><span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey & Company (2024). <em>The State of AI in Early 2024.</em></a></span></li>
+                                <li id="ref-6"><span class="ref-num">6</span><span><a href="https://www.penguinrandomhouse.com/books/741805/co-intelligence-by-ethan-mollick/" target="_blank" rel="noopener noreferrer">Mollick, E. (2024). <em>Co-Intelligence: Living and Working with AI.</em></a></span></li>
+                                <li id="ref-7"><span class="ref-num">7</span><span><a href="https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7571.pdf" target="_blank" rel="noopener noreferrer">Dell'Acqua, F. et al. (2023). <em>Navigating the Jagged Technological Frontier.</em> Harvard Business School.</a></span></li>
+                                <li id="ref-8"><span class="ref-num">8</span><span><a href="https://dl.acm.org/doi/10.1145/3571730" target="_blank" rel="noopener noreferrer">Ji, Z. et al. (2023). Survey of Hallucination in Natural Language Generation. <em>ACM Computing Surveys</em>, 55(12).</a></span></li>
+                                <li id="ref-9"><span class="ref-num">9</span><span><a href="https://www.canva.com/designschool/courses/new-year-new-job/" target="_blank" rel="noopener noreferrer">Canva (2025). <em>New Year, New Job.</em> Survey by Sago.</a></span></li>
+                                <li id="ref-10"><span class="ref-num">10</span><span><a href="https://www.jisc.ac.uk/guides/artificial-intelligence-ai-in-tertiary-education" target="_blank" rel="noopener noreferrer">Jisc (2024). <em>Artificial intelligence (AI) in tertiary education.</em></a></span></li>
+                                <li id="ref-11"><span class="ref-num">11</span><span><a href="https://russellgroup.ac.uk/media/6137/rg_ai_principles-final.pdf" target="_blank" rel="noopener noreferrer">Russell Group (2023). <em>Principles on the use of generative AI tools in education.</em></a></span></li>
+                                <li id="ref-12"><span class="ref-num">12</span><span><a href="https://www.oecd.org/en/publications/oecd-employment-outlook-2023_08785bba-en.html" target="_blank" rel="noopener noreferrer">OECD (2023). <em>Employment Outlook 2023: AI and the Labour Market.</em></a></span></li>
+                                <li id="ref-13"><span class="ref-num">13</span><span><a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach" target="_blank" rel="noopener noreferrer">DSIT (2023). <em>A pro-innovation approach to AI regulation.</em> UK Government.</a></span></li>
+                            </ol>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up text-sm"></i>
+    </button>
+
+    <div id="shared-footer"></div>
+    <script src="../assets/js/footer.js"></script>
+
+    <script>
+        // Progress bar + back to top
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('progress-bar').style.width = (window.scrollY / h * 100) + '%';
+            document.getElementById('back-to-top').style.display = window.scrollY > 600 ? 'flex' : 'none';
+        });
+
+        // Build TOCs from data-toc attributes
+        const toc = document.getElementById('toc');
+        const mobileToc = document.getElementById('mobile-toc');
+        const sections = document.querySelectorAll('[data-toc]');
+
+        sections.forEach((el) => {
+            // Desktop TOC
+            const link = document.createElement('button');
+            link.className = 'toc-link';
+            link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            link.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            toc.appendChild(link);
+
+            // Mobile TOC (same style)
+            const mLink = document.createElement('button');
+            mLink.className = 'toc-link';
+            mLink.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            mLink.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            mobileToc.appendChild(mLink);
+        });
+
+        // Active tracking for both TOCs
+        const tocLinks = toc.querySelectorAll('.toc-link');
+        const mobileTocLinks = mobileToc.querySelectorAll('.toc-link');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(sections).indexOf(entry.target);
+                    tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                    mobileTocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
