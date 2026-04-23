@@ -17,7 +17,7 @@ function getHeader(isArticlePage = false) {
                     </div>
                     <div class="hidden sm:block">
                         <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
-                        <div class="text-xs text-text_tertiary">Data & AI Solutions</div>
+                        <div class="text-xs text-text_tertiary">AI, Automation & Enablement</div>
                     </div>
                 </a>
 
