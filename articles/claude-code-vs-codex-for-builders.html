@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code vs Codex: Which AI Coding Agent Actually Helps You Ship? - Meg Patakota</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/site-style-config.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="canonical" href="https://www.megpatakota.co.uk/articles/claude-code-vs-codex-for-builders.html">
+
+    <meta name="description" content="An opinionated, evidence-backed look at Claude Code and Codex for coders, vibe coders, and low-code builders choosing which AI coding agent actually helps them ship.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.megpatakota.co.uk/articles/claude-code-vs-codex-for-builders.html">
+    <meta property="og:title" content="Claude Code vs Codex: Which AI Coding Agent Actually Helps You Ship?">
+    <meta property="og:description" content="An opinionated, evidence-backed look at Claude Code and Codex for coders, vibe coders, and low-code builders choosing which AI coding agent actually helps them ship.">
+    <meta property="og:image" content="https://www.megpatakota.co.uk/assets/images/articles/ai-builder-city-metaphor.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+
+    <style>
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
+
+        .toc-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.375rem 0; font-size: 0.8125rem; color: var(--color-text-tertiary); transition: color 0.2s; cursor: pointer; }
+        .toc-link:hover, .toc-link.active { color: var(--color-text-primary); }
+        .toc-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d1d5db; background: white; transition: all 0.2s; flex-shrink: 0; }
+        .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
+        .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
+
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout-tip { border-color: #f59e0b; background: rgba(245,158,11,0.04); }
+        .callout-tip .callout-label { color: #d97706; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        .cite { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; font-size: 0.5625rem; font-weight: 700; color: var(--color-buttons); background: rgba(14,116,144,0.1); border-radius: 50%; vertical-align: super; margin-left: 2px; text-decoration: none; transition: background 0.2s; }
+        .cite:hover { background: rgba(14,116,144,0.2); }
+
+        .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
+
+        .article-content ul { list-style: none; padding-left: 1.25rem; }
+        .article-content ul li { display: list-item; list-style: none; position: relative; margin-bottom: 0.75rem; line-height: 1.75; }
+        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; position: absolute; left: -1.25rem; top: 0.6rem; }
+
+        .article-content ol { counter-reset: step; list-style: none; padding-left: 2.25rem; }
+        .article-content ol li { counter-increment: step; position: relative; margin-bottom: 1rem; line-height: 1.75; }
+        .article-content ol li::before { content: counter(step); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.6875rem; font-weight: 700; display: flex; align-items: center; justify-content: center; position: absolute; left: -2.25rem; top: 0.15rem; }
+
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.875rem; margin: 1.5rem 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; }
+        .compare-table th { background: #f8fafc; color: var(--color-text-primary); font-weight: 700; text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; }
+        .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; color: var(--color-text-secondary); vertical-align: top; }
+        .compare-table tr:last-child td { border-bottom: 0; }
+        .compare-table strong { color: var(--color-text-primary); }
+
+        .verdict-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+        .verdict-pill { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #fff; }
+        .verdict-pill span { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .verdict-pill p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
+
+        .article-hero-image { max-width: 46rem; margin: 1.5rem 0 2rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
+        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
+
+        .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
+        .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
+        .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card ul { margin: 0; padding-left: 0; }
+        .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; padding-left: 0; }
+        .quick-card li::before { display: none !important; }
+        .quick-card li:last-child { margin-bottom: 0; }
+
+        .mini-rule { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; margin: 1.5rem 0; background: #f8fafc; }
+        .mini-rule p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .mini-rule p:last-child { margin-bottom: 0; }
+
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
+        #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
+
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; }
+        .ref-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+
+        @media (max-width: 640px) {
+            .section-num { font-size: 1.75rem; }
+            .callout { padding: 1rem 1.25rem; }
+            .verdict-strip { grid-template-columns: 1fr; }
+            .quick-verdict { grid-template-columns: 1fr; }
+            .article-hero-image { margin: 1.25rem 0 1.5rem; border-radius: 0.75rem; }
+            .article-hero-image img { max-height: 14rem; }
+            .compare-table { font-size: 0.8125rem; }
+            .compare-table th, .compare-table td { padding: 0.75rem; }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+    <div id="progress-bar" style="width: 0%"></div>
+
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../assets/js/header.js"></script>
+
+    <section class="pt-8 pb-12 px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+
+            <div class="mb-6">
+                <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i>
+                    All Articles
+                </a>
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="text-sm text-text_tertiary">28 April 2026</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">8 min read</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">AI</span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Coding</span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Low Code</span>
+                </div>
+                <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">
+                    Claude Code vs Codex: Which AI Coding Agent Actually Helps You Ship?
+                </h1>
+                <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">
+                    I started with Claude Max vs ChatGPT Pro, but the real builder question is sharper: Claude Code or Codex? Here is the practical comparison.
+                </p>
+                <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+            </div>
+
+            <figure class="article-hero-image">
+                <img src="../assets/images/articles/ai-builder-city-metaphor.png" alt="A playful miniature software city showing planning, coding, context, automation, and shipping as two paths">
+            </figure>
+
+            <div class="xl:hidden mb-10" id="mobile-toc-wrapper">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-4">In this article</p>
+                <div class="relative" id="mobile-toc">
+                    <div class="toc-line"></div>
+                </div>
+            </div>
+
+            <div class="xl:flex xl:gap-12">
+                <aside class="hidden xl:block w-56 shrink-0">
+                    <div class="sticky top-24">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-5">In this article</p>
+                        <div class="relative" id="toc">
+                            <div class="toc-line"></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="flex-1 max-w-3xl">
+                    <article class="article-content">
+
+                        <p>Every few months, the internet gives us a new frontier model and a fresh excuse to panic-buy a subscription. I started this comparison as <strong>Claude Max versus ChatGPT Pro</strong>, but for builders the more useful question is now clearer: <strong>Claude Code versus Codex</strong>.</p>
+
+                        <p>Not party tricks. Coding. Low-code workflows. Debugging broken automations. Reading a messy repo. Turning a half-formed idea into something shippable.</p>
+
+                        <p>The reason I started comparing them seriously is simple: Claude had been my comfortable default, but over the last week it started feeling weirdly uneven. More missed details. More "here is the plan" without properly carrying the plan through. A little lazy around edge cases. That is subjective, of course, and model behaviour can shift with prompts, load, routing, product changes, or the specific task. But when a coding tool feels less reliable, you notice. So I started testing Codex more deliberately.</p>
+
+                        <div class="quick-verdict">
+                            <div class="quick-card">
+                                <h3>Skim Verdict</h3>
+                                <ul>
+                                    <li><strong>Building and debugging:</strong> Codex feels stronger for moving work forward.</li>
+                                    <li><strong>Review and judgement:</strong> Claude/Claude Code still has a real place.</li>
+                                    <li><strong>Best habit:</strong> test both on your own repo or workflow, not on vibes.</li>
+                                </ul>
+                            </div>
+                            <div class="quick-card">
+                                <h3>My Testing Lens</h3>
+                                <ul>
+                                    <li>Can it keep a plan alive across several turns?</li>
+                                    <li>Does it find the boring file or config field that matters?</li>
+                                    <li>How much cleanup does it leave behind?</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p>Small naming cleanup before the fight starts: <strong>Claude Code</strong> is Anthropic's coding agent, usually used with Claude models such as Opus. <strong>Codex</strong> is OpenAI's coding agent, available across terminal, editor, cloud, and ChatGPT-style workflows.<a href="#ref-9" class="cite">9</a><a href="#ref-10" class="cite">10</a> The subscription context still matters: Claude Max and ChatGPT Pro affect how much of these premium workflows you can practically use, but the real comparison here is the coding-agent experience.</p>
+
+                        <div class="callout">
+                            <div class="callout-label"><i class="fas fa-lightbulb"></i> My take</div>
+                            <p>For coders and low-code builders, the winning tool is not the one with the fanciest launch graph. It is the one that reads enough context, makes a plan, keeps the plan in memory, checks its work, and does not quietly skip the boring bits.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-1" data-toc="Why This Matters More for Builders">
+                            <span class="section-num">01</span>
+                            <h2 class="-mt-4">Why This Matters More for Builders</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>For general writing, the difference between frontier models can feel like taste. For builders, the difference becomes much more concrete.</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>Builder task</th>
+                                        <th>What good looks like</th>
+                                        <th>What hurts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Reading a repo</strong></td>
+                                        <td>Finds the relevant files, conventions, and side effects.</td>
+                                        <td>Patches one file while missing the surrounding system.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Low-code automation</strong></td>
+                                        <td>Tracks triggers, payloads, schemas, permissions, and failure paths.</td>
+                                        <td>Gives generic workflow advice and misses the actual field mismatch.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Debugging</strong></td>
+                                        <td>Uses logs, tests, and config together before suggesting a fix.</td>
+                                        <td>Decorates the symptom instead of finding the cause.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Planning</strong></td>
+                                        <td>Creates a plan, follows it, and updates it when evidence changes.</td>
+                                        <td>Writes a nice plan, then quietly forgets half of it.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>This is not only for software engineers. It is also for low-code builders using tools like Make, Zapier, n8n, Airtable, Retool, Bubble, Webflow, Supabase, or internal ops platforms. The modern builder is often stitching together APIs, workflow logic, database tables, webhooks, screenshots, CSVs, and vague business requirements. That is exactly where a lazy model hurts.</p>
+
+                        <p>Claude Opus 4.7 launched on 16 April 2026 as Anthropic's latest generally available Opus model, with a focus on advanced software engineering, long-running tasks, better vision, instruction following, and memory across sessions.<a href="#ref-3" class="cite">3</a> Anthropic positions it as a premium model for coding, AI agents, and enterprise workflows, with a 1M context window and API pricing from $5 per million input tokens and $25 per million output tokens.<a href="#ref-5" class="cite">5</a></p>
+
+                        <p>GPT-5.5 launched on 23 April 2026. OpenAI describes it as a model for complex real-world work: writing and debugging code, researching online, analysing information, creating documents and spreadsheets, and moving across tools until a task is done.<a href="#ref-1" class="cite">1</a> OpenAI's system card says GPT-5.5 Pro uses the same underlying model with parallel test-time compute, so think "more compute on the problem", not a totally different brain.<a href="#ref-6" class="cite">6</a></p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>Builder question</th>
+                                        <th>Claude Code / Opus</th>
+                                        <th>Codex / GPT-5.5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Best feeling use</strong></td>
+                                        <td>Architecture thinking, code review, document-heavy analysis, UI taste, careful second opinions.</td>
+                                        <td>End-to-end building, debugging, repo work, workflow design, research, and tool-heavy execution.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Context window</strong></td>
+                                        <td>1M context window in Anthropic's Opus product positioning.<a href="#ref-5" class="cite">5</a></td>
+                                        <td>1M context window for API developers; Codex availability lists a 400K context window.<a href="#ref-2" class="cite">2</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>API list price</strong></td>
+                                        <td>$5 input / $25 output per 1M tokens.<a href="#ref-5" class="cite">5</a></td>
+                                        <td>$5 input / $30 output per 1M tokens. Pro is $30 / $180.<a href="#ref-2" class="cite">2</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Benchmark signals</strong></td>
+                                        <td>SWE-Bench Pro, FinanceAgent, MCP Atlas in OpenAI's comparison table.<a href="#ref-2" class="cite">2</a></td>
+                                        <td>Terminal-Bench 2.0, OSWorld-Verified, BrowseComp, long-context MRCR ranges in OpenAI's table.<a href="#ref-2" class="cite">2</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-2" data-toc="The Context Window Is the Real Workspace">
+                            <span class="section-num">02</span>
+                            <h2 class="-mt-4">The Context Window Is the Real Workspace</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>For coding and low-code work, context is not a luxury feature. It is the difference between "here is generic advice" and "I noticed your webhook payload changed shape after step three".</p>
+
+                        <p>Both model families are now playing in huge-context territory. Anthropic positions Opus 4.7 with a 1M context window.<a href="#ref-5" class="cite">5</a> OpenAI lists GPT-5.5 for API developers with a 1M context window, while Codex availability is listed with a 400K context window.<a href="#ref-2" class="cite">2</a> In plain English: both can theoretically ingest much more of your project than older chatbots could.</p>
+
+                        <p>But here is the trap: a big context window is not the same as a good memory. You can paste half a repo into a model and still get a wrong answer if it attends to the wrong file, forgets a constraint, or makes a confident assumption. OpenAI's own long-context table shows GPT-5.5 ahead on the hardest MRCR range it reports, 74.0% at 512K-1M versus 32.2% for Claude Opus 4.7.<a href="#ref-2" class="cite">2</a> That is a useful signal, but your real test is whether the model can find the one boring line that breaks your build.</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>Context to provide</th>
+                                        <th>For coders</th>
+                                        <th>For low-code builders</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>System shape</strong></td>
+                                        <td>Repo tree, key files, package scripts, test commands.</td>
+                                        <td>Workflow export, app screenshots, trigger/action map.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Failure evidence</strong></td>
+                                        <td>Stack traces, failing tests, logs, recent diffs.</td>
+                                        <td>Failed run logs, webhook payloads, API responses.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Constraints</strong></td>
+                                        <td>Do not change public API, keep tests green, match existing patterns.</td>
+                                        <td>Rate limits, permissions, schema fields, business rules.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Success check</strong></td>
+                                        <td>Tests, lint, typecheck, smoke path.</td>
+                                        <td>Sample input/output, retry path, alerting or fallback rule.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="callout callout-tip">
+                            <div class="callout-label"><i class="fas fa-compass"></i> Context rule</div>
+                            <p>Do not just upload everything and pray. Tell the model what each file is, what success looks like, which constraints matter, and ask it to cite the exact file, step, or config field behind important claims.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-3" data-toc="Claude Code vs Codex Is the Builder Comparison">
+                            <span class="section-num">03</span>
+                            <h2 class="-mt-4">Claude Code vs Codex Is the Builder Comparison</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>This is where the models stop being clever text boxes and become actual coding environments.</p>
+
+                        <p>OpenAI describes Codex as a coding agent that can complete engineering work end to end, including features, refactors, migrations, documentation, code review, and background automations. The product is designed around multi-agent workflows, worktrees, cloud environments, editor use, and terminal use.<a href="#ref-9" class="cite">9</a> Anthropic describes Claude Code as an agentic coding system that reads your codebase, edits across files, runs tests, uses your toolchain, and asks permission before risky actions by default.<a href="#ref-10" class="cite">10</a></p>
+
+                        <p>That means the choice is partly philosophical:</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>Question</th>
+                                        <th>Claude Code</th>
+                                        <th>Codex</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>How it feels</strong></td>
+                                        <td>Pairing with an agent in your own development environment.</td>
+                                        <td>Delegating work to an agent that can run in parallel and come back with a result.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Best for</strong></td>
+                                        <td>Exploratory debugging, architecture, ambiguous refactors, and hands-on steering.</td>
+                                        <td>Well-scoped tasks, tests, PR-style work, parallel jobs, and "please just implement this".</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Risk shape</strong></td>
+                                        <td>You see more of the steps, but you may spend more time supervising.</td>
+                                        <td>You get more autonomy, but you need strong specs and good review habits.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Why regulars care</strong></td>
+                                        <td>Planning quality and consistency show up immediately in a long local session.</td>
+                                        <td>Task framing, test coverage, and final diff quality matter more than the chat answer.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>SitePoint makes a similar distinction: Claude Code is framed as interactive, terminal-first, and human-in-the-loop, while Codex is framed as more autonomous and cloud-sandboxed for delegated work.<a href="#ref-11" class="cite">11</a> That matches my own mental model. Claude Code is a close collaborator. Codex is closer to assigning a task to a junior engineer who can run tests, make a branch, and return with a diff.</p>
+
+                        <p>For low-code builders, the same pattern applies. Claude Code is useful when you want to reason through how the automation should work. Codex-style agent work is more appealing when you have a clear spec and want the scaffolding, glue code, test harness, or integration code actually produced.</p>
+
+                        <div class="callout callout-tip">
+                            <div class="callout-label"><i class="fas fa-code-branch"></i> Coding-agent rule</div>
+                            <p>If you want to explore a messy system, start interactive. If you can write a clean acceptance test or spec, delegate. The tool choice should follow the shape of the task.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-4" data-toc="Where Codex Is Pulling Ahead for Me">
+                            <span class="section-num">04</span>
+                            <h2 class="-mt-4">Where Codex Is Pulling Ahead for Me</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>Codex's advantage, at least in my testing, is that it feels more willing to move from "analysis" into "doing". That matters when you are asking it to build a dashboard, refactor code, debug a failing workflow, or turn an idea into a working low-code spec.</p>
+
+                        <p>The benchmark picture supports some of that builder story. In OpenAI's published table, GPT-5.5 scores 82.7% on Terminal-Bench 2.0 versus 69.4% for Claude Opus 4.7, and 78.7% on OSWorld-Verified versus 78.0% for Opus.<a href="#ref-2" class="cite">2</a> It also leads BrowseComp, 84.4% versus 79.3%, which matters if your work includes research and web-style information gathering.<a href="#ref-2" class="cite">2</a></p>
+
+                        <ul>
+                            <li><strong>For coders:</strong> better task persistence: read, plan, edit, test, fix.</li>
+                            <li><strong>For low-code builders:</strong> clearer workflow design, field mapping, webhook failure points, and test paths.</li>
+                            <li><strong>For mixed work:</strong> stronger movement across code, docs, screenshots, research, and implementation.</li>
+                        </ul>
+
+                        <div class="callout">
+                            <div class="callout-label"><i class="fas fa-bolt"></i> Codex feels stronger when</div>
+                            <p>The task crosses tools: code plus docs, workflow plus database, screenshot plus API payload, research plus implementation. That is where execution beats elegance.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-5" data-toc="Where Claude Still Helps, and Where It Has Been Frustrating">
+                            <span class="section-num">05</span>
+                            <h2 class="-mt-4">Where Claude Still Helps, and Where It Has Been Frustrating</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>I do not want this to become "Claude is bad now", because that is not fair. Opus 4.7 still looks strong on several relevant signals. In OpenAI's own comparison table, Opus 4.7 leads GPT-5.5 on SWE-Bench Pro, 64.3% versus 58.6%, and on FinanceAgent v1.1, 64.4% versus 60.0%. It also edges GPT-5.5 on MCP Atlas, 79.1% versus 75.3%.<a href="#ref-2" class="cite">2</a></p>
+
+                        <p>Claude is often still excellent as a reviewer. It can be thoughtful about architecture, UX, data modelling, edge cases, and written explanations. Anthropic also calls out better high-resolution vision, instruction following, file-system memory, and more polished professional outputs like interfaces, slides, and docs.<a href="#ref-3" class="cite">3</a></p>
+
+                        <p>My frustration is about consistency. Over the week, Claude felt more likely to:</p>
+
+                        <ul>
+                            <li>miss something I had already said,</li>
+                            <li>produce a plan that looked sensible but did not line up with the actual files,</li>
+                            <li>stop too early, especially around edge cases,</li>
+                            <li>need more babysitting than I expected from a premium plan.</li>
+                        </ul>
+
+                        <p>That is deadly for coding. A model can be brilliant for ten minutes and still be expensive if you spend the next twenty checking what it skipped.</p>
+
+                        <p>There are caveats everywhere. OpenAI notes its GPT evals used <code>xhigh</code> reasoning in a research environment, which may differ from production ChatGPT.<a href="#ref-2" class="cite">2</a> Anthropic notes that Opus 4.7 can take instructions more literally than older models, so prompts and harnesses may need retuning.<a href="#ref-4" class="cite">4</a> OpenAI's table also flags memorization concerns around SWE-Bench Pro.<a href="#ref-2" class="cite">2</a> Third-party comparisons are useful for price, benchmark, and context checks, but they still will not tell you how the models behave on your messy real files.<a href="#ref-7" class="cite">7</a></p>
+
+                        <div class="verdict-strip">
+                            <div class="verdict-pill">
+                                <span>Best builder bet</span>
+                                <p>Codex, if your work depends on execution across tools and files.</p>
+                            </div>
+                            <div class="verdict-pill">
+                                <span>Best second reviewer</span>
+                                <p>Claude, when you want critique, architecture, writing, or taste.</p>
+                            </div>
+                            <div class="verdict-pill">
+                                <span>Best habit</span>
+                                <p>Make every model show its assumptions before you trust the output.</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-6" data-toc="The Real Difference Shows Up After Daily Use">
+                            <span class="section-num">06</span>
+                            <h2 class="-mt-4">The Real Difference Shows Up After Daily Use</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>One thing I would be careful about: a lot of casual comparisons are done by people who are still in the "wow, this is better than Copilot" phase. And honestly, fair. If you are moving from Microsoft Copilot, a basic workplace assistant, or occasional free ChatGPT use into Claude Code, Claude Max, ChatGPT Pro, or Codex, all of this will feel dramatically better.</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>User type</th>
+                                        <th>What they notice first</th>
+                                        <th>What they may miss</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>New to frontier AI</strong></td>
+                                        <td>It writes code, explains errors, drafts workflows, and feels magical.</td>
+                                        <td>Whether it is consistent enough for daily production work.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Copilot upgrader</strong></td>
+                                        <td>Longer answers, more reasoning, more complete suggestions.</td>
+                                        <td>Whether it actually read the repo, schema, or logs properly.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Regular builder</strong></td>
+                                        <td>Plan drift, context misses, cleanup cost, and trust after five loops.</td>
+                                        <td>Less. Regular use makes the sharp edges very obvious.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>That is why I am more interested in daily-driver behaviour than one-off prompt battles. The meaningful differences show up after the fifth debugging loop, the third refactor, the second failed webhook, and the moment you ask, "wait, did it actually read the file I gave it?"</p>
+
+                        <div class="mini-rule">
+                            <p><strong>For new users:</strong> almost any frontier model will feel like a huge upgrade.</p>
+                            <p><strong>For regular builders:</strong> the differences are in consistency, planning discipline, context retrieval, and cleanup cost.</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 mb-5" id="section-7" data-toc="So, What Should You Invest In?">
+                            <span class="section-num">07</span>
+                            <h2 class="-mt-4">So, What Should You Invest In?</h2>
+                            <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                        </div>
+
+                        <p>If you are an individual coder or low-code builder, I would test Codex first right now, especially if you want help actually building. Not because Claude Code is suddenly useless, but because Codex feels more aligned with the "take this messy thing and move it forward" workflow.</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>If your main work is...</th>
+                                        <th>Start with</th>
+                                        <th>Why</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Shipping features</strong></td>
+                                        <td>Codex</td>
+                                        <td>Better fit for execution, test loops, and delegated implementation.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Architecture or review</strong></td>
+                                        <td>Claude/Claude Code</td>
+                                        <td>Still valuable as a careful second reviewer and thinking partner.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Low-code automations</strong></td>
+                                        <td>Codex first, Claude as critic</td>
+                                        <td>Useful split between building the flow and stress-testing the logic.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Learning AI tools</strong></td>
+                                        <td>Either</td>
+                                        <td>The first leap from Copilot/basic chat will matter more than the brand.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Visual assets</strong></td>
+                                        <td>ChatGPT</td>
+                                        <td>Claude and Claude Code do not generate images natively like ChatGPT; use Claude more as a critic for concept, copy, and layout.<a href="#ref-8" class="cite">8</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p>If you can afford to test both for a month, do that. Give them the same tasks:</p>
+
+                        <ol>
+                            <li><strong>Repo comprehension:</strong> ask each model to explain a real project and identify the riskiest files before making changes.</li>
+                            <li><strong>Bug fixing:</strong> give it a failing test, logs, and relevant files. See whether it fixes the cause or decorates the symptom.</li>
+                            <li><strong>Low-code workflow design:</strong> ask for a Make, Zapier, n8n, or Airtable workflow from a messy business brief.</li>
+                            <li><strong>Automation debugging:</strong> paste a failed run, payload sample, and schema. Check whether it spots the actual mismatch.</li>
+                            <li><strong>Review mode:</strong> ask it to critique its own output and list what it might have missed.</li>
+                        </ol>
+
+                        <p>Score the boring things: files missed, assumptions made, number of retries, whether the plan matched the implementation, whether it checked its own work, and how much cleanup you had to do. The best model is the one that leaves you with less residue.</p>
+
+                        <p>And if you are wondering whether you need to worry about this at all? Honestly, only a bit. The biggest gap I still see is not Claude Code versus Codex. It is people who use AI like autocomplete versus people who use it like a build partner: with context, constraints, test cases, and verification.</p>
+
+                        <div class="callout callout-tip">
+                            <div class="callout-label"><i class="fas fa-compass"></i> The practical answer</div>
+                            <p>For builders, invest in context discipline before model loyalty. A cheaper model with the right files, constraints, and tests will often beat an expensive model given a vague wish.</p>
+                            <p>Currently, I am exploring Codex more and more because it feels closer to how I want to build: specify, delegate, inspect, tighten. But this space is moving fast, and daily use is where the truth shows up. What is your experience?</p>
+                        </div>
+
+                        <hr>
+
+                        <div class="mt-14 pt-8 border-t border-gray-200">
+                            <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                            <ol class="ref-list">
+                                <li id="ref-1"><span class="ref-num">1</span><span><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI (2026). <em>Introducing GPT-5.5.</em></a></span></li>
+                                <li id="ref-2"><span class="ref-num">2</span><span><a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener noreferrer">OpenAI (2026). <em>Introducing GPT-5.5: Availability, pricing, and evaluations.</em></a></span></li>
+                                <li id="ref-3"><span class="ref-num">3</span><span><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener noreferrer">Anthropic (2026). <em>Introducing Claude Opus 4.7.</em></a></span></li>
+                                <li id="ref-4"><span class="ref-num">4</span><span><a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener noreferrer">Anthropic (2026). <em>Claude Opus 4.7 launch notes: effort control, instruction following, and migration notes.</em></a></span></li>
+                                <li id="ref-5"><span class="ref-num">5</span><span><a href="https://www.anthropic.com/claude/opus" target="_blank" rel="noopener noreferrer">Anthropic (2026). <em>Claude Opus 4.7 product page.</em></a></span></li>
+                                <li id="ref-6"><span class="ref-num">6</span><span><a href="https://openai.com/index/gpt-5-5-system-card/" target="_blank" rel="noopener noreferrer">OpenAI (2026). <em>GPT-5.5 System Card.</em></a></span></li>
+                                <li id="ref-7"><span class="ref-num">7</span><span><a href="https://www.digitalapplied.com/blog/gpt-5-5-vs-claude-opus-4-7-frontier-comparison" target="_blank" rel="noopener noreferrer">Digital Applied (2026). <em>GPT-5.5 vs Claude Opus 4.7: Benchmarks & Pricing.</em></a></span></li>
+                                <li id="ref-8"><span class="ref-num">8</span><span><a href="https://openai.com/chatgpt/pricing/" target="_blank" rel="noopener noreferrer">OpenAI (2026). <em>ChatGPT pricing.</em></a></span></li>
+                                <li id="ref-9"><span class="ref-num">9</span><span><a href="https://openai.com/codex/" target="_blank" rel="noopener noreferrer">OpenAI (2026). <em>Codex.</em></a></span></li>
+                                <li id="ref-10"><span class="ref-num">10</span><span><a href="https://www.anthropic.com/product/claude-code" target="_blank" rel="noopener noreferrer">Anthropic (2026). <em>Claude Code by Anthropic.</em></a></span></li>
+                                <li id="ref-11"><span class="ref-num">11</span><span><a href="https://www.sitepoint.com/claude-code-vs-codex-2026/" target="_blank" rel="noopener noreferrer">SitePoint (2026). <em>Claude Code vs Codex: A Developer's 2026 Workflow Comparison.</em></a></span></li>
+                            </ol>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up text-sm"></i>
+    </button>
+
+    <div id="shared-footer"></div>
+    <script src="../assets/js/footer.js"></script>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('progress-bar').style.width = (window.scrollY / h * 100) + '%';
+            document.getElementById('back-to-top').style.display = window.scrollY > 600 ? 'flex' : 'none';
+        });
+
+        const toc = document.getElementById('toc');
+        const mobileToc = document.getElementById('mobile-toc');
+        const sections = document.querySelectorAll('[data-toc]');
+
+        sections.forEach((el) => {
+            const link = document.createElement('button');
+            link.className = 'toc-link';
+            link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            link.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            toc.appendChild(link);
+
+            const mLink = document.createElement('button');
+            mLink.className = 'toc-link';
+            mLink.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            mLink.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            mobileToc.appendChild(mLink);
+        });
+
+        const tocLinks = toc.querySelectorAll('.toc-link');
+        const mobileTocLinks = mobileToc.querySelectorAll('.toc-link');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(sections).indexOf(entry.target);
+                    tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                    mobileTocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
