@@ -71,6 +71,15 @@
 
         .article-hero-image { max-width: 46rem; margin: 1.5rem 0 2rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
         .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
+        .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
+        .article-hero-caption strong { color: var(--color-text-secondary); }
+
+        .brand-logo-strip { max-width: 46rem; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; margin: -1rem 0 2rem; }
+        .brand-logo-card { display: flex; align-items: center; gap: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #fff; }
+        .brand-logo-mark { width: 2rem; height: 2rem; object-fit: contain; flex-shrink: 0; }
+        .brand-logo-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
+        .brand-logo-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
+        .brand-logo-vs { font-size: 0.625rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); }
 
         .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
         .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
@@ -99,6 +108,8 @@
             .quick-verdict { grid-template-columns: 1fr; }
             .article-hero-image { margin: 1.25rem 0 1.5rem; border-radius: 0.75rem; }
             .article-hero-image img { max-height: 14rem; }
+            .brand-logo-strip { grid-template-columns: 1fr; gap: 0.5rem; margin: -0.75rem 0 1.75rem; }
+            .brand-logo-vs { text-align: center; }
             .compare-table { font-size: 0.8125rem; }
             .compare-table th, .compare-table td { padding: 0.75rem; }
         }
@@ -139,7 +150,28 @@
 
             <figure class="article-hero-image">
                 <img src="../assets/images/articles/ai-builder-city-metaphor.png" alt="A playful miniature software city showing planning, coding, context, automation, and shipping as two paths">
+                <figcaption class="article-hero-caption">
+                    <strong>Image note:</strong> generated with ChatGPT from inside this Codex workflow. Claude can critique the concept; it does not generate the image natively.
+                </figcaption>
             </figure>
+
+            <div class="brand-logo-strip" aria-label="Company logos for the coding agents compared">
+                <div class="brand-logo-card">
+                    <img class="brand-logo-mark" src="https://api.iconify.design/logos/anthropic-icon.svg" alt="Anthropic logo" decoding="async">
+                    <div>
+                        <span>Anthropic</span>
+                        <strong>Claude Code</strong>
+                    </div>
+                </div>
+                <span class="brand-logo-vs">vs</span>
+                <div class="brand-logo-card">
+                    <img class="brand-logo-mark" src="https://api.iconify.design/logos/openai-icon.svg" alt="OpenAI logo" decoding="async">
+                    <div>
+                        <span>OpenAI</span>
+                        <strong>Codex</strong>
+                    </div>
+                </div>
+            </div>
 
             <div class="xl:hidden mb-10" id="mobile-toc-wrapper">
                 <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-4">In this article</p>
