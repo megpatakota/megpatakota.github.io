@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>As AI Adoption Grows, Why Is Everyday Work Still Hard to Change? - Meg Patakota</title>
+    <title>AI Adoption Is Growing. Is It Actually Increasing Productivity? - Meg Patakota</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="../assets/css/article.css">
     <link rel="canonical" href="https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html">
 
-    <meta name="description" content="A practical thought piece on why AI adoption often feels uneven, why access alone may not change work, and what it can take to turn AI into real productivity gain.">
+    <meta name="description" content="A practical thought piece on whether growing AI adoption is actually increasing productivity, why access alone may not change work, and what it can take to turn scattered usage into shared capability.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html">
-    <meta property="og:title" content="As AI Adoption Grows, Why Is Everyday Work Still Hard to Change?">
+    <meta property="og:title" content="AI Adoption Is Growing. Is It Actually Increasing Productivity?">
     <meta property="og:description" content="Why AI access alone may not change work, where adoption gets stuck, and what leaders can do to turn AI into real productivity gain.">
     <meta property="og:image" content="https://www.megpatakota.co.uk/assets/images/articles/ai-adoption-workshop.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -32,10 +32,14 @@
     <style>
         #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
 
-        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 15rem); gap: 1.5rem; align-items: start; margin: 1.5rem 0 2.25rem; }
+        .article-page-shell { max-width: 72rem; }
+        .article-reading-shell { max-width: 56rem; }
+        .article-page-title, .article-page-summary, .toc-link span, .quick-card, .stat-card, .ref-list a { overflow-wrap: anywhere; word-break: normal; }
+
+        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(13rem, 16rem); gap: 2rem; align-items: start; margin: 1.5rem 0 2.25rem; }
         .article-media-stack { min-width: 0; }
         .article-hero-image { margin: 0; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
-        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
+        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 26rem; aspect-ratio: 16 / 9; object-fit: cover; }
         .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
         .article-hero-caption strong { color: var(--color-text-secondary); }
 
@@ -55,12 +59,13 @@
         .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
         .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
         .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
         .quick-card ul { margin: 0; padding-left: 0; }
         .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; padding-left: 0; }
         .quick-card li::before { display: none !important; }
         .quick-card li:last-child { margin-bottom: 0; }
 
-        .stat-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+        .stat-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
         .stat-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #f8fafc; }
         .stat-card span { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-buttons); margin-bottom: 0.35rem; }
         .stat-card strong { display: block; font-size: 1.6rem; line-height: 1.1; color: var(--color-text-primary); margin-bottom: 0.4rem; }
@@ -71,6 +76,7 @@
         .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; color: var(--color-text-secondary); vertical-align: top; }
         .compare-table tr:last-child td { border-bottom: 0; }
         .compare-table strong { color: var(--color-text-primary); }
+        .article-content .overflow-x-auto { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
         .article-content h2::before { content: ''; display: block; width: 2.5rem; height: 2px; background: rgba(14,116,144,0.25); border-radius: 999px; margin-bottom: 0.75rem; }
         .article-content ul { list-style: none; padding-left: 1.25rem; }
@@ -83,10 +89,11 @@
         .adoption-label { margin: 1.35rem 0 0.5rem; }
         .adoption-label strong { display: inline-block; border-radius: 0.4rem; background: rgba(14,116,144,0.08); color: var(--color-buttons); padding: 0.12rem 0.45rem; }
 
-        .source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; padding-left: 0 !important; }
-        .source-list li { margin: 0 !important; padding: 0.75rem 0.85rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; line-height: 1.45; }
-        .source-list li::before { display: none !important; }
-        .source-list a { font-size: 0.8125rem; }
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; padding-left: 0 !important; }
+        .ref-list li { display: flex !important; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; line-height: 1.55; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+        .reference-heading::before { display: none !important; }
 
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
         #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
@@ -106,12 +113,30 @@
             .toc-link { gap: 0.45rem; padding: 0.25rem 0; font-size: 0.6875rem; line-height: 1.25; }
             .toc-dot { width: 6px; height: 6px; border-width: 1.5px; }
             .toc-line { left: 2px; top: 8px; bottom: 8px; }
-            .quick-verdict { grid-template-columns: 1fr; }
-            .stat-strip { grid-template-columns: 1fr; }
-            .compare-table { font-size: 0.8125rem; }
+            .quick-verdict { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .quick-card { padding: 0.75rem; }
+            .quick-card h3 { font-size: 0.75rem; margin-bottom: 0.3rem; }
+            .quick-card p { font-size: 0.75rem; line-height: 1.35; }
+            .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .stat-card { padding: 0.75rem; }
+            .stat-card span { font-size: 0.5625rem; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+            .stat-card strong { font-size: 1.25rem; margin-bottom: 0.25rem; }
+            .stat-card p { font-size: 0.6875rem; line-height: 1.35; }
+            .compare-table { min-width: 36rem; font-size: 0.8125rem; }
             .compare-table th, .compare-table td { padding: 0.75rem; }
-            .source-list { grid-template-columns: 1fr; }
             #back-to-top { bottom: 1rem; right: 1rem; }
+        }
+
+        @media (max-width: 420px) {
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(6.5rem, 40%); gap: 0.6rem; }
+            .article-hero-image img { max-height: 8.5rem; }
+            .article-toc-panel { padding-left: 0.55rem; }
+            .article-toc-panel-title { font-size: 0.5rem; letter-spacing: 0.1em; }
+            .toc-link { gap: 0.35rem; font-size: 0.625rem; line-height: 1.2; }
+            .quick-card, .stat-card, .callout { padding: 0.65rem; }
+            .quick-card h3 { font-size: 0.6875rem; }
+            .quick-card p, .stat-card p { font-size: 0.625rem; }
+            .stat-card strong { font-size: 1.125rem; }
         }
     </style>
 </head>
@@ -123,7 +148,7 @@
     <script src="../assets/js/header.js"></script>
 
     <section class="pt-8 pb-12 px-4 md:px-6">
-        <div class="max-w-5xl mx-auto">
+        <div class="article-page-shell mx-auto">
             <div class="mb-6">
                     <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
                         <i class="fas fa-arrow-left mr-2 text-xs"></i>
@@ -140,12 +165,12 @@
                         <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Productivity</span>
                     </div>
 
-                    <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">
-                        As AI Adoption Grows, Why Is Everyday Work Still Hard to Change?
+                    <h1 class="article-page-title text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-4xl">
+                        AI Adoption Is Growing. Is It Actually Increasing Productivity?
                     </h1>
 
-                    <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">
-                        A practical thought piece to help leaders and teams see the AI adoption picture more clearly: why access alone may not change work, where adoption gets stuck, and what it can take to turn scattered usage into shared capability.
+                    <p class="article-page-summary mt-4 text-lg text-text_secondary leading-relaxed max-w-3xl">
+                        A practical thought piece to help leaders and teams see the AI adoption picture more clearly: whether growing adoption is translating into productivity, why access alone may not change work, and what it can take to turn scattered usage into shared capability.
                     </p>
 
                     <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
@@ -169,7 +194,7 @@
                 </aside>
             </div>
 
-            <div class="max-w-3xl mx-auto">
+            <div class="article-reading-shell mx-auto">
                 <article class="article-content">
                     <p>Many organisations now seem past the point of asking whether AI matters.</p>
 
@@ -183,24 +208,18 @@
 
                     <p>That gap, between having AI and actually changing how work gets done, is where the adoption conversation gets interesting.</p>
 
+                    <p>It is also where the productivity question becomes more useful. Are people saving a few minutes here and there, or is the organisation learning how to remove friction from the way work actually moves?</p>
+
                     <p>Naming that gap is not about making organisations feel behind. It is about making the picture clearer. A lot of teams are somewhere in the same messy middle: curious, experimenting, seeing pockets of value, and still working out how to make AI part of everyday work.</p>
 
                     <div class="quick-verdict">
                         <div class="quick-card">
                             <h3>The Adoption Gap</h3>
-                            <ul>
-                                <li><strong>Access:</strong> the tool is available.</li>
-                                <li><strong>Usage:</strong> a few people make it useful.</li>
-                                <li><strong>Change:</strong> the workflow still needs to move.</li>
-                            </ul>
+                            <p>Access exists. Workflow change is the hard part.</p>
                         </div>
                         <div class="quick-card">
-                            <h3>The Practical Question</h3>
-                            <ul>
-                                <li>Where is AI removing friction?</li>
-                                <li>Who owns adoption beyond the pilot?</li>
-                                <li>How does it show up as productivity gain?</li>
-                            </ul>
+                            <h3>Productivity Lens</h3>
+                            <p>Where does AI remove friction and create measured value?</p>
                         </div>
                     </div>
 
@@ -211,7 +230,7 @@
 
                     <hr>
 
-                    <h2 data-toc="Adoption vs Real Change">The Numbers Say Yes. The Work Says Not Yet.</h2>
+                    <h2 data-toc="Adoption vs Productivity">Adoption Is Rising. Productivity Is Less Obvious.</h2>
 
                     <p>The numbers are useful, but they can make things sound more settled than they really are.</p>
 
@@ -228,14 +247,9 @@
                             <p>report regular AI use in at least one business function.</p>
                         </div>
                         <div class="stat-card">
-                            <span>OECD</span>
+                            <span>Economy View</span>
                             <strong>20.2%</strong>
-                            <p>of firms reported using AI in countries with available 2025 data.</p>
-                        </div>
-                        <div class="stat-card">
-                            <span>UK Research</span>
-                            <strong>1 in 6</strong>
-                            <p>businesses currently use at least one AI technology.</p>
+                            <p>of firms reported AI use in OECD data; UK research found around 1 in 6 businesses using at least one AI technology.</p>
                         </div>
                     </div>
 
@@ -384,7 +398,7 @@
 
                     <p>That loop still needs governance, but not governance that lives only as a document. Useful governance answers practical questions: what can people use, with what data, for what decisions, with what level of human review? Frameworks like the <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a> are helpful because they push organisations to think about trustworthiness, evaluation, and risk management as part of the lifecycle, not as a document at the end.</p>
 
-                    <h2 data-toc="The Maturity Curve">The Bit That Matters</h2>
+                    <h2 data-toc="From Access to Productivity">The Productivity Question Is Really a Workflow Question</h2>
 
                     <p>I do not think AI adoption is a single moment. It is more like a maturity curve.</p>
 
@@ -394,27 +408,26 @@
 
                     <p>The question for leaders is less whether AI will matter, and more where it will matter first.</p>
 
-                    <p>The bigger question may be whether their organisation can turn scattered usage into shared capability.</p>
+                    <p>The bigger question may be whether their organisation can turn scattered usage into shared capability, and shared capability into measurable productivity gain.</p>
 
-                    <hr>
-
-                    <h2>Sources Worth Reading</h2>
-
-                    <ul class="source-list">
-                        <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey: The state of AI in 2025</a></li>
-                        <li><a href="https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research" target="_blank" rel="noopener noreferrer">UK Government: AI Adoption Research</a></li>
-                        <li><a href="https://www.oecd.org/en/topics/policy-issues/artificial-intelligence.html" target="_blank" rel="noopener noreferrer">OECD: Artificial intelligence policy and adoption data</a></li>
-                        <li><a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html" target="_blank" rel="noopener noreferrer">Deloitte: The State of AI in the Enterprise 2026</a></li>
-                        <li><a href="https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html" target="_blank" rel="noopener noreferrer">Federal Reserve: Monitoring AI Adoption in the US Economy</a></li>
-                        <li><a href="https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged" target="_blank" rel="noopener noreferrer">Ethan Mollick: Centaurs and Cyborgs on the Jagged Frontier</a></li>
-                        <li><a href="https://d3.harvard.edu/navigating-the-jagged-technological-frontier/" target="_blank" rel="noopener noreferrer">Harvard D^3: Navigating the Jagged Technological Frontier</a></li>
-                        <li><a href="https://assets.landing.ai/content/uploads/2018/12/AI-Transformation-Playbook-v8.pdf" target="_blank" rel="noopener noreferrer">Andrew Ng: AI Transformation Playbook</a></li>
-                        <li><a href="https://news.kpiinstitute.org/exclusive-interview-googles-first-chief-decision-scientist-says-leaders-misunderstand-ai/" target="_blank" rel="noopener noreferrer">Cassie Kozyrkov: Leaders misunderstand AI</a></li>
-                        <li><a href="https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization" target="_blank" rel="noopener noreferrer">Microsoft: 2026 Work Trend Index</a></li>
-                        <li><a href="https://openai.com/business/guides-and-resources/staying-ahead-in-the-age-of-ai/" target="_blank" rel="noopener noreferrer">OpenAI: Staying ahead in the age of AI</a></li>
-                        <li><a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/" target="_blank" rel="noopener noreferrer">OpenAI: The state of enterprise AI</a></li>
-                        <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST: AI Risk Management Framework</a></li>
-                    </ul>
+                    <div class="mt-14 pt-8 border-t border-gray-200">
+                        <h2 class="reference-heading text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                        <ol class="ref-list">
+                            <li id="ref-1"><span class="ref-num">1</span><span><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey. <em>The state of AI in 2025.</em></a></span></li>
+                            <li id="ref-2"><span class="ref-num">2</span><span><a href="https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research" target="_blank" rel="noopener noreferrer">UK Government. <em>AI Adoption Research.</em></a></span></li>
+                            <li id="ref-3"><span class="ref-num">3</span><span><a href="https://www.oecd.org/en/topics/policy-issues/artificial-intelligence.html" target="_blank" rel="noopener noreferrer">OECD. <em>Artificial intelligence policy and adoption data.</em></a></span></li>
+                            <li id="ref-4"><span class="ref-num">4</span><span><a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html" target="_blank" rel="noopener noreferrer">Deloitte. <em>The State of AI in the Enterprise 2026.</em></a></span></li>
+                            <li id="ref-5"><span class="ref-num">5</span><span><a href="https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html" target="_blank" rel="noopener noreferrer">Federal Reserve. <em>Monitoring AI Adoption in the US Economy.</em></a></span></li>
+                            <li id="ref-6"><span class="ref-num">6</span><span><a href="https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged" target="_blank" rel="noopener noreferrer">Ethan Mollick. <em>Centaurs and Cyborgs on the Jagged Frontier.</em></a></span></li>
+                            <li id="ref-7"><span class="ref-num">7</span><span><a href="https://d3.harvard.edu/navigating-the-jagged-technological-frontier/" target="_blank" rel="noopener noreferrer">Harvard D^3. <em>Navigating the Jagged Technological Frontier.</em></a></span></li>
+                            <li id="ref-8"><span class="ref-num">8</span><span><a href="https://assets.landing.ai/content/uploads/2018/12/AI-Transformation-Playbook-v8.pdf" target="_blank" rel="noopener noreferrer">Andrew Ng. <em>AI Transformation Playbook.</em></a></span></li>
+                            <li id="ref-9"><span class="ref-num">9</span><span><a href="https://news.kpiinstitute.org/exclusive-interview-googles-first-chief-decision-scientist-says-leaders-misunderstand-ai/" target="_blank" rel="noopener noreferrer">Cassie Kozyrkov. <em>Leaders misunderstand AI.</em></a></span></li>
+                            <li id="ref-10"><span class="ref-num">10</span><span><a href="https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization" target="_blank" rel="noopener noreferrer">Microsoft. <em>2026 Work Trend Index.</em></a></span></li>
+                            <li id="ref-11"><span class="ref-num">11</span><span><a href="https://openai.com/business/guides-and-resources/staying-ahead-in-the-age-of-ai/" target="_blank" rel="noopener noreferrer">OpenAI. <em>Staying ahead in the age of AI.</em></a></span></li>
+                            <li id="ref-12"><span class="ref-num">12</span><span><a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/" target="_blank" rel="noopener noreferrer">OpenAI. <em>The state of enterprise AI.</em></a></span></li>
+                            <li id="ref-13"><span class="ref-num">13</span><span><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST. <em>AI Risk Management Framework.</em></a></span></li>
+                        </ol>
+                    </div>
 
                     <hr>
 
@@ -428,7 +441,7 @@
                                 <i class="fab fa-linkedin text-2xl"></i>
                                 <span class="font-semibold">LinkedIn</span>
                             </a>
-                            <a href="https://twitter.com/intent/tweet?url=https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html&amp;text=As%20AI%20Adoption%20Grows%2C%20Why%20Is%20Everyday%20Work%20Still%20Hard%20to%20Change%3F"
+                            <a href="https://twitter.com/intent/tweet?url=https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html&amp;text=AI%20Adoption%20Is%20Growing.%20Is%20It%20Actually%20Increasing%20Productivity%3F"
                                 target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons hover:text-opacity-80 transition">
                                 <i class="fab fa-twitter text-2xl"></i>
                                 <span class="font-semibold">Twitter</span>
