@@ -69,12 +69,17 @@
         .verdict-pill span { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-buttons); margin-bottom: 0.35rem; }
         .verdict-pill p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
 
-        .article-hero-image { max-width: 46rem; margin: 1.5rem 0 2rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
+        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 46rem) minmax(13rem, 17rem); gap: 1.5rem; align-items: start; margin: 1.5rem 0 2rem; }
+        .article-media-stack { min-width: 0; }
+        .article-hero-image { margin: 0 0 1.25rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
         .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
         .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
         .article-hero-caption strong { color: var(--color-text-secondary); }
 
-        .brand-logo-strip { max-width: 46rem; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; margin: -1rem 0 2rem; }
+        .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
+        .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+
+        .brand-logo-strip { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 0.75rem; margin: 0; }
         .brand-logo-card { display: flex; align-items: center; gap: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #fff; }
         .brand-logo-mark { width: 2rem; height: 2rem; object-fit: contain; flex-shrink: 0; }
         .brand-logo-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
@@ -101,14 +106,19 @@
         .ref-list li::before { display: none !important; }
         .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
 
+        @media (max-width: 900px) {
+            .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
+            .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+        }
+
         @media (max-width: 640px) {
             .section-num { font-size: 1.75rem; }
             .callout { padding: 1rem 1.25rem; }
             .verdict-strip { grid-template-columns: 1fr; }
             .quick-verdict { grid-template-columns: 1fr; }
-            .article-hero-image { margin: 1.25rem 0 1.5rem; border-radius: 0.75rem; }
+            .article-hero-image { border-radius: 0.75rem; }
             .article-hero-image img { max-height: 14rem; }
-            .brand-logo-strip { grid-template-columns: 1fr; gap: 0.5rem; margin: -0.75rem 0 1.75rem; }
+            .brand-logo-strip { grid-template-columns: 1fr; gap: 0.5rem; }
             .brand-logo-vs { text-align: center; }
             .compare-table { font-size: 0.8125rem; }
             .compare-table th, .compare-table td { padding: 0.75rem; }
@@ -148,50 +158,44 @@
                 <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
             </div>
 
-            <figure class="article-hero-image">
-                <img src="../assets/images/articles/ai-builder-city-metaphor.png" alt="A playful miniature software city showing planning, coding, context, automation, and shipping as two paths">
-                <figcaption class="article-hero-caption">
-                    <strong>Image note:</strong> generated with ChatGPT from inside this Codex workflow. Claude can critique the concept; it does not generate the image natively.
-                </figcaption>
-            </figure>
+            <div class="article-intro-layout">
+                <div class="article-media-stack">
+                    <figure class="article-hero-image">
+                        <img src="../assets/images/articles/ai-builder-city-metaphor.png" alt="A playful miniature software city showing planning, coding, context, automation, and shipping as two paths">
+                        <figcaption class="article-hero-caption">
+                            <strong>Image note:</strong> generated with ChatGPT from inside this Codex workflow. Claude can critique the concept; it does not generate the image natively.
+                        </figcaption>
+                    </figure>
 
-            <div class="brand-logo-strip" aria-label="Company logos for the coding agents compared">
-                <div class="brand-logo-card">
-                    <img class="brand-logo-mark" src="https://api.iconify.design/logos/anthropic-icon.svg" alt="Anthropic logo" decoding="async">
-                    <div>
-                        <span>Anthropic</span>
-                        <strong>Claude Code</strong>
-                    </div>
-                </div>
-                <span class="brand-logo-vs">vs</span>
-                <div class="brand-logo-card">
-                    <img class="brand-logo-mark" src="https://api.iconify.design/logos/openai-icon.svg" alt="OpenAI logo" decoding="async">
-                    <div>
-                        <span>OpenAI</span>
-                        <strong>Codex</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="xl:hidden mb-10" id="mobile-toc-wrapper">
-                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-4">In this article</p>
-                <div class="relative" id="mobile-toc">
-                    <div class="toc-line"></div>
-                </div>
-            </div>
-
-            <div class="xl:flex xl:gap-12">
-                <aside class="hidden xl:block w-56 shrink-0">
-                    <div class="sticky top-24">
-                        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-text_tertiary mb-5">In this article</p>
-                        <div class="relative" id="toc">
-                            <div class="toc-line"></div>
+                    <div class="brand-logo-strip" aria-label="Company logos for the coding agents compared">
+                        <div class="brand-logo-card">
+                            <img class="brand-logo-mark" src="https://api.iconify.design/logos/anthropic-icon.svg" alt="Anthropic logo" decoding="async">
+                            <div>
+                                <span>Anthropic</span>
+                                <strong>Claude Code</strong>
+                            </div>
+                        </div>
+                        <span class="brand-logo-vs">vs</span>
+                        <div class="brand-logo-card">
+                            <img class="brand-logo-mark" src="https://api.iconify.design/logos/openai-icon.svg" alt="OpenAI logo" decoding="async">
+                            <div>
+                                <span>OpenAI</span>
+                                <strong>Codex</strong>
+                            </div>
                         </div>
                     </div>
-                </aside>
+                </div>
 
-                <div class="flex-1 max-w-3xl">
-                    <article class="article-content">
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">In this article</p>
+                    <div class="relative" id="toc">
+                        <div class="toc-line"></div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <article class="article-content">
 
                         <p>Every few months, a new frontier model arrives and I end up asking the same question: is this actually worth changing how I work? I started this comparison as <strong>Claude Max versus ChatGPT Pro</strong>, but for builders the more useful question is now clearer: <strong>Claude Code versus Codex</strong>.</p>
 
@@ -647,8 +651,7 @@
                             </ol>
                         </div>
 
-                    </article>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -668,7 +671,6 @@
         });
 
         const toc = document.getElementById('toc');
-        const mobileToc = document.getElementById('mobile-toc');
         const sections = document.querySelectorAll('[data-toc]');
 
         sections.forEach((el) => {
@@ -677,22 +679,14 @@
             link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
             link.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             toc.appendChild(link);
-
-            const mLink = document.createElement('button');
-            mLink.className = 'toc-link';
-            mLink.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
-            mLink.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            mobileToc.appendChild(mLink);
         });
 
         const tocLinks = toc.querySelectorAll('.toc-link');
-        const mobileTocLinks = mobileToc.querySelectorAll('.toc-link');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const idx = Array.from(sections).indexOf(entry.target);
                     tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
-                    mobileTocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
                 }
             });
         }, { rootMargin: '-20% 0px -60% 0px' });
