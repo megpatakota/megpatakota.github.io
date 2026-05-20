@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="../assets/css/article.css">
     <link rel="canonical" href="https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html">
 
-    <meta name="description" content="A practical thought piece on why AI adoption often feels uneven, why access alone does not change work, and what it takes to turn AI into real productivity gain.">
+    <meta name="description" content="A practical thought piece on why AI adoption often feels uneven, why access alone may not change work, and what it can take to turn AI into real productivity gain.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.megpatakota.co.uk/articles/ai-adoption-across-organisations.html">
     <meta property="og:title" content="Your Company Has AI. So Why Does Work Still Feel the Same?">
-    <meta property="og:description" content="Why AI access alone does not change work, where adoption gets stuck, and what leaders need to do to turn AI into real productivity gain.">
+    <meta property="og:description" content="Why AI access alone may not change work, where adoption gets stuck, and what leaders can do to turn AI into real productivity gain.">
     <meta property="og:image" content="https://www.megpatakota.co.uk/assets/images/articles/ai-adoption-workshop.png">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -47,17 +47,70 @@
         .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
         .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
 
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
+        .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
+        .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card ul { margin: 0; padding-left: 0; }
+        .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; padding-left: 0; }
+        .quick-card li::before { display: none !important; }
+        .quick-card li:last-child { margin-bottom: 0; }
+
+        .stat-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+        .stat-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #f8fafc; }
+        .stat-card span { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .stat-card strong { display: block; font-size: 1.6rem; line-height: 1.1; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+        .stat-card p { margin: 0; font-size: 0.8125rem; line-height: 1.55; color: var(--color-text-secondary); }
+
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.875rem; margin: 1.5rem 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; }
+        .compare-table th { background: #f8fafc; color: var(--color-text-primary); font-weight: 700; text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; }
+        .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; color: var(--color-text-secondary); vertical-align: top; }
+        .compare-table tr:last-child td { border-bottom: 0; }
+        .compare-table strong { color: var(--color-text-primary); }
+
+        .article-content h2::before { content: ''; display: block; width: 2.5rem; height: 2px; background: rgba(14,116,144,0.25); border-radius: 999px; margin-bottom: 0.75rem; }
+        .article-content ul { list-style: none; padding-left: 1.25rem; }
+        .article-content ul li { display: list-item; list-style: none; position: relative; margin-bottom: 0.75rem; line-height: 1.75; }
+        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; position: absolute; left: -1.25rem; top: 0.6rem; }
+        .article-content .quick-card ul { margin: 0; padding-left: 0; }
+        .article-content .quick-card li { margin-bottom: 0.35rem; line-height: 1.55; }
+        .article-content .quick-card li::before { display: none !important; }
+
+        .adoption-label { margin: 1.35rem 0 0.5rem; }
+        .adoption-label strong { display: inline-block; border-radius: 0.4rem; background: rgba(14,116,144,0.08); color: var(--color-buttons); padding: 0.12rem 0.45rem; }
+
+        .source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; padding-left: 0 !important; }
+        .source-list li { margin: 0 !important; padding: 0.75rem 0.85rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; line-height: 1.45; }
+        .source-list li::before { display: none !important; }
+        .source-list a { font-size: 0.8125rem; }
+
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
         #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
 
         @media (max-width: 900px) {
-            .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 2rem; }
-            .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(10rem, 34%); gap: 1rem; margin: 1.25rem 0 2rem; }
+            .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1rem; }
         }
 
         @media (max-width: 640px) {
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(7.5rem, 42%); gap: 0.75rem; margin: 1rem 0 1.75rem; }
             .article-hero-image { border-radius: 0.75rem; }
-            .article-hero-image img { max-height: 14rem; }
+            .article-hero-image img { max-height: 10rem; }
+            .article-hero-caption { display: none; }
+            .article-toc-panel { padding-left: 0.75rem; margin-top: 0; }
+            .article-toc-panel-title { font-size: 0.5625rem; letter-spacing: 0.14em; margin-bottom: 0.55rem; }
+            .toc-link { gap: 0.45rem; padding: 0.25rem 0; font-size: 0.6875rem; line-height: 1.25; }
+            .toc-dot { width: 6px; height: 6px; border-width: 1.5px; }
+            .toc-line { left: 2px; top: 8px; bottom: 8px; }
+            .quick-verdict { grid-template-columns: 1fr; }
+            .stat-strip { grid-template-columns: 1fr; }
+            .compare-table { font-size: 0.8125rem; }
+            .compare-table th, .compare-table td { padding: 0.75rem; }
+            .source-list { grid-template-columns: 1fr; }
             #back-to-top { bottom: 1rem; right: 1rem; }
         }
     </style>
@@ -69,54 +122,94 @@
     <div id="shared-header" data-article-page="true"></div>
     <script src="../assets/js/header.js"></script>
 
-    <section class="pt-2 pb-12 px-4 md:px-6">
+    <section class="pt-8 pb-12 px-4 md:px-6">
         <div class="max-w-5xl mx-auto">
-            <article class="bg-white rounded-2xl shadow-lg p-5 sm:p-8 md:p-12">
-                <div class="article-content">
+            <div class="mb-6">
                     <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
                         <i class="fas fa-arrow-left mr-2 text-xs"></i>
                         All Articles
                     </a>
 
-                    <h1>Your Company Has AI. So Why Does Work Still Feel the Same?</h1>
-
-                    <p class="text-sm text-gray-500 mb-8">
-                        <i class="far fa-calendar mr-2"></i>20 May 2026 &bull; 6 min read &bull; AI Adoption
-                    </p>
-
-                    <div class="article-intro-layout">
-                        <div class="article-media-stack">
-                            <figure class="article-hero-image">
-                                <img src="../assets/images/articles/ai-adoption-workshop.png" alt="A team workshop around a laptop and workflow board, representing practical AI adoption at work">
-                                <figcaption class="article-hero-caption">
-                                    <strong>Image note:</strong> generated with ChatGPT for this article to show the practical, human side of AI adoption.
-                                </figcaption>
-                            </figure>
-                        </div>
-
-                        <aside class="article-toc-panel" aria-label="Article table of contents">
-                            <p class="article-toc-panel-title">In this article</p>
-                            <div class="relative" id="toc">
-                                <div class="toc-line"></div>
-                            </div>
-                        </aside>
+                    <div class="flex items-center gap-3 mb-4 flex-wrap">
+                        <span class="text-sm text-text_tertiary">20 May 2026</span>
+                        <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                        <span class="text-sm text-text_tertiary">6 min read</span>
+                        <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                        <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">AI Adoption</span>
+                        <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Enterprise AI</span>
+                        <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Productivity</span>
                     </div>
 
-                    <p>Most organisations are past the point of asking whether AI matters.</p>
+                    <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">
+                        Your Company Has AI. So Why Does Work Still Feel the Same?
+                    </h1>
+
+                    <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">
+                        A practical thought piece on why AI access alone may not change work, where adoption gets stuck, and what it can take to turn scattered usage into shared capability.
+                    </p>
+
+                    <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+            </div>
+
+            <div class="article-intro-layout">
+                <div class="article-media-stack">
+                    <figure class="article-hero-image">
+                        <img src="../assets/images/articles/ai-adoption-workshop.png" alt="A team workshop around a laptop and workflow board, representing practical AI adoption at work">
+                        <figcaption class="article-hero-caption">
+                            <strong>Image note:</strong> generated with ChatGPT for this article to show the practical, human side of AI adoption.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">In this article</p>
+                    <div class="relative" id="toc">
+                        <div class="toc-line"></div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <article class="article-content">
+                    <p>Many organisations now seem past the point of asking whether AI matters.</p>
 
                     <p>The awkward bit is what happens after access.</p>
 
-                    <p>The tool gets launched. People attend the demo. A few power users race ahead. Someone shares a prompt in Teams. Everyone agrees the potential is huge.</p>
+                    <p>The tool gets launched. People attend the demo. A few power users race ahead. Someone shares a prompt in Teams. The potential feels huge.</p>
 
                     <p>Then Monday arrives.</p>
 
                     <p>The same spreadsheet is still being updated by hand. The same document is still waiting for review. The same person is still chasing the same answer from three different systems.</p>
 
-                    <p>That gap, between having AI and actually changing how work gets done, is the real adoption story.</p>
+                    <p>That gap, between having AI and actually changing how work gets done, is where the adoption conversation gets interesting.</p>
+
+                    <div class="quick-verdict">
+                        <div class="quick-card">
+                            <h3>The Adoption Gap</h3>
+                            <ul>
+                                <li><strong>Access:</strong> the tool is available.</li>
+                                <li><strong>Usage:</strong> a few people make it useful.</li>
+                                <li><strong>Change:</strong> the workflow still needs to move.</li>
+                            </ul>
+                        </div>
+                        <div class="quick-card">
+                            <h3>The Practical Question</h3>
+                            <ul>
+                                <li>Where is AI removing friction?</li>
+                                <li>Who owns adoption beyond the pilot?</li>
+                                <li>How does it show up as productivity gain?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="callout">
+                        <div class="callout-label"><i class="fas fa-lightbulb"></i> My take</div>
+                        <p>The useful adoption question is not whether an organisation has AI somewhere. It is whether AI is changing a real piece of work in a way people can trust, repeat, and measure.</p>
+                    </div>
 
                     <hr>
 
-                    <h2 data-toc="Numbers">The Numbers Say Yes. The Work Says Not Yet.</h2>
+                    <h2 data-toc="Adoption vs Real Change">The Numbers Say Yes. The Work Says Not Yet.</h2>
 
                     <p>The numbers are useful, but they can make things sound more settled than they really are.</p>
 
@@ -126,45 +219,87 @@
 
                     <p>The Federal Reserve makes the measurement problem even clearer. In the US, one firm-level survey found <a href="https://www.federalreserve.gov/econres/notes/feds-notes/monitoring-ai-adoption-in-the-u-s-economy-20260403.html" target="_blank" rel="noopener noreferrer">about 18% of firms had adopted AI by the end of 2025</a>, while an employment-weighted executive survey estimated that 78% of the labour force worked at firms that had adopted AI. Same economy. Very different lens.</p>
 
-                    <p>Those figures are not contradictions. They are measuring different things: access, usage, firm-level adoption, employee behaviour, and enterprise transformation. A large organisation can have thousands of people using AI and still have no serious workflow redesign. A small business can use one AI tool every day, get real value from it, and never call it a transformation programme.</p>
+                    <div class="stat-strip" aria-label="AI adoption market snapshot">
+                        <div class="stat-card">
+                            <span>McKinsey</span>
+                            <strong>88%</strong>
+                            <p>report regular AI use in at least one business function.</p>
+                        </div>
+                        <div class="stat-card">
+                            <span>OECD</span>
+                            <strong>20.2%</strong>
+                            <p>of firms reported using AI in countries with available 2025 data.</p>
+                        </div>
+                        <div class="stat-card">
+                            <span>UK Research</span>
+                            <strong>1 in 6</strong>
+                            <p>businesses currently use at least one AI technology.</p>
+                        </div>
+                    </div>
 
-                    <p>So the better question is not "has this organisation adopted AI?" That question is too blunt now.</p>
+                    <p>Those figures do not have to be contradictions. They are measuring different things: access, usage, firm-level adoption, employee behaviour, and enterprise transformation. A large organisation can have thousands of people using AI and still have limited workflow redesign. A small business can use one AI tool every day, get real value from it, and never call it a transformation programme.</p>
 
-                    <p>The better question is: <strong>where is AI changing the way work actually gets done?</strong></p>
+                    <p>So one better question might be: not "has this organisation adopted AI?" That question is starting to feel too blunt.</p>
 
-                    <h2 data-toc="Teams">Why Some Teams Move Faster Than Others</h2>
+                    <p>The more useful question is: <strong>where is AI changing the way work actually gets done?</strong></p>
 
-                    <p>Adoption is fastest where the work is already digital, text-heavy, analytical, and measurable.</p>
+                    <h2 data-toc="Why Progress Feels Uneven">Why Some Teams Move Faster Than Others</h2>
+
+                    <p>Adoption often looks fastest where the work is already digital, text-heavy, analytical, and measurable.</p>
 
                     <p>Technology, professional services, finance, media, marketing, legal, and customer operations all have clear starting points: document review, research, code generation, content drafting, customer support, forecasting, and knowledge search.</p>
 
                     <p>That does not mean those sectors are "easy". Finance and legal teams have heavy governance expectations. Healthcare has safety, privacy, and clinical accountability. Manufacturing and logistics have physical processes, complex systems, and operational risk. Public sector organisations need transparency, procurement discipline, and public trust.</p>
 
-                    <p>The industries that look slower are not always less interested. Sometimes the use cases are simply harder to translate into safe, repeatable workflows.</p>
+                    <p>The industries that look slower are not necessarily less interested. Sometimes the use cases are harder to translate into safe, repeatable workflows.</p>
 
                     <p>AI that summarises a meeting can be useful on day one. AI that influences a treatment pathway, a credit decision, a supply chain plan, or a public service interaction needs a different level of assurance.</p>
 
-                    <p>That is why the next phase of adoption will not be evenly distributed by hype. It will be distributed by workflow readiness.</p>
+                    <p>That is why the next phase of adoption may be shaped less by hype and more by workflow readiness.</p>
 
-                    <h2 data-toc="Company Size">Big Companies and Small Teams Hit Different Problems</h2>
+                    <h2 data-toc="Big vs Small Organisations">Big Companies and Small Teams Hit Different Problems</h2>
 
                     <p>Large enterprises can start with real advantages: budget, data, vendor leverage, security teams, internal platforms, and enough repeatable work to justify serious investment. They are often better placed to negotiate enterprise AI tools, build internal guardrails, and run adoption programmes at scale.</p>
 
-                    <p>But size brings complexity. Data sits in many places. Processes cross departments. Risk approval takes time. And the awkward middle between a promising prototype and a production workflow can be hard to own. Everyone likes the demo. Fewer people want to own the rollout.</p>
+                    <p>But size brings complexity. Data sits in many places. Processes cross departments. Risk approval takes time. And the awkward middle between a promising prototype and a production workflow can be hard to own. The demo is often the easy part. The rollout is where ownership gets harder.</p>
 
                     <p>Smaller organisations can have the opposite pattern. They may move quickly because there are fewer layers. A founder, operations lead, or analyst can test a tool on Monday and change the process by Friday. The trade-off is capacity: some teams will have less access to specialist AI skills, procurement support, and time to work out where AI is genuinely worth using.</p>
 
+                    <div class="overflow-x-auto">
+                        <table class="compare-table">
+                            <thead>
+                                <tr>
+                                    <th>Organisation type</th>
+                                    <th>What helps</th>
+                                    <th>What can slow adoption</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Large enterprises</strong></td>
+                                    <td>Budget, security teams, vendor leverage, platforms, repeatable work.</td>
+                                    <td>Complex data, approval paths, cross-team ownership, production risk.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Small and mid-sized teams</strong></td>
+                                    <td>Speed, fewer layers, faster process changes, closer feedback loops.</td>
+                                    <td>Limited specialist skills, procurement support, time, and implementation capacity.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <p>The UK research captures this well: large and mid-sized businesses are more likely to be using AI, but many adopters are investing through off-the-shelf applications or by embedding AI into tools they already use. That matters.</p>
 
-                    <p>For most organisations, the first wave of practical AI adoption will not be custom models. It will be AI turning up inside the software people already open every morning.</p>
+                    <p>For many organisations, the first wave of practical AI adoption may not be custom models. It may be AI turning up inside the software people already open every morning.</p>
 
-                    <h2 data-toc="Useful Voices">What the Useful Voices Keep Saying</h2>
+                    <h2 data-toc="What Experts Keep Saying">What the Useful Voices Keep Saying</h2>
 
                     <p>The voices I find most useful in this space are not simply saying "buy more AI". They are pointing to a harder but more useful idea: change the work.</p>
 
                     <p><a href="https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged" target="_blank" rel="noopener noreferrer">Ethan Mollick</a>, who has become one of the clearest practical voices on generative AI at work, keeps pointing to the unevenness of AI capability. In the Harvard and BCG research he worked on with Karim Lakhani and others, <a href="https://d3.harvard.edu/navigating-the-jagged-technological-frontier/" target="_blank" rel="noopener noreferrer">758 consultants were tested on realistic consulting tasks</a>. For tasks inside the AI frontier, performance improved substantially. But the important lesson was not "AI solves everything". It was that the frontier is jagged. AI can be excellent at some things, weak at others, and people need enough hands-on experience to know the difference.</p>
 
-                    <p>That lines up with Andrew Ng's older but still very relevant <a href="https://assets.landing.ai/content/uploads/2018/12/AI-Transformation-Playbook-v8.pdf" target="_blank" rel="noopener noreferrer">AI Transformation Playbook</a>. His advice is not to start with a grand abstract strategy. In his words, most companies cannot develop a thoughtful AI strategy until they have some basic experience with AI. Start with projects. Build capability. Then strategy becomes more grounded.</p>
+                    <p>That lines up with Andrew Ng's older but still very relevant <a href="https://assets.landing.ai/content/uploads/2018/12/AI-Transformation-Playbook-v8.pdf" target="_blank" rel="noopener noreferrer">AI Transformation Playbook</a>. His advice is to avoid starting with a grand abstract strategy. One of his useful points is that companies often need some basic experience with AI before a thoughtful AI strategy becomes grounded. Start with projects. Build capability. Then strategy becomes more practical.</p>
 
                     <p><a href="https://news.kpiinstitute.org/exclusive-interview-googles-first-chief-decision-scientist-says-leaders-misunderstand-ai/" target="_blank" rel="noopener noreferrer">Cassie Kozyrkov</a>, Google's first Chief Decision Scientist, frames the same problem differently. She argues that leaders often confuse tool use with automation, and that a good AI strategy starts with intent: what decision are we improving, and what does success look like? That is a much better starting point than "where can we sprinkle AI?"</p>
 
@@ -172,9 +307,9 @@
 
                     <p>Different language. Same underlying point.</p>
 
-                    <p>One way to put it: AI adoption is not only a tool rollout. It is an organisational learning problem.</p>
+                    <p>One way to put it: I see AI adoption less as a tool rollout and more as an organisational learning problem.</p>
 
-                    <h2 data-toc="Blockers">Where Adoption Actually Gets Stuck</h2>
+                    <h2 data-toc="Where Adoption Gets Stuck">Where Adoption Actually Gets Stuck</h2>
 
                     <p>It is tempting to think adoption is blocked by model quality.</p>
 
@@ -182,74 +317,88 @@
 
                     <ul>
                         <li><strong>Unclear use cases:</strong> teams are told to "use AI" without knowing which workflow, metric, or pain point matters.</li>
-                        <li><strong>Messy data and systems:</strong> AI cannot reliably answer questions or take action if the underlying knowledge, permissions, and processes are fragmented.</li>
+                        <li><strong>Messy data and systems:</strong> AI struggles to answer questions or take action reliably if the underlying knowledge, permissions, and processes are fragmented.</li>
                         <li><strong>Security and data access:</strong> teams need clear rules for sensitive information, vendor risk, permissions, retention, and what can safely be used in external tools.</li>
                         <li><strong>Trust gaps:</strong> people need to understand when outputs can be used directly, when they need checking, and who is accountable.</li>
                         <li><strong>Skills gaps:</strong> Deloitte's 2026 enterprise AI report says leaders see <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html" target="_blank" rel="noopener noreferrer">insufficient worker skills as the biggest barrier</a> to integrating AI into existing workflows.</li>
-                        <li><strong>Weak measurement:</strong> time saved is useful, but it is not enough. Teams need to know whether quality, speed, risk, customer experience, or revenue actually improved.</li>
+                        <li><strong>Weak measurement:</strong> time saved is useful, but it may not be enough. Teams need to know whether quality, speed, risk, customer experience, or revenue actually improved.</li>
                     </ul>
 
-                    <p>In other words, the issue is rarely "we do not have enough AI". It is usually "we have not connected AI to how work actually runs".</p>
+                    <p>In other words, the issue is often less "we do not have enough AI" and more "we have not connected AI to how work actually runs".</p>
 
-                    <h2 data-toc="Enterprise Tools">Why Enterprise Tools Help, But Do Not Fix Everything</h2>
+                    <h2 data-toc="Role of Enterprise Tools">Why Enterprise Tools Help, But Do Not Fix Everything</h2>
 
-                    <p>Enterprise AI tools matter because they make adoption safer and more scalable. They bring identity management, admin controls, auditability, data protection, connectors, permissioning, and support. They reduce the need for employees to paste sensitive information into random consumer tools. They give IT and risk teams a way to say yes with conditions instead of saying no by default.</p>
+                    <p>Enterprise AI tools can matter because they make adoption safer and more scalable. They bring identity management, admin controls, auditability, data protection, connectors, permissioning, and support. They reduce the need for employees to paste sensitive information into random consumer tools. They give IT and risk teams a way to say yes with conditions instead of saying no by default.</p>
 
-                    <p>But enterprise tools are not the whole answer. A tool can open the door. It does not walk the process through it.</p>
+                    <p>But enterprise tools are not the whole answer. A tool can open the door. The organisation still has to walk the process through it.</p>
 
-                    <p>Buying Copilot, Gemini, ChatGPT Enterprise, Salesforce Agentforce, ServiceNow AI agents, or any other platform does not automatically create adoption. It creates access.</p>
+                    <p>Buying Copilot, Gemini, ChatGPT Enterprise, Salesforce Agentforce, ServiceNow AI agents, or any other platform rarely creates adoption on its own. It mainly creates access, which is the starting point.</p>
 
-                    <p>The value comes when those tools are tied to real work: a finance analyst reconciling commentary faster, a lawyer finding precedent more efficiently, a contact centre agent resolving cases with better context, a sustainability team drafting client reports from structured evidence, or an engineer using an agent to move from ticket to pull request.</p>
+                    <p>The value is more likely to show up when those tools are tied to real work: a finance analyst reconciling commentary faster, a lawyer finding precedent more efficiently, a contact centre agent resolving cases with better context, a sustainability team drafting client reports from structured evidence, or an engineer using an agent to move from ticket to pull request.</p>
 
-                    <p>OpenAI's enterprise report is interesting here because it points to intensity, not just access: <a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/" target="_blank" rel="noopener noreferrer">workers reporting the biggest time savings use more tools, more models, and AI across a wider range of tasks</a>. The pattern is clear once you see it. Light usage gives light value. Real value comes when people use AI across the messy middle of actual work.</p>
+                    <p>OpenAI's enterprise report is interesting here because it points to intensity, not just access: <a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/" target="_blank" rel="noopener noreferrer">workers reporting the biggest time savings use more tools, more models, and AI across a wider range of tasks</a>. The pattern is useful to think about. Light usage tends to give light value. Deeper value is more likely when people use AI across the messy middle of actual work.</p>
 
-                    <p>That is the role of enterprise AI: not to be a shiny new layer on top of work, but to become part of how work flows.</p>
+                    <p>That is one useful way to think about enterprise AI: not as a shiny new layer on top of work, but as something that can become part of how work flows.</p>
 
-                    <h2 data-toc="Moving Forward">So What Actually Moves This Forward?</h2>
+                    <h2 data-toc="What Moves It Forward">So What Actually Moves This Forward?</h2>
 
-                    <p>The next step is not more excitement. There is plenty of that. The next step is choosing better starting points, with enough governance that people can move safely.</p>
+                    <p>The next step is probably not more excitement. There is plenty of that. The next step is choosing better starting points, with enough governance that people can move safely.</p>
 
-                    <p>That means picking use cases where the value is visible, the risk is understood, and the team can learn quickly.</p>
+                    <p>That means picking use cases where the value is visible, the risk is understood, and the team can learn quickly. A useful way to structure it is across four areas.</p>
 
+                    <p class="adoption-label"><strong>Start with the workflow:</strong></p>
                     <ul>
-                        <li>Which workflows are expensive, repetitive, knowledge-heavy, or slow because people are waiting for information?</li>
-                        <li>What is the smallest safe pilot that would teach us something useful in weeks, not months?</li>
-                        <li>Where does a human need a better first draft, and where does a human need a better decision aid?</li>
-                        <li>Which use cases are safe enough for experimentation, and which need formal controls before they scale?</li>
-                        <li>What data does the AI need, who owns it, and what permissions should follow it?</li>
-                        <li>What guardrails need to be in place before people start using the tool?</li>
-                        <li>How will we test outputs before trusting them in front of customers, regulators, patients, or employees?</li>
-                        <li>Who has the mandate to make adoption happen across teams, not just inside one enthusiastic pocket?</li>
-                        <li>How will we communicate the purpose clearly, so people understand what AI is for, what it is not for, and how it helps them?</li>
-                        <li>Where should AI show up as a real productivity gain: faster turnaround, less rework, better decisions, or more time for higher-value work?</li>
-                        <li>What behaviour do we want managers to model, reward, and make normal?</li>
+                        <li>Look for work that is expensive, repetitive, knowledge-heavy, or slow because people are waiting for information.</li>
+                        <li>Choose a small safe pilot that can teach the organisation something useful in weeks, not months.</li>
+                        <li>Be clear on whether AI is helping with a better first draft, a better search experience, a better decision aid, or a faster handover.</li>
                     </ul>
 
-                    <p>The organisations that move fastest will not be the ones with the longest AI strategy deck.</p>
+                    <p class="adoption-label"><strong>Make the safe path obvious:</strong></p>
+                    <ul>
+                        <li>Separate use cases that are safe for experimentation from the ones that need formal controls before they scale.</li>
+                        <li>Define what data the AI needs, who owns it, what permissions follow it, and what should never be pasted into external tools.</li>
+                        <li>Test outputs before they are trusted in front of customers, regulators, patients, or employees.</li>
+                    </ul>
 
-                    <p>They will be the ones that build a repeatable loop: choose a starting workflow, define the guardrails, give people the tool, explain the "why", train them in context, measure the result, improve the system, and share what worked.</p>
+                    <p class="adoption-label"><strong>Give adoption an owner:</strong></p>
+                    <ul>
+                        <li>Name who has the mandate to make adoption happen across teams, not just inside one enthusiastic pocket.</li>
+                        <li>Communicate the purpose clearly, so people understand what AI is for, what it is not for, and how it helps them.</li>
+                        <li>Ask managers to model the behaviours they want to make normal.</li>
+                    </ul>
 
-                    <p>That leadership mandate matters. Without it, AI adoption becomes optional enthusiasm. With it, the message is clearer: this is not another tool people have to remember to use. It is a way to remove friction from work, improve quality, and give people back time.</p>
+                    <p class="adoption-label"><strong>Measure the productivity gain:</strong></p>
+                    <ul>
+                        <li>Decide where AI should show up as a practical improvement: faster turnaround, less rework, better decisions, or more time for higher-value work.</li>
+                        <li>Measure whether the workflow actually changed, not just whether people opened the tool.</li>
+                        <li>Share what worked, where it failed, and what the next team can reuse.</li>
+                    </ul>
 
-                    <p>That loop needs governance, but not governance as theatre. Useful governance answers practical questions: what can people use, with what data, for what decisions, with what level of human review? Frameworks like the <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a> are helpful because they push organisations to think about trustworthiness, evaluation, and risk management as part of the lifecycle, not as a document at the end.</p>
+                    <p>The organisations that move fastest may not be the ones with the longest AI strategy deck.</p>
 
-                    <h2 data-toc="Bottom Line">The Bit That Matters</h2>
+                    <p>They may be the ones that build a repeatable loop: choose a starting workflow, define the guardrails, give people the tool, explain the "why", train them in context, measure the result, improve the system, and share what worked.</p>
 
-                    <p>AI adoption is not a single moment. It is a maturity curve.</p>
+                    <p>That leadership mandate feels important. Without it, AI adoption can drift into optional enthusiasm. With it, the message is clearer: this is not just another tool people have to remember to use. It is a way to remove friction from work, improve quality, and give people back time.</p>
 
-                    <p>The first stage is access: people can use the tools. The second is confidence: people know how to use them safely and well. The third is integration: AI is embedded into the systems and processes where work happens. The fourth is redesign: teams stop asking how AI can speed up the old process and start asking whether the process should exist in the same form at all.</p>
+                    <p>That loop still needs governance, but not governance as theatre. Useful governance answers practical questions: what can people use, with what data, for what decisions, with what level of human review? Frameworks like the <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework</a> are helpful because they push organisations to think about trustworthiness, evaluation, and risk management as part of the lifecycle, not as a document at the end.</p>
 
-                    <p>Most organisations are somewhere between access and integration. That is not failure. It is the normal middle of a technology shift. But it does mean the hard work is still ahead.</p>
+                    <h2 data-toc="The Maturity Curve">The Bit That Matters</h2>
 
-                    <p>The question for leaders is not whether AI will matter. It already does.</p>
+                    <p>I do not think AI adoption is a single moment. It is more like a maturity curve.</p>
 
-                    <p>The question is whether their organisation can turn scattered usage into shared capability.</p>
+                    <p>A useful maturity curve might look like this: access, where people can use the tools; confidence, where people know how to use them safely and well; integration, where AI is embedded into the systems and processes where work happens; and redesign, where teams stop asking only how AI can speed up the old process and start asking whether the process should exist in the same form at all.</p>
+
+                    <p>Many organisations seem to be somewhere between access and integration. That does not have to be failure. It may simply be the normal middle of a technology shift. But it does suggest the hard work is still ahead.</p>
+
+                    <p>The question for leaders is less whether AI will matter, and more where it will matter first.</p>
+
+                    <p>The bigger question may be whether their organisation can turn scattered usage into shared capability.</p>
 
                     <hr>
 
                     <h2>Sources Worth Reading</h2>
 
-                    <ul>
+                    <ul class="source-list">
                         <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey: The state of AI in 2025</a></li>
                         <li><a href="https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research" target="_blank" rel="noopener noreferrer">UK Government: AI Adoption Research</a></li>
                         <li><a href="https://www.oecd.org/en/topics/policy-issues/artificial-intelligence.html" target="_blank" rel="noopener noreferrer">OECD: Artificial intelligence policy and adoption data</a></li>
@@ -267,7 +416,7 @@
 
                     <hr>
 
-                    <p class="text-sm italic text-center text-gray-600">If your organisation is somewhere in the messy middle of AI adoption, that is probably normal. The important bit is whether the next experiment teaches the organisation how to work differently.</p>
+                    <p class="text-sm italic text-center text-gray-600">If your organisation is somewhere in the messy middle of AI adoption, that is probably normal. The useful question is whether the next experiment teaches the organisation how to work differently.</p>
 
                     <div class="mt-12 pt-8 border-t border-gray-300">
                         <p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p>
@@ -284,8 +433,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </div>
         </div>
     </section>
 
