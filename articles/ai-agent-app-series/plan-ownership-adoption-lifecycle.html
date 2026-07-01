@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3: Plan Ownership, Adoption and Lifecycle - Meg Patakota</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../assets/js/site-style-config.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/article.css">
+    <link rel="canonical" href="https://www.megpatakota.co.uk/articles/ai-agent-app-series/plan-ownership-adoption-lifecycle.html">
+
+    <meta name="description" content="How to plan cost, ownership, evaluation, lifecycle, adoption and retirement for AI systems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.megpatakota.co.uk/articles/ai-agent-app-series/plan-ownership-adoption-lifecycle.html">
+    <meta property="og:title" content="Part 3: Plan Ownership, Adoption and Lifecycle">
+    <meta property="og:description" content="How to plan cost, ownership, evaluation, lifecycle, adoption and retirement for AI systems.">
+    <meta property="og:image" content="https://www.megpatakota.co.uk/assets/images/articles/ai-agent-app-metaphor-refined.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+
+    <style>
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
+
+        .toc-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.375rem 0; font-size: 0.8125rem; color: var(--color-text-tertiary); transition: color 0.2s; cursor: pointer; text-align: left; }
+        .toc-link:hover, .toc-link.active { color: var(--color-text-primary); }
+        .toc-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d1d5db; background: white; transition: all 0.2s; flex-shrink: 0; }
+        .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
+        .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
+
+        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 46rem) minmax(13rem, 17rem); gap: 1.5rem; align-items: start; margin: 1.5rem 0 2rem; }
+        .article-media-stack { min-width: 0; }
+        .article-hero-image { margin: 0 0 1.25rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
+        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
+        .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
+        .article-hero-caption strong { color: var(--color-text-secondary); }
+        .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
+        .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+
+        .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout-warn { border-color: #f59e0b; background: rgba(245,158,11,0.05); }
+        .callout-warn .callout-label { color: #b45309; }
+        .cite { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; font-size: 0.5625rem; font-weight: 700; color: var(--color-buttons); background: rgba(14,116,144,0.1); border-radius: 50%; vertical-align: super; margin-left: 2px; text-decoration: none; transition: background 0.2s; }
+        .cite:hover { background: rgba(14,116,144,0.2); }
+
+        .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
+        .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
+        .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card ul { margin: 0; padding-left: 0; list-style: none; }
+        .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; color: var(--color-text-secondary); }
+
+        .tool-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0; }
+        .tool-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #fff; }
+        .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
+        .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
+
+        .series-map { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem auto 2.25rem; box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
+        .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
+        .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
+        .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
+        .series-map-note { margin: 0; font-size: 0.75rem; line-height: 1.5; color: var(--color-text-tertiary); max-width: 22rem; }
+        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+        .series-card { display: block; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; }
+        .series-card:hover { border-color: rgba(14,116,144,0.4); background: #fff; transform: translateY(-2px); text-decoration: none; }
+        .series-card span { display: block; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .series-card strong { display: block; color: var(--color-text-primary); font-size: 0.9rem; line-height: 1.25; margin-bottom: 0.35rem; }
+        .series-card em { display: block; color: var(--color-text-tertiary); font-size: 0.75rem; line-height: 1.45; font-style: normal; }
+        .series-card[aria-current="page"] { border-color: rgba(14,116,144,0.42); background: #ecfeff; box-shadow: inset 0 0 0 1px rgba(14,116,144,0.12); }
+        .series-card[aria-current="page"] span { color: #0f172a; }
+        .series-divider { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: linear-gradient(180deg, #fff, #f8fafc); padding: 1rem 1.1rem; margin: 2.75rem 0 1.5rem; }
+        .series-divider span { display: inline-flex; align-items: center; border-radius: 999px; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.25rem 0.55rem; margin-bottom: 0.65rem; }
+        .series-divider h2 { margin: 0 0 0.35rem !important; font-size: 1.35rem !important; line-height: 1.25 !important; }
+        .series-divider p { margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--color-text-secondary); }
+
+        .decision-ladder { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+        .ladder-step { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
+        .ladder-label { display: flex; flex-direction: column; justify-content: center; border-radius: 0.75rem; background: #0f172a; color: white; padding: 0.85rem; min-height: 5.5rem; }
+        .ladder-label span { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.62); }
+        .ladder-label strong { font-size: 0.9rem; line-height: 1.25; margin-top: 0.2rem; }
+        .ladder-cell { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.85rem 1rem; }
+        .ladder-cell b { display: block; color: var(--color-text-primary); font-size: 0.75rem; margin-bottom: 0.25rem; }
+        .ladder-cell p { margin: 0; font-size: 0.8125rem; line-height: 1.5; }
+
+        .signal-board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .signal-panel { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; overflow: hidden; }
+        .signal-panel h3 { margin: 0; padding: 0.9rem 1rem; font-size: 0.875rem; font-weight: 800; color: var(--color-text-primary); background: #f8fafc; border-bottom: 1px solid #e5e7eb; }
+        .signal-panel ul { list-style: none; margin: 0; padding: 0.25rem 1rem 1rem; }
+        .signal-panel li { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.65rem; margin: 0.75rem 0 0; color: var(--color-text-secondary); line-height: 1.55; font-size: 0.875rem; }
+        .signal-panel li::before { display: none !important; }
+        .signal-icon { width: 1.5rem; height: 1.5rem; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.7rem; margin-top: 0.1rem; }
+
+        .cost-chart { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #fff; margin: 1.5rem 0; }
+        .cost-row { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; align-items: center; margin-bottom: 0.9rem; }
+        .cost-row:last-child { margin-bottom: 0; }
+        .cost-label { font-size: 0.8125rem; font-weight: 700; color: var(--color-text-primary); }
+        .cost-bar { display: grid; grid-template-columns: var(--license) var(--platform) var(--ownership); height: 2.4rem; border-radius: 0.65rem; overflow: hidden; border: 1px solid #e5e7eb; background: #f8fafc; }
+        .cost-seg { display: flex; align-items: center; justify-content: center; min-width: 0; color: white; font-size: 0.6875rem; font-weight: 700; white-space: nowrap; }
+        .cost-license { background: #0e7490; }
+        .cost-platform { background: #64748b; }
+        .cost-ownership { background: #f59e0b; color: #0f172a; }
+        .cost-legend { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; font-size: 0.75rem; color: var(--color-text-tertiary); }
+        .legend-dot { display: inline-block; width: 0.65rem; height: 0.65rem; border-radius: 999px; margin-right: 0.35rem; vertical-align: -0.05rem; }
+
+        .consultancy-grid, .engineer-ladder { display: grid; gap: 0.85rem; margin: 1.5rem 0; }
+        .consultancy-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 1rem 1.1rem; }
+        .consultancy-card h3 { margin: 0 0 0.65rem; font-size: 0.95rem; font-weight: 800; color: var(--color-text-primary); }
+        .consultancy-card .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+        .consultancy-card .split div { border-radius: 0.65rem; background: #f8fafc; padding: 0.8rem; }
+        .consultancy-card span { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.3rem; }
+        .consultancy-card p { margin: 0; font-size: 0.8375rem; line-height: 1.55; }
+
+        .engineer-step { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 0.85rem; align-items: center; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.9rem 1rem; }
+        .engineer-step strong { color: var(--color-text-primary); font-size: 0.875rem; }
+        .engineer-step p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
+
+        .mini-rule { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; margin: 1.5rem 0; background: #f8fafc; }
+        .mini-rule p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .mini-rule p:last-child { margin-bottom: 0; }
+
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; }
+        .ref-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
+        #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
+
+        .series-page-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 2.5rem 0 0; }
+        .series-page-link { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #fff; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .series-page-link:hover { border-color: rgba(14,116,144,0.4); transform: translateY(-2px); text-decoration: none; }
+        .series-page-link span { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .series-page-link strong { display: block; color: var(--color-text-primary); font-size: 0.95rem; line-height: 1.3; }
+        .series-page-link.next { text-align: right; }
+        .summary-hero-panel { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1.15rem; margin: 1.5rem 0; }
+        .summary-hero-panel p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-text-secondary); }
+        @media (max-width: 640px) { .series-page-nav { grid-template-columns: 1fr; } .series-page-link.next { text-align: left; } }
+
+
+        @media (max-width: 900px) {
+            .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
+            .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+            .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 640px) {
+            .section-num { font-size: 1.75rem; }
+            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; }
+            .ladder-step { grid-template-columns: 1fr; }
+            .ladder-label { min-height: auto; }
+            .tool-strip { grid-template-columns: 1fr; }
+            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; }
+            .cost-seg { font-size: 0; }
+            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; }
+            .article-hero-image { border-radius: 0.75rem; }
+            .article-hero-image img { max-height: 14rem; }
+            .series-map-header { display: block; }
+            .series-map-note { margin-top: 0.65rem; }
+            .series-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+    <div id="progress-bar" style="width: 0%"></div>
+
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../../assets/js/header.js"></script>
+
+    <section class="pt-8 pb-12 px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-6">
+                <a href="./" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i>
+                    Series overview
+                </a>
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="text-sm text-text_tertiary">1 July 2026</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">9 min read</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">33 min full series</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Series</span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Demos are not systems. Operating discipline is where AI becomes real.</span>
+                </div>
+                <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">Part 3: Plan Ownership, Adoption and Lifecycle</h1>
+                <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">How to plan cost, ownership, evaluation, lifecycle, adoption and retirement for AI systems.</p>
+                <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+            </div>
+
+            <nav class="series-map max-w-5xl" aria-label="Article series map">
+                <div class="series-map-header">
+                    <div>
+                        <div class="series-map-kicker">Full series</div>
+                        <p class="series-map-title">When AI Agents Become Apps: Field Guide</p>
+                    </div>
+                    <p class="series-map-note">You are reading Part 3 of 4. Jump to another decision point or return to the overview.</p>
+                </div>
+
+                <div class="series-grid">
+                    <a class="series-card" href="decide-what-to-build.html">
+                        <span>Part 1</span>
+                        <strong>Decide what to build</strong>
+                        <em>Prompt, skill, agent, workflow or custom app.</em>
+                    </a>
+                    <a class="series-card" href="set-data-governance-boundary.html">
+                        <span>Part 2</span>
+                        <strong>Set the data and governance boundary</strong>
+                        <em>Permissions, legal terms, derived data and audit trails.</em>
+                    </a>
+                    <a class="series-card" aria-current="page" href="plan-ownership-adoption-lifecycle.html">
+                        <span>Part 3 / You are here</span>
+                        <strong>Plan ownership, adoption and lifecycle</strong>
+                        <em>Cost, evaluation, support, adoption and retirement.</em>
+                    </a>
+                    <a class="series-card" href="decide-internal-vs-client-facing.html">
+                        <span>Part 4</span>
+                        <strong>Decide internal vs client-facing</strong>
+                        <em>Personal tool, firm accelerator or client product.</em>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="article-intro-layout">
+                <div class="article-media-stack">
+                    <figure class="article-hero-image">
+                        <img src="../../assets/images/articles/ai-agent-app-metaphor-refined.png" alt="A quiet metaphorical still life showing an AI workflow becoming a governed app with data boundaries and client compartments">
+                    </figure>
+                </div>
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">In this part</p>
+                    <div class="relative" id="toc"><div class="toc-line"></div></div>
+                </aside>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <article class="article-content">
+                    <div class="series-divider" id="part-3">
+                        <span>Part 3</span>
+                        <h2>Plan Ownership, Adoption and Lifecycle</h2>
+                        <p>Costs, ownership, evaluation and retirement are where a useful demo becomes a real internal capability.</p>
+                    </div>
+
+                    <div class="mt-14 mb-5" id="section-7" data-toc="Cost and Ownership">
+                        <span class="section-num">07</span>
+                        <h2 class="-mt-4">The Infrastructure Cost Is Real</h2>
+                        <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                    </div>
+
+                    <p>There is a lazy version of the build-versus-buy debate that sounds like this: "Copilot is expensive, so let's build it ourselves." Or the opposite: "Custom apps need infrastructure, so let's just use Copilot."</p>
+
+                    <p>Both are too simple. The real debate has three cost layers: starting cost, scaling cost and ownership cost.</p>
+
+                    <div class="cost-chart" aria-label="Relative cost mix for AI tooling choices">
+                        <div class="cost-row">
+                            <div class="cost-label">Copilot / Claude</div>
+                            <div class="cost-bar" style="--license: 55%; --platform: 30%; --ownership: 15%;">
+                                <span class="cost-seg cost-license">Licences</span>
+                                <span class="cost-seg cost-platform">Admin</span>
+                                <span class="cost-seg cost-ownership">Ownership</span>
+                            </div>
+                        </div>
+                        <div class="cost-row">
+                            <div class="cost-label">Low-code app</div>
+                            <div class="cost-bar" style="--license: 30%; --platform: 35%; --ownership: 35%;">
+                                <span class="cost-seg cost-license">Seats</span>
+                                <span class="cost-seg cost-platform">Platform</span>
+                                <span class="cost-seg cost-ownership">Care</span>
+                            </div>
+                        </div>
+                        <div class="cost-row">
+                            <div class="cost-label">Custom app</div>
+                            <div class="cost-bar" style="--license: 15%; --platform: 25%; --ownership: 60%;">
+                                <span class="cost-seg cost-license">Models</span>
+                                <span class="cost-seg cost-platform">Cloud</span>
+                                <span class="cost-seg cost-ownership">Ownership</span>
+                            </div>
+                        </div>
+                        <div class="cost-legend">
+                            <span><i class="legend-dot" style="background:#0e7490"></i>Licence or model cost</span>
+                            <span><i class="legend-dot" style="background:#64748b"></i>Platform and admin cost</span>
+                            <span><i class="legend-dot" style="background:#f59e0b"></i>Engineering ownership cost</span>
+                        </div>
+                    </div>
+
+                    <p>Productivity tools usually win on starting cost. The licence exists. The admin centre exists. The identity layer probably exists. The users already know Teams, Outlook, Slack or ChatGPT. You can get to first value without designing a database schema or deploying a backend.</p>
+
+                    <p>Scaling cost is where the answer becomes less obvious. A vendor tool can become expensive when every user needs a licence, every workflow needs a platform seat, and every workaround creates hidden labour. A custom app can become cheaper at scale when the workflow is repeated often enough and the same product boundary serves many users.</p>
+
+                    <p>Ownership cost is where custom apps bite. A simple internal AI app is not just a frontend and a model call. It may need hosting, SSO, roles, permissions, data storage, retrieval, model routing, observability, CI/CD, security reviews, support, governance and a plan for derived data.</p>
+
+                    <div class="callout callout-warn">
+                        <div class="callout-label"><i class="fas fa-triangle-exclamation"></i> Honest build decision</div>
+                        <p>The custom app is justified when the workflow needs the control: better UX, cleaner permissions, stronger client isolation, proper review screens, reusable firm IP and a durable operating model.</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="mt-14 mb-5" id="section-8" data-toc="Lifecycle">
+                        <span class="section-num">08</span>
+                        <h2 class="-mt-4">Evaluation, Ownership and Lifecycle Are Where AI Systems Become Real</h2>
+                        <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                    </div>
+
+                    <p>There is one final trap: teams often judge AI tools by demo quality.</p>
+
+                    <p>The agent answers a question well. The app produces a useful draft. The workflow runs once. Everyone gets excited. But demos are not systems.</p>
+
+                    <p>A serious AI capability needs to be evaluated, owned, updated and eventually retired. Without that, the organisation ends up with a pile of agents, prompts, skills, scripts and apps that nobody fully trusts and nobody fully owns. The question is not only "does this work today?" It is: <strong>how will we know it still works three months from now?</strong></p>
+
+                    <div class="signal-board">
+                        <div class="signal-panel">
+                            <h3>Evaluation should check</h3>
+                            <ul>
+                                <li><span class="signal-icon"><i class="fas fa-bullseye"></i></span><span><strong>Accuracy and completeness:</strong> is it right, and did it miss anything important?</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-link"></i></span><span><strong>Source quality:</strong> did it use the right evidence, and can reviewers inspect it?</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-lock"></i></span><span><strong>Permission safety:</strong> did it only use data the user was allowed to access?</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-repeat"></i></span><span><strong>Consistency:</strong> does it behave reliably across similar tasks and messy inputs?</span></li>
+                            </ul>
+                        </div>
+                        <div class="signal-panel">
+                            <h3>Ownership should answer</h3>
+                            <ul>
+                                <li><span class="signal-icon"><i class="fas fa-pen-to-square"></i></span><span><strong>Who approves changes?</strong> Prevent uncontrolled prompt, model or workflow drift.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-folder-tree"></i></span><span><strong>Who manages data sources?</strong> Reduce stale information and oversharing.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-chart-line"></i></span><span><strong>Who monitors quality?</strong> Turn usage, feedback and corrections into improvement.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-life-ring"></i></span><span><strong>Who responds to incidents?</strong> Make bad outputs operational issues, not curiosities.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p>This is where many productivity-tool rollouts are weak. They measure usage, but not quality. They count prompts, but not outcomes. They celebrate adoption, but do not know whether the work is actually better.</p>
+
+                    <p>For low-risk individual productivity, that may be acceptable. For operational workflows, client delivery or reusable firm IP, it is not. OpenAI's agent guidance includes evaluation and production deployment concerns, and NIST's AI RMF frames risk management as an ongoing lifecycle, not a one-off launch checklist.<a href="#ref-5" class="cite">5</a><a href="#ref-9" class="cite">9</a></p>
+
+                    <h3>Portability Matters More When the Method Is IP</h3>
+
+                    <p>Vendor lock-in is not always bad. If a company is already deeply Microsoft-based, using Copilot Studio, Teams, SharePoint and Power Platform may be the most sensible path. The organisation gets speed, governance and adoption because the tool sits inside the existing work environment.</p>
+
+                    <p>It becomes a problem when the firm's reusable expertise gets trapped in a format it cannot move, test, version or improve outside one vendor surface. A firm's proposal method, delivery QA approach, sector research workflow or client onboarding process may become valuable intellectual property. If that IP exists only as hidden prompts, click-ops flows and undocumented agent settings, the firm does not really own it in a useful way.</p>
+
+                    <div class="mini-rule">
+                        <p><strong>Keep the core method portable:</strong> markdown prompts, versioned skills, documented schemas, evaluation sets, reusable code, and business logic in an owned service where necessary.</p>
+                        <p><strong>Use the vendor surface for distribution:</strong> Teams, Slack, ChatGPT, Claude, Retool or Streamlit can still be the front door.</p>
+                    </div>
+
+                    <h3>Failure Handling and Retirement Need a Plan</h3>
+
+                    <p>AI systems fail differently from normal software. A normal app might crash. An AI app may confidently produce a weak answer, use the wrong source, omit a key exception, summarise the wrong client file or trigger a workflow that looks reasonable but is not.</p>
+
+                    <p>If the workflow needs exception handling, approval queues, status tracking and rollback, it probably wants an app or at least a more structured workflow layer. Users need to be able to flag bad answers. Admins need to inspect what happened. Sources and tool calls need to be logged. High-impact actions need human approval. Changes need a rollback path.</p>
+
+                    <p>And eventually, some things should be switched off. Organisations are bad at deleting old systems, and AI will make this worse: old agents, old prompts, old skills, old workflow automations, old Streamlit apps and old proof-of-concepts that people still occasionally use.</p>
+
+                    <div class="decision-ladder" aria-label="Lifecycle stages for an internal AI capability">
+                        <div class="ladder-step">
+                            <div class="ladder-label"><span>Stage</span><strong>Pilot</strong></div>
+                            <div class="ladder-cell"><b>Question</b><p>What are we trying to prove?</p></div>
+                            <div class="ladder-cell"><b>Evidence</b><p>Test cases, user feedback, risk notes and a clear go/no-go threshold.</p></div>
+                        </div>
+                        <div class="ladder-step">
+                            <div class="ladder-label"><span>Stage</span><strong>Production</strong></div>
+                            <div class="ladder-cell"><b>Question</b><p>Who owns it and how is it supported?</p></div>
+                            <div class="ladder-cell"><b>Evidence</b><p>Named owners, support path, monitoring, versioning and incident response.</p></div>
+                        </div>
+                        <div class="ladder-step">
+                            <div class="ladder-label"><span>Stage</span><strong>Review</strong></div>
+                            <div class="ladder-cell"><b>Question</b><p>Is it still accurate, safe and used?</p></div>
+                            <div class="ladder-cell"><b>Evidence</b><p>Evaluation runs, correction rates, data-source review and access review.</p></div>
+                        </div>
+                        <div class="ladder-step">
+                            <div class="ladder-label"><span>Stage</span><strong>Retire</strong></div>
+                            <div class="ladder-cell"><b>Question</b><p>When do we remove access?</p></div>
+                            <div class="ladder-cell"><b>Evidence</b><p>Decommission plan, user migration, deleted derived data and archived records.</p></div>
+                        </div>
+                    </div>
+
+                    <p>This is not bureaucracy for its own sake. It is how the organisation avoids turning early AI enthusiasm into long-term operational clutter.</p>
+
+                    <hr>
+
+                    <div class="mt-14 mb-5" id="section-9" data-toc="Adoption">
+                        <span class="section-num">09</span>
+                        <h2 class="-mt-4">Adoption Is the Part Everyone Underestimates</h2>
+                        <div class="w-10 h-0.5 bg-buttons/25 rounded-full mt-3"></div>
+                    </div>
+
+                    <p>There is one more reason AI projects fail. Not because the model is bad. Not because the app is badly built. Because nobody changes how they work.</p>
+
+                    <p>Adoption is not the same as access. Giving everyone Copilot, Claude, ChatGPT or a new internal app does not mean the organisation has adopted AI. It usually just means the organisation has created another tool people may or may not remember to use.</p>
+
+                    <p>This matters when comparing productivity tools with custom apps. Productivity tools often have a lower adoption barrier because they live inside existing habits. Copilot appears in Teams, Outlook, Word, PowerPoint and Excel. ChatGPT or Claude sits in a familiar chat interface. A shared agent can be dropped into Slack or Teams. The user does not have to learn a whole new system.</p>
+
+                    <p>That is a real advantage. But it can also hide weak adoption. People may use the tool once, get a mediocre answer, and quietly stop. Or they may use it in inconsistent ways, with different prompts, different assumptions and different quality standards. The organisation then has "AI usage", but not a repeatable capability.</p>
+
+                    <p>Custom apps have the opposite problem. They can give the workflow a much better home: clearer screens, structured inputs, review steps, status tracking, source evidence and role-specific experiences. But they require people to leave their normal flow of work. If the app is not obviously useful, trusted and embedded into the process, it becomes another portal. And people hate another portal.</p>
+
+                    <div class="callout">
+                        <div class="callout-label"><i class="fas fa-route"></i> Adoption rule</div>
+                        <p>Choose the tool people will actually use, then add only as much engineering as the workflow deserves.</p>
+                    </div>
+
+                    <h3>Adoption Is a Product Problem, Not Just a Training Problem</h3>
+
+                    <p>A common mistake is to treat adoption as a comms exercise: launch email, training session, Teams post, maybe a short demo. Then everyone wonders why usage drops after two weeks.</p>
+
+                    <p>For AI tools, users need more than awareness. They need to know whether the tool helps their actual job, whether they can trust the output, whether it is faster than their workaround, whether they are allowed to use it with the data in front of them, what good use looks like, who is accountable if the output is wrong, and where to go when it breaks.</p>
+
+                    <p>The best AI rollouts do not start with "here is the tool". They start with a job. A proposal manager cares whether the system helps produce a better first draft with approved case studies and fewer compliance issues. A consultant cares whether it helps them get to a sharper client answer faster. A partner cares whether evidence is traceable and risk is controlled. A finance user cares whether the workflow saves time without creating audit problems.</p>
+
+                    <div class="signal-board">
+                        <div class="signal-panel">
+                            <h3>Adoption advantage by tool</h3>
+                            <ul>
+                                <li><span class="signal-icon"><i class="fas fa-window-restore"></i></span><span><strong>Productivity assistant:</strong> already near daily work, but usage can stay random and shallow.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-comments"></i></span><span><strong>Shared agent:</strong> easy to distribute, but people may not know when to use or trust it.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-layer-group"></i></span><span><strong>Skill or prompt pack:</strong> reusable method, but hidden unless embedded into workflow.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-table-columns"></i></span><span><strong>Custom app:</strong> best workflow fit when designed well, but the highest change-management burden.</span></li>
+                            </ul>
+                        </div>
+                        <div class="signal-panel">
+                            <h3>Trust mechanisms</h3>
+                            <ul>
+                                <li><span class="signal-icon"><i class="fas fa-quote-left"></i></span><span><strong>Source citations:</strong> users can inspect where an answer came from.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-user-check"></i></span><span><strong>Review steps:</strong> humans approve consequential outputs.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-book-open"></i></span><span><strong>Good examples:</strong> teams learn what useful output looks like.</span></li>
+                                <li><span class="signal-icon"><i class="fas fa-rotate"></i></span><span><strong>Feedback loops:</strong> users can correct, flag and improve the system.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p>This is where custom apps can outperform generic agents. A custom app can put trust mechanisms directly into the interface: sources, missing evidence, review gates, draft-versus-approved status and feedback capture. But vendor tools can still win when trust already exists in the work environment. If users trust SharePoint permissions, Teams channels and Microsoft 365 governance, an assistant inside that world may feel safer than a standalone app.</p>
+
+                    <h3>Measure Changed Work, Not Adoption Theatre</h3>
+
+                    <p>AI adoption metrics are often lazy: licences assigned, active users, prompts sent, agents created. These can be useful, but they do not prove value.</p>
+
+                    <p>A better adoption dashboard asks whether people come back after the novelty fades, whether the tool helps finish a real workflow, whether the process is faster, whether outputs are better or more consistent, how often humans approve or reject AI outputs, where the tool fails repeatedly, and whether proposal cycle time, QA effort or operational backlog actually improves.</p>
+
+                    <p>High usage can still be low value. A team may send thousands of prompts and save very little time. Another team may use a small internal app twice a week and remove hours of painful manual work. The point is not adoption theatre. The point is changed work.</p>
+
+                    <h3>Champions Need to Be Close to the Work</h3>
+
+                    <p>For consultancy firms, adoption usually needs local champions. Not generic "AI champions" who forward tips. Real champions embedded in the work: proposal champions, delivery QA champions, sector knowledge champions, operations champions and engineering champions.</p>
+
+                    <p>These people translate the tool into the language of the team. They collect examples, explain edge cases, spot misuse, suggest improvements and keep the system honest. Without that operating model, adoption becomes enthusiasm without ownership.</p>
+
+                    <p>The adoption question is not "can we deploy this?" It is: <strong>can we make this part of the way work gets done?</strong> That is a much higher bar.</p>
+
+                    <hr>
+
+
+                    <div class="series-page-nav">
+                        <a class="series-page-link prev" href="set-data-governance-boundary.html"><span>Previous</span><strong>Part 2: Set the Data and Governance Boundary</strong></a>
+                        <a class="series-page-link next" href="decide-internal-vs-client-facing.html"><span>Next</span><strong>Part 4: Decide Internal vs Client-Facing</strong></a>
+                    </div>
+
+                    <div class="mt-14 pt-8 border-t border-gray-200">
+                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                        <ol class="ref-list">
+                            <li id="ref-1"><span class="ref-num">1</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Key concepts: publish and deploy your agent in Copilot Studio.</em></a></span></li>
+                            <li id="ref-2"><span class="ref-num">2</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Configure user authentication in Copilot Studio.</em></a></span></li>
+                            <li id="ref-3"><span class="ref-num">3</span><span><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener noreferrer">Anthropic. <em>Extend Claude with skills.</em></a></span></li>
+                            <li id="ref-4"><span class="ref-num">4</span><span><a href="https://code.claude.com/docs/en/settings" target="_blank" rel="noopener noreferrer">Anthropic. <em>Claude Code settings and configuration scopes.</em></a></span></li>
+                            <li id="ref-5"><span class="ref-num">5</span><span><a href="https://developers.openai.com/api/docs/guides/agents" target="_blank" rel="noopener noreferrer">OpenAI. <em>Agents SDK and agent workflow documentation.</em></a></span></li>
+                            <li id="ref-6"><span class="ref-num">6</span><span><a href="https://docs.retool.com/permissions/quickstart" target="_blank" rel="noopener noreferrer">Retool Docs. <em>Permissions quickstart.</em></a></span></li>
+                            <li id="ref-7"><span class="ref-num">7</span><span><a href="https://docs.streamlit.io/develop/concepts/connections/authentication" target="_blank" rel="noopener noreferrer">Streamlit Docs. <em>User authentication and information.</em></a></span></li>
+                            <li id="ref-8"><span class="ref-num">8</span><span><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer">OWASP Foundation. <em>Top 10 for Large Language Model Applications.</em></a></span></li>
+                            <li id="ref-9"><span class="ref-num">9</span><span><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST. <em>AI Risk Management Framework.</em></a></span></li>
+                            <li id="ref-10"><span class="ref-num">10</span><span><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/" target="_blank" rel="noopener noreferrer">ICO. <em>Artificial intelligence and data protection guidance.</em></a></span></li>
+                            <li id="ref-11"><span class="ref-num">11</span><span><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission. <em>AI Act.</em></a></span></li>
+                        </ol>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up text-sm"></i></button>
+    <div id="shared-footer"></div>
+    <script src="../../assets/js/footer.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('progress-bar').style.width = (window.scrollY / h * 100) + '%';
+            document.getElementById('back-to-top').style.display = window.scrollY > 600 ? 'flex' : 'none';
+        });
+        const toc = document.getElementById('toc');
+        const sections = document.querySelectorAll('[data-toc]');
+        sections.forEach((el) => {
+            const link = document.createElement('button');
+            link.className = 'toc-link';
+            link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            link.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            toc.appendChild(link);
+        });
+        const tocLinks = toc.querySelectorAll('.toc-link');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(sections).indexOf(entry.target);
+                    tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>

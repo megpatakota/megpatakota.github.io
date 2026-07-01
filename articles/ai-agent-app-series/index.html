@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When AI Agents Become Apps - Meg Patakota</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../assets/js/site-style-config.js"></script>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/article.css">
+    <link rel="canonical" href="https://www.megpatakota.co.uk/articles/ai-agent-app-series/">
+
+    <meta name="description" content="A four-part field guide for choosing Copilot, Claude, workflow builders, internal accelerators or client-facing products.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.megpatakota.co.uk/articles/ai-agent-app-series/">
+    <meta property="og:title" content="When AI Agents Become Apps">
+    <meta property="og:description" content="A four-part field guide for choosing Copilot, Claude, workflow builders, internal accelerators or client-facing products.">
+    <meta property="og:image" content="https://www.megpatakota.co.uk/assets/images/articles/ai-agent-app-metaphor-refined.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+
+    <style>
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
+
+        .toc-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.375rem 0; font-size: 0.8125rem; color: var(--color-text-tertiary); transition: color 0.2s; cursor: pointer; text-align: left; }
+        .toc-link:hover, .toc-link.active { color: var(--color-text-primary); }
+        .toc-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d1d5db; background: white; transition: all 0.2s; flex-shrink: 0; }
+        .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
+        .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
+
+        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 46rem) minmax(13rem, 17rem); gap: 1.5rem; align-items: start; margin: 1.5rem 0 2rem; }
+        .article-media-stack { min-width: 0; }
+        .article-hero-image { margin: 0 0 1.25rem; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
+        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 22rem; aspect-ratio: 16 / 9; object-fit: cover; }
+        .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
+        .article-hero-caption strong { color: var(--color-text-secondary); }
+        .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
+        .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+
+        .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+        .callout-warn { border-color: #f59e0b; background: rgba(245,158,11,0.05); }
+        .callout-warn .callout-label { color: #b45309; }
+        .cite { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; font-size: 0.5625rem; font-weight: 700; color: var(--color-buttons); background: rgba(14,116,144,0.1); border-radius: 50%; vertical-align: super; margin-left: 2px; text-decoration: none; transition: background 0.2s; }
+        .cite:hover { background: rgba(14,116,144,0.2); }
+
+        .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
+        .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
+        .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card ul { margin: 0; padding-left: 0; list-style: none; }
+        .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; color: var(--color-text-secondary); }
+
+        .tool-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0; }
+        .tool-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #fff; }
+        .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
+        .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
+
+        .series-map { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem auto 2.25rem; box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
+        .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
+        .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
+        .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
+        .series-map-note { margin: 0; font-size: 0.75rem; line-height: 1.5; color: var(--color-text-tertiary); max-width: 22rem; }
+        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+        .series-card { display: block; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; }
+        .series-card:hover { border-color: rgba(14,116,144,0.4); background: #fff; transform: translateY(-2px); text-decoration: none; }
+        .series-card span { display: block; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .series-card strong { display: block; color: var(--color-text-primary); font-size: 0.9rem; line-height: 1.25; margin-bottom: 0.35rem; }
+        .series-card em { display: block; color: var(--color-text-tertiary); font-size: 0.75rem; line-height: 1.45; font-style: normal; }
+        .series-card[aria-current="page"] { border-color: rgba(14,116,144,0.42); background: #ecfeff; box-shadow: inset 0 0 0 1px rgba(14,116,144,0.12); }
+        .series-card[aria-current="page"] span { color: #0f172a; }
+        .series-divider { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: linear-gradient(180deg, #fff, #f8fafc); padding: 1rem 1.1rem; margin: 2.75rem 0 1.5rem; }
+        .series-divider span { display: inline-flex; align-items: center; border-radius: 999px; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.25rem 0.55rem; margin-bottom: 0.65rem; }
+        .series-divider h2 { margin: 0 0 0.35rem !important; font-size: 1.35rem !important; line-height: 1.25 !important; }
+        .series-divider p { margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--color-text-secondary); }
+
+        .decision-ladder { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
+        .ladder-step { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
+        .ladder-label { display: flex; flex-direction: column; justify-content: center; border-radius: 0.75rem; background: #0f172a; color: white; padding: 0.85rem; min-height: 5.5rem; }
+        .ladder-label span { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.62); }
+        .ladder-label strong { font-size: 0.9rem; line-height: 1.25; margin-top: 0.2rem; }
+        .ladder-cell { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.85rem 1rem; }
+        .ladder-cell b { display: block; color: var(--color-text-primary); font-size: 0.75rem; margin-bottom: 0.25rem; }
+        .ladder-cell p { margin: 0; font-size: 0.8125rem; line-height: 1.5; }
+
+        .signal-board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .signal-panel { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; overflow: hidden; }
+        .signal-panel h3 { margin: 0; padding: 0.9rem 1rem; font-size: 0.875rem; font-weight: 800; color: var(--color-text-primary); background: #f8fafc; border-bottom: 1px solid #e5e7eb; }
+        .signal-panel ul { list-style: none; margin: 0; padding: 0.25rem 1rem 1rem; }
+        .signal-panel li { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.65rem; margin: 0.75rem 0 0; color: var(--color-text-secondary); line-height: 1.55; font-size: 0.875rem; }
+        .signal-panel li::before { display: none !important; }
+        .signal-icon { width: 1.5rem; height: 1.5rem; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.7rem; margin-top: 0.1rem; }
+
+        .cost-chart { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #fff; margin: 1.5rem 0; }
+        .cost-row { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; align-items: center; margin-bottom: 0.9rem; }
+        .cost-row:last-child { margin-bottom: 0; }
+        .cost-label { font-size: 0.8125rem; font-weight: 700; color: var(--color-text-primary); }
+        .cost-bar { display: grid; grid-template-columns: var(--license) var(--platform) var(--ownership); height: 2.4rem; border-radius: 0.65rem; overflow: hidden; border: 1px solid #e5e7eb; background: #f8fafc; }
+        .cost-seg { display: flex; align-items: center; justify-content: center; min-width: 0; color: white; font-size: 0.6875rem; font-weight: 700; white-space: nowrap; }
+        .cost-license { background: #0e7490; }
+        .cost-platform { background: #64748b; }
+        .cost-ownership { background: #f59e0b; color: #0f172a; }
+        .cost-legend { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; font-size: 0.75rem; color: var(--color-text-tertiary); }
+        .legend-dot { display: inline-block; width: 0.65rem; height: 0.65rem; border-radius: 999px; margin-right: 0.35rem; vertical-align: -0.05rem; }
+
+        .consultancy-grid, .engineer-ladder { display: grid; gap: 0.85rem; margin: 1.5rem 0; }
+        .consultancy-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 1rem 1.1rem; }
+        .consultancy-card h3 { margin: 0 0 0.65rem; font-size: 0.95rem; font-weight: 800; color: var(--color-text-primary); }
+        .consultancy-card .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+        .consultancy-card .split div { border-radius: 0.65rem; background: #f8fafc; padding: 0.8rem; }
+        .consultancy-card span { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.3rem; }
+        .consultancy-card p { margin: 0; font-size: 0.8375rem; line-height: 1.55; }
+
+        .engineer-step { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 0.85rem; align-items: center; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.9rem 1rem; }
+        .engineer-step strong { color: var(--color-text-primary); font-size: 0.875rem; }
+        .engineer-step p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
+
+        .mini-rule { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; margin: 1.5rem 0; background: #f8fafc; }
+        .mini-rule p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .mini-rule p:last-child { margin-bottom: 0; }
+
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; }
+        .ref-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
+        #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
+
+        .series-page-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 2.5rem 0 0; }
+        .series-page-link { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #fff; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .series-page-link:hover { border-color: rgba(14,116,144,0.4); transform: translateY(-2px); text-decoration: none; }
+        .series-page-link span { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .series-page-link strong { display: block; color: var(--color-text-primary); font-size: 0.95rem; line-height: 1.3; }
+        .series-page-link.next { text-align: right; }
+        .summary-hero-panel { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1.15rem; margin: 1.5rem 0; }
+        .summary-hero-panel p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-text-secondary); }
+        @media (max-width: 640px) { .series-page-nav { grid-template-columns: 1fr; } .series-page-link.next { text-align: left; } }
+
+
+        @media (max-width: 900px) {
+            .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
+            .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+            .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 640px) {
+            .section-num { font-size: 1.75rem; }
+            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; }
+            .ladder-step { grid-template-columns: 1fr; }
+            .ladder-label { min-height: auto; }
+            .tool-strip { grid-template-columns: 1fr; }
+            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; }
+            .cost-seg { font-size: 0; }
+            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; }
+            .article-hero-image { border-radius: 0.75rem; }
+            .article-hero-image img { max-height: 14rem; }
+            .series-map-header { display: block; }
+            .series-map-note { margin-top: 0.65rem; }
+            .series-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-text_primary">
+    <div id="progress-bar" style="width: 0%"></div>
+
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../../assets/js/header.js"></script>
+
+    <section class="pt-8 pb-12 px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-6">
+                <a href="../../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
+                    <i class="fas fa-arrow-left mr-2 text-xs"></i>
+                    All articles
+                </a>
+                <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="text-sm text-text_tertiary">1 July 2026</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">2 min read</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-sm text-text_tertiary">33 min full series</span>
+                    <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Series</span>
+                    <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Series overview</span>
+                </div>
+                <h1 class="text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-3xl">When AI Agents Become Apps</h1>
+                <p class="mt-4 text-lg text-text_secondary leading-relaxed max-w-2xl">A four-part field guide for choosing Copilot, Claude, workflow builders, internal accelerators or client-facing products.</p>
+                <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+            </div>
+
+            <nav class="series-map max-w-5xl" aria-label="Article series map">
+                <div class="series-map-header">
+                    <div>
+                        <div class="series-map-kicker">Full series</div>
+                        <p class="series-map-title">When AI Agents Become Apps: Field Guide</p>
+                    </div>
+                    <p class="series-map-note">Start with the summary, read in order, or jump to the decision you need.</p>
+                </div>
+
+                <div class="series-grid">
+                    <a class="series-card" href="decide-what-to-build.html">
+                        <span>Part 1</span>
+                        <strong>Decide what to build</strong>
+                        <em>Prompt, skill, agent, workflow or custom app.</em>
+                    </a>
+                    <a class="series-card" href="set-data-governance-boundary.html">
+                        <span>Part 2</span>
+                        <strong>Set the data and governance boundary</strong>
+                        <em>Permissions, legal terms, derived data and audit trails.</em>
+                    </a>
+                    <a class="series-card" href="plan-ownership-adoption-lifecycle.html">
+                        <span>Part 3</span>
+                        <strong>Plan ownership, adoption and lifecycle</strong>
+                        <em>Cost, evaluation, support, adoption and retirement.</em>
+                    </a>
+                    <a class="series-card" href="decide-internal-vs-client-facing.html">
+                        <span>Part 4</span>
+                        <strong>Decide internal vs client-facing</strong>
+                        <em>Personal tool, firm accelerator or client product.</em>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="article-intro-layout">
+                <div class="article-media-stack">
+                    <figure class="article-hero-image">
+                        <img src="../../assets/images/articles/ai-agent-app-metaphor-refined.png" alt="A quiet metaphorical still life showing an AI workflow becoming a governed app with data boundaries and client compartments">
+                    </figure>
+                </div>
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">Series guide</p>
+                    <div class="relative" id="toc"><div class="toc-line"></div></div>
+                </aside>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <article class="article-content">
+
+                    <div class="summary-hero-panel" id="series-overview" data-toc="Series Overview">
+                        <p><strong>The short version:</strong> an AI assistant should become an app when the work needs a durable home: roles, data boundaries, approvals, audit trails, evaluation, adoption support and lifecycle ownership. If it is just a task, use the assistant. If it is becoming operationally important, give it product discipline.</p>
+                    </div>
+
+                    <div class="quick-verdict" id="skim-verdict" data-toc="Skim Verdict">
+                        <div class="quick-card">
+                            <h3>Skim Verdict</h3>
+                            <ul>
+                                <li><strong>Use Copilot</strong> when the work already lives in Microsoft 365 and the existing governance boundary is enough.</li>
+                                <li><strong>Use Claude</strong> when the work is about reasoning, reusable expertise, coding-adjacent delivery or repeatable methods.</li>
+                                <li><strong>Build an app</strong> when the workflow needs users, roles, state, approvals, audit trails, client boundaries or explicit data governance.</li>
+                            </ul>
+                        </div>
+                        <div class="quick-card">
+                            <h3>Core Question</h3>
+                            <ul>
+                                <li>What shape has the work become?</li>
+                                <li>What data does it touch?</li>
+                                <li>Who is accountable when it is wrong?</li>
+                                <li>Will people actually use it?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h2 id="read-the-series" data-toc="Read the Series">Read the Series</h2>
+                    <p>This started as one article, but the decision is too important to treat as one long scroll. Read the four parts in order, or jump to the question you are facing now.</p>
+
+                <div class="series-grid">
+                    <a class="series-card" href="decide-what-to-build.html">
+                        <span>Part 1</span>
+                        <strong>Decide what to build</strong>
+                        <em>Prompt, skill, agent, workflow or custom app.</em>
+                    </a>
+                    <a class="series-card" href="set-data-governance-boundary.html">
+                        <span>Part 2</span>
+                        <strong>Set the data and governance boundary</strong>
+                        <em>Permissions, legal terms, derived data and audit trails.</em>
+                    </a>
+                    <a class="series-card" href="plan-ownership-adoption-lifecycle.html">
+                        <span>Part 3</span>
+                        <strong>Plan ownership, adoption and lifecycle</strong>
+                        <em>Cost, evaluation, support, adoption and retirement.</em>
+                    </a>
+                    <a class="series-card" href="decide-internal-vs-client-facing.html">
+                        <span>Part 4</span>
+                        <strong>Decide internal vs client-facing</strong>
+                        <em>Personal tool, firm accelerator or client product.</em>
+                    </a>
+                </div>
+
+
+                    <hr>
+
+                    <h2 id="final-decision-rule" data-toc="Decision Rule">The Final Decision Rule</h2>
+                    <ol>
+                        <li><strong>Where does the work naturally happen?</strong> Teams, Slack, documents, code, or a browser app?</li>
+                        <li><strong>What exactly needs to be shared?</strong> A prompt, method, agent, workflow or app?</li>
+                        <li><strong>What data does it touch?</strong> Source ownership, confidentiality, retention, deletion and derived data.</li>
+                        <li><strong>Are we allowed to use this tool in this way?</strong> Client commitments, data processing terms, model-training terms and regional requirements.</li>
+                        <li><strong>Who controls access?</strong> Identity, permissions and source-system alignment.</li>
+                        <li><strong>What happens when it goes wrong?</strong> Logs, rollback, source traceability and incident handling.</li>
+                        <li><strong>How will we know it still works later?</strong> Evaluation, monitoring and review dates.</li>
+                        <li><strong>Will people actually use it?</strong> Adoption, workflow fit and proof of changed work.</li>
+                        <li><strong>Who owns it after launch?</strong> Business owner, technical owner, governance owner and support model.</li>
+                    </ol>
+
+                    <div class="callout">
+                        <div class="callout-label"><i class="fas fa-lightbulb"></i> Final thought</div>
+                        <p>The companies that get this right will not be the ones with the most AI licences. They will be the ones that know which agents deserve to exist, who owns them, how they are tested, who will actually use them, when they should become apps and when they should be switched off.</p>
+                    </div>
+
+                    <div class="series-page-nav">
+                        <a class="series-page-link prev" href="../../main_articles.html"><span>Back</span><strong>All Articles</strong></a>
+                        <a class="series-page-link next" href="decide-what-to-build.html"><span>Next</span><strong>Start with Part 1: Decide What to Build</strong></a>
+                    </div>
+
+                    <div class="mt-14 pt-8 border-t border-gray-200">
+                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                        <ol class="ref-list">
+                            <li id="ref-1"><span class="ref-num">1</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Key concepts: publish and deploy your agent in Copilot Studio.</em></a></span></li>
+                            <li id="ref-2"><span class="ref-num">2</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Configure user authentication in Copilot Studio.</em></a></span></li>
+                            <li id="ref-3"><span class="ref-num">3</span><span><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener noreferrer">Anthropic. <em>Extend Claude with skills.</em></a></span></li>
+                            <li id="ref-4"><span class="ref-num">4</span><span><a href="https://code.claude.com/docs/en/settings" target="_blank" rel="noopener noreferrer">Anthropic. <em>Claude Code settings and configuration scopes.</em></a></span></li>
+                            <li id="ref-5"><span class="ref-num">5</span><span><a href="https://developers.openai.com/api/docs/guides/agents" target="_blank" rel="noopener noreferrer">OpenAI. <em>Agents SDK and agent workflow documentation.</em></a></span></li>
+                            <li id="ref-6"><span class="ref-num">6</span><span><a href="https://docs.retool.com/permissions/quickstart" target="_blank" rel="noopener noreferrer">Retool Docs. <em>Permissions quickstart.</em></a></span></li>
+                            <li id="ref-7"><span class="ref-num">7</span><span><a href="https://docs.streamlit.io/develop/concepts/connections/authentication" target="_blank" rel="noopener noreferrer">Streamlit Docs. <em>User authentication and information.</em></a></span></li>
+                            <li id="ref-8"><span class="ref-num">8</span><span><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer">OWASP Foundation. <em>Top 10 for Large Language Model Applications.</em></a></span></li>
+                            <li id="ref-9"><span class="ref-num">9</span><span><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST. <em>AI Risk Management Framework.</em></a></span></li>
+                            <li id="ref-10"><span class="ref-num">10</span><span><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/" target="_blank" rel="noopener noreferrer">ICO. <em>Artificial intelligence and data protection guidance.</em></a></span></li>
+                            <li id="ref-11"><span class="ref-num">11</span><span><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission. <em>AI Act.</em></a></span></li>
+                        </ol>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up text-sm"></i></button>
+    <div id="shared-footer"></div>
+    <script src="../../assets/js/footer.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('progress-bar').style.width = (window.scrollY / h * 100) + '%';
+            document.getElementById('back-to-top').style.display = window.scrollY > 600 ? 'flex' : 'none';
+        });
+        const toc = document.getElementById('toc');
+        const sections = document.querySelectorAll('[data-toc]');
+        sections.forEach((el) => {
+            const link = document.createElement('button');
+            link.className = 'toc-link';
+            link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+            link.onclick = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            toc.appendChild(link);
+        });
+        const tocLinks = toc.querySelectorAll('.toc-link');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = Array.from(sections).indexOf(entry.target);
+                    tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
