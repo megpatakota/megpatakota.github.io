@@ -46,6 +46,8 @@
         .article-hero-caption strong { color: var(--color-text-secondary); }
         .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
         .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+        .part-content-intro { float: right; width: min(17rem, 28vw); margin: 0.25rem 0 1.25rem 1.75rem; display: block; }
+        .part-content-intro .article-toc-panel { border-left: 1px solid #e5e7eb; border-top: 0; padding: 0.25rem 0 0 1.25rem; margin-top: 0; }
 
         .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
         .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
@@ -68,7 +70,7 @@
         .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
         .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
 
-        .series-map { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem auto 2.25rem; box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
+        .series-map { width: min(76rem, calc(100vw - 2rem)); max-width: min(76rem, calc(100vw - 2rem)); border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem 50%; transform: translateX(-50%); box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
         .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
         .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
         .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
@@ -81,10 +83,7 @@
         .series-card em { display: block; color: var(--color-text-tertiary); font-size: 0.75rem; line-height: 1.45; font-style: normal; }
         .series-card[aria-current="page"] { border-color: rgba(14,116,144,0.42); background: #ecfeff; box-shadow: inset 0 0 0 1px rgba(14,116,144,0.12); }
         .series-card[aria-current="page"] span { color: #0f172a; }
-        .series-divider { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: linear-gradient(180deg, #fff, #f8fafc); padding: 1rem 1.1rem; margin: 2.75rem 0 1.5rem; }
-        .series-divider span { display: inline-flex; align-items: center; border-radius: 999px; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.25rem 0.55rem; margin-bottom: 0.65rem; }
-        .series-divider h2 { margin: 0 0 0.35rem !important; font-size: 1.35rem !important; line-height: 1.25 !important; }
-        .series-divider p { margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--color-text-secondary); }
+        .evidence-note { margin: -1rem auto 1.5rem; font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-tertiary); }
 
         .decision-ladder { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
         .ladder-step { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
@@ -153,24 +152,58 @@
         @media (max-width: 900px) {
             .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
             .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+            .part-content-intro { float: none; width: auto; margin: 1.25rem 0 1.75rem; }
+            .part-content-intro .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
             .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 640px) {
+            .article-content .mt-14 { margin-top: 2.25rem !important; }
+            .article-content .mb-5 { margin-bottom: 0.85rem !important; }
+            .article-content .section-num + h2 { font-size: 1.55rem; line-height: 1.15; }
+            .article-content p, .article-content li { font-size: 0.95rem; }
+            .ref-list, .ref-list li { font-size: 0.8125rem; }
+            .part-content-intro { margin: 0.85rem 0 1rem; }
+            .article-toc-panel { padding-top: 0.95rem; }
+            .article-toc-panel-title { margin-bottom: 0.65rem; letter-spacing: 0.14em; }
+            .article-toc-panel .relative { position: static; }
+            .article-toc-panel #toc { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+            .article-toc-panel .toc-line { display: none; }
+            .article-toc-panel .toc-link { display: inline-flex; width: auto; gap: 0; padding: 0.42rem 0.58rem; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; font-size: 0.72rem; line-height: 1.25; color: var(--color-text-secondary); }
+            .article-toc-panel .toc-link.active { border-color: rgba(14,116,144,0.32); background: rgba(14,116,144,0.08); color: var(--color-text-primary); }
+            .article-toc-panel .toc-dot { display: none; }
             .section-num { font-size: 1.75rem; }
-            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; }
-            .ladder-step { grid-template-columns: 1fr; }
-            .ladder-label { min-height: auto; }
+            .callout { padding: 1rem; margin: 1.1rem 0; border-radius: 0 0.65rem 0.65rem 0; }
+            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; gap: 0.65rem; margin: 1.15rem 0; }
+            .quick-card, .consultancy-card, .mini-rule, .summary-hero-panel { padding: 0.85rem; }
+            .tool-card { padding: 0.75rem 0.85rem; }
+            .decision-ladder, .consultancy-grid, .engineer-ladder { gap: 0.6rem; margin: 1.15rem 0; }
+            .ladder-step { grid-template-columns: 1fr; gap: 0.5rem; }
+            .ladder-label { min-height: auto; padding: 0.65rem 0.75rem; }
+            .ladder-label strong { font-size: 0.85rem; }
+            .ladder-cell { padding: 0.75rem 0.85rem; }
             .tool-strip { grid-template-columns: 1fr; }
-            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; }
+            .cost-chart { padding: 0.85rem; margin: 1.15rem 0; }
+            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; margin-bottom: 0.75rem; }
+            .cost-bar { height: 1.9rem; }
             .cost-seg { font-size: 0; }
-            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; }
+            .cost-legend { gap: 0.45rem 0.65rem; }
+            .signal-panel h3 { padding: 0.75rem 0.85rem; }
+            .signal-panel ul { padding: 0.15rem 0.85rem 0.85rem; }
+            .signal-panel li { gap: 0.5rem; margin-top: 0.65rem; }
+            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
             .article-hero-image { border-radius: 0.75rem; }
-            .article-hero-image img { max-height: 14rem; }
+            .article-hero-image img { max-height: 12rem; }
+            .series-map { width: 100%; max-width: 100%; padding: 0.85rem; margin: 1.1rem 0 1.5rem; transform: none; }
             .series-map-header { display: block; }
             .series-map-note { margin-top: 0.65rem; }
-            .series-grid { grid-template-columns: 1fr; }
+            .series-grid { grid-template-columns: 1fr; gap: 0.55rem; }
+            .series-card { padding: 0.75rem 0.8rem; }
+            .evidence-note { margin: -0.45rem 0 1.1rem; }
+            .series-page-nav { gap: 0.6rem; margin-top: 1.75rem; }
+            .series-page-link { padding: 0.85rem; }
+            #back-to-top { right: 1rem; bottom: 1rem; width: 2.25rem; height: 2.25rem; }
         }
     </style>
 </head>
@@ -193,7 +226,7 @@
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
                     <span class="text-sm text-text_tertiary">10 min read</span>
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
-                    <span class="text-sm text-text_tertiary">33 min full series</span>
+                    <span class="text-sm text-text_tertiary">34 min full series</span>
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
                     <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Series</span>
                     <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">The strongest builders choose the smallest responsible version of the thing.</span>
@@ -236,12 +269,9 @@
                 </div>
             </nav>
 
-            <div class="article-intro-layout">
-                <div class="article-media-stack">
-                    <figure class="article-hero-image">
-                        <img src="../../assets/images/articles/ai-agent-app-metaphor-refined.png" alt="A quiet metaphorical still life showing an AI workflow becoming a governed app with data boundaries and client compartments">
-                    </figure>
-                </div>
+            <p class="evidence-note max-w-3xl mx-auto">Product-specific details are tied to the linked vendor and governance sources. The recommendations are decision heuristics, not legal, security or procurement advice; check current product docs, contracts and client terms before production use.</p>
+
+            <div class="article-intro-layout part-content-intro">
                 <aside class="article-toc-panel" aria-label="Article table of contents">
                     <p class="article-toc-panel-title">In this part</p>
                     <div class="relative" id="toc"><div class="toc-line"></div></div>
@@ -250,12 +280,6 @@
 
             <div class="max-w-3xl mx-auto">
                 <article class="article-content">
-                    <div class="series-divider" id="part-4">
-                        <span>Part 4</span>
-                        <h2>Decide Internal vs Client-Facing</h2>
-                        <p>For consultancies and AI solutions engineers, the job is to recognise the layer, preserve reusable IP and build the smallest responsible version of the thing.</p>
-                    </div>
-
                     <div class="mt-14 mb-5" id="section-10" data-toc="Consultancy Angle">
                         <span class="section-num">10</span>
                         <h2 class="-mt-4">The Consultancy Version of This Problem</h2>
@@ -311,7 +335,7 @@
 
                     <p>An internal AI accelerator can often be rougher, faster and more experimental than a client-facing product. The users are colleagues. Training is easier. Support can start informally. If something is unclear, someone can explain it in Teams. If the workflow changes, the team can adapt.</p>
 
-                    <p>But an internal accelerator may still need serious governance. If it touches client documents, proposals, commercial information, employee data, project files, legal material, source code or reusable firm methodology, it cannot be treated like a harmless prototype. It may be internal in terms of audience, but high-risk in terms of data.</p>
+                    <p>But an internal accelerator may still need serious governance. If it touches client documents, proposals, commercial information, employee data, project files, legal material, source code or reusable firm methodology, it should not be treated like a harmless prototype. It may be internal in terms of audience, but high-risk in terms of data.</p>
 
                     <div class="consultancy-grid" aria-label="Three categories of AI tooling in a consulting firm">
                         <div class="consultancy-card">
@@ -407,7 +431,7 @@
 
                     <p>The rise of Copilot Studio, Claude Skills, ChatGPT workspace agents and no-code workflow builders does not make coding irrelevant. It changes where coding matters.</p>
 
-                    <p>The valuable person is not the one who refuses to use platforms. That person will be too slow. The valuable person is also not the one who only configures platforms. That person will hit a ceiling as soon as the workflow needs proper software.</p>
+                    <p>In my view, the valuable person is not the one who refuses to use platforms. That person is likely to be too slow. The valuable person is also not the one who only configures platforms. That person often hits a ceiling as soon as the workflow needs proper software.</p>
 
                     <div class="engineer-ladder" aria-label="AI solutions engineer capability ladder">
                         <div class="engineer-step"><strong>Productivity</strong><p>Use Copilot, Claude, ChatGPT and Gemini well enough to know their strengths.</p></div>
@@ -432,7 +456,7 @@
                     <p>I would ask ten questions before choosing the tool.</p>
 
                     <ol>
-                        <li><strong>Where does the work naturally happen?</strong> If the answer is Teams, Outlook, SharePoint and Office, Microsoft has a strong advantage. If the answer is Slack, code, documents, local files and reusable methods, Claude may be a better fit. If the answer is a browser app with its own workflow, stop pretending chat is the interface.</li>
+                        <li><strong>Where does the work naturally happen?</strong> If the answer is Teams, Outlook, SharePoint and Office, Microsoft often has a strong advantage. If the answer is Slack, code, documents, local files and reusable methods, Claude may be a better fit. If the answer is a browser app with its own workflow, chat may be the wrong interface.</li>
                         <li><strong>What exactly needs to be shared?</strong> A prompt? A method? An agent? A workflow? An app? Be precise. "Sharing" is not one thing.</li>
                         <li><strong>Who experiences the tool?</strong> A personal assistant, an internal delivery accelerator and a client-operated product need different boundaries.</li>
                         <li><strong>What data does it touch?</strong> Check source ownership, client boundaries, confidentiality, derived data, retention, deletion and whether outputs become business records.</li>
@@ -440,7 +464,7 @@
                         <li><strong>Who controls access?</strong> If access is just "whoever has the link", be careful. For internal data, you need identity, permissions and source-system alignment.</li>
                         <li><strong>What happens when it goes wrong?</strong> Can you see what the agent did, which sources it used, whether a change can be rolled back, and whether a new version can be tested?</li>
                         <li><strong>How will we know it still works later?</strong> Important workflows need evaluation cases, quality monitoring, feedback loops and review dates.</li>
-                        <li><strong>Will people actually use it?</strong> Check where the work happens today, what behaviour must change, which workaround is being replaced, and what metric proves the work is better.</li>
+                        <li><strong>Will people actually use it?</strong> Check where the work happens today, what behaviour must change, which workaround is being replaced, and what evidence shows the work is better.</li>
                         <li><strong>Who owns it after launch?</strong> A productivity tool can be enabled by IT. A workflow needs an owner. An internal product needs a product owner, a technical owner, a governance owner and a support model.</li>
                     </ol>
 
@@ -450,13 +474,13 @@
                         <p>The better question is: what shape has the work become, what data does it touch, and who is accountable when it is wrong?</p>
                     </div>
 
-                    <p>If it is a task, use the assistant. If it is a repeatable workflow, use the workflow builder carefully. If it is a reusable method, package it as a skill. If it is becoming operationally important, give it an app.</p>
+                    <p>If it is a task, use the assistant. If it is a repeatable workflow, use the workflow builder carefully. If it is a reusable method, package it as a skill. If it is becoming operationally important, give it product discipline; sometimes that means an app, and sometimes it means a governed platform workflow with clear ownership.</p>
 
                     <p>The more sensitive the data, the more important the boundary. The more client-specific the workflow, the more important the commercial permission. The more repeatable the process, the more important the ownership. The more consequential the output, the more important the audit trail. The longer the tool will live, the more important the lifecycle. The harder the behaviour change, the more important the adoption design.</p>
 
-                    <p>That is where the market is heading. Not one tool to rule them all, but a layered operating model: productivity tools for individuals, agents for workflows, skills for reusable expertise and small custom products where the work needs a proper home.</p>
+                    <p>The stronger pattern is a layered operating model: productivity tools for individuals, agents for workflows, skills for reusable expertise and small custom products where the work needs a proper home.</p>
 
-                    <p>The companies that get this right will not be the ones with the most AI licences. They will be the ones that know which agents deserve to exist, who owns them, how they are tested, who will actually use them, when they should become apps and when they should be switched off.</p>
+                    <p>The organisations in the strongest position are not simply the ones with the most AI licences. They are the ones that know which agents deserve to exist, who owns them, how they are tested, who will actually use them, when they should become apps and when they should be switched off.</p>
 
 
                     <div class="series-page-nav">
@@ -465,7 +489,7 @@
                     </div>
 
                     <div class="mt-14 pt-8 border-t border-gray-200">
-                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">Sources Used Across the Series</h2>
                         <ol class="ref-list">
                             <li id="ref-1"><span class="ref-num">1</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Key concepts: publish and deploy your agent in Copilot Studio.</em></a></span></li>
                             <li id="ref-2"><span class="ref-num">2</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Configure user authentication in Copilot Studio.</em></a></span></li>

@@ -46,6 +46,8 @@
         .article-hero-caption strong { color: var(--color-text-secondary); }
         .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
         .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+        .part-content-intro { float: right; width: min(17rem, 28vw); margin: 0.25rem 0 1.25rem 1.75rem; display: block; }
+        .part-content-intro .article-toc-panel { border-left: 1px solid #e5e7eb; border-top: 0; padding: 0.25rem 0 0 1.25rem; margin-top: 0; }
 
         .section-num { font-size: 2.5rem; font-weight: 800; color: rgba(14,116,144,0.08); line-height: 1; font-family: monospace; }
         .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
@@ -68,7 +70,7 @@
         .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
         .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
 
-        .series-map { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem auto 2.25rem; box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
+        .series-map { width: min(76rem, calc(100vw - 2rem)); max-width: min(76rem, calc(100vw - 2rem)); border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem 50%; transform: translateX(-50%); box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
         .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
         .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
         .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
@@ -81,10 +83,7 @@
         .series-card em { display: block; color: var(--color-text-tertiary); font-size: 0.75rem; line-height: 1.45; font-style: normal; }
         .series-card[aria-current="page"] { border-color: rgba(14,116,144,0.42); background: #ecfeff; box-shadow: inset 0 0 0 1px rgba(14,116,144,0.12); }
         .series-card[aria-current="page"] span { color: #0f172a; }
-        .series-divider { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: linear-gradient(180deg, #fff, #f8fafc); padding: 1rem 1.1rem; margin: 2.75rem 0 1.5rem; }
-        .series-divider span { display: inline-flex; align-items: center; border-radius: 999px; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.25rem 0.55rem; margin-bottom: 0.65rem; }
-        .series-divider h2 { margin: 0 0 0.35rem !important; font-size: 1.35rem !important; line-height: 1.25 !important; }
-        .series-divider p { margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--color-text-secondary); }
+        .evidence-note { margin: -1rem auto 1.5rem; font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-tertiary); }
 
         .decision-ladder { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
         .ladder-step { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
@@ -153,24 +152,58 @@
         @media (max-width: 900px) {
             .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
             .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
+            .part-content-intro { float: none; width: auto; margin: 1.25rem 0 1.75rem; }
+            .part-content-intro .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
             .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 640px) {
+            .article-content .mt-14 { margin-top: 2.25rem !important; }
+            .article-content .mb-5 { margin-bottom: 0.85rem !important; }
+            .article-content .section-num + h2 { font-size: 1.55rem; line-height: 1.15; }
+            .article-content p, .article-content li { font-size: 0.95rem; }
+            .ref-list, .ref-list li { font-size: 0.8125rem; }
+            .part-content-intro { margin: 0.85rem 0 1rem; }
+            .article-toc-panel { padding-top: 0.95rem; }
+            .article-toc-panel-title { margin-bottom: 0.65rem; letter-spacing: 0.14em; }
+            .article-toc-panel .relative { position: static; }
+            .article-toc-panel #toc { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+            .article-toc-panel .toc-line { display: none; }
+            .article-toc-panel .toc-link { display: inline-flex; width: auto; gap: 0; padding: 0.42rem 0.58rem; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; font-size: 0.72rem; line-height: 1.25; color: var(--color-text-secondary); }
+            .article-toc-panel .toc-link.active { border-color: rgba(14,116,144,0.32); background: rgba(14,116,144,0.08); color: var(--color-text-primary); }
+            .article-toc-panel .toc-dot { display: none; }
             .section-num { font-size: 1.75rem; }
-            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; }
-            .ladder-step { grid-template-columns: 1fr; }
-            .ladder-label { min-height: auto; }
+            .callout { padding: 1rem; margin: 1.1rem 0; border-radius: 0 0.65rem 0.65rem 0; }
+            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; gap: 0.65rem; margin: 1.15rem 0; }
+            .quick-card, .consultancy-card, .mini-rule, .summary-hero-panel { padding: 0.85rem; }
+            .tool-card { padding: 0.75rem 0.85rem; }
+            .decision-ladder, .consultancy-grid, .engineer-ladder { gap: 0.6rem; margin: 1.15rem 0; }
+            .ladder-step { grid-template-columns: 1fr; gap: 0.5rem; }
+            .ladder-label { min-height: auto; padding: 0.65rem 0.75rem; }
+            .ladder-label strong { font-size: 0.85rem; }
+            .ladder-cell { padding: 0.75rem 0.85rem; }
             .tool-strip { grid-template-columns: 1fr; }
-            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; }
+            .cost-chart { padding: 0.85rem; margin: 1.15rem 0; }
+            .cost-row { grid-template-columns: 1fr; gap: 0.45rem; margin-bottom: 0.75rem; }
+            .cost-bar { height: 1.9rem; }
             .cost-seg { font-size: 0; }
-            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; }
+            .cost-legend { gap: 0.45rem 0.65rem; }
+            .signal-panel h3 { padding: 0.75rem 0.85rem; }
+            .signal-panel ul { padding: 0.15rem 0.85rem 0.85rem; }
+            .signal-panel li { gap: 0.5rem; margin-top: 0.65rem; }
+            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
             .article-hero-image { border-radius: 0.75rem; }
-            .article-hero-image img { max-height: 14rem; }
+            .article-hero-image img { max-height: 12rem; }
+            .series-map { width: 100%; max-width: 100%; padding: 0.85rem; margin: 1.1rem 0 1.5rem; transform: none; }
             .series-map-header { display: block; }
             .series-map-note { margin-top: 0.65rem; }
-            .series-grid { grid-template-columns: 1fr; }
+            .series-grid { grid-template-columns: 1fr; gap: 0.55rem; }
+            .series-card { padding: 0.75rem 0.8rem; }
+            .evidence-note { margin: -0.45rem 0 1.1rem; }
+            .series-page-nav { gap: 0.6rem; margin-top: 1.75rem; }
+            .series-page-link { padding: 0.85rem; }
+            #back-to-top { right: 1rem; bottom: 1rem; width: 2.25rem; height: 2.25rem; }
         }
     </style>
 </head>
@@ -193,7 +226,7 @@
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
                     <span class="text-sm text-text_tertiary">9 min read</span>
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
-                    <span class="text-sm text-text_tertiary">33 min full series</span>
+                    <span class="text-sm text-text_tertiary">34 min full series</span>
                     <span class="w-1 h-1 rounded-full bg-text_tertiary/40"></span>
                     <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Series</span>
                     <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Demos are not systems. Operating discipline is where AI becomes real.</span>
@@ -236,12 +269,9 @@
                 </div>
             </nav>
 
-            <div class="article-intro-layout">
-                <div class="article-media-stack">
-                    <figure class="article-hero-image">
-                        <img src="../../assets/images/articles/ai-agent-app-metaphor-refined.png" alt="A quiet metaphorical still life showing an AI workflow becoming a governed app with data boundaries and client compartments">
-                    </figure>
-                </div>
+            <p class="evidence-note max-w-3xl mx-auto">Product-specific details are tied to the linked vendor and governance sources. The recommendations are decision heuristics, not legal, security or procurement advice; check current product docs, contracts and client terms before production use.</p>
+
+            <div class="article-intro-layout part-content-intro">
                 <aside class="article-toc-panel" aria-label="Article table of contents">
                     <p class="article-toc-panel-title">In this part</p>
                     <div class="relative" id="toc"><div class="toc-line"></div></div>
@@ -250,12 +280,6 @@
 
             <div class="max-w-3xl mx-auto">
                 <article class="article-content">
-                    <div class="series-divider" id="part-3">
-                        <span>Part 3</span>
-                        <h2>Plan Ownership, Adoption and Lifecycle</h2>
-                        <p>Costs, ownership, evaluation and retirement are where a useful demo becomes a real internal capability.</p>
-                    </div>
-
                     <div class="mt-14 mb-5" id="section-7" data-toc="Cost and Ownership">
                         <span class="section-num">07</span>
                         <h2 class="-mt-4">The Infrastructure Cost Is Real</h2>
@@ -298,7 +322,7 @@
                         </div>
                     </div>
 
-                    <p>Productivity tools usually win on starting cost. The licence exists. The admin centre exists. The identity layer probably exists. The users already know Teams, Outlook, Slack or ChatGPT. You can get to first value without designing a database schema or deploying a backend.</p>
+                    <p>Productivity tools often win on starting cost. The licence may already exist. The admin centre may already exist. The identity layer is often already in place. The users already know Teams, Outlook, Slack or ChatGPT. You can get to first value without designing a database schema or deploying a backend.</p>
 
                     <p>Scaling cost is where the answer becomes less obvious. A vendor tool can become expensive when every user needs a licence, every workflow needs a platform seat, and every workaround creates hidden labour. A custom app can become cheaper at scale when the workflow is repeated often enough and the same product boundary serves many users.</p>
 
@@ -306,7 +330,7 @@
 
                     <div class="callout callout-warn">
                         <div class="callout-label"><i class="fas fa-triangle-exclamation"></i> Honest build decision</div>
-                        <p>The custom app is justified when the workflow needs the control: better UX, cleaner permissions, stronger client isolation, proper review screens, reusable firm IP and a durable operating model.</p>
+                    <p>The custom app is justified when the workflow needs the control: better UX, cleaner permissions, stronger client isolation, proper review screens, reusable firm IP or a durable operating model.</p>
                     </div>
 
                     <hr>
@@ -346,13 +370,13 @@
 
                     <p>This is where many productivity-tool rollouts are weak. They measure usage, but not quality. They count prompts, but not outcomes. They celebrate adoption, but do not know whether the work is actually better.</p>
 
-                    <p>For low-risk individual productivity, that may be acceptable. For operational workflows, client delivery or reusable firm IP, it is not. OpenAI's agent guidance includes evaluation and production deployment concerns, and NIST's AI RMF frames risk management as an ongoing lifecycle, not a one-off launch checklist.<a href="#ref-5" class="cite">5</a><a href="#ref-9" class="cite">9</a></p>
+                    <p>For low-risk individual productivity, light measurement may be acceptable. For operational workflows, client delivery or reusable firm IP, it is usually too weak. OpenAI's agent guidance includes human review, observability and evaluation loops, and NIST's AI RMF frames risk management across the design, development, use and evaluation of AI systems.<a href="#ref-5" class="cite">5</a><a href="#ref-9" class="cite">9</a></p>
 
                     <h3>Portability Matters More When the Method Is IP</h3>
 
-                    <p>Vendor lock-in is not always bad. If a company is already deeply Microsoft-based, using Copilot Studio, Teams, SharePoint and Power Platform may be the most sensible path. The organisation gets speed, governance and adoption because the tool sits inside the existing work environment.</p>
+                    <p>Vendor lock-in is not always bad. If a company is already deeply Microsoft-based, using Copilot Studio, Teams, SharePoint and Power Platform may be the most sensible path. The organisation can get speed, governance and adoption advantages because the tool sits inside the existing work environment.</p>
 
-                    <p>It becomes a problem when the firm's reusable expertise gets trapped in a format it cannot move, test, version or improve outside one vendor surface. A firm's proposal method, delivery QA approach, sector research workflow or client onboarding process may become valuable intellectual property. If that IP exists only as hidden prompts, click-ops flows and undocumented agent settings, the firm does not really own it in a useful way.</p>
+                    <p>It becomes a problem when the firm's reusable expertise gets trapped in a format it cannot move, test, version or improve outside one vendor surface. A firm's proposal method, delivery QA approach, sector research workflow or client onboarding process may become valuable intellectual property. If that IP exists only as hidden prompts, click-ops flows and undocumented agent settings, the firm may own the account but not the method in a portable, improvable way.</p>
 
                     <div class="mini-rule">
                         <p><strong>Keep the core method portable:</strong> markdown prompts, versioned skills, documented schemas, evaluation sets, reusable code, and business logic in an owned service where necessary.</p>
@@ -365,7 +389,7 @@
 
                     <p>If the workflow needs exception handling, approval queues, status tracking and rollback, it probably wants an app or at least a more structured workflow layer. Users need to be able to flag bad answers. Admins need to inspect what happened. Sources and tool calls need to be logged. High-impact actions need human approval. Changes need a rollback path.</p>
 
-                    <p>And eventually, some things should be switched off. Organisations are bad at deleting old systems, and AI will make this worse: old agents, old prompts, old skills, old workflow automations, old Streamlit apps and old proof-of-concepts that people still occasionally use.</p>
+                    <p>And eventually, some things should be switched off. Many organisations already struggle to retire old systems; AI can add another layer of stale agents, prompts, skills, workflow automations, Streamlit apps and proof-of-concepts that people still occasionally use.</p>
 
                     <div class="decision-ladder" aria-label="Lifecycle stages for an internal AI capability">
                         <div class="ladder-step">
@@ -421,7 +445,7 @@
 
                     <p>For AI tools, users need more than awareness. They need to know whether the tool helps their actual job, whether they can trust the output, whether it is faster than their workaround, whether they are allowed to use it with the data in front of them, what good use looks like, who is accountable if the output is wrong, and where to go when it breaks.</p>
 
-                    <p>The best AI rollouts do not start with "here is the tool". They start with a job. A proposal manager cares whether the system helps produce a better first draft with approved case studies and fewer compliance issues. A consultant cares whether it helps them get to a sharper client answer faster. A partner cares whether evidence is traceable and risk is controlled. A finance user cares whether the workflow saves time without creating audit problems.</p>
+                    <p>Better AI rollouts do not start with "here is the tool". They start with a job. A proposal manager cares whether the system helps produce a better first draft with approved case studies and fewer compliance issues. A consultant cares whether it helps them get to a sharper client answer faster. A partner cares whether evidence is traceable and risk is controlled. A finance user cares whether the workflow saves time without creating audit problems.</p>
 
                     <div class="signal-board">
                         <div class="signal-panel">
@@ -444,11 +468,11 @@
                         </div>
                     </div>
 
-                    <p>This is where custom apps can outperform generic agents. A custom app can put trust mechanisms directly into the interface: sources, missing evidence, review gates, draft-versus-approved status and feedback capture. But vendor tools can still win when trust already exists in the work environment. If users trust SharePoint permissions, Teams channels and Microsoft 365 governance, an assistant inside that world may feel safer than a standalone app.</p>
+                    <p>This is where custom apps can sometimes outperform generic agents. A custom app can put trust mechanisms directly into the interface: sources, missing evidence, review gates, draft-versus-approved status and feedback capture. But vendor tools may still be better when trust already exists in the work environment. If users trust SharePoint permissions, Teams channels and Microsoft 365 governance, an assistant inside that world may feel safer than a standalone app.</p>
 
                     <h3>Measure Changed Work, Not Adoption Theatre</h3>
 
-                    <p>AI adoption metrics are often lazy: licences assigned, active users, prompts sent, agents created. These can be useful, but they do not prove value.</p>
+                    <p>AI adoption metrics often stop too early: licences assigned, active users, prompts sent, agents created. These can be useful, but they do not prove value.</p>
 
                     <p>A better adoption dashboard asks whether people come back after the novelty fades, whether the tool helps finish a real workflow, whether the process is faster, whether outputs are better or more consistent, how often humans approve or reject AI outputs, where the tool fails repeatedly, and whether proposal cycle time, QA effort or operational backlog actually improves.</p>
 
@@ -471,7 +495,7 @@
                     </div>
 
                     <div class="mt-14 pt-8 border-t border-gray-200">
-                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2>
+                        <h2 class="text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">Sources Used Across the Series</h2>
                         <ol class="ref-list">
                             <li id="ref-1"><span class="ref-num">1</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Key concepts: publish and deploy your agent in Copilot Studio.</em></a></span></li>
                             <li id="ref-2"><span class="ref-num">2</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. <em>Configure user authentication in Copilot Studio.</em></a></span></li>
