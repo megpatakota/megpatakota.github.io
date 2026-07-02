@@ -164,13 +164,13 @@
             .article-content .section-num + h2 { font-size: 1.55rem; line-height: 1.15; }
             .article-content p, .article-content li { font-size: 0.95rem; }
             .ref-list, .ref-list li { font-size: 0.8125rem; }
-            .part-content-intro { margin: 0.85rem 0 1rem; }
-            .article-toc-panel { padding-top: 0.95rem; }
-            .article-toc-panel-title { margin-bottom: 0.65rem; letter-spacing: 0.14em; }
+            .part-content-intro { margin: 0.45rem 0 0.6rem; }
+            .article-toc-panel { padding-top: 0.7rem; }
+            .article-toc-panel-title { margin-bottom: 0.45rem; font-size: 0.55rem; letter-spacing: 0.12em; }
             .article-toc-panel .relative { position: static; }
-            .article-toc-panel #toc { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+            .article-toc-panel #toc { display: flex; flex-wrap: wrap; gap: 0.32rem; }
             .article-toc-panel .toc-line { display: none; }
-            .article-toc-panel .toc-link { display: inline-flex; width: auto; gap: 0; padding: 0.42rem 0.58rem; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; font-size: 0.72rem; line-height: 1.25; color: var(--color-text-secondary); }
+            .article-toc-panel .toc-link { display: inline-flex; width: auto; gap: 0; padding: 0.3rem 0.44rem; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; font-size: 0.66rem; line-height: 1.2; color: var(--color-text-secondary); }
             .article-toc-panel .toc-link.active { border-color: rgba(14,116,144,0.32); background: rgba(14,116,144,0.08); color: var(--color-text-primary); }
             .article-toc-panel .toc-dot { display: none; }
             .section-num { font-size: 1.75rem; }
@@ -196,16 +196,16 @@
             .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
             .article-hero-image { border-radius: 0.75rem; }
             .article-hero-image img { max-height: 12rem; }
-            .series-map { width: 100%; max-width: 100%; padding: 0.65rem; margin: 0.85rem 0 0.85rem; transform: none; border-radius: 0.75rem; box-shadow: none; }
-            .series-map-header { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.55rem; }
-            .series-map-kicker { font-size: 0.56rem; letter-spacing: 0.14em; }
-            .series-map-title { font-size: 0.78rem; line-height: 1.2; margin-top: 0.1rem; }
+            .series-map { width: 100%; max-width: 100%; padding: 0.55rem 0; margin: 0.4rem 0 0.75rem; transform: none; border: 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; border-radius: 0; box-shadow: none; background: transparent; }
+            .series-map-header { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.45rem; }
+            .series-map-kicker { font-size: 0.54rem; letter-spacing: 0.14em; }
+            .series-map-title { display: none; }
             .series-map-note { display: none; }
             .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem; }
-            .series-card { padding: 0.55rem 0.6rem; border-radius: 0.65rem; min-height: 4.15rem; }
-            .series-card span { font-size: 0.5rem; margin-bottom: 0.25rem; letter-spacing: 0.1em; }
-            .series-card strong { font-size: 0.68rem; line-height: 1.18; margin-bottom: 0; }
-            .series-card em { display: none; }
+            .series-card { padding: 0.5rem 0.55rem; border-radius: 0.65rem; min-height: 4.35rem; text-align: left; }
+            .series-card span { font-size: 0.48rem; margin-bottom: 0.18rem; letter-spacing: 0.08em; }
+            .series-card strong { display: block; font-size: 0.66rem; line-height: 1.15; margin-bottom: 0.18rem; }
+            .series-card em { display: block; font-size: 0.58rem; line-height: 1.25; }
             .evidence-note { margin: -0.25rem 0 0.75rem; font-size: 0.7rem; line-height: 1.4; }
             .series-page-nav { gap: 0.6rem; margin-top: 1.75rem; }
             .series-page-link { padding: 0.85rem; }
@@ -242,6 +242,13 @@
                 <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
             </div>
 
+            <div class="article-intro-layout part-content-intro">
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">In this part</p>
+                    <div class="relative" id="toc"><div class="toc-line"></div></div>
+                </aside>
+            </div>
+
             <nav class="series-map max-w-5xl" aria-label="Article series map">
                 <div class="series-map-header">
                     <div>
@@ -276,13 +283,6 @@
             </nav>
 
             <p class="evidence-note max-w-3xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
-
-            <div class="article-intro-layout part-content-intro">
-                <aside class="article-toc-panel" aria-label="Article table of contents">
-                    <p class="article-toc-panel-title">In this part</p>
-                    <div class="relative" id="toc"><div class="toc-line"></div></div>
-                </aside>
-            </div>
 
             <div class="max-w-3xl mx-auto">
                 <article class="article-content">
