@@ -70,13 +70,14 @@
         .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
         .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
 
-        .series-map { box-sizing: border-box; width: min(76rem, calc(100vw - 2rem)); max-width: min(76rem, calc(100vw - 2rem)); border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem 50%; transform: translateX(-50%); box-shadow: 0 10px 30px rgba(15,23,42,0.04); overflow: hidden; }
+        .series-map { box-sizing: border-box; width: 100%; max-width: 100%; border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem; box-shadow: 0 10px 30px rgba(15,23,42,0.04); overflow: hidden; }
         .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
         .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
         .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
         .series-map-note { margin: 0; font-size: 0.75rem; line-height: 1.5; color: var(--color-text-tertiary); max-width: 22rem; }
-        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(11rem, 1fr)); gap: 0.75rem; width: 100%; min-width: 0; }
-        .series-card { display: block; min-width: 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; overflow-wrap: normal; }
+        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; width: 100%; min-width: 0; }
+        .series-card { display: block; min-width: 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; overflow-wrap: normal; word-break: normal; hyphens: manual; }
+        .series-card span, .series-card strong, .series-card em { overflow-wrap: normal; word-break: normal; hyphens: manual; }
         .series-card:hover { border-color: rgba(14,116,144,0.4); background: #fff; transform: translateY(-2px); text-decoration: none; }
         .series-card span { display: block; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
         .series-card strong { display: block; color: var(--color-text-primary); font-size: 0.9rem; line-height: 1.25; margin-bottom: 0.35rem; }
@@ -156,6 +157,7 @@
             .part-content-intro .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
             .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .series-card { min-width: 0; }
         }
 
         @media (max-width: 640px) {
@@ -196,17 +198,15 @@
             .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
             .article-hero-image { border-radius: 0.75rem; }
             .article-hero-image img { max-height: 12rem; }
-            .series-map { width: 100%; max-width: 100%; padding: 0.55rem 0; margin: 0.4rem 0 0.75rem; transform: none; border: 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; border-radius: 0; box-shadow: none; background: transparent; }
-            .series-map-header { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.45rem; }
-            .series-map-kicker { font-size: 0.54rem; letter-spacing: 0.14em; }
-            .series-map-title { display: none; }
-            .series-map-note { display: none; }
-            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem; }
-            .series-card { padding: 0.5rem 0.55rem; border-radius: 0.65rem; min-height: 4.35rem; text-align: left; }
-            .series-card span { font-size: 0.48rem; margin-bottom: 0.18rem; letter-spacing: 0.08em; }
-            .series-card strong { display: block; font-size: 0.66rem; line-height: 1.15; margin-bottom: 0.18rem; }
-            .series-card em { display: block; font-size: 0.58rem; line-height: 1.25; }
-            .evidence-note { margin: -0.25rem 0 0.75rem; font-size: 0.7rem; line-height: 1.4; }
+            .series-map { width: 100%; max-width: 100%; padding: 0.85rem; margin: 1.1rem 0 1.5rem; }
+            .series-map-header { display: block; }
+            .series-map-note { margin-top: 0.65rem; }
+            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .series-card { padding: 0.75rem 0.8rem; }
+            .series-card span { font-size: 0.57rem; }
+            .series-card strong { font-size: 0.78rem; line-height: 1.25; }
+            .series-card em { font-size: 0.68rem; line-height: 1.35; }
+            .evidence-note { margin: -0.45rem 0 1.1rem; }
             .series-page-nav { gap: 0.6rem; margin-top: 1.75rem; }
             .series-page-link { padding: 0.85rem; }
             #back-to-top { right: 1rem; bottom: 1rem; width: 2.25rem; height: 2.25rem; }
@@ -221,7 +221,7 @@
     <script src="../../assets/js/header.js"></script>
 
     <section class="pt-8 pb-12 px-4 md:px-6">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div class="mb-6">
                 <a href="./" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
                     <i class="fas fa-arrow-left mr-2 text-xs"></i>
@@ -242,14 +242,7 @@
                 <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
             </div>
 
-            <div class="article-intro-layout part-content-intro">
-                <aside class="article-toc-panel" aria-label="Article table of contents">
-                    <p class="article-toc-panel-title">In this part</p>
-                    <div class="relative" id="toc"><div class="toc-line"></div></div>
-                </aside>
-            </div>
-
-            <nav class="series-map max-w-5xl" aria-label="Article series map">
+            <nav class="series-map" aria-label="Article series map">
                 <div class="series-map-header">
                     <div>
                         <div class="series-map-kicker">Full series</div>
@@ -282,9 +275,16 @@
                 </div>
             </nav>
 
-            <p class="evidence-note max-w-3xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
+            <p class="evidence-note max-w-4xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
 
-            <div class="max-w-3xl mx-auto">
+            <div class="article-intro-layout part-content-intro">
+                <aside class="article-toc-panel" aria-label="Article table of contents">
+                    <p class="article-toc-panel-title">In this part</p>
+                    <div class="relative" id="toc"><div class="toc-line"></div></div>
+                </aside>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
                 <article class="article-content">
                     <div class="mt-14 mb-5" id="section-6" data-toc="Data Boundary">
                         <span class="section-num">06</span>
