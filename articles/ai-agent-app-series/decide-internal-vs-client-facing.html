@@ -70,13 +70,13 @@
         .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
         .tool-card strong { display: block; margin-top: 0.15rem; font-size: 0.9375rem; color: var(--color-text-primary); line-height: 1.2; }
 
-        .series-map { width: min(76rem, calc(100vw - 2rem)); max-width: min(76rem, calc(100vw - 2rem)); border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem 50%; transform: translateX(-50%); box-shadow: 0 10px 30px rgba(15,23,42,0.04); }
+        .series-map { box-sizing: border-box; width: min(76rem, calc(100vw - 2rem)); max-width: min(76rem, calc(100vw - 2rem)); border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0 2.25rem 50%; transform: translateX(-50%); box-shadow: 0 10px 30px rgba(15,23,42,0.04); overflow: hidden; }
         .series-map-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
         .series-map-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
         .series-map-title { margin: 0.2rem 0 0; font-size: 1rem; font-weight: 800; color: var(--color-text-primary); }
         .series-map-note { margin: 0; font-size: 0.75rem; line-height: 1.5; color: var(--color-text-tertiary); max-width: 22rem; }
-        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
-        .series-card { display: block; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; }
+        .series-grid { display: grid; grid-template-columns: repeat(4, minmax(11rem, 1fr)); gap: 0.75rem; width: 100%; min-width: 0; }
+        .series-card { display: block; min-width: 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.9rem; background: #f8fafc; transition: border-color 0.2s, transform 0.2s, background 0.2s; overflow-wrap: normal; }
         .series-card:hover { border-color: rgba(14,116,144,0.4); background: #fff; transform: translateY(-2px); text-decoration: none; }
         .series-card span { display: block; font-size: 0.625rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.35rem; }
         .series-card strong { display: block; color: var(--color-text-primary); font-size: 0.9rem; line-height: 1.25; margin-bottom: 0.35rem; }
