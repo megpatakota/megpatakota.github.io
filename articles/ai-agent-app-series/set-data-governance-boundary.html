@@ -87,11 +87,11 @@
         .evidence-note { margin: -1rem auto 1.5rem; font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-tertiary); }
 
         .decision-ladder { display: grid; gap: 0.75rem; margin: 1.5rem 0; }
-        .ladder-step { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
-        .ladder-label { display: flex; flex-direction: column; justify-content: center; border-radius: 0.75rem; background: #0f172a; color: white; padding: 0.85rem; min-height: 5.5rem; }
+        .ladder-step { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 1fr); gap: 0.85rem; align-items: stretch; }
+        .ladder-label { display: flex; flex-direction: column; justify-content: center; min-width: 0; overflow: hidden; border-radius: 0.75rem; background: #0f172a; color: white; padding: 0.85rem; min-height: 5.5rem; }
         .ladder-label span { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.62); }
-        .ladder-label strong { font-size: 0.9rem; line-height: 1.25; margin-top: 0.2rem; }
-        .ladder-cell { border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.85rem 1rem; }
+        .ladder-label strong { font-size: 0.9rem; line-height: 1.25; margin-top: 0.2rem; overflow-wrap: anywhere; }
+        .ladder-cell { min-width: 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.85rem 1rem; }
         .ladder-cell b { display: block; color: var(--color-text-primary); font-size: 0.75rem; margin-bottom: 0.25rem; }
         .ladder-cell p { margin: 0; font-size: 0.8125rem; line-height: 1.5; }
 
@@ -194,7 +194,7 @@
             .quick-card, .consultancy-card, .mini-rule, .summary-hero-panel { padding: 0.85rem; }
             .tool-card { padding: 0.75rem 0.85rem; }
             .decision-ladder, .consultancy-grid, .engineer-ladder { gap: 0.6rem; margin: 1.15rem 0; }
-            .ladder-step { grid-template-columns: 4.35rem minmax(0, 1fr); gap: 0.5rem; }
+            .ladder-step { grid-template-columns: 5.75rem minmax(0, 1fr); gap: 0.5rem; }
             .ladder-label { grid-row: span 2; min-height: auto; padding: 0.6rem 0.65rem; }
             .ladder-label strong { font-size: 0.78rem; }
             .ladder-label span { font-size: 0.55rem; }
