@@ -63,6 +63,21 @@
         .quick-card ul { margin: 0; padding-left: 0; list-style: none; }
         .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; color: var(--color-text-secondary); }
 
+        .route-panel { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: #fff; padding: 1rem; margin: 1.5rem 0; }
+        .route-header { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.9rem; }
+        .route-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-buttons); }
+        .route-title { margin: 0.2rem 0 0; font-size: 1.1rem; font-weight: 800; color: var(--color-text-primary); }
+        .route-note { margin: 0; font-size: 0.8125rem; line-height: 1.5; color: var(--color-text-tertiary); max-width: 22rem; }
+        .route-chart { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; align-items: stretch; }
+        .route-column { position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid #e5e7eb; border-radius: 0.75rem; background: #f8fafc; padding: 0.95rem 0.9rem 0.9rem; }
+        .route-label { display: block; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-buttons); margin-bottom: 0.3rem; }
+        .route-column h3 { margin: 0 0 0.35rem; font-size: 0.92rem; line-height: 1.2; font-weight: 800; color: var(--color-text-primary); }
+        .route-container { margin: 0 0 0.75rem; font-size: 0.75rem; line-height: 1.45; color: var(--color-text-tertiary); }
+        .route-metric { border-top: 1px solid #e5e7eb; padding-top: 0.6rem; margin-top: 0.6rem; }
+        .route-metric span { display: block; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-tertiary); margin-bottom: 0.25rem; }
+        .route-metric p { margin: 0; font-size: 0.75rem; line-height: 1.45; color: var(--color-text-secondary); }
+        .route-jump { display: inline-flex; align-items: center; margin-top: auto; padding-top: 0.75rem; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); }
+
         .tool-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0; }
         .tool-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #fff; }
         .tool-card span { display: block; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-tertiary); line-height: 1.2; }
@@ -82,6 +97,15 @@
         .series-card em { display: block; color: var(--color-text-tertiary); font-size: 0.75rem; line-height: 1.45; font-style: normal; }
         .series-card[aria-current="page"] { border-color: rgba(14,116,144,0.42); background: #ecfeff; box-shadow: inset 0 0 0 1px rgba(14,116,144,0.12); }
         .series-card[aria-current="page"] span { color: #0f172a; }
+        .compact-series-map .series-card { padding: 0.75rem 0.85rem; }
+        .compact-series-map .series-card strong { margin-bottom: 0; }
+        .read-series-grid { gap: 0.9rem; margin-top: 1rem; }
+        .read-series-grid .series-card { position: relative; overflow: hidden; background: linear-gradient(180deg, #fff, #f8fafc); border-color: rgba(14,116,144,0.24); box-shadow: 0 12px 28px rgba(15,23,42,0.06); padding: 1.1rem 1.05rem 1rem; }
+        .read-series-grid .series-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, rgba(14,116,144,0.95), rgba(14,116,144,0.28)); }
+        .read-series-grid .series-card:hover { border-color: rgba(14,116,144,0.48); background: #fff; box-shadow: 0 16px 34px rgba(15,23,42,0.09); }
+        .read-series-grid .series-card span { color: #0e7490; }
+        .read-series-grid .series-card strong { font-size: 0.98rem; }
+        .read-series-grid .series-card em { color: var(--color-text-secondary); }
         .evidence-note { margin: -1rem auto 1.5rem; font-size: 0.8125rem; line-height: 1.6; color: var(--color-text-tertiary); }
         .series-divider { border: 1px solid #e5e7eb; border-radius: 0.875rem; background: linear-gradient(180deg, #fff, #f8fafc); padding: 1rem 1.1rem; margin: 2.75rem 0 1.5rem; }
         .series-divider span { display: inline-flex; align-items: center; border-radius: 999px; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.25rem 0.55rem; margin-bottom: 0.65rem; }
@@ -160,6 +184,9 @@
             .series-card em { font-size: 0.85rem; }
             .callout p, .quick-card li, .ladder-cell p, .signal-panel li, .consultancy-card p, .engineer-step p, .mini-rule p, .summary-hero-panel p { font-size: 0.95rem; }
             .quick-card h3, .signal-panel h3 { font-size: 0.95rem; }
+            .route-note, .route-container, .route-metric p { font-size: 0.9rem; }
+            .route-column h3 { font-size: 1.05rem; }
+            .route-jump { font-size: 0.75rem; }
             .ladder-cell b, .cost-label, .ref-list, .ref-list li { font-size: 0.875rem; }
             .series-page-link strong { font-size: 1.05rem; }
         }
@@ -170,6 +197,7 @@
             .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 1.25rem 0 0; }
             .tool-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .route-chart { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (max-width: 640px) {
@@ -190,6 +218,15 @@
             .callout { padding: 1rem; margin: 1.1rem 0; border-radius: 0 0.65rem 0.65rem 0; }
             .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; gap: 0.65rem; margin: 1.15rem 0; }
             .quick-card, .consultancy-card, .mini-rule, .summary-hero-panel { padding: 0.85rem; }
+            .route-panel { padding: 0.85rem; margin: 1.15rem 0; }
+            .route-header { display: block; margin-bottom: 0.75rem; }
+            .route-note { margin-top: 0.45rem; font-size: 0.75rem; }
+            .route-chart { gap: 0.5rem; }
+            .route-column { padding: 0.75rem 0.75rem 0.7rem; }
+            .route-label, .route-metric span { font-size: 0.52rem; }
+            .route-column h3 { font-size: 0.78rem; line-height: 1.22; }
+            .route-container, .route-metric p { font-size: 0.64rem; line-height: 1.35; }
+            .route-jump { font-size: 0.58rem; margin-top: auto; padding-top: 0.6rem; }
             .tool-card { padding: 0.75rem 0.85rem; }
             .decision-ladder, .consultancy-grid, .engineer-ladder { gap: 0.6rem; margin: 1.15rem 0; }
             .ladder-step { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -252,7 +289,7 @@
                 <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
             </div>
 
-            <nav class="series-map" aria-label="Article series map">
+            <nav class="series-map compact-series-map" aria-label="Article series map">
                 <div class="series-map-header">
                     <div>
                         <div class="series-map-kicker">Full series</div>
@@ -265,22 +302,18 @@
                     <a class="series-card" href="decide-what-to-build.html#section-1">
                         <span>Part 1</span>
                         <strong>Decide what to build</strong>
-                        <em>Prompt, skill, agent, workflow or custom app.</em>
                     </a>
                     <a class="series-card" href="set-data-governance-boundary.html#section-6">
                         <span>Part 2</span>
                         <strong>Set the data and governance boundary</strong>
-                        <em>Permissions, legal terms, derived data and audit trails.</em>
                     </a>
                     <a class="series-card" href="plan-ownership-adoption-lifecycle.html#section-7">
                         <span>Part 3</span>
                         <strong>Plan ownership, adoption and lifecycle</strong>
-                        <em>Cost, evaluation, support, adoption and retirement.</em>
                     </a>
                     <a class="series-card" href="decide-internal-vs-client-facing.html#section-10">
                         <span>Part 4</span>
                         <strong>Decide internal vs client-facing</strong>
-                        <em>Personal tool, firm accelerator or client product.</em>
                     </a>
                 </div>
             </nav>
@@ -305,6 +338,59 @@
                     <div class="summary-hero-panel" id="series-overview" data-toc="Series Overview">
                         <p><strong>The short version:</strong> an AI assistant needs product discipline when the work needs a durable home: roles, data boundaries, approvals, audit trails, evaluation, adoption support and lifecycle ownership. If it is just a task, use the assistant. If it is becoming operationally important, decide whether it belongs in a governed platform workflow or a custom app.</p>
                     </div>
+
+                    <section class="route-panel" id="choose-your-route" data-toc="Choose Your Route" aria-labelledby="route-title">
+                        <div class="route-header">
+                            <div>
+                                <div class="route-kicker">Choose your route</div>
+                                <h2 class="route-title" id="route-title">Where should this work live?</h2>
+                            </div>
+                            <p class="route-note">Move right only when shared use, governance or client accountability starts to show up.</p>
+                        </div>
+
+                        <div class="route-chart" aria-label="Decision pressure chart for AI agents and apps">
+                            <div class="route-column">
+                                <span class="route-label">Personal task</span>
+                                <h3>Assistant or prompt</h3>
+                                <p class="route-container">One user, reversible output, no durable workflow state.</p>
+                                <div class="route-metric">
+                                    <span>Watch for</span>
+                                    <p>The method starts being reused or shared by other people.</p>
+                                </div>
+                                <a class="route-jump" href="decide-what-to-build.html#section-1">Read Part 1</a>
+                            </div>
+                            <div class="route-column">
+                                <span class="route-label">Shared workflow</span>
+                                <h3>Copilot or Claude workflow</h3>
+                                <p class="route-container">Reusable expertise, team patterns or work inside existing tools.</p>
+                                <div class="route-metric">
+                                    <span>Watch for</span>
+                                    <p>Permissions, source data and audit expectations becoming unclear.</p>
+                                </div>
+                                <a class="route-jump" href="set-data-governance-boundary.html#section-6">Read Part 2</a>
+                            </div>
+                            <div class="route-column">
+                                <span class="route-label">Governed tool</span>
+                                <h3>Internal app or accelerator</h3>
+                                <p class="route-container">Roles, state, approvals, logs or repeatable delivery assets.</p>
+                                <div class="route-metric">
+                                    <span>Watch for</span>
+                                    <p>Ownership, evaluation, support and retirement becoming real costs.</p>
+                                </div>
+                                <a class="route-jump" href="plan-ownership-adoption-lifecycle.html#section-7">Read Part 3</a>
+                            </div>
+                            <div class="route-column">
+                                <span class="route-label">Client-facing product</span>
+                                <h3>Product discipline</h3>
+                                <p class="route-container">External users, client data, commercial promises or support needs.</p>
+                                <div class="route-metric">
+                                    <span>Watch for</span>
+                                    <p>The same tool needing contracts, accountability and lifecycle ownership.</p>
+                                </div>
+                                <a class="route-jump" href="decide-internal-vs-client-facing.html#section-10">Read Part 4</a>
+                            </div>
+                        </div>
+                    </section>
 
                     <div class="quick-verdict" id="skim-verdict" data-toc="Skim Verdict">
                         <div class="quick-card">
@@ -357,28 +443,28 @@
                     <h2 id="read-the-series" data-toc="Read the Series">Read the Series</h2>
                     <p>This started as one article, but the decision is too important to treat as one long scroll. Read the four parts in order, or jump to the question you are facing now.</p>
 
-                <div class="series-grid">
-                    <a class="series-card" href="decide-what-to-build.html#section-1">
-                        <span>Part 1</span>
-                        <strong>Decide what to build</strong>
-                        <em>Prompt, skill, agent, workflow or custom app.</em>
-                    </a>
-                    <a class="series-card" href="set-data-governance-boundary.html#section-6">
-                        <span>Part 2</span>
-                        <strong>Set the data and governance boundary</strong>
-                        <em>Permissions, legal terms, derived data and audit trails.</em>
-                    </a>
-                    <a class="series-card" href="plan-ownership-adoption-lifecycle.html#section-7">
-                        <span>Part 3</span>
-                        <strong>Plan ownership, adoption and lifecycle</strong>
-                        <em>Cost, evaluation, support, adoption and retirement.</em>
-                    </a>
-                    <a class="series-card" href="decide-internal-vs-client-facing.html#section-10">
-                        <span>Part 4</span>
-                        <strong>Decide internal vs client-facing</strong>
-                        <em>Personal tool, firm accelerator or client product.</em>
-                    </a>
-                </div>
+                    <div class="series-grid read-series-grid">
+                        <a class="series-card" href="decide-what-to-build.html#section-1">
+                            <span>Part 1</span>
+                            <strong>Decide what to build</strong>
+                            <em>Prompt, skill, agent, workflow or custom app.</em>
+                        </a>
+                        <a class="series-card" href="set-data-governance-boundary.html#section-6">
+                            <span>Part 2</span>
+                            <strong>Set the data and governance boundary</strong>
+                            <em>Permissions, legal terms, derived data and audit trails.</em>
+                        </a>
+                        <a class="series-card" href="plan-ownership-adoption-lifecycle.html#section-7">
+                            <span>Part 3</span>
+                            <strong>Plan ownership, adoption and lifecycle</strong>
+                            <em>Cost, evaluation, support, adoption and retirement.</em>
+                        </a>
+                        <a class="series-card" href="decide-internal-vs-client-facing.html#section-10">
+                            <span>Part 4</span>
+                            <strong>Decide internal vs client-facing</strong>
+                            <em>Personal tool, firm accelerator or client product.</em>
+                        </a>
+                    </div>
 
 
                     <hr>
