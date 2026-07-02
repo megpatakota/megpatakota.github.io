@@ -196,15 +196,17 @@
             .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
             .article-hero-image { border-radius: 0.75rem; }
             .article-hero-image img { max-height: 12rem; }
-            .series-map { width: 100%; max-width: 100%; padding: 0.85rem; margin: 1.1rem 0 1.5rem; transform: none; }
-            .series-map-header { display: block; }
-            .series-map-note { margin-top: 0.65rem; }
-            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
-            .series-card { padding: 0.75rem 0.8rem; }
-            .series-card span { font-size: 0.57rem; }
-            .series-card strong { font-size: 0.78rem; line-height: 1.25; }
-            .series-card em { font-size: 0.68rem; line-height: 1.35; }
-            .evidence-note { margin: -0.45rem 0 1.1rem; }
+            .series-map { width: 100%; max-width: 100%; padding: 0.65rem; margin: 0.85rem 0 0.85rem; transform: none; border-radius: 0.75rem; box-shadow: none; }
+            .series-map-header { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.55rem; }
+            .series-map-kicker { font-size: 0.56rem; letter-spacing: 0.14em; }
+            .series-map-title { font-size: 0.78rem; line-height: 1.2; margin-top: 0.1rem; }
+            .series-map-note { display: none; }
+            .series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem; }
+            .series-card { padding: 0.55rem 0.6rem; border-radius: 0.65rem; min-height: 4.15rem; }
+            .series-card span { font-size: 0.5rem; margin-bottom: 0.25rem; letter-spacing: 0.1em; }
+            .series-card strong { font-size: 0.68rem; line-height: 1.18; margin-bottom: 0; }
+            .series-card em { display: none; }
+            .evidence-note { margin: -0.25rem 0 0.75rem; font-size: 0.7rem; line-height: 1.4; }
             .series-page-nav { gap: 0.6rem; margin-top: 1.75rem; }
             .series-page-link { padding: 0.85rem; }
             #back-to-top { right: 1rem; bottom: 1rem; width: 2.25rem; height: 2.25rem; }
@@ -251,7 +253,7 @@
 
                 <div class="series-grid">
                     <a class="series-card" aria-current="page" href="decide-what-to-build.html">
-                        <span>Part 1 / You are here</span>
+                        <span>Part 1</span>
                         <strong>Decide what to build</strong>
                         <em>Prompt, skill, agent, workflow or custom app.</em>
                     </a>
@@ -273,7 +275,7 @@
                 </div>
             </nav>
 
-            <p class="evidence-note max-w-3xl mx-auto">Product-specific details are tied to the linked vendor and governance sources. The recommendations are decision heuristics, not legal, security or procurement advice; check current product docs, contracts and client terms before production use.</p>
+            <p class="evidence-note max-w-3xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
 
             <div class="article-intro-layout part-content-intro">
                 <aside class="article-toc-panel" aria-label="Article table of contents">
