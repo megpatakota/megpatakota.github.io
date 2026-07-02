@@ -175,8 +175,12 @@
             .article-toc-panel .toc-dot { display: none; }
             .section-num { font-size: 1.75rem; }
             .callout { padding: 1rem; margin: 1.1rem 0; border-radius: 0 0.65rem 0.65rem 0; }
-            .quick-verdict, .signal-board, .consultancy-card .split { grid-template-columns: 1fr; gap: 0.65rem; margin: 1.15rem 0; }
+            .quick-verdict, .signal-board { grid-template-columns: 1fr; gap: 0.65rem; margin: 1.15rem 0; }
             .quick-card, .consultancy-card, .mini-rule, .summary-hero-panel { padding: 0.85rem; }
+            .consultancy-card .split { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .consultancy-card .split div { padding: 0.65rem; }
+            .consultancy-card span { font-size: 0.58rem; letter-spacing: 0.08em; }
+            .consultancy-card p { font-size: 0.76rem; line-height: 1.45; }
             .tool-card { padding: 0.75rem 0.85rem; }
             .decision-ladder, .consultancy-grid, .engineer-ladder { gap: 0.6rem; margin: 1.15rem 0; }
             .ladder-step { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -192,7 +196,9 @@
             .signal-panel h3 { padding: 0.75rem 0.85rem; }
             .signal-panel ul { padding: 0.15rem 0.85rem 0.85rem; }
             .signal-panel li { gap: 0.5rem; margin-top: 0.65rem; }
-            .engineer-step { grid-template-columns: 1fr; gap: 0.35rem; padding: 0.8rem 0.85rem; }
+            .engineer-step { grid-template-columns: 5.75rem minmax(0, 1fr); gap: 0.6rem; padding: 0.8rem 0.85rem; align-items: start; }
+            .engineer-step strong { font-size: 0.78rem; line-height: 1.25; }
+            .engineer-step p { font-size: 0.78rem; line-height: 1.45; }
             .article-hero-image { border-radius: 0.75rem; }
             .article-hero-image img { max-height: 12rem; }
             .series-map { width: 100%; max-width: 100%; padding: 0.85rem; margin: 1.1rem 0 1.5rem; transform: none; }
