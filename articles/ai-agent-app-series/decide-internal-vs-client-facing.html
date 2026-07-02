@@ -149,6 +149,19 @@
         .summary-hero-panel p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-text-secondary); }
         @media (max-width: 640px) { .series-page-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); } .series-page-link.next { text-align: right; } }
 
+        @media (min-width: 1024px) {
+            .article-content p, .article-content li { font-size: 1.0625rem; line-height: 1.78; }
+            .toc-link { font-size: 0.875rem; }
+            .series-map-title { font-size: 1.08rem; }
+            .series-map-note, .evidence-note { font-size: 0.875rem; }
+            .series-card strong { font-size: 1rem; }
+            .series-card em { font-size: 0.85rem; }
+            .callout p, .quick-card li, .ladder-cell p, .signal-panel li, .consultancy-card p, .engineer-step p, .mini-rule p, .summary-hero-panel p { font-size: 0.95rem; }
+            .quick-card h3, .signal-panel h3 { font-size: 0.95rem; }
+            .ladder-cell b, .cost-label, .ref-list, .ref-list li { font-size: 0.875rem; }
+            .series-page-link strong { font-size: 1.05rem; }
+        }
+
 
         @media (max-width: 900px) {
             .article-intro-layout { grid-template-columns: 1fr; gap: 1.25rem; margin: 1.25rem 0 1.75rem; }
@@ -226,7 +239,7 @@
     <script src="../../assets/js/header.js"></script>
 
     <section class="pt-8 pb-12 px-4 md:px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="mb-6">
                 <a href="./" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
                     <i class="fas fa-arrow-left mr-2 text-xs"></i>
@@ -280,7 +293,7 @@
                 </div>
             </nav>
 
-            <p class="evidence-note max-w-4xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
+            <p class="evidence-note max-w-5xl mx-auto">Sources are listed at the end; recommendations are decision guidance, not legal, security or procurement advice.</p>
 
             <div class="article-intro-layout part-content-intro">
                 <aside class="article-toc-panel" aria-label="Article table of contents">
@@ -289,7 +302,7 @@
                 </aside>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <article class="article-content">
                     <div class="mt-14 mb-5" id="section-10" data-toc="Consultancy Angle">
                         <span class="section-num">10</span>
