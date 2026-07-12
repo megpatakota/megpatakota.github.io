@@ -6,6 +6,7 @@ function getHeader(isArticlePage = false) {
     const indexPath = isArticlePage ? '../index.html' : 'index.html';
     const articlesPath = isArticlePage ? '../main_articles.html' : 'main_articles.html';
     const experiencePath = isArticlePage ? '../experience.html' : 'experience.html';
+    const careerPath = isArticlePage ? '../career-support.html' : 'career-support.html';
 
     return `
     <header id="site-header" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 transition-transform duration-300">
@@ -22,8 +23,9 @@ function getHeader(isArticlePage = false) {
                 </a>
 
                 <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center gap-8">
+                <nav class="hidden md:flex items-center gap-4 lg:gap-6">
                     <a href="${articlesPath}" class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Blogs</a>
+                    <a href="${careerPath}" class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Career Support</a>
                     <a href="${experiencePath}" class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
                     <a href="${indexPath}#projects" class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Projects</a>
                     <a href="${indexPath}#testimonials" class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Testimonials</a>
@@ -41,6 +43,7 @@ function getHeader(isArticlePage = false) {
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="hidden absolute right-4 top-16 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 py-2 px-1 min-w-[160px] z-50">
                 <a href="${articlesPath}" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Blogs</a>
+                <a href="${careerPath}" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Career Support</a>
                 <a href="${indexPath}#contact" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Contact</a>
                 <a href="${indexPath}#education" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Education</a>
                 <a href="${experiencePath}" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Experience</a>

@@ -5,6 +5,7 @@ function getFooter(isArticlePage = true) {
     const basePath = isArticlePage ? '../' : '';
     const indexPath = `${basePath}index.html`;
     const experiencePath = `${basePath}experience.html`;
+    const careerPath = `${basePath}career-support.html`;
 
     return `
     <footer class="bg-text_primary text-white py-10 px-6 mt-12">
@@ -18,6 +19,8 @@ function getFooter(isArticlePage = true) {
             </div>
             <div class="flex items-center gap-3 text-sm text-white/70">
                 <a href="${experiencePath}" class="hover:text-white transition">Experience</a>
+                <span class="hidden sm:inline">&bull;</span>
+                <a href="${careerPath}" class="hover:text-white transition">Career Support</a>
                 <span class="hidden sm:inline">&bull;</span>
                 <a href="${indexPath}#projects" class="hover:text-white transition">Projects</a>
                 <span class="hidden sm:inline">&bull;</span>
