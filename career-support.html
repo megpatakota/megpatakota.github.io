@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Support - Meg Patakota</title>
+    <title>Career Support | Meg</title>
 
     <meta name="description" content="Practical career support for students, recent graduates, and career switchers trying to make sense of data, analytics, AI, research, product, and science-adjacent roles.">
     <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meg Patakota">
@@ -21,8 +21,7 @@
     <meta name="twitter:description" content="A practical starting point for students, graduates, and career switchers moving around data, analytics, AI, and science-adjacent roles.">
     <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
 
-    <link rel="icon" type="image/jpeg" href="./assets/images/logos/profile.jpeg">
-    <link rel="apple-touch-icon" href="./assets/images/logos/profile.jpeg">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,10 +38,7 @@
 
     <style>
         .career-hero {
-            background:
-                linear-gradient(90deg, rgba(14, 116, 144, 0.06) 0 1px, transparent 1px 100%),
-                linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            background-size: 92px 100%, auto;
+            background: #ffffff;
             border-bottom: 1px solid #e5e7eb;
         }
 
@@ -88,85 +84,23 @@
             line-height: 1.6;
         }
 
-        .desk-shell {
-            border: 1px solid #cbd5e1;
-            border-radius: 0.85rem;
-            background: #ffffff;
-            box-shadow: 12px 12px 0 rgba(15, 23, 42, 0.06);
-        }
-
-        .desk-top {
-            border-bottom: 1px solid #e5e7eb;
-            background: #ffffff;
-        }
-
         .stage-button {
-            border: 1px solid #e5e7eb;
-            border-radius: 0.65rem;
-            background: #ffffff;
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid #dbe3ea;
+            border-radius: 0;
+            background: transparent;
             text-align: left;
             transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .stage-button.is-active {
-            border-color: var(--color-buttons);
-            background: #ecfeff;
-            box-shadow: inset 4px 0 0 var(--color-buttons);
-        }
-
-        .signal-checkbox:checked + span {
-            border-color: var(--color-buttons);
-            background: #ecfeff;
-            color: var(--color-text-primary);
-        }
-
-        .read-card {
-            border: 1px solid #bae6fd;
-            border-top: 4px solid var(--color-buttons);
-            border-radius: 0.75rem;
-            background: #ffffff;
-        }
-
-        .line-list {
-            display: grid;
-            gap: 0;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .line-list li {
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.15rem 0;
-        }
-
-        .line-list strong {
-            display: block;
-            margin-bottom: 0.35rem;
-            color: var(--color-text-primary);
-            font-size: 1.02rem;
-        }
-
-        .line-list p {
-            margin: 0;
-            color: var(--color-text-tertiary);
-            line-height: 1.65;
-        }
-
-        .pattern-line {
+        .stage-button:first-child {
             border-top: 1px solid #dbe3ea;
-            border-bottom: 1px solid #dbe3ea;
         }
 
-        .pattern-line span {
-            display: block;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .pattern-line span:last-child {
-            border-bottom: 0;
+        .stage-button.is-active {
+            background: #ffffff;
+            box-shadow: inset 3px 0 0 var(--color-buttons);
         }
 
         .fit-list {
@@ -186,28 +120,6 @@
             border-top: 0;
         }
 
-        @media (min-width: 768px) {
-            .pattern-line {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .pattern-line span {
-                border-bottom: 0;
-                border-right: 1px solid #e5e7eb;
-                padding: 1rem;
-            }
-
-            .pattern-line span:first-child {
-                padding-left: 0;
-            }
-
-            .pattern-line span:last-child {
-                border-right: 0;
-                padding-right: 0;
-            }
-        }
-
         @media (max-width: 1023px) {
             .career-portrait {
                 max-width: none;
@@ -224,6 +136,16 @@
                 margin-left: 0;
             }
         }
+
+        @media (max-width: 639px) {
+            .career-portrait figcaption {
+                font-size: 0.84rem;
+            }
+
+            .stage-button {
+                padding: 0.9rem 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -232,19 +154,19 @@
     <script src="./assets/js/header.js"></script>
 
     <main>
-        <section class="career-hero px-6 py-12 md:py-16">
+        <section class="career-hero px-5 sm:px-6 py-10 md:py-16">
             <div class="container mx-auto max-w-6xl">
-                <div class="grid lg:grid-cols-[1fr_0.72fr] gap-10 lg:gap-16 items-center">
+                <div class="grid lg:grid-cols-[1fr_0.72fr] gap-8 lg:gap-16 items-center">
                     <div>
                         <span class="career-kicker mb-5">Career support with Meg</span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-text_primary">
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 md:mb-6 text-text_primary">
                             Show me where the job search is getting stuck.
                         </h1>
-                        <p class="text-lg md:text-xl text-text_secondary leading-relaxed max-w-2xl mb-8">
+                        <p class="text-base sm:text-lg md:text-xl text-text_secondary leading-relaxed max-w-2xl mb-7 md:mb-8">
                             Bring the roles, applications, interview feedback, or career switch that you cannot quite
                             make sense of. We will work out what matters now and what can wait.
                         </p>
-                        <a href="#starting-brief" class="primary-button px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center">
+                        <a href="#starting-brief" class="primary-button w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center">
                             Tell me where you are stuck
                         </a>
                     </div>
@@ -252,159 +174,97 @@
                     <figure class="career-portrait">
                         <img src="./assets/images/logos/profile.jpeg" alt="Meg Patakota seated in a meeting room" width="1086" height="724">
                         <figcaption>
-                            My advice is grounded in a private record of 102 role and interview processes across 96
-                            company contexts, plus experience moving between science, data, analytics, and AI work.
+                            I have moved across science, data, analytics, and AI work myself. I know how difficult it
+                            can be to explain a path that does not fit neatly into one job title.
                         </figcaption>
                     </figure>
                 </div>
             </div>
         </section>
 
-        <section id="starting-brief" class="py-16 md:py-20 px-6 bg-bg_light">
-            <div class="container mx-auto max-w-6xl">
-                <div class="desk-shell">
-                    <div class="desk-top p-6 md:p-8">
-                        <div class="grid lg:grid-cols-[0.75fr_1fr] gap-6 items-end">
-                            <div>
-                                <span class="career-kicker mb-4">The starting brief</span>
-                                <h2 class="text-3xl md:text-5xl font-bold leading-tight">No polished pitch needed.</h2>
+        <section id="starting-brief" class="py-12 md:py-16 px-5 sm:px-6 bg-bg_light">
+            <div class="container mx-auto max-w-5xl">
+                <div class="grid lg:grid-cols-[0.75fr_1fr] gap-4 lg:gap-10 items-end">
+                    <div>
+                        <span class="career-kicker mb-3 md:mb-4">Start here</span>
+                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Find the first problem to solve.</h2>
+                    </div>
+                    <p class="text-text_tertiary leading-relaxed text-base md:text-lg">
+                        Choose what is closest and add only what you know. You will see where I would start before
+                        deciding whether to get in touch.
+                    </p>
+                </div>
+
+                <div class="mt-8 md:mt-10 border-t border-gray-300 grid lg:grid-cols-[1.1fr_0.9fr]">
+                    <div class="py-6 md:py-8 lg:pr-10 lg:border-r border-gray-300 space-y-7 md:space-y-8">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-3">What is happening now?</p>
+                            <div id="stage-options">
+                                <button class="stage-button is-active p-4" type="button" data-stage="Trying to choose a lane" aria-pressed="true">
+                                    <span class="block font-semibold">I am trying to choose a lane</span>
+                                    <span class="block text-sm text-text_tertiary mt-1">Too many role titles sound possible.</span>
+                                </button>
+                                <button class="stage-button p-4" type="button" data-stage="Applying and hearing little back" aria-pressed="false">
+                                    <span class="block font-semibold">I am applying and hearing little back</span>
+                                    <span class="block text-sm text-text_tertiary mt-1">Applications are not giving me useful signals.</span>
+                                </button>
+                                <button class="stage-button p-4" type="button" data-stage="Preparing for an interview or task" aria-pressed="false">
+                                    <span class="block font-semibold">I have an interview or task coming up</span>
+                                    <span class="block text-sm text-text_tertiary mt-1">I need to understand what they are testing.</span>
+                                </button>
+                                <button class="stage-button p-4" type="button" data-stage="Changing direction" aria-pressed="false">
+                                    <span class="block font-semibold">I am changing direction</span>
+                                    <span class="block text-sm text-text_tertiary mt-1">I need a credible bridge into a new area.</span>
+                                </button>
                             </div>
-                            <p class="text-text_tertiary leading-relaxed text-lg">
-                                Choose what is closest and add only what you know. You will see where I would start
-                                before deciding whether to get in touch.
+                        </div>
+
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-2">What feels unclear?</p>
+                            <div id="worry-options" class="grid sm:grid-cols-2 sm:gap-x-6">
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="which role titles are worth chasing"><span class="text-sm text-text_secondary">Which role titles are worth chasing</span></label>
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="how to explain my projects, degree, or experience"><span class="text-sm text-text_secondary">How to explain my projects or degree</span></label>
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="why applications are not converting"><span class="text-sm text-text_secondary">Why applications are not converting</span></label>
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="what AI, data, or analytics teams actually test"><span class="text-sm text-text_secondary">What teams actually test</span></label>
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="how to read salary, team, location, or interview-round expectations"><span class="text-sm text-text_secondary">Salary, team, rounds, or location</span></label>
+                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="what to do in the next seven days"><span class="text-sm text-text_secondary">What to do in the next seven days</span></label>
+                            </div>
+                        </div>
+
+                        <label class="block">
+                            <span class="block text-sm font-semibold text-text_primary mb-2">Anything I should know? <span class="font-normal text-text_tertiary">Optional</span></span>
+                            <textarea id="context-notes" rows="4" class="w-full rounded-md border border-gray-300 bg-white p-3 text-base text-text_primary focus:border-buttons focus:outline-none" placeholder="A role link, an upcoming interview, what you have tried, or the part that is hardest to explain."></textarea>
+                        </label>
+                    </div>
+
+                    <aside class="py-6 md:py-8 lg:pl-10">
+                        <div class="border-l-2 border-buttons pl-5">
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-buttons mb-3">Where I would start</p>
+                            <p id="read-preview" class="text-text_secondary leading-relaxed">
+                                I would first separate role families from job titles, then check which evidence you already have for each direction.
                             </p>
                         </div>
-                    </div>
 
-                    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-0">
-                        <div class="p-6 md:p-8 lg:border-r border-gray-200 space-y-8">
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-4">What is closest?</p>
-                                <div class="grid gap-3" id="stage-options">
-                                    <button class="stage-button is-active p-4" type="button" data-stage="Trying to choose a lane">
-                                        <span class="block font-semibold">I am trying to choose a lane</span>
-                                        <span class="block text-sm text-text_tertiary mt-1">Too many role titles sound possible, and I do not know which ones to prioritise.</span>
-                                    </button>
-                                    <button class="stage-button p-4" type="button" data-stage="Applying and hearing little back">
-                                        <span class="block font-semibold">I am applying and hearing little back</span>
-                                        <span class="block text-sm text-text_tertiary mt-1">I have sent applications, but I am not getting enough useful signal back.</span>
-                                    </button>
-                                    <button class="stage-button p-4" type="button" data-stage="Preparing for an interview or task">
-                                        <span class="block font-semibold">I have an interview or task coming up</span>
-                                        <span class="block text-sm text-text_tertiary mt-1">I need to understand what they are really testing and how to prepare.</span>
-                                    </button>
-                                    <button class="stage-button p-4" type="button" data-stage="Changing direction">
-                                        <span class="block font-semibold">I am changing direction</span>
-                                        <span class="block text-sm text-text_tertiary mt-1">I have some experience, but I need a bridge into a new area.</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-4">What is unclear?</p>
-                                <div class="grid sm:grid-cols-2 gap-3" id="worry-options">
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="which role titles are worth chasing">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">Which role titles are worth chasing</span>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="how to explain my projects, degree, or experience">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">How to explain my projects or degree</span>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="why applications are not converting">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">Why applications are not converting</span>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="what AI, data, or analytics teams actually test">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">What teams actually test</span>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="how to read salary, team, location, or interview-round expectations">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">Salary, team, rounds, or location</span>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input class="signal-checkbox sr-only" type="checkbox" value="what to do in the next seven days">
-                                        <span class="block rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-text_secondary transition">What to do in the next seven days</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <label class="block">
-                                    <span class="block text-sm font-semibold text-text_primary mb-2">Roles, links, companies, or teams you keep seeing</span>
-                                    <textarea id="target-roles" rows="4" class="w-full rounded-lg border border-gray-200 p-4 text-sm text-text_primary focus:border-buttons focus:outline-none" placeholder="Example: data analyst, AI product, research assistant, analytics engineer"></textarea>
-                                </label>
-                                <label class="block">
-                                    <span class="block text-sm font-semibold text-text_primary mb-2">The part that feels most stuck</span>
-                                    <textarea id="already-tried" rows="4" class="w-full rounded-lg border border-gray-200 p-4 text-sm text-text_primary focus:border-buttons focus:outline-none" placeholder="Example: I am getting rejected after applying, or I cannot explain one project clearly"></textarea>
-                                </label>
-                            </div>
+                        <div class="mt-8 border-t border-gray-300 pt-6">
+                            <h3 class="text-lg font-bold text-text_primary mb-2">Want me to look at the real situation?</h3>
+                            <p class="text-sm text-text_tertiary leading-relaxed mb-5">
+                                Your answers will be included in the email, so you do not have to explain everything again.
+                            </p>
+                            <a id="brief-mailto" href="mailto:megpatakota@icloud.com?subject=Career%20support%20starting%20point&body=Current%20situation%3A%20Trying%20to%20choose%20a%20lane.%0A%0AI%20want%20help%20turning%20the%20messy%20picture%20into%20a%20clearer%20next%20step." class="primary-button w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">
+                                Send my starting point
+                            </a>
                         </div>
-
-                        <div class="p-6 md:p-8 space-y-6">
-                            <div class="read-card p-5 md:p-6">
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-buttons mb-4">Where I would start</p>
-                                <p id="read-preview" class="text-text_secondary leading-relaxed">
-                                    I would first separate role families from job titles, then check which evidence you already have for each direction.
-                                </p>
-                            </div>
-
-                            <div class="border-t border-gray-200 pt-6">
-                                <h3 class="text-lg font-bold text-text_primary mb-2">Want me to look at the real situation?</h3>
-                                <p class="text-sm text-text_tertiary leading-relaxed mb-5">
-                                    Your answers will be included in the email, so you do not have to explain everything again.
-                                </p>
-                                <a id="brief-mailto" href="mailto:megpatakota@icloud.com?subject=Career%20support%20starting%20point&body=Current%20situation%3A%20Trying%20to%20choose%20a%20lane.%0A%0AI%20want%20help%20turning%20the%20messy%20picture%20into%20a%20clearer%20next%20step." class="primary-button inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">
-                                    Send my starting point
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="py-20 px-6 bg-white">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
-                    <div>
-                        <span class="career-kicker mb-5">What we sort</span>
-                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-5">The useful work is usually not the obvious work.</h2>
-                        <p class="text-lg text-text_tertiary leading-relaxed">
-                            A CV review might be part of it, but only after we know what the CV needs to prove. The
-                            point is to find the decision that will make the next move less noisy.
-                        </p>
-                    </div>
-
-                    <ul class="line-list">
-                        <li>
-                            <strong>Role map</strong>
-                            <p>Which role families fit your current evidence, which ones need a bridge, and which ones are wasting your energy right now.</p>
-                        </li>
-                        <li>
-                            <strong>Evidence story</strong>
-                            <p>How to make a degree, dissertation, project, internship, job, or side experiment sound relevant without pretending it was bigger than it was.</p>
-                        </li>
-                        <li>
-                            <strong>Process read</strong>
-                            <p>What a company may be testing through a screen, take-home task, case, technical round, or hiring-manager conversation.</p>
-                        </li>
-                        <li>
-                            <strong>Next seven days</strong>
-                            <p>A short plan: what to apply for, what to rewrite, what to practise, who to contact, and what to stop over-fixing.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 px-6 bg-bg_light">
+        <section class="py-14 md:py-20 px-5 sm:px-6 bg-white">
             <div class="container mx-auto max-w-6xl">
                 <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-start">
                     <div>
-                        <span class="career-kicker mb-5">Why Meg</span>
-                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
+                        <span class="career-kicker mb-5">Why this is different</span>
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-5">
                             I read the market through real interview patterns.
                         </h2>
                     </div>
@@ -417,16 +277,16 @@
                             ask better questions.
                         </p>
 
-                        <div class="pattern-line mb-8 text-sm text-text_secondary">
-                            <span><strong class="block text-2xl text-buttons mb-1">102</strong>role records reviewed</span>
-                            <span><strong class="block text-2xl text-buttons mb-1">96</strong>company contexts</span>
-                            <span><strong class="block text-2xl text-buttons mb-1">69</strong>role titles</span>
-                            <span><strong class="block text-2xl text-buttons mb-1">48</strong>process notes</span>
-                        </div>
+                        <p class="border-y border-gray-300 py-4 mb-8 text-sm leading-relaxed text-text_secondary">
+                            The working record currently covers <strong class="text-text_primary">102 roles</strong>,
+                            <strong class="text-text_primary">96 company contexts</strong>,
+                            <strong class="text-text_primary">69 role titles</strong>, and
+                            <strong class="text-text_primary">48 detailed interview processes</strong>.
+                        </p>
 
                         <div class="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h3 class="text-xl font-bold mb-4">Useful if you are...</h3>
+                                <h3 class="text-xl font-bold mb-4">A good fit when...</h3>
                                 <ul class="fit-list">
                                     <li>A student or recent graduate trying to turn study, projects, or internships into a credible direction.</li>
                                     <li>Applying for data, analytics, AI, research-adjacent, product, or operations roles and unsure how to position yourself.</li>
@@ -434,11 +294,11 @@
                                 </ul>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-4">Probably not useful if you want...</h3>
+                                <h3 class="text-xl font-bold mb-4">What you should leave with</h3>
                                 <ul class="fit-list">
-                                    <li>A promise that one call will get you hired.</li>
-                                    <li>Someone to mass-apply for roles on your behalf.</li>
-                                    <li>A generic CV polish where everyone leaves sounding the same.</li>
+                                    <li>A clearer target: the role families worth your attention now.</li>
+                                    <li>A stronger evidence story for applications and conversations.</li>
+                                    <li>A practical next-week plan, including what to stop spending time on.</li>
                                 </ul>
                             </div>
                         </div>
@@ -447,23 +307,6 @@
             </div>
         </section>
 
-        <section class="py-16 px-6 bg-text_primary text-white">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid md:grid-cols-[1fr_auto] gap-8 items-center">
-                    <div>
-                        <p class="text-sm font-semibold text-white/50 mb-3">Start small</p>
-                        <h2 class="text-3xl md:text-5xl font-bold mb-5">Send the honest version first.</h2>
-                        <p class="text-lg text-white/70 leading-relaxed max-w-2xl">
-                            Use the brief above. Add links, role titles, or messy context if it helps. A clear starting
-                            point is useful, but a human one is better.
-                        </p>
-                    </div>
-                    <a href="#starting-brief" class="bg-white text-text_primary px-7 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all inline-flex items-center justify-center">
-                        Make the brief
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <div id="shared-footer" data-article-page="false"></div>
@@ -472,8 +315,7 @@
         (function () {
             const stageButtons = document.querySelectorAll('[data-stage]');
             const worryInputs = document.querySelectorAll('#worry-options input');
-            const rolesInput = document.getElementById('target-roles');
-            const triedInput = document.getElementById('already-tried');
+            const contextInput = document.getElementById('context-notes');
             const readPreview = document.getElementById('read-preview');
             const mailto = document.getElementById('brief-mailto');
             let selectedStage = 'Trying to choose a lane';
@@ -483,6 +325,15 @@
                 'Applying and hearing little back': 'I would look for whether the problem is targeting, seniority, evidence, phrasing, or whether your strongest proof is hidden too low.',
                 'Preparing for an interview or task': 'I would try to identify what the process is testing: technical depth, commercial judgement, communication, product sense, speed, or ownership.',
                 'Changing direction': 'I would look for bridge evidence: the parts of your previous work that already sound useful to the new role, even if the title does not match yet.'
+            };
+
+            const focusReads = {
+                'which role titles are worth chasing': 'I would compare the work behind the titles, rather than relying on how similar the titles sound.',
+                'how to explain my projects, degree, or experience': 'We would identify the strongest evidence you already have and make its relevance easier to see.',
+                'why applications are not converting': 'I would locate where the application funnel is breaking before changing everything at once.',
+                'what AI, data, or analytics teams actually test': 'We would translate each interview stage into the capability it is most likely testing.',
+                'how to read salary, team, location, or interview-round expectations': 'I would separate genuine constraints from details that can be clarified later.',
+                'what to do in the next seven days': 'We would finish with a short order of work, including what to stop spending time on.'
             };
 
             function getCheckedWorries() {
@@ -499,31 +350,33 @@
 
             function updateBrief() {
                 const worries = getCheckedWorries();
-                const roles = rolesInput.value.trim();
-                const tried = triedInput.value.trim();
+                const context = contextInput.value.trim();
                 const lines = [
                     `Current situation: ${selectedStage}.`,
                     worries.length ? `What feels unclear: ${sentenceList(worries)}.` : 'I want help turning the messy picture into a clearer next step.',
-                    roles ? `Roles, companies, or teams I keep seeing: ${roles}.` : '',
-                    tried ? `The part that feels most stuck: ${tried}.` : ''
+                    context ? `Useful context: ${context}` : ''
                 ].filter(Boolean);
 
-                readPreview.textContent = firstReads[selectedStage];
+                const focus = worries.slice(0, 2).map((worry) => focusReads[worry]);
+                readPreview.textContent = [firstReads[selectedStage], ...focus].join(' ');
                 mailto.href = `mailto:megpatakota@icloud.com?subject=${encodeURIComponent('Career support starting point')}&body=${encodeURIComponent(lines.join('\n\n'))}`;
             }
 
             stageButtons.forEach((button) => {
                 button.addEventListener('click', function () {
                     selectedStage = this.dataset.stage;
-                    stageButtons.forEach((item) => item.classList.remove('is-active'));
+                    stageButtons.forEach((item) => {
+                        item.classList.remove('is-active');
+                        item.setAttribute('aria-pressed', 'false');
+                    });
                     this.classList.add('is-active');
+                    this.setAttribute('aria-pressed', 'true');
                     updateBrief();
                 });
             });
 
             worryInputs.forEach((input) => input.addEventListener('change', updateBrief));
-            rolesInput.addEventListener('input', updateBrief);
-            triedInput.addEventListener('input', updateBrief);
+            contextInput.addEventListener('input', updateBrief);
             updateBrief();
         })();
     </script>

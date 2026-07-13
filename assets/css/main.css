@@ -699,3 +699,19 @@ details[open] summary i.fa-chevron-right {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+#desktop-more > summary::-webkit-details-marker {
+    display: none;
+}
+
+#desktop-more > summary::marker {
+    content: "";
+}
+
+#desktop-more > summary i {
+    transition: transform 0.2s ease;
+}
+
+#desktop-more[open] > summary i {
+    transform: rotate(180deg);
+}

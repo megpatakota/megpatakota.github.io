@@ -33,8 +33,7 @@
     <meta name="twitter:image:alt" content="Meg Patakota - AI & Data Strategy Advisor">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="./assets/images/logos/profile.jpeg">
-    <link rel="apple-touch-icon" href="./assets/images/logos/profile.jpeg">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,7 +79,7 @@
                         class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-sm group-hover:scale-105 transition-transform">
                         MP
                     </div>
-                    <div class="hidden sm:block">
+                    <div class="hidden lg:block">
                         <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
                         <div class="text-xs text-text_tertiary">AI, Automation & Enablement</div>
                     </div>
@@ -88,16 +87,23 @@
 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex items-center gap-4 lg:gap-6">
-                    <a href="main_articles.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Blogs</a>
                     <a href="career-support.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Career Support</a>
+                        class="text-sm text-buttons hover:text-accent transition-colors font-semibold">Career Support</a>
+                    <a href="main_articles.html"
+                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Blog</a>
                     <a href="experience.html"
                         class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
-                    <a href="#projects"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Projects</a>
-                    <a href="#testimonials"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Testimonials</a>
+                    <details id="desktop-more" class="relative">
+                        <summary class="list-none cursor-pointer text-sm text-text_secondary hover:text-buttons transition-colors font-medium inline-flex items-center gap-1.5">
+                            More <i class="fas fa-chevron-down text-[10px]" aria-hidden="true"></i>
+                        </summary>
+                        <div class="absolute right-0 top-full mt-3 w-44 rounded-lg border border-gray-200 bg-white p-2 shadow-xl">
+                            <a href="#about" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">About</a>
+                            <a href="#projects" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Projects</a>
+                            <a href="#testimonials" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Testimonials</a>
+                            <a href="#education" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Education</a>
+                        </div>
+                    </details>
                     <a href="mailto:megpatakota@icloud.com"
                         class="text-sm px-4 py-2 tech-gradient text-white rounded-lg font-medium hover:shadow-lg hover:shadow-buttons/25 transition-all">
                         <i class="fas fa-envelope mr-1"></i>Contact
@@ -105,20 +111,21 @@
                 </nav>
 
                 <!-- Hamburger Menu -->
-                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition">
+                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition" type="button" aria-label="Open navigation" aria-controls="mobile-menu" aria-expanded="false">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="hidden absolute right-4 top-16 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 py-2 px-1 min-w-[160px] z-50">
-                <a href="main_articles.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Blogs</a>
-                <a href="career-support.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Career Support</a>
-                <a href="#contact" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Contact</a>
-                <a href="#education" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Education</a>
+                <a href="career-support.html" class="block px-4 py-2 text-sm text-buttons font-semibold hover:bg-buttons/5 rounded-lg transition">Career Support</a>
+                <a href="main_articles.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Blog</a>
                 <a href="experience.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Experience</a>
+                <div class="my-1 border-t border-gray-100"></div>
                 <a href="#projects" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Projects</a>
                 <a href="#testimonials" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Testimonials</a>
+                <a href="#education" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Education</a>
+                <a href="#contact" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Contact</a>
             </div>
         </nav>
     </header>
@@ -274,13 +281,13 @@
     <section class="border-y border-gray-200 bg-bg_light px-6 py-8">
         <div class="container mx-auto max-w-6xl reveal">
             <div class="grid md:grid-cols-[0.7fr_1.3fr_auto] gap-4 md:gap-8 items-center">
-                <p class="text-xs uppercase tracking-[0.18em] font-bold text-buttons">For your next move</p>
+                <p class="text-xs uppercase tracking-[0.18em] font-bold text-buttons">Career support</p>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-text_primary mb-1">Trying to make sense of the job market?</h2>
-                    <p class="text-text_secondary leading-relaxed">Practical career support for students, recent graduates, and people moving into data, analytics, AI, product, or research roles.</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-text_primary mb-1">Not sure which role actually fits?</h2>
+                    <p class="text-text_secondary leading-relaxed">I help students, recent graduates, and career switchers make sense of data, analytics, AI, product, and research roles.</p>
                 </div>
                 <a href="career-support.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-accent transition whitespace-nowrap">
-                    <span>Career support</span>
+                    <span>See how I can help</span>
                     <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                 </a>
             </div>

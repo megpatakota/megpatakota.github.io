@@ -7,27 +7,41 @@
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
-mobileMenuButton.addEventListener('click', function() {
-    mobileMenu.classList.toggle('hidden');
-    const icon = this.querySelector('i');
-    if (mobileMenu.classList.contains('hidden')) {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    } else {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    }
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-        const icon = mobileMenuButton.querySelector('i');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+        const icon = this.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
     });
-});
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            const icon = mobileMenuButton.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
+const desktopMore = document.getElementById('desktop-more');
+if (desktopMore) {
+    desktopMore.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => desktopMore.removeAttribute('open'));
+    });
+    document.addEventListener('click', function(event) {
+        if (!desktopMore.contains(event.target)) desktopMore.removeAttribute('open');
+    });
+}
 
 // Contact Form - AJAX submission with notification
 const contactForm = document.getElementById('contactForm');
