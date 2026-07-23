@@ -4,22 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Support | Meghana Patakota</title>
+    <title>Career Support | Meg Patakota</title>
 
-    <meta name="description" content="A free 20-minute video job-search diagnostic for data, analytics, and AI careers, grounded in 102 tracked roles and 48 documented interview processes.">
+    <meta name="description" content="A free 20-minute video call for one real data, analytics, or AI job-search problem, grounded in 102 tracked roles and 48 documented interview processes.">
     <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meghana Patakota">
     <meta name="author" content="Meghana Patakota">
     <link rel="canonical" href="https://megpatakota.co.uk/career-support.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://megpatakota.co.uk/career-support.html">
-    <meta property="og:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
+    <meta property="og:title" content="Free 20-Minute Job-Search Call | Meg Patakota">
     <meta property="og:description" content="Bring one real job-search problem to a free 20-minute video call, grounded in 102 tracked roles and 48 documented interview processes.">
-    <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
+    <meta property="og:image" content="https://megpatakota.co.uk/assets/images/social/career-preview.png">
+    <meta property="og:image:secure_url" content="https://megpatakota.co.uk/assets/images/social/career-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Free 20-minute video call. Not sure what to do next in your job search? Let's find the right next step.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
-    <meta name="twitter:description" content="A focused video diagnostic for data, analytics, and AI careers, informed by real role and interview-process evidence.">
-    <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
+    <meta name="twitter:url" content="https://megpatakota.co.uk/career-support.html">
+    <meta name="twitter:title" content="Free 20-Minute Job-Search Call | Meg Patakota">
+    <meta name="twitter:description" content="A focused video call for data, analytics, and AI careers, informed by real role and interview-process evidence.">
+    <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/social/career-preview.png">
+    <meta name="twitter:image:alt" content="Free 20-minute video call. Not sure what to do next in your job search? Let's find the right next step.">
 
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,34 +194,24 @@
 
         .hero h1 {
             max-width: 650px;
-            font-size: 5.6rem;
-            line-height: 0.92;
+            font-size: 4rem;
+            line-height: 0.98;
         }
 
-        .hero h1 span {
-            display: block;
+        .hero-answer {
+            max-width: 620px;
+            margin: 0.9rem 0 0;
+            color: var(--teal-dark);
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.35;
         }
 
         .hero-intro {
             max-width: 620px;
-            margin: 2.3rem 0 1.7rem;
+            margin: 1.4rem 0 1.7rem;
             font-size: 1.13rem;
             line-height: 1.72;
-        }
-
-        .hero-proof {
-            max-width: 620px;
-            margin: -0.25rem 0 1.5rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--teal);
-            color: #4d5351;
-            font-size: 0.84rem;
-            line-height: 1.6;
-        }
-
-        .hero-proof strong {
-            color: var(--ink);
-            font-weight: 700;
         }
 
         .primary-action {
@@ -663,29 +660,62 @@
             margin-top: 3.8rem;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 4rem;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .fit-column {
+            min-width: 0;
+            padding: 2.2rem 3rem 2.4rem 0;
+        }
+
+        .fit-column + .fit-column {
+            padding-right: 0;
+            padding-left: 3rem;
+            border-left: 1px solid var(--line);
+        }
+
+        .fit-label {
+            display: block;
+            margin-bottom: 0.45rem;
+            color: var(--teal-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .fit-grid h3 {
-            margin: 0 0 0.7rem;
+            margin: 0 0 1.25rem;
             font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 2rem;
+            font-size: 2.35rem;
             font-weight: 600;
-            line-height: 1.1;
+            line-height: 1.05;
         }
 
-        .plain-list {
+        .clarity-list {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        .plain-list li {
+        .clarity-list li {
+            display: grid;
+            grid-template-columns: minmax(125px, 0.42fr) minmax(0, 1fr);
+            gap: 1.4rem;
             padding: 0.9rem 0;
-            border-bottom: 1px solid var(--soft-line);
+            border-top: 1px solid var(--soft-line);
+        }
+
+        .clarity-list strong {
+            color: var(--ink);
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+
+        .clarity-list span {
             color: #4d5351;
-            font-size: 0.86rem;
-            line-height: 1.6;
+            font-size: 0.76rem;
+            line-height: 1.55;
         }
 
         .closing {
@@ -753,7 +783,7 @@
             }
 
             .hero h1 {
-                font-size: 4.8rem;
+                font-size: 3.7rem;
             }
 
             .diagnostic,
@@ -794,18 +824,17 @@
             }
 
             .hero h1 {
-                font-size: 4.5rem;
+                font-size: 3.5rem;
+            }
+
+            .hero-answer {
+                font-size: 1.2rem;
             }
 
             .hero-intro {
                 margin: 1.4rem 0 1.2rem;
                 font-size: 1rem;
                 line-height: 1.6;
-            }
-
-            .hero-proof {
-                margin-bottom: 1rem;
-                line-height: 1.5;
             }
 
             .portrait-stage {
@@ -859,8 +888,13 @@
             }
 
             .hero h1 {
-                max-width: 610px;
-                font-size: 4.6rem;
+                max-width: 650px;
+                font-size: 3.25rem;
+            }
+
+            .hero-answer {
+                max-width: 650px;
+                font-size: 1.15rem;
             }
 
             .hero-intro {
@@ -995,21 +1029,19 @@
             }
 
             .hero h1 {
-                font-size: 3.08rem;
-                line-height: 0.94;
+                font-size: 2.15rem;
+                line-height: 1;
+            }
+
+            .hero-answer {
+                margin-top: 0.65rem;
+                font-size: 1rem;
             }
 
             .hero-intro {
-                margin: 1.3rem 0 1.15rem;
+                margin: 0.9rem 0 1.15rem;
                 font-size: 0.88rem;
                 line-height: 1.62;
-            }
-
-            .hero-proof {
-                margin: 0 0 1rem;
-                padding-left: 0.75rem;
-                font-size: 0.78rem;
-                line-height: 1.55;
             }
 
             .primary-action {
@@ -1144,7 +1176,30 @@
             .fit-grid {
                 margin-top: 3rem;
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+            }
+
+            .fit-column {
+                padding: 1.7rem 0 1.9rem;
+            }
+
+            .fit-column + .fit-column {
+                padding: 1.9rem 0;
+                border-top: 1px solid var(--line);
+                border-left: 0;
+            }
+
+            .fit-grid h3 {
+                font-size: 2rem;
+            }
+
+            .clarity-list li {
+                grid-template-columns: minmax(110px, 0.36fr) minmax(0, 1fr);
+                gap: 1rem;
+            }
+
+            .clarity-list strong,
+            .clarity-list span {
+                font-size: 0.75rem;
             }
 
             .closing {
@@ -1174,7 +1229,7 @@
             }
 
             .hero h1 {
-                font-size: 2.65rem;
+                font-size: 2.05rem;
             }
 
             .offer-facts {
@@ -1210,11 +1265,11 @@
 
 <body>
     <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="Meghana Patakota, home">
+        <a class="brand" href="./index.html" aria-label="Meg Patakota, home">
             <span class="brand-mark" aria-hidden="true">MP</span>
             <span class="brand-divider" aria-hidden="true"></span>
             <span class="brand-copy">
-                <span class="brand-name">Meghana Patakota</span>
+                <span class="brand-name">Meg Patakota</span>
                 <span class="brand-role">AI, Automation &amp; Enablement</span>
             </span>
         </a>
@@ -1225,21 +1280,13 @@
         <section class="hero" aria-labelledby="career-title">
             <div class="hero-inner">
                 <div class="hero-copy">
-                    <span class="eyebrow">For data, analytics and AI careers</span>
-                    <h1 id="career-title">
-                        <span>Free 20-minute</span>
-                        <span>job-search</span>
-                        <span>diagnostic.</span>
-                    </h1>
+                    <span class="eyebrow">Free 20-minute video call</span>
+                    <h1 id="career-title">Not sure what to do next in your job search?</h1>
+                    <p class="hero-answer">Let&rsquo;s find the right next step.</p>
                     <p class="hero-intro">
-                        Bring one real application, interview, role-choice, or career-switch problem. I will review the
-                        context before we meet, then use the call to identify the main blockage and your next useful move.
-                    </p>
-                    <p class="hero-proof">
-                        I have worked across <strong>Google DeepMind, ERM, Mishcon de Reya and Marsh</strong>. I also
-                        keep a private record of <strong>102 roles across 90+ companies</strong>, including
-                        <strong>48 documented interview processes and four offers</strong>. It tracks salary and
-                        workplace patterns too, so we can look at the whole opportunity.
+                        Bring one application, interview, role choice or career switch in data, analytics, AI or
+                        adjacent work. I will review the context before we meet, then use the call to work out your next
+                        move.
                     </p>
                     <a class="primary-action" href="#starting-brief">
                         <span>Request your free session</span>
@@ -1392,27 +1439,47 @@
                             </div>
                             <div>
                                 <dt>4</dt>
-                                <dd>offers recorded</dd>
+                                <dd>offers secured in under four weeks</dd>
                             </div>
                         </dl>
                     </div>
                 </div>
 
                 <div class="fit-grid">
-                    <div>
-                        <h3>This is a useful starting point if...</h3>
-                        <ul class="plain-list">
-                            <li>You are turning study, projects or internships into a credible direction.</li>
-                            <li>You are applying across data, analytics, AI or adjacent roles without clear signals.</li>
-                            <li>You are changing direction and need to explain the bridge from your existing experience.</li>
+                    <div class="fit-column">
+                        <span class="fit-label">This is for you if</span>
+                        <h3>The search feels stuck.</h3>
+                        <ul class="clarity-list">
+                            <li>
+                                <strong>Too many directions</strong>
+                                <span>You are comparing several plausible roles without a clear target.</span>
+                            </li>
+                            <li>
+                                <strong>Not enough signal</strong>
+                                <span>Applications are going out, but the response is weak or inconsistent.</span>
+                            </li>
+                            <li>
+                                <strong>Changing path</strong>
+                                <span>You need to explain the bridge from study or existing experience into a new area.</span>
+                            </li>
                         </ul>
                     </div>
-                    <div>
-                        <h3>You should leave with...</h3>
-                        <ul class="plain-list">
-                            <li>A clearer diagnosis of the issue most likely to be blocking progress.</li>
-                            <li>One or two priorities for your next application, interview or week.</li>
-                            <li>An honest view of whether any further support would be useful.</li>
+                    <div class="fit-column">
+                        <span class="fit-label">After 20 minutes</span>
+                        <h3>You know what to do next.</h3>
+                        <ul class="clarity-list">
+                            <li>
+                                <strong>Main blockage</strong>
+                                <span>A clearer view of the issue most likely to be slowing progress.</span>
+                            </li>
+                            <li>
+                                <strong>Seven-day priority</strong>
+                                <span>One or two actions for your next application, interview or week.</span>
+                            </li>
+                            <li>
+                                <strong>Honest next step</strong>
+                                <span>A direct view of whether any further support would actually help.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1434,7 +1501,7 @@
     </main>
 
     <footer class="site-footer">
-        <span>&copy; <span id="current-year"></span> Meghana Patakota</span>
+        <span>&copy; <span id="current-year"></span> Meg Patakota</span>
         <nav class="footer-links" aria-label="Footer">
             <a href="./index.html">Home</a>
             <a href="./main_articles.html">Blog</a>
@@ -1484,7 +1551,7 @@
                 const worries = getCheckedWorries();
                 const context = contextInput.value.trim();
                 const lines = [
-                    'I would like to request a free 20-minute video job-search diagnostic.',
+                    'I would like to request a free 20-minute video job-search call.',
                     `Current situation: ${selectedStage}.`,
                     worries.length ? `What feels unclear: ${sentenceList(worries)}.` : 'I want help turning the messy picture into a clearer next step.',
                     context ? `Useful context: ${context}` : ''

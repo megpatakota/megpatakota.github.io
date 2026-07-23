@@ -17,7 +17,7 @@ function getHeader(isArticlePage = false) {
                         MP
                     </div>
                     <div class="hidden lg:block">
-                        <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
+                        <div class="text-sm font-bold text-text_primary">Meg Patakota</div>
                         <div class="text-xs text-text_tertiary">AI, Automation & Enablement</div>
                     </div>
                 </a>
