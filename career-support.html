@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Support | Meg</title>
+    <title>Free Job-Search Diagnostic | Meg</title>
 
-    <meta name="description" content="Practical career support for students, recent graduates, and career switchers trying to make sense of data, analytics, AI, research, product, and science-adjacent roles.">
+    <meta name="description" content="A free 20-minute online job-search diagnostic for students, recent graduates, and career switchers exploring data, analytics, AI, research, product, and related roles.">
     <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meg Patakota">
     <meta name="author" content="Meghana Patakota">
     <link rel="canonical" href="https://megpatakota.co.uk/career-support.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://megpatakota.co.uk/career-support.html">
-    <meta property="og:title" content="Career Support - Meg Patakota">
-    <meta property="og:description" content="Bring the messy version of your job search, role ideas, interview worries, or career switch. Meg helps you sort what actually needs attention.">
+    <meta property="og:title" content="Free 20-Minute Job-Search Diagnostic - Meg Patakota">
+    <meta property="og:description" content="Bring one real job-search or career problem to a free 20-minute online diagnostic with Meg.">
     <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Career Support - Meg Patakota">
-    <meta name="twitter:description" content="A practical starting point for students, graduates, and career switchers moving around data, analytics, AI, and science-adjacent roles.">
+    <meta name="twitter:title" content="Free 20-Minute Job-Search Diagnostic - Meg Patakota">
+    <meta name="twitter:description" content="A free 20-minute online job-search diagnostic for students, graduates, and career switchers around data, analytics, and AI.">
     <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
 
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
@@ -62,26 +62,38 @@
 
         .career-portrait {
             position: relative;
-            max-width: 28rem;
+            max-width: 22.5rem;
             margin-left: auto;
         }
 
         .career-portrait img {
             width: 100%;
-            aspect-ratio: 4 / 5;
+            aspect-ratio: 3 / 4;
             object-fit: cover;
             object-position: 54% center;
-            border-radius: 0.5rem;
+            border-radius: 0.4rem;
         }
 
         .career-portrait figcaption {
-            max-width: 23rem;
-            margin: 1rem 0 0 auto;
-            padding-left: 1rem;
-            border-left: 2px solid var(--color-buttons);
-            color: var(--color-text-tertiary);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            position: absolute;
+            right: -0.75rem;
+            bottom: 1rem;
+            left: -2.5rem;
+            padding: 1rem 1.1rem;
+            border-left: 3px solid #22d3ee;
+            border-radius: 0.25rem;
+            background: rgba(15, 23, 42, 0.94);
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.82rem;
+            line-height: 1.55;
+        }
+
+        .career-portrait figcaption strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.35;
         }
 
         .stage-button {
@@ -122,7 +134,7 @@
 
         @media (max-width: 1023px) {
             .career-portrait {
-                max-width: none;
+                max-width: 40rem;
                 margin-left: 0;
             }
 
@@ -132,14 +144,29 @@
             }
 
             .career-portrait figcaption {
-                max-width: none;
-                margin-left: 0;
+                right: 1rem;
+                bottom: 1rem;
+                left: 1rem;
+                max-width: 31rem;
             }
         }
 
         @media (max-width: 639px) {
+            .career-portrait img {
+                aspect-ratio: 4 / 3;
+                object-position: center 30%;
+            }
+
             .career-portrait figcaption {
-                font-size: 0.84rem;
+                right: 0.75rem;
+                bottom: 0.75rem;
+                left: 0.75rem;
+                padding: 0.8rem 0.9rem;
+                font-size: 0.75rem;
+            }
+
+            .career-portrait figcaption strong {
+                font-size: 0.85rem;
             }
 
             .stage-button {
@@ -156,26 +183,44 @@
     <main>
         <section class="career-hero px-5 sm:px-6 py-10 md:py-16">
             <div class="container mx-auto max-w-6xl">
-                <div class="grid lg:grid-cols-[1fr_0.72fr] gap-8 lg:gap-16 items-center">
+                <div class="grid lg:grid-cols-[1fr_0.58fr] gap-8 lg:gap-16 items-center">
                     <div>
-                        <span class="career-kicker mb-5">Career support with Meg</span>
+                        <span class="career-kicker mb-5">For data, analytics and AI careers</span>
                         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 md:mb-6 text-text_primary">
-                            Show me where the job search is getting stuck.
+                            <span class="block text-buttons">Free 20-minute</span>
+                            <span class="block">job-search diagnostic.</span>
                         </h1>
-                        <p class="text-base sm:text-lg md:text-xl text-text_secondary leading-relaxed max-w-2xl mb-7 md:mb-8">
-                            Bring the roles, applications, interview feedback, or career switch that you cannot quite
-                            make sense of. We will work out what matters now and what can wait.
+                        <p class="text-base sm:text-lg md:text-xl text-text_secondary leading-relaxed max-w-2xl mb-6">
+                            Bring one real application, interview, role-choice, or career-switch problem. I will review
+                            the context before we meet, then use the call to identify the main blockage and your next useful move.
                         </p>
+
+                        <dl class="grid grid-cols-3 divide-x divide-gray-300 border-y border-gray-300 max-w-xl mb-7 text-sm">
+                            <div class="py-3 pr-3">
+                                <dt class="text-xs text-text_tertiary mb-1">Length</dt>
+                                <dd class="font-semibold text-text_primary">20 minutes</dd>
+                            </div>
+                            <div class="py-3 px-3">
+                                <dt class="text-xs text-text_tertiary mb-1">Format</dt>
+                                <dd class="font-semibold text-text_primary">Video call</dd>
+                            </div>
+                            <div class="py-3 pl-3">
+                                <dt class="text-xs text-text_tertiary mb-1">Price</dt>
+                                <dd class="font-semibold text-text_primary">Free during launch</dd>
+                            </div>
+                        </dl>
+
                         <a href="#starting-brief" class="primary-button w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center">
-                            Tell me where you are stuck
+                            Request your free session
                         </a>
                     </div>
 
                     <figure class="career-portrait">
                         <img src="./assets/images/logos/profile.jpeg" alt="Meg Patakota seated in a meeting room" width="1086" height="724">
                         <figcaption>
-                            I have moved across science, data, analytics, and AI work myself. I know how difficult it
-                            can be to explain a path that does not fit neatly into one job title.
+                            <strong>Experience across very different hiring environments.</strong>
+                            I have worked with or interviewed across Big Tech, AI labs, professional services,
+                            universities, sustainability organisations and start-ups.
                         </figcaption>
                     </figure>
                 </div>
@@ -187,11 +232,11 @@
                 <div class="grid lg:grid-cols-[0.75fr_1fr] gap-4 lg:gap-10 items-end">
                     <div>
                         <span class="career-kicker mb-3 md:mb-4">Start here</span>
-                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Find the first problem to solve.</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Tell me what is happening.</h2>
                     </div>
                     <p class="text-text_tertiary leading-relaxed text-base md:text-lg">
-                        Choose what is closest and add only what you know. You will see where I would start before
-                        deciding whether to get in touch.
+                        Choose what is closest and add only what you know. This gives me enough context to prepare for
+                        the free session and helps you see where I would start.
                     </p>
                 </div>
 
@@ -246,13 +291,23 @@
                         </div>
 
                         <div class="mt-8 border-t border-gray-300 pt-6">
-                            <h3 class="text-lg font-bold text-text_primary mb-2">Want me to look at the real situation?</h3>
+                            <h3 class="text-lg font-bold text-text_primary mb-2">Request the free 20-minute session</h3>
                             <p class="text-sm text-text_tertiary leading-relaxed mb-5">
-                                Your answers will be included in the email, so you do not have to explain everything again.
+                                Your answers will be included in the email. Attach your CV or LinkedIn profile and up to
+                                three relevant role links if you want me to review them before we speak.
                             </p>
-                            <a id="brief-mailto" href="mailto:megpatakota@icloud.com?subject=Career%20support%20starting%20point&body=Current%20situation%3A%20Trying%20to%20choose%20a%20lane.%0A%0AI%20want%20help%20turning%20the%20messy%20picture%20into%20a%20clearer%20next%20step." class="primary-button w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">
-                                Send my starting point
+                            <a id="brief-mailto" href="mailto:megpatakota@icloud.com?subject=Free%2020-minute%20career%20session%20request&body=I%20would%20like%20to%20request%20a%20free%2020-minute%20online%20job-search%20diagnostic.%0A%0ACurrent%20situation%3A%20Trying%20to%20choose%20a%20lane." class="primary-button w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">
+                                Request a free session
                             </a>
+
+                            <div class="mt-7 border-t border-gray-300 pt-5">
+                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-3">What happens next</p>
+                                <ol class="space-y-3 text-sm text-text_secondary leading-relaxed">
+                                    <li><strong class="text-text_primary">1.</strong> Your email opens with these answers already included.</li>
+                                    <li><strong class="text-text_primary">2.</strong> I review the context and reply with a choice of video call times.</li>
+                                    <li><strong class="text-text_primary">3.</strong> We use the 20 minutes to identify the main blockage and the next useful move.</li>
+                                </ol>
+                            </div>
                         </div>
                     </aside>
                 </div>
@@ -277,7 +332,23 @@
                             ask better questions.
                         </p>
 
-                        <p class="border-y border-gray-300 py-4 mb-8 text-sm leading-relaxed text-text_secondary">
+                        <div class="mb-5">
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-buttons mb-3">Company contexts I draw from</p>
+                            <ul class="grid sm:grid-cols-2 border-y border-gray-300 text-sm font-semibold text-text_primary">
+                                <li class="py-3 sm:pr-5 border-b border-gray-200">Big Tech and AI labs</li>
+                                <li class="py-3 sm:pl-5 border-b border-gray-200">Global consultancies</li>
+                                <li class="py-3 sm:pr-5 border-b border-gray-200">Law, insurance and professional services</li>
+                                <li class="py-3 sm:pl-5 border-b border-gray-200">Universities and research teams</li>
+                                <li class="py-3 sm:pr-5 border-b sm:border-b-0 border-gray-200">Sustainability and climate organisations</li>
+                                <li class="py-3 sm:pl-5">Start-ups and scale-ups</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-text_tertiary leading-relaxed">
+                                This includes organisations I have worked with, teams I have engaged with, and interview
+                                processes recorded for pattern-level learning. Private details stay private.
+                            </p>
+                        </div>
+
+                        <p class="mb-8 text-sm leading-relaxed text-text_secondary">
                             The working record currently covers <strong class="text-text_primary">102 roles</strong>,
                             <strong class="text-text_primary">96 company contexts</strong>,
                             <strong class="text-text_primary">69 role titles</strong>, and
@@ -294,12 +365,33 @@
                                 </ul>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-4">What you should leave with</h3>
+                                <h3 class="text-xl font-bold mb-4">What the initial session should give you</h3>
                                 <ul class="fit-list">
-                                    <li>A clearer target: the role families worth your attention now.</li>
-                                    <li>A stronger evidence story for applications and conversations.</li>
-                                    <li>A practical next-week plan, including what to stop spending time on.</li>
+                                    <li>A clearer diagnosis of the main issue blocking progress.</li>
+                                    <li>One or two priorities for your next application, interview, or week.</li>
+                                    <li>An honest view of whether further support would be useful.</li>
                                 </ul>
+                            </div>
+                        </div>
+
+                        <div id="free-session" class="mt-10 border-t border-gray-300 pt-8">
+                            <span class="career-kicker mb-3">Free during launch</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-text_primary mb-3">Book a 20-minute job-search diagnostic</h3>
+                            <p class="text-text_secondary leading-relaxed max-w-2xl mb-6">
+                                Bring one real career or job-search problem. I will review the context you send before
+                                we meet, then help you identify what is actually blocking progress and where to focus next.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 border-y border-gray-300 text-sm text-text_secondary mb-6">
+                                <p class="py-3 sm:pr-5 sm:border-r border-gray-300"><strong class="block text-text_primary mb-1">20 minutes</strong>One focused initial conversation</p>
+                                <p class="py-3 sm:pl-5 border-t sm:border-t-0 border-gray-300"><strong class="block text-text_primary mb-1">Format</strong>Online video call</p>
+                                <p class="py-3 sm:pr-5 border-t sm:border-r border-gray-300"><strong class="block text-text_primary mb-1">Reviewed beforehand</strong>Optional CV or LinkedIn plus up to three roles</p>
+                                <p class="py-3 sm:pl-5 border-t border-gray-300"><strong class="block text-text_primary mb-1">Currently free</strong>No payment or commitment required</p>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                                <a href="#starting-brief" class="primary-button inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">Request a free session</a>
+                                <a href="mailto:megpatakota@icloud.com?subject=Is%20the%20free%20career%20session%20right%20for%20me%3F" class="text-buttons font-semibold hover:text-accent transition">Ask whether it is right for me</a>
                             </div>
                         </div>
                     </div>
@@ -352,6 +444,7 @@
                 const worries = getCheckedWorries();
                 const context = contextInput.value.trim();
                 const lines = [
+                    'I would like to request a free 20-minute online job-search diagnostic.',
                     `Current situation: ${selectedStage}.`,
                     worries.length ? `What feels unclear: ${sentenceList(worries)}.` : 'I want help turning the messy picture into a clearer next step.',
                     context ? `Useful context: ${context}` : ''
@@ -359,7 +452,7 @@
 
                 const focus = worries.slice(0, 2).map((worry) => focusReads[worry]);
                 readPreview.textContent = [firstReads[selectedStage], ...focus].join(' ');
-                mailto.href = `mailto:megpatakota@icloud.com?subject=${encodeURIComponent('Career support starting point')}&body=${encodeURIComponent(lines.join('\n\n'))}`;
+                mailto.href = `mailto:megpatakota@icloud.com?subject=${encodeURIComponent('Free 20-minute career session request')}&body=${encodeURIComponent(lines.join('\n\n'))}`;
             }
 
             stageButtons.forEach((button) => {
