@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Support | Meghana Patakota</title>
 
-    <meta name="description" content="A free 20-minute video call for students, recent graduates, and career switchers navigating data, analytics, AI, and related roles.">
+    <meta name="description" content="A free 20-minute video job-search diagnostic for data, analytics, and AI careers, grounded in 102 tracked roles and 48 documented interview processes.">
     <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meghana Patakota">
     <meta name="author" content="Meghana Patakota">
     <link rel="canonical" href="https://megpatakota.co.uk/career-support.html">
@@ -14,11 +14,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://megpatakota.co.uk/career-support.html">
     <meta property="og:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
-    <meta property="og:description" content="Bring one real job-search or career problem to a free 20-minute video call with Meghana.">
+    <meta property="og:description" content="Bring one real job-search problem to a free 20-minute video call, grounded in 102 tracked roles and 48 documented interview processes.">
     <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
-    <meta name="twitter:description" content="A focused starting point for students, graduates, and career switchers exploring data, analytics, and AI roles.">
+    <meta name="twitter:description" content="A focused video diagnostic for data, analytics, and AI careers, informed by real role and interview-process evidence.">
     <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
 
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
@@ -208,7 +208,7 @@
             padding-left: 1rem;
             border-left: 2px solid var(--teal);
             color: #4d5351;
-            font-size: 0.78rem;
+            font-size: 0.84rem;
             line-height: 1.6;
         }
 
@@ -1008,8 +1008,8 @@
             .hero-proof {
                 margin: 0 0 1rem;
                 padding-left: 0.75rem;
-                font-size: 0.68rem;
-                line-height: 1.5;
+                font-size: 0.78rem;
+                line-height: 1.55;
             }
 
             .primary-action {
@@ -1022,19 +1022,27 @@
             .offer-facts {
                 margin-top: 1.1rem;
                 padding-top: 0.9rem;
-                grid-template-columns: 0.8fr 0.9fr 1.18fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 0.8rem;
             }
 
             .offer-facts div {
                 padding: 0 0.65rem;
             }
 
+            .offer-facts div:nth-child(3) {
+                grid-column: 1 / -1;
+                padding: 0.8rem 0 0;
+                border-top: 1px solid var(--soft-line);
+                border-left: 0;
+            }
+
             .offer-facts dt {
-                font-size: 0.64rem;
+                font-size: 0.68rem;
             }
 
             .offer-facts dd {
-                font-size: 0.69rem;
+                font-size: 0.78rem;
                 line-height: 1.35;
             }
 
@@ -1168,6 +1176,24 @@
             .hero h1 {
                 font-size: 2.65rem;
             }
+
+            .offer-facts {
+                grid-template-columns: 1fr;
+                row-gap: 0;
+            }
+
+            .offer-facts div,
+            .offer-facts div:nth-child(3) {
+                grid-column: 1;
+                padding: 0.65rem 0;
+                border-top: 1px solid var(--soft-line);
+                border-left: 0;
+            }
+
+            .offer-facts div:first-child {
+                padding-top: 0;
+                border-top: 0;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1210,9 +1236,10 @@
                         context before we meet, then use the call to identify the main blockage and your next useful move.
                     </p>
                     <p class="hero-proof">
-                        Informed by a private record of <strong>102 roles</strong> and
-                        <strong>48 detailed interview processes</strong> across Big Tech, AI labs, consulting,
-                        professional services, research, climate organisations and start-ups.
+                        I have worked across <strong>Google DeepMind, ERM, Mishcon de Reya and Marsh</strong>. I also
+                        keep a private record of <strong>102 roles across 90+ companies</strong>, including
+                        <strong>48 documented interview processes and four offers</strong>. It tracks salary and
+                        workplace patterns too, so we can look at the whole opportunity.
                     </p>
                     <a class="primary-action" href="#starting-brief">
                         <span>Request your free session</span>
@@ -1332,41 +1359,40 @@
                     </div>
                     <div class="credibility-copy">
                         <p>
-                            I keep a private record of roles and interview processes across data, analytics, AI and
-                            adjacent work. It captures salary bands, team structures, office expectations, interview
-                            rounds, take-home tasks and the questions companies use to test different capabilities.
-                            Private details stay private; the patterns help me ask better questions.
+                            I keep a private record of my own job searches, interviews, offers and role research across
+                            data, analytics, AI and adjacent work. Across 48 documented interview processes, I have seen
+                            live SQL and Python, product metrics, experimentation, take-home cases, presentations,
+                            commercial judgement, stakeholder management and leadership tested in very different ways.
                         </p>
 
-                        <ul class="context-list" aria-label="Company contexts">
-                            <li>Big Tech and AI labs</li>
-                            <li>Global consultancies</li>
-                            <li>Law, insurance and professional services</li>
-                            <li>Universities and research teams</li>
-                            <li>Sustainability and climate organisations</li>
-                            <li>Start-ups and scale-ups</li>
+                        <ul class="context-list" aria-label="Examples from the role-market sample">
+                            <li>AI and data: Google DeepMind, Mistral AI, Dataiku, Databricks, Perplexity</li>
+                            <li>Consulting and services: BCG X, PwC, BDO, Linklaters</li>
+                            <li>Product and consumer: Wise, Deliveroo, Expedia, Financial Times</li>
+                            <li>Climate and infrastructure: ERM, AECOM, Octopus Energy</li>
                         </ul>
                         <p class="record-note">
-                            These are contexts I have worked in, engaged with, or encountered through interview
-                            processes and role research.
+                            The company examples come from the wider role-market sample, not only completed interviews.
+                            The record also includes 29 salary or compensation data points and 30 office-pattern
+                            records. I use the patterns, never private company or candidate details.
                         </p>
 
                         <dl class="record-stats" aria-label="Private career research record">
                             <div>
                                 <dt>102</dt>
-                                <dd>roles reviewed</dd>
+                                <dd>roles tracked</dd>
                             </div>
                             <div>
-                                <dt>96</dt>
-                                <dd>company contexts</dd>
-                            </div>
-                            <div>
-                                <dt>69</dt>
-                                <dd>role titles</dd>
+                                <dt>90+</dt>
+                                <dd>companies sampled</dd>
                             </div>
                             <div>
                                 <dt>48</dt>
-                                <dd>detailed interview processes</dd>
+                                <dd>interview processes documented</dd>
+                            </div>
+                            <div>
+                                <dt>4</dt>
+                                <dd>offers recorded</dd>
                             </div>
                         </dl>
                     </div>
