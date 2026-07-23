@@ -4,880 +4,1957 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meg Patakota | AI, Automation & Enablement</title>
+    <title>Meghana Patakota | AI, Automation &amp; Enablement</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Meg Patakota — AI, Automation & Enablement. Building and shipping production AI at ERM. Ex-Google DeepMind, Oxford, Mishcon de Reya. Legal tech, higher education, sustainability.">
-    <meta name="keywords" content="AI Solutions Manager, AI Automation, AI Enablement, AI Builder, Agentic AI Systems, Legal Tech AI, Law Firm Data Analytics, Higher Education AI, ESG Data Reporting, Sustainability Analytics, Process Automation, n8n Automation, Streamlit, AWS, Meg Patakota">
+    <meta name="description" content="Meghana Patakota builds and delivers practical AI, automation, and data products across sustainability, legal services, higher education, and AI research.">
+    <meta name="keywords" content="AI Solutions Manager, AI Automation, AI Enablement, AI Product Delivery, Agentic AI Systems, Legal Tech AI, Higher Education AI, Sustainability Analytics, Process Automation, Meghana Patakota">
     <meta name="author" content="Meghana Patakota">
     <link rel="canonical" href="https://megpatakota.co.uk/">
 
-    <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://megpatakota.co.uk/">
-    <meta property="og:title" content="Meg Patakota | AI, Automation & Enablement">
-    <meta property="og:description" content="AI, Automation & Enablement. Building and shipping production AI — ex-Google DeepMind, Oxford, Mishcon de Reya. Legal tech, higher education, sustainability.">
+    <meta property="og:title" content="Meghana Patakota | AI, Automation &amp; Enablement">
+    <meta property="og:description" content="Building practical AI and automation products, from first use case to working system and adoption.">
     <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
     <meta property="og:image:secure_url" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1086">
     <meta property="og:image:height" content="724">
-    <meta property="og:image:alt" content="Meg Patakota — AI, Automation & Enablement">
+    <meta property="og:image:alt" content="Meghana Patakota">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://megpatakota.co.uk/">
-    <meta name="twitter:title" content="Meg Patakota | AI & Data Strategy Advisor">
-    <meta name="twitter:description" content="Strategic AI & Data Advisor. Ex-Google DeepMind, Oxford, Mishcon de Reya. Specializing in legal tech, higher education, and sustainability sectors.">
+    <meta name="twitter:title" content="Meghana Patakota | AI, Automation &amp; Enablement">
+    <meta name="twitter:description" content="Building practical AI and automation products across sustainability, legal services, higher education, and AI research.">
     <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
-    <meta name="twitter:image:alt" content="Meg Patakota - AI & Data Strategy Advisor">
+    <meta name="twitter:image:alt" content="Meghana Patakota">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/site-style-config.js"></script>
-
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="./assets/css/main.css">
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDBG2LDJ');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            const firstScript = d.getElementsByTagName(s)[0];
+            const tag = d.createElement(s);
+            const dataLayer = l !== 'dataLayer' ? '&l=' + l : '';
+            tag.async = true;
+            tag.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dataLayer;
+            firstScript.parentNode.insertBefore(tag, firstScript);
+        })(window, document, 'script', 'dataLayer', 'GTM-PDBG2LDJ');
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-X7Q8776VVE');
     </script>
+
+    <style>
+        :root {
+            --ink: #11110f;
+            --muted: #5d625f;
+            --paper: #fbf8f2;
+            --white: #ffffff;
+            --teal: #007f79;
+            --teal-dark: #006a66;
+            --mint: #e8f3f1;
+            --blue-mist: #edf4f5;
+            --line: #aeb4b1;
+            --soft-line: #d8dad7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body,
+        button,
+        input,
+        textarea {
+            font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        summary,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(0, 127, 121, 0.35);
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            position: relative;
+            z-index: 20;
+            min-height: 102px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 18px 3.2rem;
+            background: var(--paper);
+        }
+
+        .brand {
+            min-width: 0;
+            display: inline-flex;
+            align-items: center;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            flex: 0 0 auto;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 63px;
+            margin: 0 1.8rem;
+            background: #727b79;
+        }
+
+        .brand-copy {
+            min-width: 0;
+            display: grid;
+            line-height: 1.3;
+        }
+
+        .brand-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .brand-role {
+            color: var(--muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link,
+        .nav-menu summary {
+            padding: 0.35rem 0 0.45rem;
+            border: 0;
+            background: transparent;
+            color: var(--ink);
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .nav-link:hover,
+        .nav-menu summary:hover {
+            color: var(--teal-dark);
+        }
+
+        .nav-link.career-link {
+            border-bottom: 2px solid var(--teal);
+        }
+
+        .nav-menu {
+            position: relative;
+        }
+
+        .nav-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .menu-caret {
+            display: inline-block;
+            margin-left: 0.35rem;
+            color: var(--teal);
+            font-size: 0.72rem;
+        }
+
+        .menu-panel {
+            position: absolute;
+            z-index: 30;
+            top: calc(100% + 0.7rem);
+            right: 0;
+            width: 190px;
+            padding: 0.45rem 0;
+            border: 1px solid var(--soft-line);
+            background: var(--white);
+            box-shadow: 0 14px 35px rgba(17, 17, 15, 0.11);
+        }
+
+        .menu-panel a {
+            display: block;
+            padding: 0.65rem 0.9rem;
+            color: #414744;
+            font-size: 0.82rem;
+            text-decoration: none;
+        }
+
+        .menu-panel a:hover {
+            background: var(--mint);
+            color: var(--ink);
+        }
+
+        .home-hero {
+            min-height: calc(100svh - 176px);
+            padding: 2.5rem 8vw 0;
+            overflow: hidden;
+            background: var(--paper);
+        }
+
+        .hero-inner,
+        .section-inner {
+            width: 100%;
+            max-width: 1335px;
+            margin: 0 auto;
+        }
+
+        .hero-inner {
+            min-height: inherit;
+            display: grid;
+            grid-template-columns: minmax(0, 1.03fr) minmax(490px, 0.97fr);
+            align-items: end;
+            gap: 6rem;
+        }
+
+        .hero-copy {
+            align-self: start;
+            padding: 0 0 3rem;
+        }
+
+        .eyebrow {
+            display: block;
+            margin: 0 0 1rem;
+            color: var(--teal-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        .career-band-title,
+        .project-title,
+        .quote-mark {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            max-width: 680px;
+            margin: 0;
+            font-size: 5.8rem;
+            line-height: 0.9;
+        }
+
+        h1 span {
+            display: block;
+        }
+
+        .hero-lead {
+            max-width: 650px;
+            margin: 2.1rem 0 0;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .hero-detail {
+            max-width: 620px;
+            margin: 1rem 0 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            margin-top: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 1.7rem;
+        }
+
+        .primary-action {
+            width: min(100%, 270px);
+            min-height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            padding: 0.8rem 1.35rem;
+            border: 1px solid var(--teal);
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 160ms ease, border-color 160ms ease;
+        }
+
+        .primary-action:hover {
+            border-color: var(--teal-dark);
+            background: var(--teal-dark);
+        }
+
+        .action-arrow {
+            flex: 0 0 auto;
+            font-size: 1.65rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .text-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            color: var(--ink);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration-color: var(--teal);
+            text-underline-offset: 0.35rem;
+        }
+
+        .text-action:hover {
+            color: var(--teal-dark);
+        }
+
+        .hero-facts {
+            max-width: 650px;
+            margin: 1.9rem 0 0;
+            padding: 1.15rem 0 0;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 1.2fr 1.1fr 0.7fr;
+        }
+
+        .hero-facts div {
+            min-width: 0;
+            padding: 0 1.25rem;
+            border-left: 1px solid var(--line);
+        }
+
+        .hero-facts div:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .hero-facts dt {
+            margin-bottom: 0.25rem;
+            color: var(--teal-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .hero-facts dd {
+            margin: 0;
+            font-size: 0.76rem;
+            line-height: 1.45;
+        }
+
+        .latest-writing {
+            max-width: 650px;
+            margin: 1.05rem 0 0;
+            color: var(--muted);
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .latest-writing a {
+            color: var(--ink);
+            font-weight: 700;
+            text-decoration-color: var(--teal);
+            text-underline-offset: 0.25rem;
+        }
+
+        .portrait-stage {
+            position: relative;
+            width: 100%;
+            height: min(715px, calc(100svh - 220px));
+            min-height: 570px;
+            isolation: isolate;
+        }
+
+        .portrait-stage::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 0.4rem;
+            left: 0;
+            width: 57%;
+            height: 25%;
+            background-image: radial-gradient(#94948d 0.8px, transparent 0.8px);
+            background-size: 4px 4px;
+            opacity: 0.52;
+        }
+
+        .portrait-accent {
+            position: absolute;
+            z-index: 0;
+            right: 0;
+            bottom: 0;
+            width: 37%;
+            height: 51%;
+            background: var(--teal);
+        }
+
+        .portrait-ring {
+            position: absolute;
+            z-index: 1;
+            right: 1.2%;
+            top: 14%;
+            width: 74%;
+            aspect-ratio: 1;
+            border: 1px solid var(--teal);
+            border-radius: 50%;
+        }
+
+        .portrait-line {
+            position: absolute;
+            z-index: 1;
+            top: 0.3rem;
+            right: 25%;
+            width: 1px;
+            height: 36%;
+            background: var(--teal);
+        }
+
+        .portrait-stage img {
+            position: absolute;
+            z-index: 2;
+            inset: 0 7% 0 0;
+            width: 93%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 58% center;
+            filter: grayscale(1) contrast(1.34) brightness(1.08);
+            mix-blend-mode: multiply;
+        }
+
+        .career-band {
+            padding: 2.25rem 8vw;
+            background: var(--mint);
+        }
+
+        .career-band-inner {
+            display: grid;
+            grid-template-columns: 0.62fr minmax(0, 1.28fr) auto;
+            align-items: center;
+            gap: 3.5rem;
+        }
+
+        .career-band .eyebrow {
+            margin: 0;
+        }
+
+        .career-band-title {
+            margin: 0;
+            font-size: 2.3rem;
+            line-height: 1.05;
+        }
+
+        .career-band-copy {
+            margin: 0.55rem 0 0;
+            color: #48504e;
+            font-size: 0.84rem;
+            line-height: 1.65;
+        }
+
+        .career-band-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration-color: var(--teal);
+            text-underline-offset: 0.35rem;
+            white-space: nowrap;
+        }
+
+        .career-band-link:hover {
+            color: var(--teal-dark);
+        }
+
+        .experience-strip {
+            padding: 4.5rem 8vw 3.8rem;
+            background: var(--white);
+        }
+
+        .strip-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .strip-heading h2 {
+            margin: 0;
+            font-size: 2.7rem;
+            line-height: 1;
+        }
+
+        .strip-heading p {
+            max-width: 520px;
+            margin: 0 0 0.2rem;
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.6;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo-item {
+            min-width: 0;
+            min-height: 104px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .logo-item:first-child {
+            border-left: 0;
+        }
+
+        .logo-item img {
+            max-width: 132px;
+            max-height: 48px;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: 0.78;
+        }
+
+        .education-line {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 0.55fr repeat(3, minmax(0, 1fr));
+            align-items: start;
+            gap: 1.6rem;
+        }
+
+        .education-line .eyebrow {
+            margin: 0;
+        }
+
+        .education-item {
+            padding-left: 1.15rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .education-item strong {
+            display: block;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        .education-item span {
+            display: block;
+            margin-top: 0.25rem;
+            color: var(--muted);
+            font-size: 0.7rem;
+            line-height: 1.45;
+        }
+
+        .about {
+            padding: 6.5rem 8vw;
+            background: var(--paper);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+            gap: 7rem;
+        }
+
+        .about h2,
+        .focus h2,
+        .work h2,
+        .testimonials h2,
+        .contact h2 {
+            margin: 0;
+            font-size: 4rem;
+            line-height: 0.98;
+        }
+
+        .about-copy > p {
+            max-width: 750px;
+            margin: 0;
+            color: #4d5351;
+            font-size: 1rem;
+            line-height: 1.78;
+        }
+
+        .about-copy > p + p {
+            margin-top: 1.25rem;
+        }
+
+        .stat-grid {
+            margin: 2.6rem 0 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .stat-grid div {
+            min-width: 0;
+            padding: 1.3rem 1.2rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .stat-grid div:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .stat-grid dt {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .stat-grid dd {
+            margin: 0.35rem 0 0;
+            color: var(--muted);
+            font-size: 0.72rem;
+            line-height: 1.45;
+        }
+
+        .about-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+        }
+
+        .focus {
+            padding: 5.8rem 8vw;
+            background: var(--blue-mist);
+        }
+
+        .focus-heading {
+            display: grid;
+            grid-template-columns: minmax(310px, 0.85fr) minmax(0, 1.15fr);
+            align-items: end;
+            gap: 6rem;
+            margin-bottom: 3.3rem;
+        }
+
+        .focus-heading p {
+            max-width: 650px;
+            margin: 0 0 0.35rem;
+            color: #4d5654;
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .focus-list {
+            border-top: 1px solid #9eaaa8;
+        }
+
+        .focus-row {
+            display: grid;
+            grid-template-columns: 0.18fr 0.72fr 1.1fr;
+            align-items: start;
+            gap: 2rem;
+            padding: 1.6rem 0;
+            border-bottom: 1px solid #b9c3c1;
+        }
+
+        .focus-number {
+            color: var(--teal-dark);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .focus-row h3 {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .focus-row p {
+            margin: 0;
+            color: #4d5654;
+            font-size: 0.84rem;
+            line-height: 1.65;
+        }
+
+        .work {
+            padding: 6.5rem 8vw;
+            background: var(--white);
+        }
+
+        .work-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .work-heading p {
+            max-width: 520px;
+            margin: 0 0 0.35rem;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.65;
+        }
+
+        .project-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .project-row {
+            display: grid;
+            grid-template-columns: 0.42fr minmax(0, 1.25fr) minmax(260px, 0.68fr);
+            align-items: start;
+            gap: 3rem;
+            padding: 2.2rem 0;
+            border-bottom: 1px solid var(--soft-line);
+        }
+
+        .project-meta {
+            color: var(--teal-dark);
+            font-size: 0.72rem;
+            font-weight: 700;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            margin: 0 0 0.7rem;
+            font-size: 2.15rem;
+            line-height: 1.05;
+        }
+
+        .project-copy {
+            margin: 0;
+            color: #4d5351;
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .project-copy + .text-action {
+            margin-top: 0.75rem;
+        }
+
+        .project-outcome {
+            margin: 0;
+            padding-left: 1.2rem;
+            border-left: 2px solid var(--teal);
+            color: #4d5351;
+            font-size: 0.8rem;
+            line-height: 1.65;
+        }
+
+        .project-outcome strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--ink);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+        }
+
+        .work-footer {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .work-footer p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .testimonials {
+            padding: 5.8rem 8vw 6.5rem;
+            background: var(--paper);
+        }
+
+        .testimonial-heading {
+            max-width: 690px;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-heading p {
+            margin: 0.9rem 0 0;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .quote {
+            min-width: 0;
+            margin: 0;
+            padding: 2rem 2rem 2rem 0;
+        }
+
+        .quote + .quote {
+            padding-left: 2rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .quote-mark {
+            display: block;
+            height: 2.2rem;
+            color: var(--teal);
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .quote p {
+            min-height: 118px;
+            margin: 0.8rem 0 1.5rem;
+            color: #343936;
+            font-size: 0.88rem;
+            line-height: 1.72;
+        }
+
+        .quote footer {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--muted);
+            font-size: 0.69rem;
+            line-height: 1.45;
+        }
+
+        .quote footer img {
+            width: 62px;
+            max-height: 32px;
+            object-fit: contain;
+            filter: grayscale(1);
+        }
+
+        .quote footer strong {
+            display: block;
+            color: var(--ink);
+            font-size: 0.72rem;
+        }
+
+        .contact {
+            padding: 5rem 8vw;
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        .contact-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .contact .eyebrow {
+            color: #7ed7d1;
+        }
+
+        .contact h2 {
+            max-width: 750px;
+        }
+
+        .contact-copy {
+            max-width: 540px;
+            margin: 1rem 0 0;
+            color: #c7ccca;
+            font-size: 0.86rem;
+            line-height: 1.7;
+        }
+
+        .contact-actions {
+            flex: 0 0 290px;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .contact .primary-action {
+            width: 100%;
+        }
+
+        .contact .text-action {
+            justify-content: center;
+            color: var(--white);
+            text-decoration-color: #7ed7d1;
+        }
+
+        .site-footer {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 1.5rem 3.2rem;
+            background: var(--paper);
+            color: var(--muted);
+            font-size: 0.75rem;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+        }
+
+        .footer-links a {
+            text-decoration-color: var(--teal);
+            text-underline-offset: 0.25rem;
+        }
+
+        @media (max-width: 1120px) {
+            .home-hero,
+            .career-band,
+            .experience-strip,
+            .about,
+            .focus,
+            .work,
+            .testimonials,
+            .contact {
+                padding-right: 5vw;
+                padding-left: 5vw;
+            }
+
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr) minmax(410px, 0.82fr);
+                gap: 3.5rem;
+            }
+
+            h1 {
+                font-size: 4.9rem;
+            }
+
+            .about-grid {
+                gap: 4rem;
+            }
+
+            .career-band-inner {
+                gap: 2.5rem;
+            }
+        }
+
+        @media (min-width: 901px) and (max-height: 820px) {
+            .site-header {
+                min-height: 88px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .brand-mark {
+                font-size: 2.8rem;
+            }
+
+            .brand-divider {
+                height: 52px;
+            }
+
+            .home-hero {
+                min-height: calc(100svh - 145px);
+                padding-top: 1.6rem;
+            }
+
+            h1 {
+                font-size: 4.4rem;
+            }
+
+            .hero-lead {
+                margin-top: 1.3rem;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .hero-detail {
+                margin-top: 0.6rem;
+                font-size: 0.78rem;
+            }
+
+            .hero-actions {
+                margin-top: 1.1rem;
+            }
+
+            .hero-facts {
+                margin-top: 1.2rem;
+                padding-top: 0.85rem;
+            }
+
+            .portrait-stage {
+                height: calc(100svh - 175px);
+                min-height: 510px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-header {
+                min-height: 84px;
+                padding: 14px 1.5rem;
+            }
+
+            .brand-mark {
+                font-size: 2.7rem;
+            }
+
+            .brand-divider {
+                height: 48px;
+                margin: 0 1.2rem;
+            }
+
+            .brand-name {
+                font-size: 1rem;
+            }
+
+            .brand-role {
+                font-size: 0.76rem;
+            }
+
+            .main-nav {
+                gap: 1.25rem;
+            }
+
+            .home-hero {
+                min-height: auto;
+                padding: 2rem 1.5rem 0;
+            }
+
+            .hero-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.6rem;
+            }
+
+            .hero-copy {
+                padding-bottom: 0;
+            }
+
+            h1 {
+                max-width: 650px;
+                font-size: 4.7rem;
+            }
+
+            .portrait-stage {
+                width: min(100%, 690px);
+                height: 320px;
+                min-height: 0;
+                margin-left: auto;
+            }
+
+            .portrait-stage img {
+                inset: 0 5% 0 0;
+                width: 95%;
+                object-position: 58% 32%;
+            }
+
+            .portrait-stage::before {
+                width: 43%;
+                height: 36%;
+            }
+
+            .portrait-accent {
+                width: 36%;
+                height: 62%;
+            }
+
+            .portrait-ring {
+                top: -9%;
+                right: 4%;
+                width: 51%;
+            }
+
+            .portrait-line {
+                right: 27%;
+            }
+
+            .career-band {
+                padding: 2rem 1.5rem;
+            }
+
+            .career-band-inner {
+                grid-template-columns: 1fr auto;
+                gap: 1rem 2rem;
+            }
+
+            .career-band .eyebrow {
+                grid-column: 1 / -1;
+            }
+
+            .experience-strip,
+            .about,
+            .focus,
+            .work,
+            .testimonials,
+            .contact {
+                padding-right: 1.5rem;
+                padding-left: 1.5rem;
+            }
+
+            .strip-heading,
+            .work-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .about-grid,
+            .focus-heading {
+                grid-template-columns: 1fr;
+                gap: 2.4rem;
+            }
+
+            .about h2,
+            .focus h2,
+            .work h2,
+            .testimonials h2,
+            .contact h2 {
+                font-size: 3.4rem;
+            }
+
+            .focus-heading {
+                margin-bottom: 2.5rem;
+            }
+
+            .project-row {
+                grid-template-columns: 0.32fr minmax(0, 1fr);
+                gap: 1.5rem 2rem;
+            }
+
+            .project-outcome {
+                grid-column: 2;
+            }
+
+            .quote-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote,
+            .quote + .quote {
+                padding: 1.8rem 0;
+                border-left: 0;
+                border-top: 1px solid var(--soft-line);
+            }
+
+            .quote:first-child {
+                border-top: 0;
+            }
+
+            .quote p {
+                min-height: 0;
+            }
+
+            .contact-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+
+            .contact-actions {
+                width: min(100%, 360px);
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .site-header {
+                min-height: 74px;
+                padding: 11px 1.15rem;
+                gap: 1rem;
+            }
+
+            .brand-mark {
+                font-size: 2.25rem;
+            }
+
+            .brand-divider,
+            .brand-copy {
+                display: none;
+            }
+
+            .main-nav {
+                gap: 1rem;
+            }
+
+            .nav-link,
+            .nav-menu summary {
+                padding-bottom: 0.25rem;
+                font-size: 0.72rem;
+            }
+
+            .main-nav > .blog-link {
+                display: none;
+            }
+
+            .menu-panel {
+                width: 176px;
+            }
+
+            .home-hero {
+                padding: 1.5rem 1.15rem 0;
+            }
+
+            .eyebrow {
+                margin-bottom: 0.7rem;
+                font-size: 0.66rem;
+            }
+
+            h1 {
+                font-size: 3.15rem;
+                line-height: 0.92;
+            }
+
+            .hero-lead {
+                margin-top: 1.2rem;
+                font-size: 0.91rem;
+                line-height: 1.62;
+            }
+
+            .hero-detail {
+                margin-top: 0.7rem;
+                font-size: 0.72rem;
+                line-height: 1.55;
+            }
+
+            .hero-actions {
+                margin-top: 1.15rem;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .primary-action {
+                width: 100%;
+                min-height: 50px;
+                padding: 0.7rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .text-action {
+                font-size: 0.76rem;
+            }
+
+            .hero-facts {
+                margin-top: 1.1rem;
+                padding-top: 0.8rem;
+                grid-template-columns: 1.2fr 1.05fr 0.65fr;
+            }
+
+            .hero-facts div {
+                padding: 0 0.55rem;
+            }
+
+            .hero-facts dt {
+                font-size: 0.58rem;
+            }
+
+            .hero-facts dd {
+                font-size: 0.61rem;
+                line-height: 1.4;
+            }
+
+            .latest-writing {
+                margin-top: 0.75rem;
+                font-size: 0.64rem;
+            }
+
+            .hero-inner {
+                gap: 1rem;
+            }
+
+            .portrait-stage {
+                height: 180px;
+            }
+
+            .portrait-stage img {
+                object-position: 58% 29%;
+            }
+
+            .portrait-ring {
+                top: -14%;
+                width: 56%;
+            }
+
+            .career-band {
+                padding: 1.7rem 1.15rem;
+            }
+
+            .career-band-inner {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .career-band-title {
+                font-size: 1.8rem;
+            }
+
+            .career-band-copy {
+                font-size: 0.74rem;
+            }
+
+            .career-band-link {
+                justify-self: start;
+                font-size: 0.76rem;
+            }
+
+            .experience-strip {
+                padding: 3.5rem 1.15rem 3rem;
+            }
+
+            .strip-heading {
+                margin-bottom: 1.2rem;
+            }
+
+            .strip-heading h2 {
+                font-size: 2.3rem;
+            }
+
+            .strip-heading p {
+                font-size: 0.72rem;
+            }
+
+            .logo-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .logo-item {
+                min-height: 82px;
+                border-bottom: 1px solid var(--soft-line);
+            }
+
+            .logo-item:nth-child(odd) {
+                border-left: 0;
+            }
+
+            .logo-item:last-child {
+                grid-column: 1 / -1;
+                border-bottom: 0;
+            }
+
+            .logo-item img {
+                max-width: 110px;
+                max-height: 38px;
+            }
+
+            .education-line {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+
+            .education-item {
+                padding: 0.75rem 0 0;
+                border-top: 1px solid var(--soft-line);
+                border-left: 0;
+            }
+
+            .about,
+            .focus,
+            .work,
+            .testimonials,
+            .contact {
+                padding-right: 1.15rem;
+                padding-left: 1.15rem;
+            }
+
+            .about {
+                padding-top: 4.5rem;
+                padding-bottom: 4.5rem;
+            }
+
+            .about h2,
+            .focus h2,
+            .work h2,
+            .testimonials h2,
+            .contact h2 {
+                font-size: 2.8rem;
+            }
+
+            .about-copy > p {
+                font-size: 0.86rem;
+                line-height: 1.7;
+            }
+
+            .stat-grid div {
+                padding: 1rem 0.65rem;
+            }
+
+            .stat-grid dt {
+                font-size: 2rem;
+            }
+
+            .stat-grid dd {
+                font-size: 0.61rem;
+            }
+
+            .about-actions {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .focus {
+                padding-top: 4.3rem;
+                padding-bottom: 4.3rem;
+            }
+
+            .focus-heading p {
+                font-size: 0.82rem;
+            }
+
+            .focus-row {
+                grid-template-columns: 0.16fr 0.84fr;
+                gap: 0.8rem 1rem;
+                padding: 1.3rem 0;
+            }
+
+            .focus-row p {
+                grid-column: 2;
+                font-size: 0.76rem;
+            }
+
+            .focus-row h3 {
+                font-size: 0.9rem;
+            }
+
+            .work {
+                padding-top: 4.5rem;
+                padding-bottom: 4.5rem;
+            }
+
+            .work-heading {
+                margin-bottom: 2rem;
+            }
+
+            .work-heading p {
+                font-size: 0.76rem;
+            }
+
+            .project-row {
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+                padding: 1.6rem 0;
+            }
+
+            .project-title {
+                font-size: 1.8rem;
+            }
+
+            .project-copy {
+                font-size: 0.78rem;
+            }
+
+            .project-outcome {
+                grid-column: 1;
+                margin-top: 0.4rem;
+                font-size: 0.72rem;
+            }
+
+            .work-footer {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .testimonials {
+                padding-top: 4.2rem;
+                padding-bottom: 4.6rem;
+            }
+
+            .quote p {
+                font-size: 0.8rem;
+            }
+
+            .contact {
+                padding-top: 3.8rem;
+                padding-bottom: 3.8rem;
+            }
+
+            .contact-copy {
+                font-size: 0.76rem;
+            }
+
+            .site-footer {
+                min-height: 0;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1.4rem 1.15rem;
+            }
+        }
+
+        @media (max-width: 350px) {
+            h1 {
+                font-size: 2.75rem;
+            }
+
+            .nav-link.career-link {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="font-sans bg-white text-text_primary">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDBG2LDJ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDBG2LDJ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
-    <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2.5 hover:opacity-80 transition-opacity group">
-                    <div
-                        class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-sm group-hover:scale-105 transition-transform">
-                        MP
-                    </div>
-                    <div class="hidden lg:block">
-                        <div class="text-sm font-bold text-text_primary">Meghana Patakota</div>
-                        <div class="text-xs text-text_tertiary">AI, Automation & Enablement</div>
-                    </div>
-                </a>
+    <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Meghana Patakota, home">
+            <span class="brand-mark" aria-hidden="true">MP</span>
+            <span class="brand-divider" aria-hidden="true"></span>
+            <span class="brand-copy">
+                <span class="brand-name">Meghana Patakota</span>
+                <span class="brand-role">AI, Automation &amp; Enablement</span>
+            </span>
+        </a>
 
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center gap-4 lg:gap-6">
-                    <a href="career-support.html"
-                        class="text-sm text-buttons hover:text-accent transition-colors font-semibold">Career Support</a>
-                    <a href="main_articles.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Blog</a>
-                    <a href="experience.html"
-                        class="text-sm text-text_secondary hover:text-buttons transition-colors font-medium">Experience</a>
-                    <details id="desktop-more" class="relative">
-                        <summary class="list-none cursor-pointer text-sm text-text_secondary hover:text-buttons transition-colors font-medium inline-flex items-center gap-1.5">
-                            More <i class="fas fa-chevron-down text-[10px]" aria-hidden="true"></i>
-                        </summary>
-                        <div class="absolute right-0 top-full mt-3 w-44 rounded-lg border border-gray-200 bg-white p-2 shadow-xl">
-                            <a href="#about" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">About</a>
-                            <a href="#projects" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Projects</a>
-                            <a href="#testimonials" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Testimonials</a>
-                            <a href="#education" class="block rounded-md px-3 py-2 text-sm text-text_secondary hover:bg-bg_light hover:text-buttons">Education</a>
-                        </div>
-                    </details>
-                    <a href="mailto:megpatakota@icloud.com"
-                        class="text-sm px-4 py-2 tech-gradient text-white rounded-lg font-medium hover:shadow-lg hover:shadow-buttons/25 transition-all">
-                        <i class="fas fa-envelope mr-1"></i>Contact
-                    </a>
-                </nav>
-
-                <!-- Hamburger Menu -->
-                <button id="mobile-menu-button" class="md:hidden text-text_primary hover:text-buttons transition" type="button" aria-label="Open navigation" aria-controls="mobile-menu" aria-expanded="false">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="hidden absolute right-4 top-16 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-gray-100 py-2 px-1 min-w-[160px] z-50">
-                <a href="career-support.html" class="block px-4 py-2 text-sm text-buttons font-semibold hover:bg-buttons/5 rounded-lg transition">Career Support</a>
-                <a href="main_articles.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Blog</a>
-                <a href="experience.html" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Experience</a>
-                <div class="my-1 border-t border-gray-100"></div>
-                <a href="#projects" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Projects</a>
-                <a href="#testimonials" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Testimonials</a>
-                <a href="#education" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Education</a>
-                <a href="#contact" class="block px-4 py-2 text-sm text-text_secondary hover:text-buttons hover:bg-buttons/5 rounded-lg transition">Contact</a>
-            </div>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-link career-link" href="./career-support.html">Career support</a>
+            <a class="nav-link blog-link" href="./main_articles.html">Blog</a>
+            <details class="nav-menu" id="site-menu">
+                <summary>Explore <span class="menu-caret" aria-hidden="true">&#8964;</span></summary>
+                <div class="menu-panel">
+                    <a href="#about">About</a>
+                    <a href="#focus">Focus</a>
+                    <a href="#work">Selected work</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="./experience.html">Full experience</a>
+                    <a href="./main_articles.html">Blog</a>
+                    <a href="https://www.tremoli.com" target="_blank" rel="noopener noreferrer">Tremoli</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </details>
         </nav>
     </header>
 
-    <!-- Hero Section - Modern Clean Design -->
-    <section class="pt-24 pb-16 px-6 relative overflow-hidden bg-white min-h-screen flex items-center">
-        <!-- Data Particle Network Animation -->
-        <div class="absolute inset-0 pointer-events-none opacity-60">
-            <!-- Connection Lines -->
-            <div class="connection-line connection-line-1"></div>
-            <div class="connection-line connection-line-2"></div>
-            <div class="connection-line connection-line-3"></div>
-            <div class="connection-line connection-line-4"></div>
-            <div class="connection-line connection-line-5"></div>
-            <div class="connection-line connection-line-6"></div>
-            <div class="connection-line connection-line-7"></div>
-            <div class="connection-line connection-line-8"></div>
-            <!-- Data Particles -->
-            <div class="data-particle data-particle-1"></div>
-            <div class="data-particle data-particle-2"></div>
-            <div class="data-particle data-particle-3"></div>
-            <div class="data-particle data-particle-4"></div>
-            <div class="data-particle data-particle-5"></div>
-            <div class="data-particle data-particle-6"></div>
-            <div class="data-particle data-particle-7"></div>
-            <div class="data-particle data-particle-8"></div>
-            <div class="data-particle data-particle-9"></div>
-            <div class="data-particle data-particle-10"></div>
-            <div class="data-particle data-particle-11"></div>
-            <div class="data-particle data-particle-12"></div>
-        </div>
-
-        <div class="container mx-auto max-w-7xl relative z-10">
-            <!-- Mobile Layout: Text -> Image -> Buttons -->
-            <div class="lg:hidden flex flex-col items-center text-center">
-                <!-- Text Content -->
-                <h1 class="text-5xl sm:text-6xl font-bold mb-8 leading-tight fade-in-up">
-                    <span class="block gradient-text pb-2">Hi, I'm Meg</span>
-                </h1>
-
-                <p class="text-2xl sm:text-3xl text-text_primary font-semibold mb-6 fade-in-up-delay-1">
-                    AI, Automation & Enablement
-                </p>
-
-                <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl mx-auto fade-in-up-delay-2">
-                    Helping organizations adopt, build, and unlock value from AI and data.
-                </p>
-
-                <!-- Profile Image -->
-                <div class="relative max-w-md sm:max-w-lg w-full mb-10 fade-in-up-delay-3">
-                    <div class="relative bg-white rounded-[2rem] p-2 shadow-lg border border-gray-200">
-                        <img src="./assets/images/logos/profile.jpeg" alt="Meghana Patakota"
-                            class="rounded-[1.75rem] w-full h-auto">
-                    </div>
-                    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
-                        <a href="https://github.com/megpatakota" target="_blank"
-                            class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                            class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <div class="flex items-center gap-2 ml-2 text-text_tertiary text-sm font-medium">
-                            <i class="fas fa-map-marker-alt text-buttons"></i>
-                            <span>London</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-row gap-3 w-full max-w-md justify-center mb-20 fade-in-up-delay-4">
-                    <a href="#advisory-services"
-                        class="group tech-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:shadow-buttons/30 transition-all duration-300 flex items-center justify-center gap-2">
-                        <span>Expertise in</span>
-                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#contact"
-                        class="group bg-white border-2 border-gray-200 text-text_primary px-6 py-3 rounded-xl font-semibold hover:border-buttons hover:text-buttons transition-all duration-300 flex items-center justify-center gap-2">
-                        <span>Let's connect</span>
-                        <i class="fas fa-envelope text-sm"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Desktop Layout: Side by Side -->
-            <div class="hidden lg:grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left Content -->
-                <div class="text-left">
-                    <h1 class="text-7xl font-bold mb-8 leading-tight fade-in-up">
-                        <span class="block gradient-text pb-2">Hi, I'm Meg</span>
+    <main>
+        <section class="home-hero" aria-labelledby="home-title">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <span class="eyebrow">AI, automation and enablement</span>
+                    <h1 id="home-title">
+                        <span>Meghana</span>
+                        <span>Patakota.</span>
                     </h1>
-
-                    <p class="text-3xl text-text_primary font-semibold mb-6 fade-in-up-delay-1">
-                        AI, Automation & Enablement
+                    <p class="hero-lead">
+                        I build AI and automation systems, then help organisations turn them into work that people can
+                        actually use.
+                    </p>
+                    <p class="hero-detail">
+                        My work spans product design, data, engineering and adoption across sustainability, legal
+                        services, higher education and AI research.
                     </p>
 
-                    <p class="text-lg text-text_tertiary mb-10 leading-relaxed max-w-xl fade-in-up-delay-2">
-                        Helping organizations adopt, build, and unlock value from AI and data.
-                    </p>
-
-                    <div class="flex gap-4 fade-in-up-delay-3">
-                        <a href="#advisory-services"
-                            class="group tech-gradient text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-buttons/30 transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Expertise in</span>
-                            <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    <div class="hero-actions">
+                        <a class="primary-action" href="#work">
+                            <span>See selected work</span>
+                            <span class="action-arrow" aria-hidden="true">&rarr;</span>
                         </a>
-                        <a href="#contact"
-                            class="group bg-white border-2 border-gray-200 text-text_primary px-8 py-4 rounded-xl font-semibold hover:border-buttons hover:text-buttons transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Get in Touch</span>
-                            <i class="fas fa-envelope text-sm"></i>
-                        </a>
+                        <a class="text-action" href="./experience.html">Full experience <span aria-hidden="true">&rarr;</span></a>
                     </div>
+
+                    <dl class="hero-facts" aria-label="Current work and location">
+                        <div>
+                            <dt>Current</dt>
+                            <dd>AI Solutions Manager, ERM</dd>
+                        </div>
+                        <div>
+                            <dt>Also</dt>
+                            <dd>AI Consultant, University of Oxford</dd>
+                        </div>
+                        <div>
+                            <dt>Based</dt>
+                            <dd>London</dd>
+                        </div>
+                    </dl>
+
+                    <p class="latest-writing">
+                        Latest writing:
+                        <a href="./articles/ai-agent-app-series/">When AI Agents Become Apps</a>
+                    </p>
                 </div>
 
-                <!-- Right Content - Profile Image -->
-                <div class="relative fade-in-up-delay-4">
-                    <div class="relative max-w-lg mx-auto">
-                        <div class="relative bg-white rounded-[2rem] p-2 shadow-lg border border-gray-200">
-                            <img src="./assets/images/logos/profile.jpeg" alt="Meghana Patakota"
-                                class="rounded-[1.75rem] w-full h-auto">
-                        </div>
-                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-gray-100">
-                            <a href="https://github.com/megpatakota" target="_blank"
-                                class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                                class="w-10 h-10 rounded-full bg-gray-100 hover:bg-buttons hover:text-white flex items-center justify-center text-text_tertiary transition-all">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <div class="flex items-center gap-2 ml-2 text-text_tertiary text-sm font-medium">
-                                <i class="fas fa-map-marker-alt text-buttons"></i>
-                                <span>London</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="portrait-stage" aria-hidden="true">
+                    <span class="portrait-accent"></span>
+                    <span class="portrait-ring"></span>
+                    <span class="portrait-line"></span>
+                    <img src="./assets/images/logos/profile.jpeg" alt="" width="1086" height="724">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Latest Article -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-[90%] lg:max-w-none flex justify-center">
-            <a href="articles/ai-agent-app-series/" class="inline-flex items-center gap-2 px-5 py-3 lg:px-6 lg:py-3.5 bg-white/90 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 hover:border-buttons hover:shadow-xl transition-all group">
-                <i class="fas fa-pen-fancy text-buttons text-sm lg:text-base"></i>
-                <span class="text-sm lg:text-base text-text_secondary">Latest Article:</span>
-                <span class="font-semibold text-sm lg:text-base text-text_primary line-clamp-1">When AI Agents Become Apps</span>
-                <i class="fas fa-arrow-right text-buttons text-sm group-hover:translate-x-1 transition-transform"></i>
-            </a>
-        </div>
-    </section>
-
-    <section class="border-y border-gray-200 bg-bg_light px-6 py-8">
-        <div class="container mx-auto max-w-6xl reveal">
-            <div class="grid md:grid-cols-[0.7fr_1.3fr_auto] gap-4 md:gap-8 items-center">
-                <p class="text-xs uppercase tracking-[0.18em] font-bold text-buttons">Career support</p>
+        <section class="career-band" aria-labelledby="career-band-title">
+            <div class="section-inner career-band-inner">
+                <span class="eyebrow">Career support</span>
                 <div>
-                    <h2 class="text-xl md:text-2xl font-bold text-text_primary mb-1">Not sure which role actually fits?</h2>
-                    <p class="text-text_secondary leading-relaxed">I help students, recent graduates, and career switchers make sense of data, analytics, AI, product, and research roles. Start with a free 20-minute online diagnostic.</p>
-                </div>
-                <a href="career-support.html" class="inline-flex items-center gap-2 text-buttons font-semibold hover:text-accent transition whitespace-nowrap">
-                    <span>See how I can help</span>
-                    <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-4xl">
-            <!-- About Text -->
-            <div class="max-w-3xl mx-auto text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-text_primary mb-6">About Me</h2>
-                <p class="text-lg text-text_secondary leading-relaxed mb-6">
-                    I'm passionate about bridging the gap between <span class="gradient-text font-semibold">technical possibility and business value</span>. With experience spanning consulting, AI research, and enablement, I help organizations navigate <span class="gradient-text font-semibold">data strategy, AI adoption, automation, and enablement</span>.
-                </p>
-                <p class="text-lg text-text_secondary leading-relaxed">
-                    From leading data analytics at a <span class="gradient-text font-semibold">top-tier law firm</span> for over three years, to working on the core analytics team at <span class="gradient-text font-semibold">Big Tech</span>, advising on AI-powered research tools at the <span class="gradient-text font-semibold">no.1 university in the world</span>, and delivering automation solutions in the sustainability industry, I bring both strategic vision and <span class="gradient-text font-semibold">hands-on technical expertise</span> to every engagement.
-                </p>
-            </div>
-
-            <!-- Credentials Row -->
-            <div class="grid grid-cols-3 gap-4 md:gap-8 mt-12 reveal">
-                <div class="text-center reveal-child">
-                    <p class="text-3xl md:text-5xl font-bold gradient-text mb-1 md:mb-2">5+</p>
-                    <p class="text-text_tertiary font-medium text-xs md:text-base">Years Experience</p>
-                </div>
-                <div class="text-center reveal-child">
-                    <p class="text-3xl md:text-5xl font-bold gradient-text mb-1 md:mb-2">6</p>
-                    <p class="text-text_tertiary font-medium text-xs md:text-base">Organizations</p>
-                </div>
-                <div class="text-center reveal-child">
-                    <p class="text-3xl md:text-5xl font-bold gradient-text mb-1 md:mb-2">4</p>
-                    <p class="text-text_tertiary font-medium text-xs md:text-base">Academic Degrees</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Experience & Expertise Logos Section - Auto-scrolling Marquee -->
-    <section class="py-12 px-6 bg-white relative overflow-hidden">
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="text-center mb-8 reveal">
-                <h3 class="text-xl md:text-2xl font-bold text-text_primary mb-2">Experience & Expertise Built At</h3>
-                <p class="text-text_tertiary text-sm">Honed skills and delivered impact at world-class organisations</p>
-            </div>
-
-            <!-- Auto-scrolling Logo Marquee -->
-            <div class="logo-marquee-container overflow-hidden mb-8">
-                <div class="logo-marquee flex gap-12 items-center">
-                    <!-- First set of logos -->
-                    <img src="./assets/images/logos/erm.png" alt="ERM" class="h-16 md:h-20 object-contain">
-                    <img src="./assets/images/logos/oxford.png" alt="University of Oxford"
-                        class="h-10 md:h-14 object-contain">
-                    <img src="./assets/images/logos/MDR.png" alt="Mishcon de Reya"
-                        class="h-10 md:h-14 object-contain brightness-75">
-                    <img src="./assets/images/logos/deepmind.png" alt="Google DeepMind"
-                        class="h-8 md:h-12 object-contain brightness-75">
-                    <img src="./assets/images/logos/marsh.png" alt="Marsh" class="h-6 md:h-10 object-contain">
-                    <!-- Duplicate for seamless loop -->
-                    <img src="./assets/images/logos/erm.png" alt="ERM" class="h-16 md:h-20 object-contain">
-                    <img src="./assets/images/logos/oxford.png" alt="University of Oxford"
-                        class="h-10 md:h-14 object-contain">
-                    <img src="./assets/images/logos/MDR.png" alt="Mishcon de Reya"
-                        class="h-10 md:h-14 object-contain brightness-75">
-                    <img src="./assets/images/logos/deepmind.png" alt="Google DeepMind"
-                        class="h-8 md:h-12 object-contain brightness-75">
-                    <img src="./assets/images/logos/marsh.png" alt="Marsh" class="h-6 md:h-10 object-contain">
-                </div>
-            </div>
-
-            <!-- Education Section (Compact, Manual Scroll) -->
-            <div id="education" class="mt-10 pt-6 border-t border-gray-200">
-                <div class="text-center mb-6">
-                    <p class="text-xs text-text_tertiary uppercase tracking-wider font-medium">Academic Background</p>
-                </div>
-                <div class="edu-marquee-container overflow-x-auto scrollbar-hide flex justify-center">
-                    <div class="edu-marquee items-center">
-                        <div class="bg-white rounded-lg shadow-sm p-4 text-center flex-shrink-0 min-w-[180px]">
-                            <div class="flex justify-center mb-2">
-                                <img src="./assets/images/logos/ucl.png" alt="University College London"
-                                    class="h-8 md:h-10 object-contain">
-                            </div>
-                            <p class="text-xs font-semibold text-text_primary">MSc Business Analytics <span
-                                    class="text-text_tertiary">· 2021</span></p>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-sm p-4 text-center flex-shrink-0 min-w-[180px]">
-                            <div class="flex justify-center mb-2">
-                                <img src="./assets/images/logos/bristol.png" alt="University of Bristol"
-                                    class="h-8 md:h-10 object-contain">
-                            </div>
-                            <p class="text-xs font-semibold text-text_primary">MSc Accounting & Finance <span
-                                    class="text-text_tertiary">· 2020</span></p>
-                        </div>
-                        <div class="bg-white rounded-lg shadow-sm p-4 text-center flex-shrink-0 min-w-[200px]">
-                            <div class="flex justify-center mb-2">
-                                <img src="./assets/images/logos/buffalo.png" alt="University at Buffalo"
-                                    class="h-8 md:h-10 object-contain">
-                            </div>
-                            <p class="text-xs font-semibold text-text_primary leading-snug">BSc Business Admin & BA Intl
-                                Trade <span class="text-text_tertiary">· 2019</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="scroll-hint flex justify-center items-center gap-2 text-xs text-text_tertiary mt-2 md:hidden">
-                    <i class="fas fa-arrow-left text-text_tertiary"></i>
-                    <i class="fas fa-long-arrow-alt-right text-text_tertiary animate-bounce-x"></i>
-                </div>
-            </div>
-
-            <!-- Career Timeline Link -->
-            <div class="mt-10 pt-6 border-t border-gray-200 text-center">
-                <a href="experience.html" class="inline-flex items-center gap-2 text-buttons hover:text-accent transition font-medium text-sm">
-                    <i class="fas fa-timeline text-xs"></i>
-                    <span>View career timeline</span>
-                    <i class="fas fa-arrow-right text-xs"></i>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Advisory Services Section -->
-    <section id="advisory-services" class="py-12 px-6 lg:px-12 bg-gray-50">
-        <div class="container mx-auto max-w-7xl">
-            <div class="text-center mb-8 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-text_primary">Advisory Focus</h2>
-                <p class="text-lg text-text_tertiary max-w-2xl mx-auto">
-                    Areas of expertise honed across consulting, research, and enterprise environments
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                <!-- AI & Data Strategy -->
-                <div class="bg-gradient-to-br from-buttons/5 to-transparent rounded-xl p-5 border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300 reveal-child">
-                    <div class="w-10 h-10 rounded-full bg-buttons/10 flex items-center justify-center mb-3">
-                        <i class="fas fa-brain text-buttons"></i>
-                    </div>
-                    <h3 class="font-bold text-base text-text_primary mb-2">AI & Data Strategy</h3>
-                    <p class="text-sm text-text_tertiary leading-relaxed mb-3">Building actionable roadmaps for AI adoption and aligning data initiatives with business goals.</p>
-                    <ul class="text-sm text-text_secondary space-y-1">
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>AI readiness assessment</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Use case prioritization</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Build vs buy vs configure analysis</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Process Automation -->
-                <div class="bg-gradient-to-br from-buttons/5 to-transparent rounded-xl p-5 border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300 reveal-child">
-                    <div class="w-10 h-10 rounded-full bg-buttons/10 flex items-center justify-center mb-3">
-                        <i class="fas fa-cogs text-buttons"></i>
-                    </div>
-                    <h3 class="font-bold text-base text-text_primary mb-2">Process Automation</h3>
-                    <p class="text-sm text-text_tertiary leading-relaxed mb-3">Designing intelligent workflow solutions that reduce manual effort and improve efficiency.</p>
-                    <ul class="text-sm text-text_secondary space-y-1">
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Workflow optimization</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>AI-powered automation</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Data pipeline development</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Education Advisory -->
-                <div class="bg-gradient-to-br from-buttons/5 to-transparent rounded-xl p-5 border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300 reveal-child">
-                    <div class="w-10 h-10 rounded-full bg-buttons/10 flex items-center justify-center mb-3">
-                        <i class="fas fa-graduation-cap text-buttons"></i>
-                    </div>
-                    <h3 class="font-bold text-base text-text_primary mb-2">Education Advisory</h3>
-                    <p class="text-sm text-text_tertiary leading-relaxed mb-3">Supporting universities in analytics programme design and technical teaching.</p>
-                    <ul class="text-sm text-text_secondary space-y-1">
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Curriculum consulting</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Guest lectures & workshops</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Student mentorship</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Transformation -->
-                <div class="bg-gradient-to-br from-buttons/5 to-transparent rounded-xl p-5 border border-gray-200 hover:border-buttons hover:shadow-lg transition-all duration-300 reveal-child">
-                    <div class="w-10 h-10 rounded-full bg-buttons/10 flex items-center justify-center mb-3">
-                        <i class="fas fa-chart-line text-buttons"></i>
-                    </div>
-                    <h3 class="font-bold text-base text-text_primary mb-2">Transformation</h3>
-                    <p class="text-sm text-text_tertiary leading-relaxed mb-3">Guiding organizations through data and tech transformations with adoption strategies.</p>
-                    <ul class="text-sm text-text_secondary space-y-1">
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Stakeholder alignment</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Change management</span>
-                        </li>
-                        <li class="flex items-start gap-1.5">
-                            <i class="fas fa-check text-accent text-[10px] mt-0.5"></i>
-                            <span>Adoption & enablement</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center mt-8 flex justify-center gap-3">
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank" class="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 tech-gradient text-white rounded-lg hover:shadow-lg hover:shadow-buttons/25 transition-all">
-                    <i class="fas fa-comments"></i>
-                    Let's connect for an intro call
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section removed (content moved to Academic Background) -->
-
-    <!-- Skills Section moved to skills.html; commented out below -->
-    <!--#include file="skills.html" -->
-    <!--
-    <section id="skills" class="py-20 px-6 soft-gradient-bg">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical & Professional Skills</h2>
-                <p class="text-xl text-text_tertiary max-w-2xl mx-auto">
-                    Comprehensive expertise across data science, AI, and cloud technologies
-                </p>
-                        </div>
-                        
-            <div class="flex flex-col gap-12">
-              -->
-
-    <!-- Blog Posts removed in favor of main_articles.html -->
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-2 md:px-4 bg-white">
-        <div class="container mx-auto max-w-7xl">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-                <p class="text-lg text-text_tertiary max-w-2xl mx-auto">
-                    Key projects showcasing technical expertise and business impact
-                </p>
-            </div>
-            <div class="horizontal-scroll md:grid md:grid-cols-3 gap-6 scrollbar-hide reveal">
-                <!-- Bath Spa University Advisory -->
-                <div
-                    class="bg-gradient-to-br from-buttons/5 to-text_tertiary/5 rounded-2xl p-6 border border-buttons/20">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="fas fa-chalkboard-teacher mr-1"></i>Advisory
-                        </span>
-                        <img src="./assets/images/logos/bsu.jpg" alt="Bath Spa University" class="h-14 rounded -mt-3 -mr-3">
-                    </div>
-
-                    <h3 class="text-xl font-bold text-text_primary mb-3">External Industry Advisor — New BSc Programme</h3>
-                    <p class="text-text_secondary mb-4">
-                        Appointed as External Advisor to Bath Spa University's Bath Business School, providing industry feedback on the new BSc Business Analytics programme curriculum.
+                    <h2 id="career-band-title" class="career-band-title">Free 20-minute job-search diagnostic.</h2>
+                    <p class="career-band-copy">
+                        Free 20-minute video diagnostic for students, graduates and career switchers navigating data,
+                        analytics, AI and related roles.
                     </p>
-
-                    <details class="mb-6">
-                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
-                            <i class="fas fa-chevron-right text-[10px]"></i>
-                            <span>Project details</span>
-                        </summary>
-                        <div class="space-y-3 mt-4">
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Programme curriculum review & industry alignment</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Bridging academic theory with real-world analytics practice</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Advisory on data engineering, AI & business intelligence skills</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Business Analytics</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Curriculum Design</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Higher Education</span>
-                        </div>
-                    </details>
-
                 </div>
-
-                <!-- CLARA Project -->
-                <div
-                    class="bg-gradient-to-br from-buttons/5 to-text_secondary/5 rounded-2xl p-6 border border-buttons/20">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-2">
-                            <a href="https://clara-research.com" target="_blank"
-                                class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-green-600 transition inline-flex items-center shadow-md shadow-green-500/30 ring-2 ring-green-400/50 animate-pulse-subtle">
-                                <i class="fas fa-circle animate-pulse mr-1.5 text-[8px]"></i>Live — Try Free
-                            </a>
-                            <a href="https://uk.linkedin.com/company/clara-research-ai?trk=public_post_feed-actor-name" target="_blank"
-                                class="bg-[#0a66c2]/10 text-[#0a66c2] px-3 py-1 rounded-full text-sm font-semibold hover:bg-[#0a66c2]/20 transition inline-flex items-center">
-                                <i class="fab fa-linkedin mr-1.5"></i>Follow
-                            </a>
-                        </div>
-                        <img src="./assets/images/logos/oxford_sq.png" alt="University of Oxford" class="h-14 rounded -mt-3 -mr-3">
-                    </div>
-
-                    <h3 class="text-xl font-bold text-text_primary mb-3">CLARA: Corporate Litigation Research Assistant
-                    </h3>
-                    <p class="text-text_secondary mb-4">
-                        An advanced AI research agent powered by LLMs and hybrid GraphRAG technology, transforming how
-                        researchers access and analyze 1.2M+ pages of litigation-relevant archival documents.
-                    </p>
-
-                    <details class="mb-6">
-                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
-                            <i class="fas fa-chevron-right text-[10px]"></i>
-                            <span>Project details</span>
-                        </summary>
-                        <div class="space-y-3 mt-4">
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">End-to-end AWS deployment (ECS, ECR, Lambda,
-                                    DynamoDB)</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Automated CI/CD pipeline with Docker & GitHub
-                                    Actions</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Advanced data pipeline: OCR, entity extraction,
-                                    embeddings</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Docker</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">GraphRAG</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">LLMs</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-                        </div>
-                    </details>
-
-                </div>
-
-                <!-- Microsoft Analytics Platform -->
-                <div
-                    class="bg-gradient-to-br from-buttons/5 to-text_tertiary/5 rounded-2xl p-6 border border-buttons/20">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="fab fa-microsoft mr-1"></i>Enterprise
-                        </span>
-                        <img src="./assets/images/logos/mdr_sq.png" alt="MDR" class="h-14 rounded -mt-3 -mr-3">
-                    </div>
-
-                    <h3 class="text-xl font-bold text-text_primary mb-3">Microsoft Analytics Platform Migration</h3>
-                    <p class="text-text_secondary mb-4">
-                        Led enterprise-wide migration from legacy SSRS to Power BI at a leading international law firm, establishing data democratization
-                        and self-serve analytics across all business functions.
-                    </p>
-
-                    <details class="mb-6">
-                        <summary class="cursor-pointer text-sm font-semibold text-buttons hover:text-accent transition select-none inline-flex items-center gap-1.5">
-                            <i class="fas fa-chevron-right text-[10px]"></i>
-                            <span>Project details</span>
-                        </summary>
-                        <div class="space-y-3 mt-4">
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">70% reduction in report redundancy</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">20% of business ops teams enabled for
-                                    self-serve</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
-                                <span class="text-sm text-text_tertiary">Cross-department data integration (HR, Finance,
-                                    Legal)</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Power BI</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Azure Synapse</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">SQL Server</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">ETL/ELT</span>
-                            <span class="bg-buttons/10 text-buttons px-3 py-1 rounded-full text-xs font-semibold">Data Governance</span>
-                        </div>
-                    </details>
-
-                </div>
-            </div>
-            <div class="scroll-hint flex justify-center items-center gap-2 text-xs text-text_tertiary mt-4 md:hidden">
-                <i class="fas fa-arrow-left text-text_tertiary"></i>
-                <i class="fas fa-long-arrow-alt-right text-text_tertiary animate-bounce-x"></i>
-            </div>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm mt-8">
-                <div class="flex items-center gap-2 text-text_secondary">
-                    <i class="fab fa-github text-lg"></i>
-                    <span>Explore 10+ projects spanning AI agents, generative AI, and intelligent data pipelines</span>
-                </div>
-                <a href="https://github.com/megpatakota" target="_blank"
-                    class="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-700 transition text-sm">
-                    <i class="fab fa-github"></i>
-                    View GitHub
+                <a class="career-band-link" href="./career-support.html">
+                    Explore career support <span aria-hidden="true">&rarr;</span>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-6 bg-gray-50">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Testimonials</h2>
-                <p class="text-lg text-text_tertiary max-w-2xl mx-auto">
-                    What colleagues and collaborators have to say
-                </p>
-            </div>
-
-            <div class="horizontal-scroll md:grid md:grid-cols-3 gap-8 scrollbar-hide reveal">
-                <div class="text-center reveal-child">
-                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
-                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
-                        "It's been a privilege to see Meg's skills evolve over the last 5 years, as she moved from student to practitioner. Data Scientist, AI Researcher are worthy titles but putting aside her leading edge skills, her strength as a highly motivated, 'people centred' collaborator enables her to bring real value to any organisation, team or individual that she works with. I can't recommend her highly enough to any future collaborators."
-                    </blockquote>
-                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
-                    <div class="flex items-center justify-center gap-3">
-                        <img src="./assets/images/logos/ucl.png" alt="UCL" class="h-9 w-auto object-contain">
-                        <div class="text-left">
-                            <p class="font-semibold text-text_primary text-sm">Ex Programme Director</p>
-                            <p class="text-xs text-text_tertiary">MSc Business Analytics, UCL School of Management</p>
-                        </div>
+        <section class="experience-strip" aria-labelledby="experience-title">
+            <div class="section-inner">
+                <div class="strip-heading">
+                    <div>
+                        <span class="eyebrow">Experience built across</span>
+                        <h2 id="experience-title">Different sectors. The same delivery problem.</h2>
                     </div>
-                </div>
-
-                <div class="text-center reveal-child">
-                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
-                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
-                        "I highly recommend working with Meghana. Meg has worked with the multidisciplinary research group I lead at Oxford, the Climate Litigation Lab at the Oxford Sustainable Law Programme, for multiple years, and her contributions have been stellar. She is a great team member, personable and professional, brings impressive technical skills, acquires new skills quickly, and brings strategic leadership and direction to projects. Thank you Meg!"
-                    </blockquote>
-                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
-                    <div class="flex items-center justify-center gap-3">
-                        <img src="./assets/images/logos/oxford.png" alt="Oxford" class="h-9 w-auto object-contain">
-                        <div class="text-left">
-                            <p class="font-semibold text-text_primary text-sm">Associate Professor</p>
-                            <p class="text-xs text-text_tertiary">Climate Litigation Lab, Oxford</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center reveal-child">
-                    <i class="fas fa-quote-left text-4xl text-buttons/15 mb-5 block"></i>
-                    <blockquote class="text-sm text-text_secondary italic leading-relaxed mb-2 line-clamp-5">
-                        "Meg was a key part of the data team at Mishcon de Reya, and one of the strongest data scientists in the Firm. She is exceptional at solving problems and turning ideas into clear, measurable outcomes. Meg has a great mix of technical and business insight; she understands how a law firm works, and how to use AI and analytics to drive business value through data products. Her Power BI, Python data query and data manipulation skills are excellent and she helped bring on junior data scientists and reporting analysis. Meg has a great mix of data, business and people skills. Exactly what you want in a data team."
-                    </blockquote>
-                    <button class="testimonial-toggle text-buttons hover:text-accent text-xs font-medium mb-4 transition">Read more</button>
-                    <div class="flex items-center justify-center gap-3">
-                        <img src="./assets/images/logos/mdr_sq.png" alt="Mishcon de Reya" class="h-9 w-auto object-contain">
-                        <div class="text-left">
-                            <p class="font-semibold text-text_primary text-sm">Head of Data</p>
-                            <p class="text-xs text-text_tertiary">Mishcon de Reya</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-text_primary text-white">
-        <div class="container mx-auto max-w-4xl text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
-            <p class="text-xl mb-8 text-gray-300">
-                Ready to discuss AI strategy, data transformation, or advisory engagements?
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="mailto:megpatakota@icloud.com"
-                    class="gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition flex items-center justify-center">
-                    <i class="fas fa-envelope mr-2"></i>
-                    Email Me Directly
-                </a>
-                <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                    class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-text_primary transition flex items-center justify-center">
-                    <i class="fab fa-linkedin mr-2"></i>
-                    Connect on LinkedIn
-                </a>
-            </div>
-
-            <p class="text-gray-400 text-sm mb-4">
-                <i class="fas fa-clock mr-1"></i> Typically respond within 24-48 hours
-            </p>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-text_primary text-white py-12 px-6">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div
-                            class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">
-                            MP
-                        </div>
-                        <span class="font-bold text-xl">Meg Patakota</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        AI Solutions Manager • Data Analytics and Reporting Leader • AI Consultant at Oxford • Applied Data Scientist at Google
-                        DeepMind • Principal Data Scientist at Mishcon de Reya
+                    <p>
+                        Turning technical possibility into something useful has taken me through enterprise AI,
+                        research, legal services, consulting and sustainability.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/megpatakota" target="_blank"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:megpatakota@icloud.com"
-                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
                 </div>
 
+                <div class="logo-grid" aria-label="Organisations">
+                    <div class="logo-item"><img src="./assets/images/logos/erm.png" alt="ERM"></div>
+                    <div class="logo-item"><img src="./assets/images/logos/oxford.png" alt="University of Oxford"></div>
+                    <div class="logo-item"><img src="./assets/images/logos/MDR.png" alt="Mishcon de Reya"></div>
+                    <div class="logo-item"><img src="./assets/images/logos/deepmind.png" alt="Google DeepMind"></div>
+                    <div class="logo-item"><img src="./assets/images/logos/marsh.png" alt="Marsh"></div>
+                </div>
+
+                <div id="education" class="education-line">
+                    <span class="eyebrow">Academic background</span>
+                    <div class="education-item">
+                        <strong>MSc Business Analytics</strong>
+                        <span>UCL School of Management, 2021</span>
+                    </div>
+                    <div class="education-item">
+                        <strong>MSc Accounting &amp; Finance</strong>
+                        <span>University of Bristol, 2020</span>
+                    </div>
+                    <div class="education-item">
+                        <strong>Business Administration &amp; International Trade</strong>
+                        <span>University at Buffalo, 2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="section-inner about-grid">
                 <div>
-                    <h3 class="font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                        <li><a href="experience.html" class="hover:text-white transition">Experience</a></li>
-                        <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
-                        <li><a href="https://www.tremoli.com" target="_blank" class="tremoli-shimmer transition">Tremoli</a></li>
-                    </ul>
+                    <span class="eyebrow">About</span>
+                    <h2 id="about-title">I work where AI ambition meets operational reality.</h2>
                 </div>
+                <div class="about-copy">
+                    <p>
+                        I have worked on the core analytics team at Google DeepMind, led data science in a major
+                        international law firm, built AI research systems with Oxford, and now own AI and automation
+                        applications end to end at ERM.
+                    </p>
+                    <p>
+                        That range has made me practical about the work. A promising model is only one part of the
+                        problem. The product, data, workflow, governance, deployment and adoption all have to hold
+                        together before an AI system creates value.
+                    </p>
 
-                <div>
-                    <h3 class="font-bold mb-4">Contact</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://www.linkedin.com/in/megpatakota/" target="_blank"
-                                class="hover:text-white transition">LinkedIn</a></li>
-                        <li><a href="https://github.com/megpatakota" target="_blank"
-                                class="hover:text-white transition">GitHub</a></li>
-                        <li><span class="text-gray-400">London, UK</span></li>
-                    </ul>
+                    <dl class="stat-grid" aria-label="Experience summary">
+                        <div>
+                            <dt>5+</dt>
+                            <dd>years across AI and data</dd>
+                        </div>
+                        <div>
+                            <dt>6</dt>
+                            <dd>organisational environments</dd>
+                        </div>
+                        <div>
+                            <dt>4</dt>
+                            <dd>academic degrees</dd>
+                        </div>
+                    </dl>
+
+                    <div class="about-actions">
+                        <a class="text-action" href="./experience.html">See the full career timeline <span aria-hidden="true">&rarr;</span></a>
+                        <a class="text-action" href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">&rarr;</span></a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
-                <p class="mb-3">&copy; 2026 Meg Patakota. All rights reserved.</p>
-                <p class="text-sm">
-                    <a href="mailto:megpatakota@icloud.com?subject=Portfolio Feedback&body=Hi Meg,%0D%0A%0D%0AI have some feedback about your portfolio:%0D%0A%0D%0A"
-                        class="text-gray-500 hover:text-white transition inline-flex items-center gap-1">
-                        <i class="fas fa-comment-dots text-xs"></i>
-                        <span>Portfolio Feedback</span>
+        <section id="focus" class="focus" aria-labelledby="focus-title">
+            <div class="section-inner">
+                <div class="focus-heading">
+                    <div>
+                        <span class="eyebrow">What I focus on</span>
+                        <h2 id="focus-title">From useful idea to working system.</h2>
+                    </div>
+                    <p>
+                        I tend to work across boundaries rather than inside one narrow technical lane. The common thread
+                        is making difficult AI and data work clearer, buildable and usable.
+                    </p>
+                </div>
+
+                <div class="focus-list">
+                    <article class="focus-row">
+                        <span class="focus-number">01</span>
+                        <h3>AI product and delivery</h3>
+                        <p>Choosing worthwhile use cases, shaping the product, building the system and getting it safely into production.</p>
+                    </article>
+                    <article class="focus-row">
+                        <span class="focus-number">02</span>
+                        <h3>Process automation</h3>
+                        <p>Understanding the real workflow before deciding where agents, orchestration or conventional automation should help.</p>
+                    </article>
+                    <article class="focus-row">
+                        <span class="focus-number">03</span>
+                        <h3>Data platforms and analytics</h3>
+                        <p>Designing reporting, pipelines and decision tools that make fragmented operational data easier to trust and use.</p>
+                    </article>
+                    <article class="focus-row">
+                        <span class="focus-number">04</span>
+                        <h3>Adoption and enablement</h3>
+                        <p>Helping teams understand the system, change how work happens and build enough confidence to keep using it.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="work" aria-labelledby="work-title">
+            <div class="section-inner">
+                <div class="work-heading">
+                    <div>
+                        <span class="eyebrow">Selected work</span>
+                        <h2 id="work-title">A few examples of the work in practice.</h2>
+                    </div>
+                    <p>
+                        Different contexts, but each project required technical decisions to be made in the service of
+                        a real organisation and the people using the result.
+                    </p>
+                </div>
+
+                <div class="project-list">
+                    <article class="project-row">
+                        <div class="project-meta">Bath Spa University<br>Education advisory</div>
+                        <div>
+                            <h3 class="project-title">External industry advisor for a new BSc programme</h3>
+                            <p class="project-copy">
+                                Reviewed and challenged the proposed Business Analytics curriculum, bringing current
+                                employer expectations and applied analytics practice into the programme design.
+                            </p>
+                        </div>
+                        <p class="project-outcome">
+                            <strong>Contribution</strong>
+                            Industry feedback on curriculum relevance, graduate capabilities and the balance between
+                            technical depth and business application.
+                        </p>
+                    </article>
+
+                    <article class="project-row">
+                        <div class="project-meta">University of Oxford<br>Applied AI research</div>
+                        <div>
+                            <h3 class="project-title">CLARA: Corporate Litigation Research Assistant</h3>
+                            <p class="project-copy">
+                                Designed and built an AI research platform for climate-litigation analysis, combining
+                                document processing, entity extraction, retrieval and an AWS deployment pipeline.
+                            </p>
+                            <a class="text-action" href="https://clara-research.com" target="_blank" rel="noopener noreferrer">Visit CLARA <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                        <p class="project-outcome">
+                            <strong>Delivery</strong>
+                            A working research system spanning 1.2 million pages, OCR, GraphRAG, Python, Docker, AWS
+                            services and automated deployment rather than a standalone model demonstration.
+                        </p>
+                    </article>
+
+                    <article class="project-row">
+                        <div class="project-meta">Mishcon de Reya<br>Enterprise analytics</div>
+                        <div>
+                            <h3 class="project-title">Microsoft analytics platform migration</h3>
+                            <p class="project-copy">
+                                Led the move from legacy SSRS reporting to Power BI, bringing business data together and
+                                creating a clearer route to self-service analytics across operational teams.
+                            </p>
+                        </div>
+                        <p class="project-outcome">
+                            <strong>Impact</strong>
+                            Reduced report redundancy by 70 percent and enabled more teams to work directly with trusted
+                            analytics rather than relying on a fragmented reporting estate.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="work-footer">
+                    <p>More technical builds and experiments are available on GitHub.</p>
+                    <a class="text-action" href="https://github.com/megpatakota" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials" aria-labelledby="testimonial-title">
+            <div class="section-inner">
+                <div class="testimonial-heading">
+                    <span class="eyebrow">What collaborators notice</span>
+                    <h2 id="testimonial-title">Technical range matters. How you work matters too.</h2>
+                    <p>Feedback from people who have worked with me across education, research and enterprise data.</p>
+                </div>
+
+                <div class="quote-grid">
+                    <blockquote class="quote">
+                        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p>
+                            Her strength as a highly motivated, people-centred collaborator enables her to bring real
+                            value to any organisation, team or individual she works with.
+                        </p>
+                        <footer>
+                            <img src="./assets/images/logos/ucl.png" alt="UCL">
+                            <span><strong>Former Programme Director</strong>MSc Business Analytics, UCL</span>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="quote">
+                        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p>
+                            She brings impressive technical skills, acquires new skills quickly, and brings strategic
+                            leadership and direction to projects.
+                        </p>
+                        <footer>
+                            <img src="./assets/images/logos/oxford.png" alt="University of Oxford">
+                            <span><strong>Associate Professor</strong>Climate Litigation Lab, Oxford</span>
+                        </footer>
+                    </blockquote>
+
+                    <blockquote class="quote">
+                        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p>
+                            She is exceptional at solving problems and turning ideas into clear, measurable outcomes.
+                            Exactly what you want in a data team.
+                        </p>
+                        <footer>
+                            <img src="./assets/images/logos/mdr_sq.png" alt="Mishcon de Reya">
+                            <span><strong>Head of Data</strong>Mishcon de Reya</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="section-inner contact-inner">
+                <div>
+                    <span class="eyebrow">Contact</span>
+                    <h2 id="contact-title">Have a difficult AI, automation or data problem?</h2>
+                    <p class="contact-copy">
+                        Email is the simplest place to start. A short note about the context and what is currently stuck
+                        is enough.
+                    </p>
+                </div>
+                <div class="contact-actions">
+                    <a class="primary-action" href="mailto:megpatakota@icloud.com">
+                        <span>Email Meghana</span>
+                        <span class="action-arrow" aria-hidden="true">&rarr;</span>
                     </a>
-                </p>
+                    <a class="text-action" href="https://www.linkedin.com/in/megpatakota/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </div>
-        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>&copy; <span id="current-year"></span> Meghana Patakota</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="./career-support.html">Career support</a>
+            <a href="./main_articles.html">Blog</a>
+            <a href="./experience.html">Experience</a>
+            <a href="https://www.tremoli.com" target="_blank" rel="noopener noreferrer">Tremoli</a>
+            <a href="mailto:megpatakota@icloud.com">Email</a>
+        </nav>
     </footer>
 
-    <!-- Main JavaScript -->
-    <script src="./assets/js/main.js"></script>
+    <script>
+        (function () {
+            const menu = document.getElementById('site-menu');
+            const year = document.getElementById('current-year');
 
-    <!-- Structured Data (JSON-LD) for SEO -->
+            if (menu) {
+                menu.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => menu.removeAttribute('open'));
+                });
+
+                document.addEventListener('click', (event) => {
+                    if (!menu.contains(event.target)) menu.removeAttribute('open');
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        menu.removeAttribute('open');
+                        menu.querySelector('summary').focus();
+                    }
+                });
+            }
+
+            year.textContent = new Date().getFullYear();
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -885,7 +1962,7 @@
         "name": "Meghana Patakota",
         "alternateName": "Meg Patakota",
         "jobTitle": "AI Solutions Manager",
-        "description": "AI, Automation & Enablement — building and shipping production AI for legal tech, higher education, and sustainability sectors",
+        "description": "AI, automation and enablement professional building practical AI and data systems across sustainability, legal services, higher education and AI research.",
         "url": "https://megpatakota.co.uk",
         "email": "megpatakota@icloud.com",
         "sameAs": [
@@ -893,16 +1970,14 @@
             "https://github.com/megpatakota"
         ],
         "knowsAbout": [
-            "Data Science",
             "Artificial Intelligence",
-            "Machine Learning",
-            "Data Analytics",
+            "AI Product Delivery",
             "Process Automation",
+            "Data Science",
+            "Data Analytics",
             "AI Strategy",
-            "Legal Tech",
-            "Law Firm Analytics",
+            "Legal Technology",
             "Higher Education Analytics",
-            "ESG Reporting",
             "Sustainability Data"
         ],
         "alumniOf": [
@@ -919,12 +1994,7 @@
                 "@type": "CollegeOrUniversity",
                 "name": "University at Buffalo"
             }
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "London",
-            "addressCountry": "UK"
-        }
+        ]
     }
     </script>
 </body>
