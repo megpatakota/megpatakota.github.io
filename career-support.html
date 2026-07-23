@@ -4,29 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Job-Search Diagnostic | Meg</title>
+    <title>Career Support | Meghana Patakota</title>
 
-    <meta name="description" content="A free 20-minute online job-search diagnostic for students, recent graduates, and career switchers exploring data, analytics, AI, research, product, and related roles.">
-    <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meg Patakota">
+    <meta name="description" content="A free 20-minute video call for students, recent graduates, and career switchers navigating data, analytics, AI, and related roles.">
+    <meta name="keywords" content="career support, graduate careers, data career advice, AI career guidance, analytics careers, student employability, career clarity, Meghana Patakota">
     <meta name="author" content="Meghana Patakota">
     <link rel="canonical" href="https://megpatakota.co.uk/career-support.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://megpatakota.co.uk/career-support.html">
-    <meta property="og:title" content="Free 20-Minute Job-Search Diagnostic - Meg Patakota">
-    <meta property="og:description" content="Bring one real job-search or career problem to a free 20-minute online diagnostic with Meg.">
+    <meta property="og:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
+    <meta property="og:description" content="Bring one real job-search or career problem to a free 20-minute video call with Meghana.">
     <meta property="og:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free 20-Minute Job-Search Diagnostic - Meg Patakota">
-    <meta name="twitter:description" content="A free 20-minute online job-search diagnostic for students, graduates, and career switchers around data, analytics, and AI.">
+    <meta name="twitter:title" content="Free 20-Minute Job-Search Diagnostic | Meghana Patakota">
+    <meta name="twitter:description" content="A focused starting point for students, graduates, and career switchers exploring data, analytics, and AI roles.">
     <meta name="twitter:image" content="https://megpatakota.co.uk/assets/images/logos/profile.jpeg">
 
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/site-style-config.js"></script>
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
     <script>
@@ -37,372 +35,1387 @@
     </script>
 
     <style>
-        .career-hero {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
+        :root {
+            --ink: #11110f;
+            --muted: #5f625f;
+            --paper: #fbf8f2;
+            --white: #ffffff;
+            --teal: #007f79;
+            --teal-dark: #006a66;
+            --mist: #e8f3f1;
+            --blue-mist: #eef5f6;
+            --line: #aeb4b1;
+            --soft-line: #d6d9d5;
         }
 
-        .career-kicker {
-            display: inline-block;
-            color: var(--color-buttons);
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.13em;
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid rgba(0, 127, 121, 0.35);
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            min-height: 102px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 18px 3.2rem;
+            background: var(--paper);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            min-width: 0;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            flex: 0 0 auto;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 63px;
+            margin: 0 1.8rem;
+            background: #727b79;
+        }
+
+        .brand-copy {
+            display: grid;
+            line-height: 1.3;
+        }
+
+        .brand-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .brand-role {
+            color: var(--muted);
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .section-link {
+            flex: 0 0 auto;
+            padding: 0.35rem 0 0.45rem;
+            border-bottom: 2px solid var(--teal);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .hero {
+            min-height: calc(100svh - 181px);
+            padding: 2.6rem 8vw 0;
+            background: var(--paper);
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1335px;
+            min-height: inherit;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.04fr) minmax(490px, 0.96fr);
+            align-items: end;
+            gap: 6.25rem;
+        }
+
+        .hero-copy {
+            align-self: start;
+            padding: 0 0 3rem;
+        }
+
+        .eyebrow {
+            display: block;
+            margin: 0 0 1.15rem;
+            color: var(--teal-dark);
+            font-size: 0.84rem;
+            font-weight: 700;
+            line-height: 1.4;
             text-transform: uppercase;
         }
 
-        .primary-button {
-            background: var(--color-text-primary);
-            color: #ffffff;
+        .hero h1,
+        .section-title,
+        .credibility h2,
+        .closing h2 {
+            margin: 0;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 500;
         }
 
-        .primary-button:hover {
-            background: #1e293b;
+        .hero h1 {
+            max-width: 650px;
+            font-size: 5.6rem;
+            line-height: 0.92;
         }
 
-        .career-portrait {
-            position: relative;
-            max-width: 22.5rem;
-            margin-left: auto;
-        }
-
-        .career-portrait img {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            object-position: 54% center;
-            border-radius: 0.4rem;
-        }
-
-        .career-portrait figcaption {
-            position: absolute;
-            right: -0.75rem;
-            bottom: 1rem;
-            left: -2.5rem;
-            padding: 1rem 1.1rem;
-            border-left: 3px solid #22d3ee;
-            border-radius: 0.25rem;
-            background: rgba(15, 23, 42, 0.94);
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 0.82rem;
-            line-height: 1.55;
-        }
-
-        .career-portrait figcaption strong {
+        .hero h1 span {
             display: block;
-            margin-bottom: 0.3rem;
-            color: #ffffff;
-            font-size: 0.95rem;
-            line-height: 1.35;
+        }
+
+        .hero-intro {
+            max-width: 620px;
+            margin: 2.3rem 0 1.7rem;
+            font-size: 1.13rem;
+            line-height: 1.72;
+        }
+
+        .hero-proof {
+            max-width: 620px;
+            margin: -0.25rem 0 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--teal);
+            color: #4d5351;
+            font-size: 0.78rem;
+            line-height: 1.6;
+        }
+
+        .hero-proof strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .primary-action {
+            width: min(100%, 348px);
+            min-height: 56px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            padding: 0.85rem 1.55rem;
+            border: 1px solid var(--teal);
+            background: var(--teal);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 160ms ease, border-color 160ms ease;
+        }
+
+        .primary-action:hover {
+            border-color: var(--teal-dark);
+            background: var(--teal-dark);
+        }
+
+        .action-arrow {
+            flex: 0 0 auto;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .offer-facts {
+            max-width: 615px;
+            margin: 1.8rem 0 0;
+            padding: 1.25rem 0 0;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 0.82fr 1fr 1.2fr;
+        }
+
+        .offer-facts div {
+            min-width: 0;
+            padding: 0 1.6rem;
+            border-left: 1px solid var(--line);
+        }
+
+        .offer-facts div:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .offer-facts dt {
+            margin-bottom: 0.35rem;
+            color: var(--teal-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .offer-facts dd {
+            margin: 0;
+            font-size: 0.98rem;
+            line-height: 1.45;
+        }
+
+        .portrait-stage {
+            position: relative;
+            width: 100%;
+            height: min(730px, calc(100svh - 225px));
+            min-height: 575px;
+            isolation: isolate;
+        }
+
+        .portrait-stage::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 0.4rem;
+            left: 0;
+            width: 57%;
+            height: 25%;
+            background-image: radial-gradient(#94948d 0.8px, transparent 0.8px);
+            background-size: 4px 4px;
+            opacity: 0.52;
+        }
+
+        .portrait-accent {
+            position: absolute;
+            z-index: 0;
+            right: 0;
+            bottom: 0;
+            width: 37%;
+            height: 51%;
+            background: var(--teal);
+        }
+
+        .portrait-ring {
+            position: absolute;
+            z-index: 1;
+            right: 1.2%;
+            top: 14%;
+            width: 74%;
+            aspect-ratio: 1;
+            border: 1px solid var(--teal);
+            border-radius: 50%;
+        }
+
+        .portrait-line {
+            position: absolute;
+            z-index: 1;
+            top: 0.3rem;
+            right: 25%;
+            width: 1px;
+            height: 36%;
+            background: var(--teal);
+        }
+
+        .portrait-stage img {
+            position: absolute;
+            z-index: 2;
+            inset: 0 7% 0 0;
+            width: 93%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 58% center;
+            filter: grayscale(1) contrast(1.38) brightness(1.08);
+            mix-blend-mode: multiply;
+        }
+
+        .diagnostic {
+            padding: 1.8rem 8vw 5.6rem;
+            background: var(--mist);
+        }
+
+        .section-inner {
+            width: 100%;
+            max-width: 1335px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(330px, 0.65fr);
+            align-items: end;
+            gap: 5rem;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .section-intro {
+            max-width: 570px;
+            margin: 0 0 0.35rem;
+            color: #46504e;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .diagnostic-layout {
+            margin-top: 2.8rem;
+            padding-top: 2.25rem;
+            border-top: 1px solid #9daaa7;
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(330px, 0.7fr);
+            gap: 5rem;
+        }
+
+        fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .question-block + .question-block {
+            margin-top: 2.4rem;
+        }
+
+        .question-label,
+        legend {
+            display: block;
+            width: 100%;
+            margin: 0 0 0.8rem;
+            color: var(--teal-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.45;
+            text-transform: uppercase;
+        }
+
+        .stage-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border-top: 1px solid #aeb9b6;
         }
 
         .stage-button {
-            width: 100%;
+            min-height: 86px;
+            padding: 1rem 1.1rem;
             border: 0;
-            border-bottom: 1px solid #dbe3ea;
-            border-radius: 0;
+            border-right: 1px solid #aeb9b6;
+            border-bottom: 1px solid #aeb9b6;
             background: transparent;
+            color: var(--ink);
+            cursor: pointer;
             text-align: left;
-            transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+            transition: background 160ms ease, color 160ms ease;
         }
 
-        .stage-button:first-child {
-            border-top: 1px solid #dbe3ea;
+        .stage-button:nth-child(2n) {
+            border-right: 0;
         }
 
         .stage-button.is-active {
-            background: #ffffff;
-            box-shadow: inset 3px 0 0 var(--color-buttons);
+            background: var(--ink);
+            color: var(--white);
         }
 
-        .fit-list {
+        .stage-button strong,
+        .stage-button span {
+            display: block;
+        }
+
+        .stage-button strong {
+            margin-bottom: 0.2rem;
+            font-size: 0.94rem;
+        }
+
+        .stage-button span {
+            color: inherit;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            opacity: 0.72;
+        }
+
+        .signal-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 2rem;
+        }
+
+        .signal-option {
+            min-width: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #c4cdca;
+            color: #303735;
+            cursor: pointer;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .signal-option input {
+            width: 17px;
+            height: 17px;
+            flex: 0 0 auto;
+            margin: 0.15rem 0 0;
+            accent-color: var(--teal);
+        }
+
+        .notes-label {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .optional {
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 500;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 118px;
+            resize: vertical;
+            padding: 0.9rem 1rem;
+            border: 1px solid #9daaa7;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.56);
+            color: var(--ink);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        textarea:focus {
+            border-color: var(--teal);
+            outline: 0;
+            background: var(--white);
+        }
+
+        .diagnostic-response {
+            align-self: start;
+            padding-left: 2rem;
+            border-left: 2px solid var(--teal);
+        }
+
+        .diagnostic-response h3 {
+            margin: 0 0 0.9rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2.05rem;
+            font-weight: 600;
+            line-height: 1.05;
+        }
+
+        .diagnostic-response p {
+            margin: 0;
+            color: #46504e;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .diagnostic-response .primary-action {
+            width: 100%;
+            margin-top: 1.7rem;
+        }
+
+        .next-steps {
+            margin: 1.8rem 0 0;
+            padding: 1.4rem 0 0;
+            border-top: 1px solid #aeb9b6;
+            list-style: none;
+            counter-reset: steps;
+        }
+
+        .next-steps li {
+            position: relative;
+            padding: 0.55rem 0 0.55rem 2rem;
+            color: #46504e;
+            font-size: 0.8rem;
+            line-height: 1.55;
+            counter-increment: steps;
+        }
+
+        .next-steps li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            color: var(--teal-dark);
+            font-weight: 700;
+        }
+
+        .credibility {
+            padding: 6.5rem 8vw;
+            background: var(--white);
+        }
+
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: minmax(290px, 0.72fr) minmax(0, 1.28fr);
+            gap: 6.5rem;
+        }
+
+        .credibility h2 {
+            max-width: 520px;
+            font-size: 4rem;
+            line-height: 0.98;
+        }
+
+        .credibility-copy > p {
+            max-width: 735px;
+            margin: 0;
+            color: #4d5351;
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .context-list {
+            margin: 2.5rem 0 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            list-style: none;
+        }
+
+        .context-list li {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.25rem 0.8rem 0;
+            border-bottom: 1px solid var(--soft-line);
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .context-list li:nth-child(2n) {
+            padding-left: 1.25rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .record-note {
+            margin-top: 1.2rem !important;
+            color: var(--muted) !important;
+            font-size: 0.8rem !important;
+            line-height: 1.6 !important;
+        }
+
+        .record-stats {
+            margin: 2rem 0 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .record-stats div {
+            min-width: 0;
+            padding: 1.2rem 1rem;
+            border-left: 1px solid var(--soft-line);
+        }
+
+        .record-stats div:first-child {
+            padding-left: 0;
+            border-left: 0;
+        }
+
+        .record-stats dt {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .record-stats dd {
+            margin: 0.35rem 0 0;
+            color: var(--muted);
+            font-size: 0.72rem;
+            line-height: 1.45;
+        }
+
+        .fit-grid {
+            margin-top: 3.8rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4rem;
+        }
+
+        .fit-grid h3 {
+            margin: 0 0 0.7rem;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.1;
+        }
+
+        .plain-list {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        .fit-list li {
-            border-top: 1px solid #e5e7eb;
-            padding: 1rem 0;
-            color: var(--color-text-secondary);
-            line-height: 1.55;
+        .plain-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--soft-line);
+            color: #4d5351;
+            font-size: 0.86rem;
+            line-height: 1.6;
         }
 
-        .fit-list li:first-child {
-            border-top: 0;
+        .closing {
+            padding: 4.5rem 8vw;
+            background: var(--ink);
+            color: var(--white);
         }
 
-        @media (max-width: 1023px) {
-            .career-portrait {
-                max-width: 40rem;
-                margin-left: 0;
+        .closing-inner {
+            width: 100%;
+            max-width: 1335px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .closing .eyebrow {
+            margin-bottom: 0.5rem;
+            color: #7ed7d1;
+        }
+
+        .closing h2 {
+            font-size: 3.6rem;
+            line-height: 1;
+        }
+
+        .closing .primary-action {
+            flex: 0 0 348px;
+        }
+
+        .site-footer {
+            min-height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 1.5rem 3.2rem;
+            background: var(--paper);
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+        }
+
+        .footer-links a {
+            text-decoration-color: var(--teal);
+            text-underline-offset: 0.25rem;
+        }
+
+        @media (max-width: 1120px) {
+            .hero {
+                padding-right: 5vw;
+                padding-left: 5vw;
             }
 
-            .career-portrait img {
-                aspect-ratio: 16 / 9;
-                object-position: center 34%;
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr) minmax(400px, 0.8fr);
+                gap: 3.5rem;
             }
 
-            .career-portrait figcaption {
-                right: 1rem;
-                bottom: 1rem;
-                left: 1rem;
-                max-width: 31rem;
+            .hero h1 {
+                font-size: 4.8rem;
+            }
+
+            .diagnostic,
+            .credibility,
+            .closing {
+                padding-right: 5vw;
+                padding-left: 5vw;
+            }
+
+            .section-heading,
+            .diagnostic-layout {
+                gap: 3rem;
+            }
+
+            .credibility-grid {
+                gap: 4rem;
             }
         }
 
-        @media (max-width: 639px) {
-            .career-portrait img {
-                aspect-ratio: 4 / 3;
-                object-position: center 30%;
+        @media (min-width: 901px) and (max-height: 820px) {
+            .site-header {
+                min-height: 88px;
+                padding-top: 12px;
+                padding-bottom: 12px;
             }
 
-            .career-portrait figcaption {
-                right: 0.75rem;
-                bottom: 0.75rem;
-                left: 0.75rem;
-                padding: 0.8rem 0.9rem;
-                font-size: 0.75rem;
+            .brand-mark {
+                font-size: 2.8rem;
             }
 
-            .career-portrait figcaption strong {
+            .brand-divider {
+                height: 52px;
+            }
+
+            .hero {
+                min-height: calc(100svh - 145px);
+                padding-top: 1.7rem;
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .hero-intro {
+                margin: 1.4rem 0 1.2rem;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .hero-proof {
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            .portrait-stage {
+                height: calc(100svh - 176px);
+                min-height: 510px;
+            }
+
+            .offer-facts {
+                margin-top: 1.2rem;
+                padding-top: 0.9rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-header {
+                min-height: 84px;
+                padding: 14px 1.5rem;
+            }
+
+            .brand-mark {
+                font-size: 2.7rem;
+            }
+
+            .brand-divider {
+                height: 48px;
+                margin: 0 1.2rem;
+            }
+
+            .brand-name {
+                font-size: 1rem;
+            }
+
+            .brand-role {
+                font-size: 0.76rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 1.5rem 0;
+            }
+
+            .hero-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.8rem;
+            }
+
+            .hero-copy {
+                padding-bottom: 0;
+            }
+
+            .hero h1 {
+                max-width: 610px;
+                font-size: 4.6rem;
+            }
+
+            .hero-intro {
+                max-width: 650px;
+            }
+
+            .portrait-stage {
+                width: min(100%, 690px);
+                height: 330px;
+                min-height: 0;
+                margin-left: auto;
+            }
+
+            .portrait-stage img {
+                inset: 0 5% 0 0;
+                width: 95%;
+                object-position: 58% 32%;
+            }
+
+            .portrait-stage::before {
+                width: 43%;
+                height: 36%;
+            }
+
+            .portrait-accent {
+                width: 36%;
+                height: 62%;
+            }
+
+            .portrait-ring {
+                top: -9%;
+                right: 4%;
+                width: 51%;
+            }
+
+            .portrait-line {
+                right: 27%;
+            }
+
+            .diagnostic {
+                padding: 2rem 1.5rem 4.5rem;
+            }
+
+            .section-heading,
+            .diagnostic-layout,
+            .credibility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading,
+            .diagnostic-layout {
+                gap: 1.6rem;
+            }
+
+            .diagnostic-layout {
+                margin-top: 2rem;
+            }
+
+            .diagnostic-response {
+                padding: 2rem 0 0;
+                border-top: 2px solid var(--teal);
+                border-left: 0;
+            }
+
+            .credibility {
+                padding: 5rem 1.5rem;
+            }
+
+            .credibility-grid {
+                gap: 2.4rem;
+            }
+
+            .credibility h2 {
+                font-size: 3.4rem;
+            }
+
+            .closing {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .closing-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .closing .primary-action {
+                flex-basis: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header {
+                min-height: 74px;
+                padding: 11px 1.15rem;
+                gap: 1rem;
+            }
+
+            .brand-mark {
+                font-size: 2.25rem;
+            }
+
+            .brand-divider {
+                height: 38px;
+                margin: 0 0.75rem;
+            }
+
+            .brand-name {
+                font-size: 0.82rem;
+            }
+
+            .brand-role {
+                max-width: 155px;
+                overflow: hidden;
+                font-size: 0.66rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .section-link {
+                padding-bottom: 0.25rem;
+                font-size: 0.74rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1.15rem 0;
+            }
+
+            .eyebrow {
+                margin-bottom: 0.75rem;
+                font-size: 0.68rem;
+            }
+
+            .hero h1 {
+                font-size: 3.08rem;
+                line-height: 0.94;
+            }
+
+            .hero-intro {
+                margin: 1.3rem 0 1.15rem;
+                font-size: 0.88rem;
+                line-height: 1.62;
+            }
+
+            .hero-proof {
+                margin: 0 0 1rem;
+                padding-left: 0.75rem;
+                font-size: 0.68rem;
+                line-height: 1.5;
+            }
+
+            .primary-action {
+                width: 100%;
+                min-height: 52px;
+                padding: 0.75rem 1.1rem;
                 font-size: 0.85rem;
             }
 
+            .offer-facts {
+                margin-top: 1.1rem;
+                padding-top: 0.9rem;
+                grid-template-columns: 0.8fr 0.9fr 1.18fr;
+            }
+
+            .offer-facts div {
+                padding: 0 0.65rem;
+            }
+
+            .offer-facts dt {
+                font-size: 0.64rem;
+            }
+
+            .offer-facts dd {
+                font-size: 0.69rem;
+                line-height: 1.35;
+            }
+
+            .hero-inner {
+                gap: 1.2rem;
+            }
+
+            .portrait-stage {
+                height: 190px;
+            }
+
+            .portrait-stage img {
+                object-position: 58% 29%;
+            }
+
+            .portrait-ring {
+                top: -14%;
+                width: 56%;
+            }
+
+            .diagnostic {
+                padding: 1.65rem 1.15rem 3.8rem;
+            }
+
+            .section-title {
+                font-size: 2.65rem;
+            }
+
+            .section-intro {
+                font-size: 0.84rem;
+                line-height: 1.6;
+            }
+
+            .diagnostic-layout {
+                padding-top: 1.5rem;
+            }
+
+            .stage-options,
+            .signal-options {
+                grid-template-columns: 1fr;
+            }
+
             .stage-button {
-                padding: 0.9rem 0.75rem;
+                min-height: 72px;
+                border-right: 0;
+            }
+
+            .question-block + .question-block {
+                margin-top: 1.9rem;
+            }
+
+            .diagnostic-response h3 {
+                font-size: 1.8rem;
+            }
+
+            .credibility {
+                padding: 4rem 1.15rem;
+            }
+
+            .credibility h2 {
+                font-size: 2.8rem;
+            }
+
+            .credibility-copy > p {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+
+            .context-list {
+                grid-template-columns: 1fr;
+                margin-top: 1.8rem;
+            }
+
+            .context-list li,
+            .context-list li:nth-child(2n) {
+                min-height: 0;
+                padding: 0.85rem 0;
+                border-left: 0;
+            }
+
+            .record-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .record-stats div {
+                border-bottom: 1px solid var(--soft-line);
+            }
+
+            .record-stats div:nth-child(3) {
+                padding-left: 0;
+                border-left: 0;
+                border-bottom: 0;
+            }
+
+            .record-stats div:nth-child(4) {
+                border-bottom: 0;
+            }
+
+            .fit-grid {
+                margin-top: 3rem;
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .closing {
+                padding: 3rem 1.15rem;
+            }
+
+            .closing h2 {
+                font-size: 2.7rem;
+            }
+
+            .site-footer {
+                min-height: 0;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1.4rem 1.15rem;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .brand-copy {
+                display: none;
+            }
+
+            .brand-divider {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.65rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 
-<body class="font-sans bg-white text-text_primary">
-    <div id="shared-header" data-article-page="false"></div>
-    <script src="./assets/js/header.js"></script>
+<body>
+    <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Meghana Patakota, home">
+            <span class="brand-mark" aria-hidden="true">MP</span>
+            <span class="brand-divider" aria-hidden="true"></span>
+            <span class="brand-copy">
+                <span class="brand-name">Meghana Patakota</span>
+                <span class="brand-role">AI, Automation &amp; Enablement</span>
+            </span>
+        </a>
+        <a class="section-link" href="#starting-brief" aria-current="page">Career support</a>
+    </header>
 
     <main>
-        <section class="career-hero px-5 sm:px-6 py-10 md:py-16">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid lg:grid-cols-[1fr_0.58fr] gap-8 lg:gap-16 items-center">
-                    <div>
-                        <span class="career-kicker mb-5">For data, analytics and AI careers</span>
-                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 md:mb-6 text-text_primary">
-                            <span class="block text-buttons">Free 20-minute</span>
-                            <span class="block">job-search diagnostic.</span>
-                        </h1>
-                        <p class="text-base sm:text-lg md:text-xl text-text_secondary leading-relaxed max-w-2xl mb-6">
-                            Bring one real application, interview, role-choice, or career-switch problem. I will review
-                            the context before we meet, then use the call to identify the main blockage and your next useful move.
-                        </p>
+        <section class="hero" aria-labelledby="career-title">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <span class="eyebrow">For data, analytics and AI careers</span>
+                    <h1 id="career-title">
+                        <span>Free 20-minute</span>
+                        <span>job-search</span>
+                        <span>diagnostic.</span>
+                    </h1>
+                    <p class="hero-intro">
+                        Bring one real application, interview, role-choice, or career-switch problem. I will review the
+                        context before we meet, then use the call to identify the main blockage and your next useful move.
+                    </p>
+                    <p class="hero-proof">
+                        Informed by a private record of <strong>102 roles</strong> and
+                        <strong>48 detailed interview processes</strong> across Big Tech, AI labs, consulting,
+                        professional services, research, climate organisations and start-ups.
+                    </p>
+                    <a class="primary-action" href="#starting-brief">
+                        <span>Request your free session</span>
+                        <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
 
-                        <dl class="grid grid-cols-3 divide-x divide-gray-300 border-y border-gray-300 max-w-xl mb-7 text-sm">
-                            <div class="py-3 pr-3">
-                                <dt class="text-xs text-text_tertiary mb-1">Length</dt>
-                                <dd class="font-semibold text-text_primary">20 minutes</dd>
-                            </div>
-                            <div class="py-3 px-3">
-                                <dt class="text-xs text-text_tertiary mb-1">Format</dt>
-                                <dd class="font-semibold text-text_primary">Video call</dd>
-                            </div>
-                            <div class="py-3 pl-3">
-                                <dt class="text-xs text-text_tertiary mb-1">Price</dt>
-                                <dd class="font-semibold text-text_primary">Free during launch</dd>
-                            </div>
-                        </dl>
+                    <dl class="offer-facts" aria-label="Session details">
+                        <div>
+                            <dt>Length</dt>
+                            <dd>20 minutes</dd>
+                        </div>
+                        <div>
+                            <dt>Format</dt>
+                            <dd>Video call</dd>
+                        </div>
+                        <div>
+                            <dt>Price</dt>
+                            <dd>Free during launch</dd>
+                        </div>
+                    </dl>
+                </div>
 
-                        <a href="#starting-brief" class="primary-button w-full sm:w-auto px-6 py-3 rounded-lg font-semibold transition-all inline-flex items-center justify-center">
-                            Request your free session
-                        </a>
-                    </div>
-
-                    <figure class="career-portrait">
-                        <img src="./assets/images/logos/profile.jpeg" alt="Meg Patakota seated in a meeting room" width="1086" height="724">
-                        <figcaption>
-                            <strong>Experience across very different hiring environments.</strong>
-                            I have worked with or interviewed across Big Tech, AI labs, professional services,
-                            universities, sustainability organisations and start-ups.
-                        </figcaption>
-                    </figure>
+                <div class="portrait-stage" aria-hidden="true">
+                    <span class="portrait-accent"></span>
+                    <span class="portrait-ring"></span>
+                    <span class="portrait-line"></span>
+                    <img src="./assets/images/logos/profile.jpeg" alt="" width="1086" height="724">
                 </div>
             </div>
         </section>
 
-        <section id="starting-brief" class="py-12 md:py-16 px-5 sm:px-6 bg-bg_light">
-            <div class="container mx-auto max-w-5xl">
-                <div class="grid lg:grid-cols-[0.75fr_1fr] gap-4 lg:gap-10 items-end">
+        <section id="starting-brief" class="diagnostic" aria-labelledby="brief-title">
+            <div class="section-inner">
+                <div class="section-heading">
                     <div>
-                        <span class="career-kicker mb-3 md:mb-4">Start here</span>
-                        <h2 class="text-3xl md:text-4xl font-bold leading-tight">Tell me what is happening.</h2>
+                        <span class="eyebrow">Start here</span>
+                        <h2 id="brief-title" class="section-title">Tell me what is happening.</h2>
                     </div>
-                    <p class="text-text_tertiary leading-relaxed text-base md:text-lg">
-                        Choose what is closest and add only what you know. This gives me enough context to prepare for
-                        the free session and helps you see where I would start.
+                    <p class="section-intro">
+                        Choose what is closest and add only what you know. It gives me enough context to prepare before
+                        we speak and gives you a useful first read straight away.
                     </p>
                 </div>
 
-                <div class="mt-8 md:mt-10 border-t border-gray-300 grid lg:grid-cols-[1.1fr_0.9fr]">
-                    <div class="py-6 md:py-8 lg:pr-10 lg:border-r border-gray-300 space-y-7 md:space-y-8">
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-3">What is happening now?</p>
-                            <div id="stage-options">
-                                <button class="stage-button is-active p-4" type="button" data-stage="Trying to choose a lane" aria-pressed="true">
-                                    <span class="block font-semibold">I am trying to choose a lane</span>
-                                    <span class="block text-sm text-text_tertiary mt-1">Too many role titles sound possible.</span>
+                <div class="diagnostic-layout">
+                    <div>
+                        <fieldset class="question-block">
+                            <legend>What is happening now?</legend>
+                            <div class="stage-options">
+                                <button class="stage-button is-active" type="button" data-stage="Trying to choose a lane" aria-pressed="true">
+                                    <strong>I am trying to choose a lane</strong>
+                                    <span>Too many role titles sound possible.</span>
                                 </button>
-                                <button class="stage-button p-4" type="button" data-stage="Applying and hearing little back" aria-pressed="false">
-                                    <span class="block font-semibold">I am applying and hearing little back</span>
-                                    <span class="block text-sm text-text_tertiary mt-1">Applications are not giving me useful signals.</span>
+                                <button class="stage-button" type="button" data-stage="Applying and hearing little back" aria-pressed="false">
+                                    <strong>I am applying and hearing little back</strong>
+                                    <span>Applications are not giving me useful signals.</span>
                                 </button>
-                                <button class="stage-button p-4" type="button" data-stage="Preparing for an interview or task" aria-pressed="false">
-                                    <span class="block font-semibold">I have an interview or task coming up</span>
-                                    <span class="block text-sm text-text_tertiary mt-1">I need to understand what they are testing.</span>
+                                <button class="stage-button" type="button" data-stage="Preparing for an interview or task" aria-pressed="false">
+                                    <strong>I have an interview or task coming up</strong>
+                                    <span>I need to understand what they are testing.</span>
                                 </button>
-                                <button class="stage-button p-4" type="button" data-stage="Changing direction" aria-pressed="false">
-                                    <span class="block font-semibold">I am changing direction</span>
-                                    <span class="block text-sm text-text_tertiary mt-1">I need a credible bridge into a new area.</span>
+                                <button class="stage-button" type="button" data-stage="Changing direction" aria-pressed="false">
+                                    <strong>I am changing direction</strong>
+                                    <span>I need a credible bridge into a new area.</span>
                                 </button>
                             </div>
-                        </div>
+                        </fieldset>
 
-                        <div>
-                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-2">What feels unclear?</p>
-                            <div id="worry-options" class="grid sm:grid-cols-2 sm:gap-x-6">
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="which role titles are worth chasing"><span class="text-sm text-text_secondary">Which role titles are worth chasing</span></label>
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="how to explain my projects, degree, or experience"><span class="text-sm text-text_secondary">How to explain my projects or degree</span></label>
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="why applications are not converting"><span class="text-sm text-text_secondary">Why applications are not converting</span></label>
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="what AI, data, or analytics teams actually test"><span class="text-sm text-text_secondary">What teams actually test</span></label>
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="how to read salary, team, location, or interview-round expectations"><span class="text-sm text-text_secondary">Salary, team, rounds, or location</span></label>
-                                <label class="flex items-start gap-3 border-b border-gray-200 py-3 cursor-pointer"><input class="signal-checkbox mt-1 h-4 w-4 shrink-0 accent-cyan-700" type="checkbox" value="what to do in the next seven days"><span class="text-sm text-text_secondary">What to do in the next seven days</span></label>
+                        <fieldset class="question-block">
+                            <legend>What feels unclear?</legend>
+                            <div id="worry-options" class="signal-options">
+                                <label class="signal-option"><input type="checkbox" value="which role titles are worth chasing"><span>Which role titles are worth chasing</span></label>
+                                <label class="signal-option"><input type="checkbox" value="how to explain my projects, degree, or experience"><span>How to explain my projects or degree</span></label>
+                                <label class="signal-option"><input type="checkbox" value="why applications are not converting"><span>Why applications are not converting</span></label>
+                                <label class="signal-option"><input type="checkbox" value="what AI, data, or analytics teams actually test"><span>What teams actually test</span></label>
+                                <label class="signal-option"><input type="checkbox" value="how to read salary, team, location, or interview-round expectations"><span>Salary, team, rounds, or location</span></label>
+                                <label class="signal-option"><input type="checkbox" value="what to do in the next seven days"><span>What to do in the next seven days</span></label>
                             </div>
-                        </div>
+                        </fieldset>
 
-                        <label class="block">
-                            <span class="block text-sm font-semibold text-text_primary mb-2">Anything I should know? <span class="font-normal text-text_tertiary">Optional</span></span>
-                            <textarea id="context-notes" rows="4" class="w-full rounded-md border border-gray-300 bg-white p-3 text-base text-text_primary focus:border-buttons focus:outline-none" placeholder="A role link, an upcoming interview, what you have tried, or the part that is hardest to explain."></textarea>
-                        </label>
+                        <div class="question-block">
+                            <label class="notes-label" for="context-notes">
+                                <span>Anything I should know?</span>
+                                <span class="optional">Optional</span>
+                            </label>
+                            <textarea id="context-notes" rows="4" placeholder="A role link, an upcoming interview, what you have tried, or the part that is hardest to explain."></textarea>
+                        </div>
                     </div>
 
-                    <aside class="py-6 md:py-8 lg:pl-10">
-                        <div class="border-l-2 border-buttons pl-5">
-                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-buttons mb-3">Where I would start</p>
-                            <p id="read-preview" class="text-text_secondary leading-relaxed">
-                                I would first separate role families from job titles, then check which evidence you already have for each direction.
-                            </p>
-                        </div>
-
-                        <div class="mt-8 border-t border-gray-300 pt-6">
-                            <h3 class="text-lg font-bold text-text_primary mb-2">Request the free 20-minute session</h3>
-                            <p class="text-sm text-text_tertiary leading-relaxed mb-5">
-                                Your answers will be included in the email. Attach your CV or LinkedIn profile and up to
-                                three relevant role links if you want me to review them before we speak.
-                            </p>
-                            <a id="brief-mailto" href="mailto:megpatakota@icloud.com?subject=Free%2020-minute%20career%20session%20request&body=I%20would%20like%20to%20request%20a%20free%2020-minute%20online%20job-search%20diagnostic.%0A%0ACurrent%20situation%3A%20Trying%20to%20choose%20a%20lane." class="primary-button w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">
-                                Request a free session
-                            </a>
-
-                            <div class="mt-7 border-t border-gray-300 pt-5">
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-text_tertiary mb-3">What happens next</p>
-                                <ol class="space-y-3 text-sm text-text_secondary leading-relaxed">
-                                    <li><strong class="text-text_primary">1.</strong> Your email opens with these answers already included.</li>
-                                    <li><strong class="text-text_primary">2.</strong> I review the context and reply with a choice of video call times.</li>
-                                    <li><strong class="text-text_primary">3.</strong> We use the 20 minutes to identify the main blockage and the next useful move.</li>
-                                </ol>
-                            </div>
-                        </div>
+                    <aside class="diagnostic-response" aria-live="polite">
+                        <span class="eyebrow">Where I would start</span>
+                        <h3>Your first read</h3>
+                        <p id="read-preview">
+                            I would first separate role families from job titles, then check which evidence you already
+                            have for each direction.
+                        </p>
+                        <a id="brief-mailto" class="primary-action" href="mailto:megpatakota@icloud.com?subject=Free%2020-minute%20career%20session%20request">
+                            <span>Request the free session</span>
+                            <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <ol class="next-steps" aria-label="What happens next">
+                            <li>Your email opens with these answers included.</li>
+                            <li>I review the context and reply with video-call times.</li>
+                            <li>We use 20 minutes to identify the blockage and next move.</li>
+                        </ol>
                     </aside>
                 </div>
             </div>
         </section>
 
-        <section class="py-14 md:py-20 px-5 sm:px-6 bg-white">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16 items-start">
+        <section class="credibility" aria-labelledby="credibility-title">
+            <div class="section-inner">
+                <div class="credibility-grid">
                     <div>
-                        <span class="career-kicker mb-5">Why this is different</span>
-                        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-5">
-                            I read the market through real interview patterns.
-                        </h2>
+                        <span class="eyebrow">The perspective behind it</span>
+                        <h2 id="credibility-title">Real interview patterns, not generic career advice.</h2>
                     </div>
+                    <div class="credibility-copy">
+                        <p>
+                            I keep a private record of roles and interview processes across data, analytics, AI and
+                            adjacent work. It captures salary bands, team structures, office expectations, interview
+                            rounds, take-home tasks and the questions companies use to test different capabilities.
+                            Private details stay private; the patterns help me ask better questions.
+                        </p>
 
+                        <ul class="context-list" aria-label="Company contexts">
+                            <li>Big Tech and AI labs</li>
+                            <li>Global consultancies</li>
+                            <li>Law, insurance and professional services</li>
+                            <li>Universities and research teams</li>
+                            <li>Sustainability and climate organisations</li>
+                            <li>Start-ups and scale-ups</li>
+                        </ul>
+                        <p class="record-note">
+                            These are contexts I have worked in, engaged with, or encountered through interview
+                            processes and role research.
+                        </p>
+
+                        <dl class="record-stats" aria-label="Private career research record">
+                            <div>
+                                <dt>102</dt>
+                                <dd>roles reviewed</dd>
+                            </div>
+                            <div>
+                                <dt>96</dt>
+                                <dd>company contexts</dd>
+                            </div>
+                            <div>
+                                <dt>69</dt>
+                                <dd>role titles</dd>
+                            </div>
+                            <div>
+                                <dt>48</dt>
+                                <dd>detailed interview processes</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="fit-grid">
                     <div>
-                        <p class="text-lg text-text_tertiary leading-relaxed mb-7">
-                            I keep a private interview and application record with role titles, salary bands, team
-                            shapes, office expectations, interview rounds, take-home tasks, and questions that reveal
-                            what companies are really looking for. I do not share private details. I use the patterns to
-                            ask better questions.
-                        </p>
-
-                        <div class="mb-5">
-                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-buttons mb-3">Company contexts I draw from</p>
-                            <ul class="grid sm:grid-cols-2 border-y border-gray-300 text-sm font-semibold text-text_primary">
-                                <li class="py-3 sm:pr-5 border-b border-gray-200">Big Tech and AI labs</li>
-                                <li class="py-3 sm:pl-5 border-b border-gray-200">Global consultancies</li>
-                                <li class="py-3 sm:pr-5 border-b border-gray-200">Law, insurance and professional services</li>
-                                <li class="py-3 sm:pl-5 border-b border-gray-200">Universities and research teams</li>
-                                <li class="py-3 sm:pr-5 border-b sm:border-b-0 border-gray-200">Sustainability and climate organisations</li>
-                                <li class="py-3 sm:pl-5">Start-ups and scale-ups</li>
-                            </ul>
-                            <p class="mt-3 text-xs text-text_tertiary leading-relaxed">
-                                This includes organisations I have worked with, teams I have engaged with, and interview
-                                processes recorded for pattern-level learning. Private details stay private.
-                            </p>
-                        </div>
-
-                        <p class="mb-8 text-sm leading-relaxed text-text_secondary">
-                            The working record currently covers <strong class="text-text_primary">102 roles</strong>,
-                            <strong class="text-text_primary">96 company contexts</strong>,
-                            <strong class="text-text_primary">69 role titles</strong>, and
-                            <strong class="text-text_primary">48 detailed interview processes</strong>.
-                        </p>
-
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h3 class="text-xl font-bold mb-4">A good fit when...</h3>
-                                <ul class="fit-list">
-                                    <li>A student or recent graduate trying to turn study, projects, or internships into a credible direction.</li>
-                                    <li>Applying for data, analytics, AI, research-adjacent, product, or operations roles and unsure how to position yourself.</li>
-                                    <li>Changing direction after some work experience and trying to explain the bridge without sounding scattered.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4">What the initial session should give you</h3>
-                                <ul class="fit-list">
-                                    <li>A clearer diagnosis of the main issue blocking progress.</li>
-                                    <li>One or two priorities for your next application, interview, or week.</li>
-                                    <li>An honest view of whether further support would be useful.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div id="free-session" class="mt-10 border-t border-gray-300 pt-8">
-                            <span class="career-kicker mb-3">Free during launch</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-text_primary mb-3">Book a 20-minute job-search diagnostic</h3>
-                            <p class="text-text_secondary leading-relaxed max-w-2xl mb-6">
-                                Bring one real career or job-search problem. I will review the context you send before
-                                we meet, then help you identify what is actually blocking progress and where to focus next.
-                            </p>
-
-                            <div class="grid sm:grid-cols-2 border-y border-gray-300 text-sm text-text_secondary mb-6">
-                                <p class="py-3 sm:pr-5 sm:border-r border-gray-300"><strong class="block text-text_primary mb-1">20 minutes</strong>One focused initial conversation</p>
-                                <p class="py-3 sm:pl-5 border-t sm:border-t-0 border-gray-300"><strong class="block text-text_primary mb-1">Format</strong>Online video call</p>
-                                <p class="py-3 sm:pr-5 border-t sm:border-r border-gray-300"><strong class="block text-text_primary mb-1">Reviewed beforehand</strong>Optional CV or LinkedIn plus up to three roles</p>
-                                <p class="py-3 sm:pl-5 border-t border-gray-300"><strong class="block text-text_primary mb-1">Currently free</strong>No payment or commitment required</p>
-                            </div>
-
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-                                <a href="#starting-brief" class="primary-button inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold transition">Request a free session</a>
-                                <a href="mailto:megpatakota@icloud.com?subject=Is%20the%20free%20career%20session%20right%20for%20me%3F" class="text-buttons font-semibold hover:text-accent transition">Ask whether it is right for me</a>
-                            </div>
-                        </div>
+                        <h3>This is a useful starting point if...</h3>
+                        <ul class="plain-list">
+                            <li>You are turning study, projects or internships into a credible direction.</li>
+                            <li>You are applying across data, analytics, AI or adjacent roles without clear signals.</li>
+                            <li>You are changing direction and need to explain the bridge from your existing experience.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>You should leave with...</h3>
+                        <ul class="plain-list">
+                            <li>A clearer diagnosis of the issue most likely to be blocking progress.</li>
+                            <li>One or two priorities for your next application, interview or week.</li>
+                            <li>An honest view of whether any further support would be useful.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="closing" aria-labelledby="closing-title">
+            <div class="closing-inner">
+                <div>
+                    <span class="eyebrow">Free during launch</span>
+                    <h2 id="closing-title">Bring one real problem.</h2>
+                </div>
+                <a class="primary-action" href="#starting-brief">
+                    <span>Request your free session</span>
+                    <span class="action-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <div id="shared-footer" data-article-page="false"></div>
-    <script src="./assets/js/footer.js"></script>
+    <footer class="site-footer">
+        <span>&copy; <span id="current-year"></span> Meghana Patakota</span>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="./index.html">Home</a>
+            <a href="./main_articles.html">Blog</a>
+            <a href="mailto:megpatakota@icloud.com">Email</a>
+        </nav>
+    </footer>
+
     <script>
         (function () {
             const stageButtons = document.querySelectorAll('[data-stage]');
@@ -410,17 +1423,18 @@
             const contextInput = document.getElementById('context-notes');
             const readPreview = document.getElementById('read-preview');
             const mailto = document.getElementById('brief-mailto');
+            const year = document.getElementById('current-year');
             let selectedStage = 'Trying to choose a lane';
 
             const firstReads = {
                 'Trying to choose a lane': 'I would first separate role families from job titles, then check which evidence you already have for each direction.',
                 'Applying and hearing little back': 'I would look for whether the problem is targeting, seniority, evidence, phrasing, or whether your strongest proof is hidden too low.',
-                'Preparing for an interview or task': 'I would try to identify what the process is testing: technical depth, commercial judgement, communication, product sense, speed, or ownership.',
+                'Preparing for an interview or task': 'I would identify what the process is testing: technical depth, commercial judgement, communication, product sense, speed, or ownership.',
                 'Changing direction': 'I would look for bridge evidence: the parts of your previous work that already sound useful to the new role, even if the title does not match yet.'
             };
 
             const focusReads = {
-                'which role titles are worth chasing': 'I would compare the work behind the titles, rather than relying on how similar the titles sound.',
+                'which role titles are worth chasing': 'I would compare the work behind the titles instead of relying on how similar the titles sound.',
                 'how to explain my projects, degree, or experience': 'We would identify the strongest evidence you already have and make its relevance easier to see.',
                 'why applications are not converting': 'I would locate where the application funnel is breaking before changing everything at once.',
                 'what AI, data, or analytics teams actually test': 'We would translate each interview stage into the capability it is most likely testing.',
@@ -444,7 +1458,7 @@
                 const worries = getCheckedWorries();
                 const context = contextInput.value.trim();
                 const lines = [
-                    'I would like to request a free 20-minute online job-search diagnostic.',
+                    'I would like to request a free 20-minute video job-search diagnostic.',
                     `Current situation: ${selectedStage}.`,
                     worries.length ? `What feels unclear: ${sentenceList(worries)}.` : 'I want help turning the messy picture into a clearer next step.',
                     context ? `Useful context: ${context}` : ''
@@ -470,6 +1484,7 @@
 
             worryInputs.forEach((input) => input.addEventListener('change', updateBrief));
             contextInput.addEventListener('input', updateBrief);
+            year.textContent = new Date().getFullYear();
             updateBrief();
         })();
     </script>
