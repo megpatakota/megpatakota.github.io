@@ -12,7 +12,7 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../assets/js/site-style-config.js"></script>
+    <script src="../assets/js/site-style-config.js" data-editorial="true"></script>
     
     <!-- Shared Styles -->
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -28,18 +28,22 @@
 
         gtag('config', 'G-X7Q8776VVE');
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog.css">
 </head>
 
-<body class="font-sans bg-white text-text_primary">
+<body class="editorial-page blog-article font-sans">
     
     <!-- Shared Header -->
     <div id="shared-header" data-article-page="true"></div>
-    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/blog-shell.js"></script>
 
     <!-- Article Content -->
     <section class="pt-2 pb-12 px-4 md:px-6">
         <div class="max-w-4xl mx-auto">
-            <article class="bg-white rounded-2xl shadow-lg p-5 sm:p-8 md:p-12">
+            <article class="article-reading-panel">
                 <div class="article-content">
                     <!-- Breadcrumb -->
                     <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition">
@@ -281,28 +285,7 @@ FROM test_data, actual_data;</pre>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-text_primary text-white py-10 px-6">
-        <div class="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center text-white font-bold">MP</div>
-                <div>
-                    <p class="font-semibold">Meg Patakota</p>
-                    <p class="text-sm text-white/60">Data • AI • Analytics</p>
-                </div>
-            </div>
-            <div class="flex items-center gap-3 text-sm text-white/70">
-                <a href="../experience.html" class="hover:text-white transition">Experience</a>
-                <span class="hidden sm:inline">•</span>
-                <a href="../main_articles.html" class="hover:text-white transition">Blogs</a>
-                <span class="hidden sm:inline">•</span>
-                <a href="../index.html#projects" class="hover:text-white transition">Projects</a>
-                <span class="hidden sm:inline">•</span>
-                <a href="../index.html#contact" class="hover:text-white transition">Contact</a>
-                <span class="hidden sm:inline">•</span>
-                <a href="https://www.tremoli.com" target="_blank" class="tremoli-shimmer transition">Tremoli</a>
-            </div>
-        </div>
-    </footer>
+    <div id="shared-footer"></div>
     
     <!-- JavaScript -->
     <script src="../assets/js/main.js"></script>

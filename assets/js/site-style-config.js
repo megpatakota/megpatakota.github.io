@@ -61,3 +61,20 @@ tailwind.config = {
     },
   }
 };
+
+// The blog follows the editorial palette and typography of index.html.
+// Other pages retain their existing configuration.
+if (document.currentScript?.dataset.editorial === 'true') {
+  const editorialColors = {
+    primary: '#11110f', buttons: '#007f79', accent: '#007f79',
+    bg_dark: '#11110f', bg_light: '#fbf8f2', bg_card: '#e8f3f1',
+    text_primary: '#11110f', text_secondary: '#5d625f', text_tertiary: '#5d625f',
+    header: '#fbf8f2', header_text: '#11110f',
+    gradient_start: '#007f79', gradient_end: '#007f79'
+  };
+  Object.assign(tailwind.config.theme.extend.colors, editorialColors);
+  tailwind.config.theme.extend.fontFamily.sans = ['Manrope', 'Helvetica Neue', 'Arial', 'sans-serif'];
+  Object.entries(editorialColors).forEach(([name, value]) => {
+    document.documentElement.style.setProperty('--color-' + name.replaceAll('_', '-'), value);
+  });
+}

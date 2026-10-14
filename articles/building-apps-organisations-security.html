@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Apps Inside Organisations: The Security Work Beyond the Demo - Meg Patakota</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../assets/js/site-style-config.js" data-editorial="true"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="canonical" href="https://megpatakota.com/articles/building-apps-organisations-security.html">
+
+    <meta name="description" content="A practical guide to the decisions between a working app and a responsible rollout: permissions, data boundaries, AI actions, evidence and ownership.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://megpatakota.com/articles/building-apps-organisations-security.html">
+    <meta property="og:title" content="Building Apps Inside Organisations: The Security Work Beyond the Demo">
+    <meta property="og:description" content="A practical guide to the decisions between a working app and a responsible rollout: permissions, data boundaries, AI actions, evidence and ownership.">
+    <meta name="twitter:card" content="summary">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7Q8776VVE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X7Q8776VVE');
+    </script>
+
+    <meta property="article:published_time" content="2026-10-14">
+    <style>
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--color-buttons); z-index: 100; transition: width 0.1s linear; }
+
+        .article-page-shell { max-width: 72rem; }
+        .article-reading-shell { max-width: 56rem; }
+        .article-page-title, .article-page-summary, .toc-link span, .quick-card, .stat-card, .ref-list a { overflow-wrap: anywhere; word-break: normal; }
+
+        .article-intro-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(13rem, 16rem); gap: 2rem; align-items: start; margin: 1.5rem 0 2.25rem; }
+        .article-media-stack { min-width: 0; }
+        .article-hero-image { margin: 0; border-radius: 0.875rem; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 12px 32px rgba(15,23,42,0.07); background: #f8fafc; }
+        .article-hero-image img { display: block; width: 100%; height: auto; max-height: 26rem; aspect-ratio: 16 / 9; object-fit: cover; }
+        .article-hero-caption { border-top: 1px solid #e5e7eb; background: #fff; padding: 0.55rem 0.8rem; font-size: 0.6875rem; line-height: 1.45; color: var(--color-text-tertiary); }
+        .article-hero-caption strong { color: var(--color-text-secondary); }
+
+        .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1.25rem; margin-top: 0.25rem; }
+        .article-toc-panel-title { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-text-tertiary); margin-bottom: 1rem; }
+        .toc-link { display: flex; align-items: center; gap: 0.75rem; width: 100%; border: 0; background: transparent; text-align: left; padding: 0.375rem 0; font: inherit; font-size: 0.8125rem; color: var(--color-text-tertiary); transition: color 0.2s; cursor: pointer; }
+        .toc-link:hover, .toc-link.active { color: var(--color-text-primary); }
+        .toc-dot { width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d1d5db; background: white; transition: all 0.2s; flex-shrink: 0; }
+        .toc-link.active .toc-dot { border-color: var(--color-buttons); background: var(--color-buttons); box-shadow: 0 0 6px rgba(14,116,144,0.4); }
+        .toc-line { position: absolute; left: 3px; top: 12px; bottom: 12px; width: 2px; background: #e5e7eb; }
+
+        .callout { border-left: 3px solid var(--color-buttons); background: rgba(14,116,144,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+        .callout-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-buttons); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .callout p { margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        .quick-verdict { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin: 1.75rem 0; }
+        .quick-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem 1.1rem; background: #fff; }
+        .quick-card h3 { margin: 0 0 0.55rem; font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); }
+        .quick-card p { margin: 0; font-size: 0.875rem; line-height: 1.55; }
+        .quick-card ul { margin: 0; padding-left: 0; }
+        .quick-card li { font-size: 0.875rem; line-height: 1.55; margin-bottom: 0.35rem; padding-left: 0; }
+        .quick-card li::before { display: none !important; }
+        .quick-card li:last-child { margin-bottom: 0; }
+
+        .stat-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin: 1.5rem 0; }
+        .stat-card { border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1rem; background: #f8fafc; }
+        .stat-card span { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-buttons); margin-bottom: 0.35rem; }
+        .stat-card strong { display: block; font-size: 1.6rem; line-height: 1.1; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+        .stat-card p { margin: 0; font-size: 0.8125rem; line-height: 1.55; color: var(--color-text-secondary); }
+
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.875rem; margin: 1.5rem 0; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; }
+        .compare-table th { background: #f8fafc; color: var(--color-text-primary); font-weight: 700; text-align: left; padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; }
+        .compare-table td { padding: 0.85rem 1rem; border-bottom: 1px solid #e5e7eb; color: var(--color-text-secondary); vertical-align: top; }
+        .compare-table tr:last-child td { border-bottom: 0; }
+        .compare-table strong { color: var(--color-text-primary); }
+        .article-content .overflow-x-auto { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+        .article-content h2::before { content: ''; display: block; width: 2.5rem; height: 2px; background: rgba(14,116,144,0.25); border-radius: 999px; margin-bottom: 0.75rem; }
+        .article-content ul { list-style: none; padding-left: 1.25rem; }
+        .article-content ul li { display: list-item; list-style: none; position: relative; margin-bottom: 0.75rem; line-height: 1.75; }
+        .article-content ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-buttons); opacity: 0.6; position: absolute; left: -1.25rem; top: 0.6rem; }
+        .article-content .quick-card ul { margin: 0; padding-left: 0; }
+        .article-content .quick-card li { margin-bottom: 0.35rem; line-height: 1.55; }
+        .article-content .quick-card li::before { display: none !important; }
+
+        .adoption-label { margin: 1.35rem 0 0.5rem; }
+        .adoption-label strong { display: inline-block; border-radius: 0.4rem; background: rgba(14,116,144,0.08); color: var(--color-buttons); padding: 0.12rem 0.45rem; }
+
+        .ref-list { font-size: 0.8125rem; color: var(--color-text-tertiary); counter-reset: none; padding-left: 0 !important; }
+        .ref-list li { display: flex !important; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; counter-increment: none; line-height: 1.55; }
+        .ref-list li::before { display: none !important; }
+        .ref-num { width: 1.25rem; height: 1.25rem; border-radius: 50%; background: rgba(14,116,144,0.1); color: var(--color-buttons); font-size: 0.5625rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.125rem; }
+        .reference-heading::before { display: none !important; }
+
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: all 0.2s; color: var(--color-text-tertiary); }
+        #back-to-top:hover { color: var(--color-buttons); border-color: rgba(14,116,144,0.3); }
+
+        @media (max-width: 900px) {
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(10rem, 34%); gap: 1rem; margin: 1.25rem 0 2rem; }
+            .article-toc-panel { border-left: 1px solid #e5e7eb; padding-left: 1rem; }
+        }
+
+        @media (max-width: 640px) {
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(7.5rem, 42%); gap: 0.75rem; margin: 1rem 0 1.75rem; }
+            .article-hero-image { border-radius: 0.75rem; }
+            .article-hero-image img { max-height: 10rem; }
+            .article-hero-caption { display: none; }
+            .article-toc-panel { padding-left: 0.75rem; margin-top: 0; }
+            .article-toc-panel-title { font-size: 0.5625rem; letter-spacing: 0.14em; margin-bottom: 0.55rem; }
+            .toc-link { gap: 0.45rem; padding: 0.25rem 0; font-size: 0.6875rem; line-height: 1.25; }
+            .toc-dot { width: 6px; height: 6px; border-width: 1.5px; }
+            .toc-line { left: 2px; top: 8px; bottom: 8px; }
+            .quick-verdict { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .quick-card { padding: 0.75rem; }
+            .quick-card h3 { font-size: 0.75rem; margin-bottom: 0.3rem; }
+            .quick-card p { font-size: 0.75rem; line-height: 1.35; }
+            .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+            .stat-card { padding: 0.75rem; }
+            .stat-card span { font-size: 0.5625rem; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+            .stat-card strong { font-size: 1.25rem; margin-bottom: 0.25rem; }
+            .stat-card p { font-size: 0.6875rem; line-height: 1.35; }
+            .compare-table { min-width: 36rem; font-size: 0.8125rem; }
+            .compare-table th, .compare-table td { padding: 0.75rem; }
+            #back-to-top { bottom: 1rem; right: 1rem; }
+        }
+
+        @media (max-width: 420px) {
+            .article-intro-layout { grid-template-columns: minmax(0, 1fr) minmax(6.5rem, 40%); gap: 0.6rem; }
+            .article-hero-image img { max-height: 8.5rem; }
+            .article-toc-panel { padding-left: 0.55rem; }
+            .article-toc-panel-title { font-size: 0.5rem; letter-spacing: 0.1em; }
+            .toc-link { gap: 0.35rem; font-size: 0.625rem; line-height: 1.2; }
+            .quick-card, .stat-card, .callout { padding: 0.65rem; }
+            .quick-card h3 { font-size: 0.6875rem; }
+            .quick-card p, .stat-card p { font-size: 0.625rem; }
+            .stat-card strong { font-size: 1.125rem; }
+        }
+
+        .security-map { border: 1px solid #cbdde2; border-radius: 14px; padding: 24px; background: #f8fafc; }
+        .map-kicker { color: #0e7490; font-size: 10px; letter-spacing: .14em; font-weight: 700; text-transform: uppercase; }
+        .security-map h2 { font-size: 24px; line-height: 1.3; font-weight: 700; margin: 10px 0 20px; color: #0f172a; }
+        .map-flow { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+        .map-card { position: relative; padding: 16px 13px; background: white; border: 1px solid #d9e2e8; border-radius: 8px; }
+        .map-card span { color: #0e7490; font-size: 10px; font-weight: 700; }
+        .map-card strong { display: block; font-size: 14px; line-height: 1.4; margin: 8px 0; color: #0f172a; }
+        .map-card p { font-size: 12px; line-height: 1.55; color: #475569; }
+        .map-proof { margin-top: 14px; background: #0f172a; border-radius: 8px; padding: 15px; color: #f8fafc; font-size: 12px; line-height: 1.6; }
+        .map-proof strong { color: #a5e4e7; }
+        .map-caption { color: #64748b; font-size: 11px; line-height: 1.6; margin: 12px 0 0; }
+        .cite { display: inline-flex; align-items: center; justify-content: center; width: 1rem; height: 1rem; font-size: .6rem; font-weight: 700; color: var(--color-buttons); background: #e6f2f5; border-radius: 50%; vertical-align: super; margin-left: 3px; text-decoration: none; }
+        .compare-table caption { text-align: left; font-size: .8rem; color: #64748b; padding: 0 0 10px; }
+        .compare-table { min-width: 600px; }
+        .article-content [id] { scroll-margin-top: 6rem; }
+        .related-reading { border: 1px solid #dbe3e8; border-radius: 12px; padding: 20px; margin: 30px 0; background: #f8fafc; }
+        .related-reading p { margin-bottom: 8px; font-size: .9rem; }
+        a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid #0e7490; outline-offset: 4px; }
+        @media(max-width:760px) {
+          .article-intro-layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
+          .article-toc-panel { border-left: 0; border-top: 1px solid #e5e7eb; padding: 20px 0 0; }
+          .article-toc-panel-title { font-size: 10px; }
+          #toc { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px 16px; }
+          .toc-line { display: none; }
+          .toc-link { font-size: 12px; line-height: 1.5; padding: 7px 0; }
+          .security-map { padding: 20px; }
+          .security-map h2 { font-size: 22px; }
+          .map-flow { grid-template-columns: 1fr; gap: 9px; }
+          .map-card { display: grid; grid-template-columns: 24px 1fr; gap: 4px 8px; padding: 13px; }
+          .map-card span { grid-row: span 2; padding-top: 1px; }
+          .map-card strong { margin: 0; }
+          .map-card p { margin: 0; }
+        }
+        @media(prefers-reduced-motion:reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link rel="stylesheet" href="../assets/css/security-article.css">
+</head>
+
+<body class="editorial-page blog-article security-article font-sans">
+    <div id="progress-bar" style="width:0%"></div>
+    <div id="shared-header" data-article-page="true"></div>
+    <script src="../assets/js/blog-shell.js"></script>
+    <main class="pt-8 pb-12 px-4 md:px-6">
+      <div class="article-page-shell mx-auto">
+        <header class="mb-6">
+          <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition"><i class="fas fa-arrow-left mr-2 text-xs" aria-hidden="true"></i>All Articles</a>
+          <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <time datetime="2026-10-14" class="text-sm text-text_tertiary">14 October 2026</time>
+            <span class="text-sm text-text_tertiary">9 min read</span>
+            <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Security</span>
+            <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Building Apps</span>
+            <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">AI</span>
+          </div>
+          <h1 class="article-page-title text-3xl md:text-[40px] font-extrabold text-text_primary leading-tight max-w-4xl">Building Apps Inside Organisations: The Security Work Beyond the Demo</h1>
+          <p class="article-page-summary mt-4 text-lg text-text_secondary leading-relaxed max-w-3xl">A practical guide to the decisions between a working app and a responsible rollout: permissions, data boundaries, AI actions, evidence and ownership.</p>
+          <div class="w-12 h-0.5 bg-buttons/30 mt-6 rounded-full"></div>
+        </header>
+        <div class="article-intro-layout">
+          <figure class="security-map" aria-labelledby="security-map-title">
+            <p class="map-kicker">From a demo to a shared tool</p>
+            <h2 id="security-map-title">Follow the access. Follow the data. Follow the action.</h2>
+            <div class="map-flow">
+              <div class="map-card"><span>01</span><strong>Who is asking?</strong><p>The user, their role and the permissions they actually have.</p></div>
+              <div class="map-card"><span>02</span><strong>What can it read?</strong><p>Sources, connections and the copies that the workflow creates.</p></div>
+              <div class="map-card"><span>03</span><strong>What may it do?</strong><p>Permitted operations, destinations and meaningful approval.</p></div>
+            </div>
+            <div class="map-proof"><strong>Make the decision reviewable.</strong><br>Concern → action → owner → test → evidence</div>
+            <figcaption class="map-caption">A discussion map for the article, not an architecture assessment or certification.</figcaption>
+          </figure>
+          <aside class="article-toc-panel" aria-label="Article table of contents"><p class="article-toc-panel-title">In this article</p><nav class="relative" id="toc"><div class="toc-line"></div></nav></aside>
+        </div>
+        <div class="article-reading-shell mx-auto"><article class="article-content">
+<p>There is a satisfying moment when an app starts working.</p>
+<p>The form submits. The dashboard updates. The assistant finds the right document. Someone tries it and says, “We could actually use this.”</p>
+<p>With AI coding tools, low-code platforms and configurable agents, that moment can arrive quite quickly. The harder conversation starts when someone wants to share the link with a team, connect a real system, or use the output in client work.</p>
+<p>Who can see what? Whose account is the app using? Where does the data go? What happens if the answer is wrong? And who is responsible for the thing six months from now?</p>
+<p>That is the part of building apps inside organisations I think deserves more attention. A useful prototype gives people something to react to. A dependable tool needs decisions that hold up beyond the demo.</p>
+<div class="callout"><div class="callout-label">My starting point</div><p>Security should help a team understand the conditions under which its app can be used: by whom, with which data, to do what, and with what evidence. That conversation can begin while the idea is still small.</p></div>
+
+<h2 id="start-with-scope" data-toc="Start with the scope">Start With the Work the App Will Actually Do</h2>
+<p>Imagine an internal briefing app. It searches approved project documents, reads a few CRM fields and drafts a summary before a meeting. A person checks the draft before using it. This is an illustrative example, rather than a report of a particular deployment.</p>
+<p>It sounds straightforward. But “an internal AI app” is too broad a description to make useful security decisions.</p>
+<p>I would want a short brief: the intended users, the documents and records in scope, the output, the actions it can take, and the things it must never do. For this first version, perhaps that means one project team, selected source folders, read-only CRM access and no external sending.</p>
+<p>The amount of review should follow the consequences. A prototype using synthetic data has a different exposure from a shared app containing client material. An app that drafts a note has a different failure mode from one that approves a payment. “It is only internal” does not explain either distinction.</p>
+<p>NIST’s Secure Software Development Framework places secure development practices within the development lifecycle. I read that as a useful reason to make these questions part of delivery, rather than leave the whole conversation until the final release meeting.<a class="cite" href="#ref-1" aria-label="Reference 1">1</a></p>
+
+<h2 id="access" data-toc="Follow the permissions">A Login Does Not Explain What Someone Can Access</h2>
+<p>Signing in establishes an identity. It does not, on its own, establish which project records that person should be able to retrieve, summarise, download or change.</p>
+<p>For the briefing app, the important question is whether the app preserves the boundaries between projects. If Priya can open Project A but not Project B in the source system, can she still obtain a Project B summary through the app?</p>
+<p>Hiding a button or filtering a list in the browser is insufficient. The service handling a request needs to enforce the relevant permissions. OWASP’s authorisation guidance recommends least privilege, denying access by default and validating permissions on every request.<a class="cite" href="#ref-2" aria-label="Reference 2">2</a></p>
+<p>There is another identity to follow: the connection to the underlying system. An app might authenticate the employee, then make a CRM request through a much more privileged account. The reassuring sign-in screen has not resolved that boundary.</p>
+<p>Microsoft documents this distinction in Copilot Studio. A tool can use its maker’s credentials or the end user’s credentials; maker-provided connections can expose data or capabilities beyond the end user’s permissions. Check the particular connector, channel and runtime configuration rather than assume every agent behaves the same way.<a class="cite" href="#ref-3" aria-label="Reference 3">3</a></p>
+<div class="callout"><div class="callout-label">A test worth running</div><p>Create two test users with different project access. Try normal search, direct record requests, downloads and generated summaries. Check that restricted material is excluded from both the retrieved context and the response. Keep the test cases and results; a successful demonstration using an administrator’s account tells a much smaller story.</p></div>
+
+<h2 id="data" data-toc="Map the data beyond the database">The Data Boundary Extends Beyond the Main Database</h2>
+<p>A diagram that stops at “app → database” can miss where information actually travels.</p>
+<p>The briefing app might send a document extract to a model service, keep a search index, store a draft, record a conversation and send an error event to a monitoring tool. Each creates another place to think about access, purpose, retention and deletion.</p>
+<p>I would draw that path, including the less visible copies: caches, exports, derived summaries and backups. Then ask which service receives each part, what is necessary for the task, and how long the information needs to remain there.</p>
+<p>Logs deserve their own conversation. They are useful for investigating problems, but can become an unintended store of prompts, document extracts or identifiers. OWASP’s logging guidance describes information that should generally be excluded, masked or otherwise handled carefully, including access tokens, passwords and sensitive personal data.<a class="cite" href="#ref-4" aria-label="Reference 4">4</a></p>
+<p>For our example, a useful event might record the action, an authorised actor identifier, time, outcome and a trace reference. Whether any content belongs in the log needs a deliberate decision. “Log everything so we can debug it later” is a poor default for client material.</p>
+<p>The same care applies to vendor statements. Establish the exact service, plan, region, settings and terms being used. A statement about one product is not a substitute for checking the configuration through which your app actually processes data.</p>
+
+<h2 id="ai" data-toc="Separate AI output from authority">AI Adds Another Boundary: What It Reads Versus What It May Do</h2>
+<p>Now imagine a source document containing an instruction to send the briefing somewhere else. The document is material the app should analyse. It is not an authorised request to change the workflow.</p>
+<p>That is why prompt injection matters beyond unusual chatbot answers. Instructions can arrive inside retrieved documents and other external content. OWASP notes that retrieval-augmented generation and fine-tuning do not fully mitigate this risk.<a class="cite" href="#ref-5" aria-label="Reference 5">5</a></p>
+<p>I would keep authorisation and the permitted action set outside the model’s discretion. The model can propose a summary or an action. The surrounding application still checks the identity, project, destination and permitted operation. A sentence in the system prompt is not an access-control mechanism.</p>
+<p>The distinction becomes sharper if the briefing app gains an email tool. Drafting and sending need different controls. Start with the narrow capability the work requires, and add a specific approval step where the consequence warrants it. OWASP’s excessive-agency guidance connects this risk to excessive functionality, permissions and autonomy.<a class="cite" href="#ref-6" aria-label="Reference 6">6</a></p>
+<p>“Human in the loop” needs a usable interface too. The reviewer should see the proposed recipients, the actual content, relevant sources and the action they are authorising. If those details change, the earlier approval should not quietly authorise a different send.</p>
+
+<h2 id="build" data-toc="Check the implementation">The Implementation Still Needs Ordinary Security Work</h2>
+<p>AI can help write code and identify possible issues. It cannot establish that the finished app’s access rules, deployment settings or business logic are correct.</p>
+<p>For a custom web app, the familiar work remains: handling sessions, keeping secrets out of browser code, validating inputs, checking permissions at the service boundary, reviewing dependencies and testing failure paths. Generated code needs the same scrutiny as code written another way.</p>
+<p>OWASP’s Application Security Verification Standard gives teams a basis for specifying and testing technical application controls. It is more useful to choose relevant requirements and verify them against the actual implementation than to write “OWASP checked” beside a release.<a class="cite" href="#ref-7" aria-label="Reference 7">7</a></p>
+<p>A scanner is one source of evidence. It will not, by itself, explain whether the right person can export the right project, whether a revoked permission takes effect, or whether a draft is being sent to the wrong client. Those questions need tests of the workflow and its rules.</p>
+
+<h2 id="plan" data-toc="Turn concerns into a delivery plan">Turn the Concerns Into Work Someone Can Finish</h2>
+<p>A list of risks can leave a team feeling informed but stuck. “Sort out access”, “check the AI” and “get compliance approval” are not yet a delivery plan.</p>
+<p>I find the more useful unit is a specific concern connected to an action, an owner, an acceptance criterion and evidence. It gives the builder something to implement and the reviewer something concrete to assess.</p>
+<div class="overflow-x-auto" role="region" aria-label="Example security delivery plan" tabindex="0">
+<table class="compare-table"><caption>Illustrative plan for the briefing app</caption><thead><tr><th scope="col">Concern</th><th scope="col">Action and owner</th><th scope="col">Evidence to review</th></tr></thead><tbody>
+<tr><td>Project boundaries are lost in search.</td><td>Application team: enforce record-level access before retrieved content reaches the model.</td><td>Tests using users with different access, including direct requests and permission revocation.</td></tr>
+<tr><td>Debug logs retain document content.</td><td>Platform team: define permitted fields, access and retention.</td><td>Configuration plus sample events showing the intended content exclusions.</td></tr>
+<tr><td>A draft could be sent to the wrong recipient.</td><td>Product owner and application team: require approval of the exact destination and content.</td><td>Tests showing blocked unauthorised sends and renewed approval after edits.</td></tr>
+</tbody></table></div>
+<p>These are starting examples, not a complete assessment. The important distinction is between an action being planned, implemented and verified. A status change should point to something that was inspected or tested.</p>
+<p>The review should also record what remains uncertain, who is accepting any residual risk, and the conditions of the release. An unresolved question is easier to handle when it has a named owner and a clear effect on scope.</p>
+
+<h2 id="compliance" data-toc="Keep security and compliance distinct">Security Evidence Helps the Compliance Conversation. It Does Not Finish It.</h2>
+<p>A team can complete its technical tests and still have unanswered questions about using client information, contractual restrictions, retention commitments or the purpose for which personal data is processed.</p>
+<p>I would bring the relevant data owner, privacy, legal or procurement colleagues into the specific decisions that need them. Show them the data flow, service details, intended users and actions. “Please approve our AI app” leaves too much hidden.</p>
+<p>The result may be a narrower pilot, different terms, a change in processing or a decision to leave certain data out. The right answer depends on the organisation and use case. A control checklist cannot determine those obligations on its own.</p>
+<p>Similarly, an application review should state exactly what was reviewed. It should not imply that a small app has earned an organisation-wide certification, or that completing a framework automatically establishes compliance.</p>
+
+<h2 id="change" data-toc="Revisit decisions when the app changes">The Next Connector Can Change the Original Decision</h2>
+<p>The briefing app begins with selected documents. A month later, someone asks for broader CRM access. Then automatic email sending. Later, access for an external partner.</p>
+<p>Those are changes to the app’s reach. They can affect whose information it sees, what it can do and who carries the consequences.</p>
+<p>I would keep review triggers alongside the plan: a new source, role, connector, model service, external audience or write capability. Each trigger should prompt the team to revisit the affected decisions and tests. It need not restart every unrelated piece of work.</p>
+<p>Previous evidence is still useful history, but may not support the new version. Keep the earlier decision and record why something has reopened.</p>
+<p>There is an operational side too. Name the person responsible for support, the route for reporting a problem, and who can disable a connector or stop a release. Include a way to roll back, recover and eventually retire the app. Ownership needs to survive the person who built the prototype moving to another project.</p>
+
+<h2 id="starting-point" data-toc="A practical starting point">Give the Team a Route From Idea to Responsible Use</h2>
+<p>If I were starting this conversation with a team, I would put one page in front of us: what the app does, who uses it, the data path, the actions it can take, the main unanswered questions and the people who own them.</p>
+<p>From there, choose the smallest useful release, turn the relevant concerns into testable work, and agree what evidence a reviewer needs. Make the conditions visible to the people using the app as well as the people building it.</p>
+<p>For the briefing app, that might mean a read-only pilot with a small group, selected sources and reviewed drafts. Wider access or sending can follow when the additional controls and evidence are ready.</p>
+<p>That gives a builder a clearer route to a useful rollout. It also gives the organisation a way to revisit the decision as the app changes.</p>
+<p>The question I would want a team to answer is simple: can we explain why this version is appropriate for these users, this data and these actions—and show the work behind that decision?</p>
+<aside class="related-reading" aria-label="Related reading"><p><strong>Related reading</strong></p><p>Deciding whether the work needs an app in the first place? Read <a href="ai-agent-app-series/">When AI Agents Become Apps</a>, the four-part guide to choosing a suitable home for the workflow.</p></aside><section class="mt-14 pt-8 border-t border-gray-200" aria-labelledby="references-title"><h2 id="references-title" class="reference-heading text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2><p class="text-sm text-text_tertiary">Sources checked 14 October 2026. The examples and suggested workflow are my synthesis of this guidance; they are not requirements quoted from a single standard. Product behaviour depends on the specific service and configuration.</p><ol class="ref-list"><li id="ref-1"><span class="ref-num">1</span><span><a href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener noreferrer">NIST. Secure Software Development Framework (SSDF), SP 800-218, version 1.1.</a></span></li>
+<li id="ref-2"><span class="ref-num">2</span><span><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP. Authorization Cheat Sheet.</a></span></li>
+<li id="ref-3"><span class="ref-num">3</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-no-maker-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. Control maker-provided credentials for authentication in Copilot Studio.</a></span></li>
+<li id="ref-4"><span class="ref-num">4</span><span><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP. Logging Cheat Sheet.</a></span></li>
+<li id="ref-5"><span class="ref-num">5</span><span><a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noopener noreferrer">OWASP Gen AI Security Project. LLM01:2025 Prompt Injection.</a></span></li>
+<li id="ref-6"><span class="ref-num">6</span><span><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener noreferrer">OWASP Gen AI Security Project. LLM06:2025 Excessive Agency.</a></span></li>
+<li id="ref-7"><span class="ref-num">7</span><span><a href="https://owasp.org/projects/asvs" target="_blank" rel="noopener noreferrer">OWASP. Application Security Verification Standard (ASVS), version 5.0.0.</a></span></li>
+</ol></section><div class="mt-12 pt-8 border-t border-gray-300"><p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p><div class="flex justify-center gap-6"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html&amp;text=Building%20Apps%20Inside%20Organisations%3A%20The%20Security%20Work%20Beyond%20the%20Demo" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-twitter text-2xl" aria-hidden="true"></i>Twitter</a></div></div></article></div></div></main>
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="fas fa-chevron-up text-sm"></i>
+    </button>
+
+    <div id="shared-footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        const progressBar = document.getElementById('progress-bar');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+            backToTop.style.display = window.scrollY > 600 ? 'flex' : 'none';
+        }, { passive: true });
+
+        const toc = document.getElementById('toc');
+        const sections = document.querySelectorAll('[data-toc]');
+
+        if (toc && sections.length) {
+            sections.forEach((el) => {
+                const link = document.createElement('a');
+                link.href = '#' + el.id;
+                link.className = 'toc-link';
+                link.innerHTML = '<span class="toc-dot"></span><span>' + el.dataset.toc + '</span>';
+                toc.appendChild(link);
+            });
+
+            const tocLinks = toc.querySelectorAll('.toc-link');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const idx = Array.from(sections).indexOf(entry.target);
+                        tocLinks.forEach((l, i) => l.classList.toggle('active', i === idx));
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+            sections.forEach(s => observer.observe(s));
+        }
+    </script>
+</body>
+
+</html>

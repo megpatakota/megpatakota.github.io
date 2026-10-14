@@ -1,0 +1,29 @@
+/* Match the article's diagrams and tables to the homepage palette. */
+.security-article :is(.security-map, .map-card, .map-proof, .related-reading, .compare-table, .stat-card) {
+    border-radius: 0;
+    border-color: var(--soft-line);
+    box-shadow: none;
+}
+.security-article :is(.security-map, .related-reading, .stat-card, .compare-table th) { background: var(--mint); }
+.security-article .map-card { background: var(--paper); }
+.security-article :is(.map-kicker, .map-card span, .adoption-label strong) { color: var(--teal-dark); }
+.security-article :is(.map-card strong, .security-map h2) { color: var(--ink); }
+.security-article :is(.map-card p, .map-caption, .compare-table caption) { color: var(--muted); }
+.security-article .security-map h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; font-weight: 500; line-height: 1.15; }
+.security-article .map-proof { background: var(--ink); color: var(--white); }
+.security-article .map-proof strong { color: #7ed7d1; }
+.security-article .article-content .map-proof p { color: var(--white); }
+.security-article .adoption-label strong, .security-article .cite { background: var(--mint); }
+.security-article .adoption-label strong { border-radius: 0; }
+.security-article .article-content h2::before { background: var(--teal); border-radius: 0; }
+.security-article .article-toc-panel { border-color: var(--soft-line); }
+.security-article .article-content .quick-card h3 { font-size: 1rem; }
+@media (max-width: 640px) {
+    .security-article :is(.quick-verdict, .stat-strip) { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+    .security-article :is(.quick-card, .stat-card) { padding: 1rem; }
+    .security-article .article-content :is(.quick-card p, .stat-card p) { font-size: .875rem; line-height: 1.7; }
+    .security-article .stat-card span { font-size: .6875rem; }
+    .security-article .stat-card strong { font-size: 1.5rem; }
+    .security-article .article-hero-caption { display: block; }
+    .security-article .security-map { padding: 1rem; }
+}

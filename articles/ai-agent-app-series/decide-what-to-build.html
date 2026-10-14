@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../../assets/js/site-style-config.js"></script>
+    <script src="../../assets/js/site-style-config.js" data-editorial="true"></script>
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/article.css">
     <link rel="canonical" href="https://www.megpatakota.co.uk/articles/ai-agent-app-series/decide-what-to-build.html">
@@ -225,13 +225,17 @@
             #back-to-top { right: 1rem; bottom: 1rem; width: 2.25rem; height: 2.25rem; }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
 </head>
 
-<body class="font-sans bg-white text-text_primary">
+<body class="editorial-page blog-article font-sans">
     <div id="progress-bar" style="width: 0%"></div>
 
     <div id="shared-header" data-article-page="true"></div>
-    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/blog-shell.js"></script>
 
     <section class="pt-8 pb-12 px-4 md:px-6">
         <div class="max-w-7xl mx-auto">
@@ -484,7 +488,6 @@
 
     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up text-sm"></i></button>
     <div id="shared-footer"></div>
-    <script src="../../assets/js/footer.js"></script>
     <script>
         window.addEventListener('scroll', () => {
             const h = document.documentElement.scrollHeight - window.innerHeight;
