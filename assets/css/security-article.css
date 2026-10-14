@@ -117,8 +117,8 @@
     .security-article .control-flow > li, .security-article .cloud-option dl > div { break-inside: avoid; }
 }
 
-/* Compact editorial layout: visuals replace long-form prose. */
-.security-article > main { padding: 1.5rem clamp(1.5rem, 6vw, 6rem) 3rem; }
+/* Editorial layout: visual sections with clear vertical separation. */
+.security-article > main { padding: 2.5rem clamp(1.5rem, 6vw, 6rem) 4.5rem; }
 .security-article .article-page-shell { max-width: 100rem; }
 .security-article .article-reading-shell { max-width: none; }
 .security-article .article-page-title {
@@ -127,57 +127,57 @@
     line-height: 1.08;
 }
 .security-article .article-page-summary { max-width: 90ch; font-size: 1rem; margin-top: .8rem; line-height: 1.65; }
-.security-article main > .article-page-shell > header { margin-bottom: 1rem; }
-.security-article .article-intro-layout { grid-template-columns: minmax(0, 1fr) 15rem; gap: 1.5rem; margin: 1.25rem 0 1.5rem; }
+.security-article main > .article-page-shell > header { margin-bottom: 1.5rem; }
+.security-article .article-intro-layout { grid-template-columns: minmax(0, 1fr) 15rem; gap: 1.5rem; margin: 1.75rem 0 2.5rem; }
 .security-article .security-map { padding: 1.1rem; }
 .security-article .security-map h2 { font-size: 1.6rem; margin: .4rem 0 .8rem; }
 .security-article .map-card { padding: .8rem; }
 .security-article .map-card strong { margin: .25rem 0; }
 .security-article .map-proof { margin-top: .7rem; padding: .7rem .8rem; }
 .security-article .map-caption { margin-top: .5rem; }
-.security-article .article-content > h2 { font-size: clamp(1.6rem, 2.4vw, 2.15rem); margin: 2rem 0 .8rem; }
+.security-article .article-content > h2 { font-size: clamp(1.6rem, 2.4vw, 2.15rem); margin: clamp(2.5rem, 4vw, 3.5rem) 0 1.25rem; }
 .security-article .article-content > h2::before { margin-bottom: .5rem; }
-.security-article .article-content > p { margin-bottom: 1rem; font-size: .95rem; line-height: 1.75; }
+.security-article .article-content > p { margin-bottom: 1.25rem; font-size: .95rem; line-height: 1.75; }
 .security-article .article-content > .article-lead { font-size: 1.1rem; color: var(--ink); }
-.security-article .control-visual { margin: 1.1rem 0; padding: 1.1rem; }
-.security-article .visual-heading h3 { margin: .4rem 0 .9rem; font-size: 1.65rem; }
+.security-article .control-visual { margin: 1.75rem 0; padding: 1.5rem 1.1rem; }
+.security-article .visual-heading h3 { margin: .4rem 0 1.2rem; font-size: 1.65rem; }
 .security-article .control-flow > li { padding: .85rem; }
 .security-article .control-flow p { margin-bottom: 0; }
 .security-article .flow-number { font-size: 1.4rem; margin-bottom: .4rem; }
 .security-article .control-visual figcaption { margin-top: .7rem; }
-.security-article :is(.risk-grid, .release-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
-.security-article :is(.risk-card, .release-grid > section) { padding: 1rem; border-top: 2px solid var(--teal); background: var(--mint); min-width: 0; }
+.security-article :is(.risk-grid, .release-grid) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1rem; margin: 1.5rem 0; }
+.security-article :is(.risk-card, .release-grid > section) { padding: 1.4rem 1rem; border-top: 2px solid var(--teal); background: var(--mint); min-width: 0; }
 .security-article .article-content :is(.risk-card, .tool-card-compact, .release-grid > section) h3 { font-family: "Manrope", Arial, sans-serif; font-size: 1rem; line-height: 1.4; margin: 0 0 .65rem; font-weight: 700; }
 .security-article .risk-card dl { margin: 0; }
-.security-article .risk-card dl > div + div { margin-top: .75rem; }
+.security-article .risk-card dl > div + div { margin-top: 1rem; }
 .security-article .risk-card dt { font-size: .7rem; text-transform: uppercase; font-weight: 700; letter-spacing: .06em; color: var(--teal-dark); }
 .security-article .risk-card dd { margin: .2rem 0 0; font-size: .875rem; line-height: 1.65; color: var(--muted); }
-.security-article :is(.data-path, .evidence-strip) { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 .5rem; padding: 1rem; background: var(--mint); }
+.security-article :is(.data-path, .evidence-strip) { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0 .8rem; padding: 1.25rem 1rem; background: var(--mint); }
 .security-article :is(.data-path, .evidence-strip) > span:not([aria-hidden]) { flex: 1 1 8rem; font-size: .875rem; font-weight: 600; color: var(--ink); }
 .security-article :is(.data-path, .evidence-strip) > span[aria-hidden] { color: var(--teal); }
 .security-article .boundary-note { font-size: .8rem; color: var(--muted); margin-bottom: 1rem; }
-.security-article .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
-.security-article .tool-card-compact { border-top: 1px solid var(--soft-line); padding: 1rem 0; min-width: 0; }
+.security-article .tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1rem; margin: 1.5rem 0; }
+.security-article .tool-card-compact { border-top: 1px solid var(--soft-line); padding: 1.25rem 0; min-width: 0; }
 .security-article .tool-card-compact .visual-kicker { margin-bottom: .45rem; }
 .security-article .tool-card-compact p { font-size: .875rem; line-height: 1.65; margin: 0 0 .5rem; }
 .security-article .tool-card-compact .tool-limit { font-size: .8rem; margin-bottom: 0; }
-.security-article .article-detail { border-top: 1px solid var(--soft-line); border-bottom: 1px solid var(--soft-line); margin: 1rem 0; padding: .8rem 0; }
+.security-article .article-detail { border-top: 1px solid var(--soft-line); border-bottom: 1px solid var(--soft-line); margin: 1.5rem 0; padding: 1.15rem 0; }
 .security-article .article-detail + .article-detail { border-top: 0; }
 .security-article .article-detail summary { font-size: .875rem; font-weight: 600; cursor: pointer; color: var(--teal-dark); }
 .security-article .article-detail p { font-size: .875rem; line-height: 1.65; margin: .8rem 0 0; }
 .security-article .source-details .ref-list { margin-top: 1rem; }
-.security-article .cloud-option { padding: 1rem; }
-.security-article .cloud-option dl > div { padding: .7rem 0; }
+.security-article .cloud-option { padding: 1.4rem 1rem; }
+.security-article .cloud-option dl > div { padding: 1rem 0; }
 .security-article .cloud-option > h4 { font-size: 1.7rem; margin-bottom: .75rem; }
-.security-article .check-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
-.security-article .check-grid > div { display: grid; gap: .35rem; padding: .85rem; background: var(--mint); font-size: .875rem; min-width: 0; }
+.security-article .check-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1rem; margin: 1.5rem 0; }
+.security-article .check-grid > div { display: grid; gap: .5rem; padding: 1.2rem .85rem; background: var(--mint); font-size: .875rem; min-width: 0; }
 .security-article .check-grid span { color: var(--muted); line-height: 1.65; }
 .security-article .market-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.security-article .market-list > div { border-top: 1px solid var(--soft-line); padding-top: .8rem; min-width: 0; }
+.security-article .market-list > div { border-top: 1px solid var(--soft-line); padding-top: 1.2rem; min-width: 0; }
 .security-article .market-list > div > strong { font-size: .95rem; }
 .security-article .market-list p, .security-article .release-grid p { font-size: .875rem; line-height: 1.65; margin: .4rem 0 0; }
 .security-article .article-content .section-note { font-size: .8rem; color: var(--muted); margin-top: .8rem; }
-.security-article .related-reading { padding: .8rem 1rem; margin: 1.25rem 0; }
+.security-article .related-reading { padding: 1.1rem 1rem; margin: 1.75rem 0; }
 .security-article .related-reading p { margin: 0; }
 @media (max-width: 1000px) {
     .security-article .tool-grid, .security-article .check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -187,10 +187,19 @@
     .security-article .toc-line { display: none; }
 }
 @media (max-width: 760px) {
-    .security-article :is(.risk-grid, .release-grid, .tool-grid, .check-grid, .market-list) { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+    .security-article :is(.risk-grid, .release-grid, .tool-grid, .check-grid, .market-list) { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
     .security-article :is(.data-path, .evidence-strip) { flex-direction: column; align-items: flex-start; padding: .85rem; gap: .3rem; }
     .security-article :is(.data-path, .evidence-strip) > span:not([aria-hidden]) { flex: 0 0 auto; }
     .security-article :is(.data-path, .evidence-strip) > span[aria-hidden] { transform: rotate(90deg); }
-    .security-article .control-visual { padding: .85rem; }
-    .security-article .tool-card-compact { padding: .8rem 0; }
+    .security-article .control-visual { padding: 1.2rem .85rem; }
+    .security-article .tool-card-compact { padding: 1rem 0; }
+}
+
+/* Short scenarios followed by matched prevention and test cards. */
+.security-article .article-content .scenario-intro { margin: 0 0 1.5rem; color: var(--ink); font-size: 1rem; line-height: 1.7; }
+.security-article .scenario-checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.security-article .scenario-checks .risk-card { min-width: 0; padding: 1.4rem 1rem; border-top: 2px solid var(--teal); background: var(--mint); }
+.security-article .scenario-checks .risk-card p { margin: 0; font-size: .875rem; line-height: 1.7; }
+@media (max-width: 760px) {
+    .security-article .scenario-checks { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
 }

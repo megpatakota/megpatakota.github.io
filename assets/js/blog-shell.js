@@ -5,7 +5,10 @@
     const page = (path) => new URL(path, root).href;
     document.addEventListener('DOMContentLoaded', () => {
         const header = document.getElementById('shared-header');
-        if (header) {
+        // Article pages start with their own title and back link.
+        if (header && document.body.classList.contains('blog-article')) {
+            header.remove();
+        } else if (header) {
             header.outerHTML = `
                 <header class="site-header">
                     <a class="brand" href="${page('index.html')}" aria-label="Meg Patakota, home">
