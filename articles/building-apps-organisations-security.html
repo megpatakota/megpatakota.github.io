@@ -192,7 +192,7 @@
           <a href="../main_articles.html" class="inline-flex items-center text-sm text-text_tertiary hover:text-buttons mb-6 transition"><i class="fas fa-arrow-left mr-2 text-xs" aria-hidden="true"></i>All Articles</a>
           <div class="flex items-center gap-3 mb-4 flex-wrap">
             <time datetime="2026-10-14" class="text-sm text-text_tertiary">14 October 2026</time>
-            <span class="text-sm text-text_tertiary">18 min read</span>
+            <span class="text-sm text-text_tertiary">5 min read</span>
             <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Security</span>
             <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">Building Apps</span>
             <span class="text-xs font-medium text-buttons bg-buttons/10 px-2.5 py-0.5 rounded-full">AI</span>
@@ -204,157 +204,115 @@
         <div class="article-intro-layout">
           <figure class="security-map" aria-labelledby="security-map-title">
             <p class="map-kicker">From a demo to a shared tool</p>
-            <h2 id="security-map-title">Follow the access. Follow the data. Follow the action.</h2>
+            <h2 id="security-map-title">Three boundaries to get right.</h2>
             <div class="map-flow">
-              <div class="map-card"><span>01</span><strong>Who is asking?</strong><p>The user, their role and the permissions they actually have.</p></div>
-              <div class="map-card"><span>02</span><strong>What can it read?</strong><p>Sources, connections and the copies that the workflow creates.</p></div>
-              <div class="map-card"><span>03</span><strong>What may it do?</strong><p>Permitted operations, destinations and meaningful approval.</p></div>
+              <div class="map-card"><span>01</span><strong>Who is asking?</strong><p>Verify the researcher and their access.</p></div>
+              <div class="map-card"><span>02</span><strong>What can it read?</strong><p>Retrieve only permitted evidence.</p></div>
+              <div class="map-card"><span>03</span><strong>What may it do?</strong><p>Keep tools and sharing under control.</p></div>
             </div>
             <div class="map-proof"><strong>Make the decision reviewable.</strong><br>Concern → action → owner → test → evidence</div>
-            <figcaption class="map-caption">A discussion map for the article, not an architecture assessment or certification.</figcaption>
+            <figcaption class="map-caption">An illustrative guide for an internal AI research assistant.</figcaption>
           </figure>
           <aside class="article-toc-panel" aria-label="Article table of contents"><p class="article-toc-panel-title">In this article</p><nav class="relative" id="toc"><div class="toc-line"></div></nav></aside>
         </div>
         <div class="article-reading-shell mx-auto"><article class="article-content">
-<p>There is a satisfying moment when an app starts working.</p>
-<p>The form submits. The dashboard updates. The assistant finds the right document. Someone tries it and says, “We could actually use this.”</p>
-<p>With AI coding tools, low-code platforms and configurable agents, that moment can arrive quite quickly. The harder conversation starts when someone wants to share the link with a team, connect a real system, or use the output in client work.</p>
-<p>Who can see what? Whose account is the app using? Where does the data go? What happens if the answer is wrong? And who is responsible for the thing six months from now?</p>
-<p>That is the part of building apps inside organisations I think deserves more attention. A useful prototype gives people something to react to. A dependable tool needs decisions that hold up beyond the demo.</p>
-<div class="callout"><div class="callout-label">My starting point</div><p>Security should help a team understand the conditions under which its app can be used: by whom, with which data, to do what, and with what evidence. That conversation can begin while the idea is still small.</p></div>
+<p class="article-lead">An AI demo can answer a question. A shared research assistant must answer using the right evidence, for the right person, with controlled access and actions.</p>
+<p id="start-with-scope">Our example: an internal assistant that searches approved project documents, answers with citations and drafts research briefs. Start with one team, selected sources and read-only retrieval. This is an illustrative design.</p>
 
-<h2 id="start-with-scope" data-toc="Start with the scope">Start With the Work the App Will Actually Do</h2>
-<p>Imagine an internal briefing app. It searches approved project documents, reads a few CRM fields and drafts a summary before a meeting. A person checks the draft before using it. This is an illustrative example, rather than a report of a particular deployment.</p>
-<p>It sounds straightforward. But “an internal AI app” is too broad a description to make useful security decisions.</p>
-<p>I would want a short brief: the intended users, the documents and records in scope, the output, the actions it can take, and the things it must never do. For this first version, perhaps that means one project team, selected source folders, read-only CRM access and no external sending.</p>
-<p>The amount of review should follow the consequences. A prototype using synthetic data has a different exposure from a shared app containing client material. An app that drafts a note has a different failure mode from one that approves a payment. “It is only internal” does not explain either distinction.</p>
-<p>NIST’s Secure Software Development Framework places secure development practices within the development lifecycle. I read that as a useful reason to make these questions part of delivery, rather than leave the whole conversation until the final release meeting.<a class="cite" href="#ref-1" aria-label="Reference 1">1</a></p>
+<h2 id="access" data-toc="Protect the evidence">1. Protect the evidence before generating an answer</h2>
+<p>A login establishes identity. The backend still needs to enforce project and document permissions before retrieved passages reach the model.<a class="cite" href="#ref-2" aria-label="Reference 2">2</a><a class="cite" href="#ref-8" aria-label="Reference 8">8</a></p>
+<figure class="control-visual" aria-labelledby="retrieval-flow-title">
+<div class="visual-heading"><span class="visual-kicker">The retrieval path</span><h3 id="retrieval-flow-title">Question → permitted evidence → cited answer</h3></div>
+<ol class="control-flow control-flow-three">
+<li><span class="flow-number" aria-hidden="true">01</span><h4>Verify the researcher</h4><p>Check identity, organisation and project access on the backend.</p></li>
+<li><span class="flow-number" aria-hidden="true">02</span><h4>Filter the evidence</h4><p>Retrieve authorised passages. Each chunk inherits its source permissions.</p></li>
+<li><span class="flow-number" aria-hidden="true">03</span><h4>Generate and review</h4><p>Cite the passages. Check they support the important claims.</p></li>
+</ol>
+<figcaption>Required permission check fails? Stop. Apply access rules to citation links, saved briefs and cached answers too.</figcaption>
+</figure>
+<div class="risk-grid" aria-label="Retrieval risks and controls">
+<section class="risk-card"><h3>Restricted content appears</h3><dl><div><dt>Control</dt><dd>Filter documents before model access; never accept a user-selected access scope.</dd></div><div><dt>Verify</dt><dd>Try search, direct document links and exports as users with different permissions.</dd></div></dl></section>
+<section class="risk-card"><h3>Revoked access lingers</h3><dl><div><dt>Control</dt><dd>Set a revocation window, synchronise permissions and invalidate affected caches.</dd></div><div><dt>Verify</dt><dd>Remove access, then repeat retrieval, citation and saved-brief requests.</dd></div></dl></section>
+<section class="risk-card"><h3>A citation misleads</h3><dl><div><dt>Control</dt><dd>Link claims to accessible passages; make missing or conflicting evidence visible.</dd></div><div><dt>Verify</dt><dd>Use known-answer questions and questions the collection cannot answer.</dd></div></dl></section>
+</div>
+<p class="section-note">Check the connector’s identity as well: a maker-owned connection can grant more reach than the researcher has.<a class="cite" href="#ref-3" aria-label="Reference 3">3</a></p>
 
-<h2 id="access" data-toc="Follow the permissions">A Login Does Not Explain What Someone Can Access</h2>
-<p>Signing in establishes an identity. It does not, on its own, establish which project records that person should be able to retrieve, summarise, download or change.</p>
-<p>For the briefing app, the important question is whether the app preserves the boundaries between projects. If Priya can open Project A but not Project B in the source system, can she still obtain a Project B summary through the app?</p>
-<p>Hiding a button or filtering a list in the browser is insufficient. The service handling a request needs to enforce the relevant permissions. OWASP’s authorisation guidance recommends least privilege, denying access by default and validating permissions on every request.<a class="cite" href="#ref-2" aria-label="Reference 2">2</a></p>
-<p>There is another identity to follow: the connection to the underlying system. An app might authenticate the employee, then make a CRM request through a much more privileged account. The reassuring sign-in screen has not resolved that boundary.</p>
-<p>Microsoft documents this distinction in Copilot Studio. A tool can use its maker’s credentials or the end user’s credentials; maker-provided connections can expose data or capabilities beyond the end user’s permissions. Check the particular connector, channel and runtime configuration rather than assume every agent behaves the same way.<a class="cite" href="#ref-3" aria-label="Reference 3">3</a></p>
-<div class="callout"><div class="callout-label">A test worth running</div><p>Create two test users with different project access. Try normal search, direct record requests, downloads and generated summaries. Check that restricted material is excluded from both the retrieved context and the response. Keep the test cases and results; a successful demonstration using an administrator’s account tells a much smaller story.</p></div>
+<h2 id="data" data-toc="Follow the data">2. Follow the copies, not just the database</h2>
+<div class="data-path" aria-label="Places where research data may be retained"><span>Source documents</span><span aria-hidden="true">→</span><span>Search / embedding index</span><span aria-hidden="true">→</span><span>Model context</span><span aria-hidden="true">→</span><span>Answers and briefs</span></div>
+<div class="boundary-note"><strong>Also check:</strong> conversation history, caches, exports, backups and monitoring logs.</div>
+<p>For each location, record who can access it, which service receives it, retention and deletion. Keep logs focused on the actor, operation, outcome and trace reference; decide deliberately whether document content belongs there.<a class="cite" href="#ref-4" aria-label="Reference 4">4</a></p>
 
-<h3>How I would preserve project permissions in a retrieval app</h3>
-<p>First, validate the session or access token on the backend and derive the user and organisation from that verified identity. Do not trust a user ID or tenant ID supplied in the request body. Then check access to the requested project and apply document permissions before any text reaches the model. Downloads, citations and exports need the same boundary.</p>
-<p>For a small app, those checks may live in the existing service and database. If permissions span groups, projects and documents, a relationship-based authorisation service such as OpenFGA can answer whether a user may read a particular object. It still needs an accurate permission model and an application that enforces its decisions.<a class="cite" href="#ref-8" aria-label="Reference 8">8</a></p>
-<pre aria-label="Illustrative server-side authorisation flow"><code># Pseudocode: each helper represents a backend control.
-# Invalid identity or unavailable policy checks stop the request.
-actor = verify_session(request)
-project = load_project(request.project_id, actor.organisation)
-require_permission(actor, "read", project)
+<h2 id="ai" data-toc="Control agent actions">3. A document is evidence, not an instruction</h2>
+<p>A retrieved document might tell the assistant to search a restricted collection or share a brief externally. Prompt-injection filters help, but permissions and allowed actions must be enforced outside the model.<a class="cite" href="#ref-5" aria-label="Reference 5">5</a><a class="cite" href="#ref-6" aria-label="Reference 6">6</a></p>
+<figure class="control-visual" aria-labelledby="sharing-flow-title">
+<div class="visual-heading"><span class="visual-kicker">The sharing boundary</span><h3 id="sharing-flow-title">Draft → approve → check and share</h3></div>
+<ol class="control-flow control-flow-three">
+<li><span class="flow-number" aria-hidden="true">01</span><h4>Fix the draft</h4><p>Save the exact brief, citations, attachments and audience as a version.</p></li>
+<li><span class="flow-number" aria-hidden="true">02</span><h4>Approve that version</h4><p>Show the reviewer the content and destination. Record an expiry.</p></li>
+<li><span class="flow-number" aria-hidden="true">03</span><h4>Recheck and execute</h4><p>Validate current permissions. Consume approval once and prevent duplicate sharing.</p></li>
+</ol>
+<figcaption>Changed audience or content? Fresh approval. Expired approval? Stop. A retry must not repeat a completed operation.</figcaption>
+</figure>
+<p>Expose narrow tools for approved search, authorised passages and draft saving. Restrict destinations and network access. Test an injected document through the real workflow, checking tool calls and side effects as well as the answer.<a class="cite" href="#ref-10" aria-label="Reference 10">10</a></p>
 
-chunks = search_with_permission_filter(
-    query=request.query,
-    organisation=actor.organisation,
-    project=project.id,
-    permissions=current_permissions(actor)
-)
-require_permission_for_each(actor, "read", chunks)
-return generate_summary(context=chunks)</code></pre>
-<p>The search filter must be constructed by the server, and each chunk must inherit its source document’s permissions. Azure AI Search documents both security-trimming patterns and native document-permission features; several native integrations remain in preview. Source permission changes only affect indexed results after the relevant metadata synchronises. That delay is part of the design, not an implementation detail to discover after launch.<a class="cite" href="#ref-9" aria-label="Reference 9">9</a></p>
-<p>I would explicitly test removing someone from a project: can they still retrieve an old chunk, follow a citation, open a saved summary or receive a cached answer? Define the acceptable revocation delay, invalidate permission-sensitive caches, and use a fresh source check or suspend retrieval when stale metadata would be unacceptable. Passing one search test does not establish that every derived copy is protected.</p>
+<h2 id="security-tools" data-toc="Choose the right controls">4. Choose tools by the gap they address</h2>
+<p id="build">Use existing organisational tooling first. Code review, dependency checks, web testing and AI attack testing cover different layers.</p>
+<div class="tool-grid" aria-label="Security tools by purpose">
+<section class="tool-card-compact"><span class="visual-kicker">Code review</span><h3>Claude Security · Semgrep · Snyk Code</h3><p>Investigate source-level flaws; review proposed fixes and add regression tests.<a class="cite" href="#ref-11" aria-label="Reference 11">11</a><a class="cite" href="#ref-12" aria-label="Reference 12">12</a><a class="cite" href="#ref-14" aria-label="Reference 14">14</a><a class="cite" href="#ref-16" aria-label="Reference 16">16</a></p><p class="tool-limit">Check beta access, language coverage and code-processing terms. Semgrep CE can scan locally.<a class="cite" href="#ref-15" aria-label="Reference 15">15</a></p></section>
+<section class="tool-card-compact"><span class="visual-kicker">Dependencies</span><h3>Snyk Open Source</h3><p>Find vulnerable direct and transitive packages and licence issues.<a class="cite" href="#ref-17" aria-label="Reference 17">17</a></p><p class="tool-limit">Triage reachability and upgrade risk. This does not verify document permissions.</p></section>
+<section class="tool-card-compact"><span class="visual-kicker">Web application</span><h3>ZAP</h3><p>Check staging responses, cookies and headers; configure authentication for protected routes.<a class="cite" href="#ref-18" aria-label="Reference 18">18</a></p><p class="tool-limit">Baseline scanning is passive. Business access rules need their own tests.</p></section>
+<section class="tool-card-compact"><span class="visual-kicker">AI attack testing</span><h3>Promptfoo · Mindgard</h3><p>Exercise indirect injection, cross-user access and tool abuse.<a class="cite" href="#ref-19" aria-label="Reference 19">19</a><a class="cite" href="#ref-20" aria-label="Reference 20">20</a><a class="cite" href="#ref-21" aria-label="Reference 21">21</a></p><p class="tool-limit">Test the full retrieval/tool path and inspect effects, not just model refusals.</p></section>
+<section class="tool-card-compact"><span class="visual-kicker">Runtime and cloud exposure</span><h3>Model Armor · Wiz</h3><p>Evaluate content screening or code-to-cloud exposure, depending on the product.<a class="cite" href="#ref-23" aria-label="Reference 23">23</a><a class="cite" href="#ref-24" aria-label="Reference 24">24</a></p><p class="tool-limit">Verify purchased coverage, blocking behaviour and reproducible findings.</p></section>
+<section class="tool-card-compact"><span class="visual-kicker">Low-code governance</span><h3>Copilot Studio data policies</h3><p>Allow, group or block connectors in the intended environment.<a class="cite" href="#ref-22" aria-label="Reference 22">22</a></p><p class="tool-limit">Connector policies do not replace document-level authorisation.</p></section>
+</div>
+<details class="article-detail"><summary>Claude Security: which product are we talking about?</summary><p>The February research preview was named Claude Code Security. Current documentation describes Claude Security, an Enterprise public beta and a Claude Code plugin.<a class="cite" href="#ref-29" aria-label="Reference 29">29</a><a class="cite" href="#ref-11" aria-label="Reference 11">11</a><a class="cite" href="#ref-12" aria-label="Reference 12">12</a></p><p>The separate security-review GitHub Action is intended for trusted pull requests; its repository says it is not hardened against prompt injection. Check workflow permissions before enabling it.<a class="cite" href="#ref-13" aria-label="Reference 13">13</a></p></details>
 
-<h2 id="data" data-toc="Map the data beyond the database">The Data Boundary Extends Beyond the Main Database</h2>
-<p>A diagram that stops at “app → database” can miss where information actually travels.</p>
-<p>The briefing app might send a document extract to a model service, keep a search index, store a draft, record a conversation and send an error event to a monitoring tool. Each creates another place to think about access, purpose, retention and deletion.</p>
-<p>I would draw that path, including the less visible copies: caches, exports, derived summaries and backups. Then ask which service receives each part, what is necessary for the task, and how long the information needs to remain there.</p>
-<p>Logs deserve their own conversation. They are useful for investigating problems, but can become an unintended store of prompts, document extracts or identifiers. OWASP’s logging guidance describes information that should generally be excluded, masked or otherwise handled carefully, including access tokens, passwords and sensitive personal data.<a class="cite" href="#ref-4" aria-label="Reference 4">4</a></p>
-<p>For our example, a useful event might record the action, an authorised actor identifier, time, outcome and a trace reference. Whether any content belongs in the log needs a deliberate decision. “Log everything so we can debug it later” is a poor default for client material.</p>
-<p>The same care applies to vendor statements. Establish the exact service, plan, region, settings and terms being used. A statement about one product is not a substitute for checking the configuration through which your app actually processes data.</p>
+<figure class="control-visual cloud-visual" aria-labelledby="cloud-controls-title">
+<div class="visual-heading"><span class="visual-kicker">Azure and AWS</span><h3 id="cloud-controls-title">Match services to the same boundaries</h3></div>
+<div class="cloud-options">
+<section class="cloud-option" aria-labelledby="azure-option-title"><h4 id="azure-option-title">Azure</h4><dl>
+<div><dt>Retrieve permitted evidence</dt><dd><strong>Azure AI Search</strong><span>Carry source permissions into passages; test permission synchronisation.<a class="cite" href="#ref-9" aria-label="Reference 9">9</a></span></dd></div>
+<div><dt>Screen malicious instructions</dt><dd><strong>Foundry Prompt Shields</strong><span>Configure prompt/document controls; verify detection versus blocking.<a class="cite" href="#ref-30" aria-label="Reference 30">30</a></span></dd></div>
+<div><dt>Control actions</dt><dd><strong>Backend permissions + approved tools</strong><span>Enforce operation, destination and sharing approval.</span></dd></div>
+</dl><p class="cloud-caveat">Some native search permission features and Spotlighting are in preview. Check API support and token-cost implications.</p></section>
+<section class="cloud-option" aria-labelledby="aws-option-title"><h4 id="aws-option-title">AWS</h4><dl>
+<div><dt>Retrieve permitted evidence</dt><dd><strong>Bedrock Knowledge Bases</strong><span>Build filters from verified researcher access on the backend.<a class="cite" href="#ref-31" aria-label="Reference 31">31</a><a class="cite" href="#ref-34" aria-label="Reference 34">34</a></span></dd></div>
+<div><dt>Screen inputs and outputs</dt><dd><strong>Bedrock Guardrails</strong><span>Configure relevant policies and prompt-attack controls; rerun evaluations over time.<a class="cite" href="#ref-32" aria-label="Reference 32">32</a><a class="cite" href="#ref-35" aria-label="Reference 35">35</a></span></dd></div>
+<div><dt>Control agent credentials</dt><dd><strong>AgentCore Identity</strong><span>Scope resource/tool access; retain application permission and approval checks.<a class="cite" href="#ref-33" aria-label="Reference 33">33</a></span></dd></div>
+</dl><p class="cloud-caveat">Custom-source ACL filtering relies on application-supplied identity. It is not an authorisation boundary or real-time permission verification.</p></section>
+</div><figcaption>Illustrative mapping. Verify region and feature support; cloud services do not automatically enforce every application rule.</figcaption>
+</figure>
 
-<h2 id="ai" data-toc="Separate AI output from authority">AI Adds Another Boundary: What It Reads Versus What It May Do</h2>
-<p>Now imagine a source document containing an instruction to send the briefing somewhere else. The document is material the app should analyse. It is not an authorised request to change the workflow.</p>
-<p>That is why prompt injection matters beyond unusual chatbot answers. Instructions can arrive inside retrieved documents and other external content. OWASP notes that retrieval-augmented generation and fine-tuning do not fully mitigate this risk.<a class="cite" href="#ref-5" aria-label="Reference 5">5</a></p>
-<p>I would keep authorisation and the permitted action set outside the model’s discretion. The model can propose a summary or an action. The surrounding application still checks the identity, project, destination and permitted operation. A sentence in the system prompt is not an access-control mechanism.</p>
-<p>The distinction becomes sharper if the briefing app gains an email tool. Drafting and sending need different controls. Start with the narrow capability the work requires, and add a specific approval step where the consequence warrants it. OWASP’s excessive-agency guidance connects this risk to excessive functionality, permissions and autonomy.<a class="cite" href="#ref-6" aria-label="Reference 6">6</a></p>
-<p>“Human in the loop” needs a usable interface too. The reviewer should see the proposed recipients, the actual content, relevant sources and the action they are authorising. If those details change, the earlier approval should not quietly authorise a different send.</p>
+<h2 id="verification" data-toc="Prove it works">5. Turn each concern into evidence</h2>
+<div class="evidence-strip" aria-label="Security delivery sequence"><span>Concern</span><span aria-hidden="true">→</span><span>Control</span><span aria-hidden="true">→</span><span>Owner</span><span aria-hidden="true">→</span><span>Test</span><span aria-hidden="true">→</span><span>Evidence</span></div>
+<div class="check-grid" aria-label="Checks before sharing the assistant">
+<div><strong>Different users</strong><span>No cross-project search, citation or export leakage.</span></div>
+<div><strong>Revoked access</strong><span>Index, cache and saved-brief checks meet the revocation window.</span></div>
+<div><strong>Injected document</strong><span>No unauthorised retrieval, tool call or external share.</span></div>
+<div><strong>Changed approval</strong><span>Edited, expired and replayed approvals fail; retries do not duplicate sharing.</span></div>
+<div><strong>Missing evidence</strong><span>The answer acknowledges gaps; citations support its claims.</span></div>
+<div><strong>Protection outage</strong><span>Required permission checks fail closed; guardrails follow the chosen failure policy.</span></div>
+</div>
+<p id="plan">Run relevant code/dependency checks and access tests in CI; add authenticated web and AI attack tests in staging. Record versions, confirmed findings, fixes and any time-limited exceptions.</p>
+<details class="article-detail"><summary>Which frameworks help choose the checks?</summary><p><strong>OWASP ASVS:</strong> application requirements. <strong>OWASP LLM and Agentic Top 10:</strong> model and tool risks. <strong>MITRE ATLAS:</strong> adversary scenarios. <strong>NIST SSDF:</strong> development practices and evidence. Framework mapping is not certification.<a class="cite" href="#ref-7" aria-label="Reference 7">7</a><a class="cite" href="#ref-5" aria-label="Reference 5">5</a><a class="cite" href="#ref-25" aria-label="Reference 25">25</a><a class="cite" href="#ref-26" aria-label="Reference 26">26</a><a class="cite" href="#ref-1" aria-label="Reference 1">1</a></p></details>
 
-<h3>Turn a proposed action into a controlled operation</h3>
-<p>For the briefing app, I would expose narrow tools such as <code>read_project_record</code> and <code>create_draft</code>, rather than an unrestricted HTTP client or shell. The backend validates the argument schema, checks the user’s permission for the target object and restricts destinations. A model-supplied URL must not let the tool reach internal metadata services or an unapproved external host.</p>
-<p>If sending is later introduced, store the proposed recipients, content and attachments as an immutable server-side draft version. Bind approval to that version, the approving user, the permitted action and an expiry. At execution, recheck current permissions and consume the approval once; changed content or recipients require a new approval. Use an idempotency key and an atomic state transition so a retry does not create a second send. These are proposed implementation controls, not features automatically supplied by an agent framework.</p>
-<p>For MCP integrations, I would also record the approved server and tool definitions, restrict its file and network reach, and require review when its capabilities change. Microsoft’s account of its internal MCP governance describes vetted servers, scoped identities, gateway enforcement and consent checks—concrete controls around the integration, beyond the protocol itself.<a class="cite" href="#ref-10" aria-label="Reference 10">10</a></p>
-<div class="callout"><div class="callout-label">Test the effect, not just the answer</div><p>Put a conflicting instruction in a synthetic source document. Check both the response and the tool trace: did the app retrieve another project, attempt an external call or send anything? A polite refusal is insufficient evidence if an unauthorised operation has already happened.</p></div>
+<h2 id="market-practice" data-toc="Practice in the market">6. What organisations report doing</h2>
+<div class="market-list">
+<div><strong>Microsoft</strong><p>Its internal MCP account describes vetted servers, scoped identities, gateway controls and consent checks; some end-to-end logging remains work in progress.<a class="cite" href="#ref-10" aria-label="Reference 10">10</a></p></div>
+<div><strong>Docker</strong><p>OpenFGA’s case study describes comparing old and new permission decisions before incrementally switching traffic.<a class="cite" href="#ref-27" aria-label="Reference 27">27</a></p></div>
+<div><strong>Snowflake / DoorDash</strong><p>Anthropic publishes customer accounts of Claude Security testing and engineering-workflow integration.<a class="cite" href="#ref-28" aria-label="Reference 28">28</a></p></div>
+</div>
+<p class="section-note">These are organisational accounts and vendor-published case studies, not an independent ranking. Compare tools on the same seeded failures, false positives, fix effort, data exposure and integration cost.</p>
 
-<h2 id="build" data-toc="Check the implementation">The Implementation Still Needs Ordinary Security Work</h2>
-<p>AI can help write code and identify possible issues. It cannot establish that the finished app’s access rules, deployment settings or business logic are correct.</p>
-<p>For a custom web app, the familiar work remains: handling sessions, keeping secrets out of browser code, validating inputs, checking permissions at the service boundary, reviewing dependencies and testing failure paths. Generated code needs the same scrutiny as code written another way.</p>
-<p>OWASP’s Application Security Verification Standard gives teams a basis for specifying and testing technical application controls. It is more useful to choose relevant requirements and verify them against the actual implementation than to write “OWASP checked” beside a release.<a class="cite" href="#ref-7" aria-label="Reference 7">7</a></p>
-<p>A scanner is one source of evidence. It will not, by itself, explain whether the right person can export the right project, whether a revoked permission takes effect, or whether a draft is being sent to the wrong client. Those questions need tests of the workflow and its rules.</p>
-
-<h2 id="security-tools" data-toc="Choose tools for specific failures">Which Tools Would I Consider, and for What?</h2>
-<p>The selection depends on what the app is made of. Source-code analysis, dependency analysis, testing a running web service and attacking an AI workflow answer different questions. A platform-built app also needs configuration and connector review, even when there is little custom code to scan.</p>
-<p><strong>Claude Security is relevant here.</strong> Anthropic launched the earlier Claude Code Security research preview in February 2026.<a class="cite" href="#ref-29" aria-label="Reference 29">29</a> Its current product page describes Claude Security and a separate Claude Code plugin in beta; the help centre documents the Enterprise public beta. The product scans code for vulnerabilities and proposes patches for human review. Those capabilities make it a candidate for investigating a missing access check or a data-flow flaw—not proof that deployed permissions, connector configuration or contractual requirements are correct.<a class="cite" href="#ref-11" aria-label="Reference 11">11</a><a class="cite" href="#ref-12" aria-label="Reference 12">12</a></p>
-<p>Anthropic also maintains a separate security-review GitHub Action and documents the <code>/security-review</code> command. Its Action repository explicitly limits use to trusted pull requests because it is not hardened against prompt injection. A team should review its workflow permissions and contributor trust boundary before enabling it.<a class="cite" href="#ref-13" aria-label="Reference 13">13</a></p>
-<div class="overflow-x-auto" role="region" aria-label="Security tools and their roles" tabindex="0">
-<table class="compare-table"><caption>A shortlist by problem, not a ranking of vendors. Capabilities checked 14 October 2026.</caption><thead><tr><th scope="col">Problem and candidate</th><th scope="col">How I would use it</th><th scope="col">What still needs verifying</th></tr></thead><tbody>
-<tr><td><strong>Code-level flaws: Claude Security</strong></td><td>Review a scoped repository or change, inspect the proposed flaw and patch, then add a regression test before merging.<a class="cite" href="#ref-11" aria-label="Reference 11">11</a></td><td>Current beta access, repository permissions, code-processing terms and whether the finding is reproducible. A suggested patch still needs review.</td></tr>
-<tr><td><strong>Code patterns: Semgrep</strong></td><td>Use static application security testing (SAST) in pull requests; add project-specific rules for unsafe APIs or missing guard calls. Community Edition can scan locally; managed scanning is a separate deployment choice.<a class="cite" href="#ref-14" aria-label="Reference 14">14</a><a class="cite" href="#ref-15" aria-label="Reference 15">15</a></td><td>Supported languages and rules, coverage beyond a changed file, and what code or findings leave your environment. Rules need tests too.</td></tr>
-<tr><td><strong>Code and dependencies: Snyk Code / Snyk Open Source</strong></td><td>Use Code for source analysis and Open Source for software composition analysis (SCA): vulnerable direct and transitive dependencies and licence issues.<a class="cite" href="#ref-16" aria-label="Reference 16">16</a><a class="cite" href="#ref-17" aria-label="Reference 17">17</a></td><td>Choose the relevant product and plan. Triage reachability and upgrade risk; neither dependency analysis nor a code scan proves correct project permissions.</td></tr>
-<tr><td><strong>Running web service: ZAP</strong></td><td>Run a baseline scan against staging, with authentication configured for protected routes; investigate relevant headers, cookies and response disclosures. Baseline scanning spiders and performs passive checks.<a class="cite" href="#ref-18" aria-label="Reference 18">18</a></td><td>Which routes and user roles were actually exercised. A baseline scan is not active penetration testing or a test of your business access rules.</td></tr>
-<tr><td><strong>AI workflow attacks: Promptfoo / Mindgard</strong></td><td>Promptfoo offers repeatable red-team tests, including object-level authorisation and indirect injection. Mindgard describes specialist engagements covering RAG, tool abuse and guardrail bypass.<a class="cite" href="#ref-19" aria-label="Reference 19">19</a><a class="cite" href="#ref-20" aria-label="Reference 20">20</a><a class="cite" href="#ref-21" aria-label="Reference 21">21</a></td><td>Whether tests reach the real retrieval and tool path, their test-data exposure, and whether results are graded against actual side effects. Evaluate the configured service, not just the bare model.</td></tr>
-<tr><td><strong>Low-code connector governance: Copilot Studio data policies</strong></td><td>Classify connectors into Business, Non-business or Blocked groups and restrict unsuitable combinations in the intended environment.<a class="cite" href="#ref-22" aria-label="Reference 22">22</a></td><td>Policy coverage, connector actions and maker-versus-user credentials. Connector grouping does not replace document-level authorisation.</td></tr>
-<tr><td><strong>Runtime content screening: Google Cloud Model Armor</strong></td><td>Evaluate prompt-injection detection and sensitive-data screening at the relevant input/output boundaries. Decide whether the integration only inspects or also blocks detected violations.<a class="cite" href="#ref-23" aria-label="Reference 23">23</a></td><td>False positives, missed attacks, latency, filter coverage and failure behaviour. A content classifier cannot grant or revoke a user’s right to a record.</td></tr>
-<tr><td><strong>Code-to-cloud exposure: Wiz</strong></td><td>For an organisation already running cloud security tooling, assess how code findings connect to exposed endpoints, identities and runtime attack paths. Wiz documents capabilities across those layers.<a class="cite" href="#ref-24" aria-label="Reference 24">24</a></td><td>Purchased modules, actual cloud coverage and reproducible findings. Vendor descriptions do not establish detection effectiveness for your app.</td></tr>
-</tbody></table></div>
-<p>I would start with the organisation’s existing tools and add a capability for a demonstrated gap. A read-only Power Platform app might need environment policies, end-user connections and access tests first. A custom retrieval app needs backend authorisation, permission-aware indexing and CI checks. An app allowed to change external systems needs action controls and end-to-end adversarial tests as well.</p>
-<h3>Use frameworks to choose checks, then make the checks executable</h3>
-<p>For the web application, select relevant OWASP ASVS requirements and turn them into acceptance tests. For model and retrieval risks, use the OWASP LLM guidance; for tool-using agents, include the OWASP Top 10 for Agentic Applications 2026. MITRE ATLAS provides adversary techniques to help construct attack scenarios. NIST SSDF helps organise the development practices and evidence across the lifecycle. These references serve different purposes; mapping a tool to a framework is not a certification of the finished app.<a class="cite" href="#ref-7" aria-label="Reference 7">7</a><a class="cite" href="#ref-5" aria-label="Reference 5">5</a><a class="cite" href="#ref-25" aria-label="Reference 25">25</a><a class="cite" href="#ref-26" aria-label="Reference 26">26</a><a class="cite" href="#ref-1" aria-label="Reference 1">1</a></p>
-
-<h2 id="verification" data-toc="Verify a fix end to end">What Would Convince Me That a Fix Works?</h2>
-<p>For the briefing app, I would keep a small set of deterministic integration tests alongside the generated AI attack cases. Use synthetic records with recognisable markers and inspect the retrieved context, tool calls, side effects and permitted audit fields. Repeat model-dependent cases across runs and keep the model, prompt, index and policy versions with the results.</p>
-<div class="overflow-x-auto" role="region" aria-label="Concrete security verification examples" tabindex="0"><table class="compare-table"><caption>Example tests to run before broadening the pilot</caption><thead><tr><th scope="col">Potential failure</th><th scope="col">Test and expected evidence</th></tr></thead><tbody>
-<tr><td>An employee crosses a project or organisation boundary.</td><td>Change the requested project, document and export IDs; try the search and direct endpoints. No restricted content reaches the model or response. The denied operation creates no side effect.</td></tr>
-<tr><td>Revoked access survives in an index or cache.</td><td>Remove project access, then repeat search, citation, download and cached-summary requests. Check the documented revocation window and the behaviour when permission synchronisation fails.</td></tr>
-<tr><td>A source document redirects the agent.</td><td>Insert a synthetic conflicting instruction through the real retrieval path. Confirm the agent cannot widen its permissions, reach an unapproved destination or execute an unapproved tool.</td></tr>
-<tr><td>Approval is reused after a draft changes.</td><td>Edit the recipient or content, replay an expired approval, and retry the send. Changed or expired approvals fail; an accepted retry does not duplicate the operation.</td></tr>
-<tr><td>A protection service is unavailable.</td><td>Simulate an authorisation timeout and a guardrail outage. Permission checks fail closed; the guardrail follows the chosen failure policy rather than silently changing behaviour.</td></tr>
-</tbody></table></div>
-<p>In CI, I would run the relevant code and dependency checks plus those access tests on changes. A staging workflow can add authenticated web scans and AI attack tests. Confirmed release-blocking findings need an owner and a regression test; exceptions need a recorded reason, expiry and reviewer. An AI-generated report should not be the only evidence that an AI-generated patch worked.</p>
-
-<h2 id="market-practice" data-toc="What the market is doing">What Are Organisations and Vendors Actually Doing?</h2>
-<p>There are useful public examples, but they do not show that every organisation has reached the same level of maturity.</p>
-<p><strong>Microsoft’s internal account is an implementation example.</strong> Microsoft Digital and its CISO organisation describe a vetted MCP server catalogue, gateway controls, scoped identities, consent checks and change review. The article also says some end-to-end logging is work in progress. That makes it a more useful reference than assuming the whole programme is already complete.<a class="cite" href="#ref-10" aria-label="Reference 10">10</a></p>
-<p><strong>OpenFGA’s Docker case study describes a production authorisation migration.</strong> It reports that Docker centralised permissions and ran the new engine alongside the previous one, comparing decisions before incrementally switching traffic. This is a maintainer-published customer case study, not an independent benchmark, but the migration approach is concrete.<a class="cite" href="#ref-27" aria-label="Reference 27">27</a></p>
-<p><strong>Anthropic reports customer use of AI-assisted vulnerability review.</strong> Its April 2026 Claude Security announcement includes Snowflake describing findings from early testing, and DoorDash describing integration into engineering workflows. Those are vendor-published customer accounts; they support evidence of use, not a comparative claim that Claude detects more vulnerabilities than every alternative.<a class="cite" href="#ref-28" aria-label="Reference 28">28</a></p>
-<p><strong>The platform offerings now span several layers.</strong> Copilot Studio provides connector policy controls, Google offers runtime screening, and Wiz describes connecting code findings with cloud and runtime exposure. My inference from these product documents is that buyers need to evaluate how the layers work together. Buying one “AI security” product does not establish coverage of the whole application.<a class="cite" href="#ref-22" aria-label="Reference 22">22</a><a class="cite" href="#ref-23" aria-label="Reference 23">23</a><a class="cite" href="#ref-24" aria-label="Reference 24">24</a></p>
-<p>For a pilot, I would compare candidates using the same seeded failure cases: confirmed issues found, false positives, time to reproduce and fix, integration effort, data sent to the vendor, latency where applicable, and evidence retained. The sources here do not provide a like-for-like independent benchmark, so I would not rank these products by efficacy or invent adoption percentages.</p>
-
-<h2 id="plan" data-toc="Turn concerns into a delivery plan">Turn the Concerns Into Work Someone Can Finish</h2>
-<p>A list of risks can leave a team feeling informed but stuck. “Sort out access”, “check the AI” and “get compliance approval” are not yet a delivery plan.</p>
-<p>I find the more useful unit is a specific concern connected to an action, an owner, an acceptance criterion and evidence. It gives the builder something to implement and the reviewer something concrete to assess.</p>
-<div class="overflow-x-auto" role="region" aria-label="Example security delivery plan" tabindex="0">
-<table class="compare-table"><caption>Illustrative plan for the briefing app</caption><thead><tr><th scope="col">Concern</th><th scope="col">Action and owner</th><th scope="col">Evidence to review</th></tr></thead><tbody>
-<tr><td>Project boundaries are lost in search.</td><td>Application team: enforce record-level access before retrieved content reaches the model.</td><td>Tests using users with different access, including direct requests and permission revocation.</td></tr>
-<tr><td>Debug logs retain document content.</td><td>Platform team: define permitted fields, access and retention.</td><td>Configuration plus sample events showing the intended content exclusions.</td></tr>
-<tr><td>A draft could be sent to the wrong recipient.</td><td>Product owner and application team: require approval of the exact destination and content.</td><td>Tests showing blocked unauthorised sends and renewed approval after edits.</td></tr>
-</tbody></table></div>
-<p>These are starting examples, not a complete assessment. The important distinction is between an action being planned, implemented and verified. A status change should point to something that was inspected or tested.</p>
-<p>The review should also record what remains uncertain, who is accepting any residual risk, and the conditions of the release. An unresolved question is easier to handle when it has a named owner and a clear effect on scope.</p>
-
-<h2 id="compliance" data-toc="Keep security and compliance distinct">Security Evidence Helps the Compliance Conversation. It Does Not Finish It.</h2>
-<p>A team can complete its technical tests and still have unanswered questions about using client information, contractual restrictions, retention commitments or the purpose for which personal data is processed.</p>
-<p>I would bring the relevant data owner, privacy, legal or procurement colleagues into the specific decisions that need them. Show them the data flow, service details, intended users and actions. “Please approve our AI app” leaves too much hidden.</p>
-<p>The result may be a narrower pilot, different terms, a change in processing or a decision to leave certain data out. The right answer depends on the organisation and use case. A control checklist cannot determine those obligations on its own.</p>
-<p>Similarly, an application review should state exactly what was reviewed. It should not imply that a small app has earned an organisation-wide certification, or that completing a framework automatically establishes compliance.</p>
-
-<h2 id="change" data-toc="Revisit decisions when the app changes">The Next Connector Can Change the Original Decision</h2>
-<p>The briefing app begins with selected documents. A month later, someone asks for broader CRM access. Then automatic email sending. Later, access for an external partner.</p>
-<p>Those are changes to the app’s reach. They can affect whose information it sees, what it can do and who carries the consequences.</p>
-<p>I would keep review triggers alongside the plan: a new source, role, connector, model service, external audience or write capability. Each trigger should prompt the team to revisit the affected decisions and tests. It need not restart every unrelated piece of work.</p>
-<p>Previous evidence is still useful history, but may not support the new version. Keep the earlier decision and record why something has reopened.</p>
-<p>There is an operational side too. Name the person responsible for support, the route for reporting a problem, and who can disable a connector or stop a release. Include a way to roll back, recover and eventually retire the app. Ownership needs to survive the person who built the prototype moving to another project.</p>
-
-<h2 id="starting-point" data-toc="A practical starting point">Give the Team a Route From Idea to Responsible Use</h2>
-<p>If I were starting this conversation with a team, I would put one page in front of us: what the app does, who uses it, the data path, the actions it can take, the main unanswered questions and the people who own them.</p>
-<p>From there, choose the smallest useful release, turn the relevant concerns into testable work, and agree what evidence a reviewer needs. Make the conditions visible to the people using the app as well as the people building it.</p>
-<p>For the briefing app, that might mean a read-only pilot with a small group, selected sources and reviewed drafts. Wider access or sending can follow when the additional controls and evidence are ready.</p>
-<p>That gives a builder a clearer route to a useful rollout. It also gives the organisation a way to revisit the decision as the app changes.</p>
-<p>The question I would want a team to answer is simple: can we explain why this version is appropriate for these users, this data and these actions—and show the work behind that decision?</p>
-<aside class="related-reading" aria-label="Related reading"><p><strong>Related reading</strong></p><p>Deciding whether the work needs an app in the first place? Read <a href="ai-agent-app-series/">When AI Agents Become Apps</a>, the four-part guide to choosing a suitable home for the workflow.</p></aside><section class="mt-14 pt-8 border-t border-gray-200" aria-labelledby="references-title"><h2 id="references-title" class="reference-heading text-sm font-bold uppercase tracking-[0.15em] text-text_tertiary mb-5">References</h2><p class="text-sm text-text_tertiary">Sources checked 14 October 2026: standards and threat guidance, product documentation, and named organisational accounts. Product capabilities are distinguished from vendor-reported adoption; no independent comparative efficacy benchmark is claimed. The implementation examples and suggested workflow are my synthesis, not requirements quoted from a single standard. Availability and behaviour depend on the service, plan and configuration.</p><ol class="ref-list"><li id="ref-1"><span class="ref-num">1</span><span><a href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener noreferrer">NIST. Secure Software Development Framework (SSDF), SP 800-218, version 1.1.</a></span></li>
+<h2 id="change" data-toc="Pilot and revisit">7. Start small. Revisit when the reach changes.</h2>
+<div class="release-grid">
+<section><h3 id="starting-point">First release</h3><p>One team. Selected sources. Read-only retrieval. Cited answers. Reviewed drafts.</p></section>
+<section><h3>Review triggers</h3><p>New collections, model, connector, shared memory, external audience or write capability.</p></section>
+<section><h3 id="compliance">Ownership and obligations</h3><p>Name support and shutdown owners. Check applicable privacy, contract and retention decisions; technical tests alone do not resolve them.</p></section>
+</div>
+<p>Keep a route to disable tools, roll back changes and retire the assistant. The release decision should explain who may use this version, with which data and actions—and point to the evidence.</p>
+<aside class="related-reading" aria-label="Related reading"><p>Related: <a href="ai-agent-app-series/">When AI Agents Become Apps</a>—choosing a suitable home for the workflow.</p></aside>
+<details class="article-detail source-details" id="references-title"><summary>Sources and research notes · 35 references</summary><p>Checked 14 October 2026. Implementation suggestions are illustrative; product features and availability depend on configuration. Vendor-reported adoption is distinguished from comparative effectiveness.</p><ol class="ref-list"><li id="ref-1"><span class="ref-num">1</span><span><a href="https://csrc.nist.gov/pubs/sp/800/218/final" target="_blank" rel="noopener noreferrer">NIST. Secure Software Development Framework (SSDF), SP 800-218, version 1.1.</a></span></li>
 <li id="ref-2"><span class="ref-num">2</span><span><a href="https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP. Authorization Cheat Sheet.</a></span></li>
 <li id="ref-3"><span class="ref-num">3</span><span><a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-no-maker-authentication" target="_blank" rel="noopener noreferrer">Microsoft Learn. Control maker-provided credentials for authentication in Copilot Studio.</a></span></li>
 <li id="ref-4"><span class="ref-num">4</span><span><a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP. Logging Cheat Sheet.</a></span></li>
@@ -383,7 +341,14 @@ return generate_summary(context=chunks)</code></pre>
 <li id="ref-27"><span class="ref-num">27</span><span><a href="https://openfga.dev/docs/adopters/docker" target="_blank" rel="noopener noreferrer">OpenFGA. Docker: centralising permissions with ReBAC; maintainer-published case study.</a></span></li>
 <li id="ref-28"><span class="ref-num">28</span><span><a href="https://claude.com/resources/articles/claude-security-public-beta" target="_blank" rel="noopener noreferrer">Anthropic. Claude Security public beta, 30 April 2026; vendor-published customer accounts.</a></span></li>
 <li id="ref-29"><span class="ref-num">29</span><span><a href="https://www.anthropic.com/news/claude-code-security" target="_blank" rel="noopener noreferrer">Anthropic. Claude Code Security research-preview announcement, 20 February 2026; historical launch context.</a></span></li>
-</ol></section><div class="mt-12 pt-8 border-t border-gray-300"><p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p><div class="flex justify-center gap-6"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html&amp;text=Building%20Apps%20Inside%20Organisations%3A%20The%20Security%20Work%20Beyond%20the%20Demo" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-twitter text-2xl" aria-hidden="true"></i>Twitter</a></div></div></article></div></div></main>
+<li id="ref-30"><span class="ref-num">30</span><span><a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/content-filter-prompt-shields" target="_blank" rel="noopener noreferrer">Microsoft Learn. Prompt Shields in Microsoft Foundry; document attacks, intervention points and Spotlighting preview.</a></span></li>
+<li id="ref-31"><span class="ref-num">31</span><span><a href="https://aws.amazon.com/blogs/machine-learning/access-control-for-vector-stores-using-metadata-filtering-with-knowledge-bases-for-amazon-bedrock/" target="_blank" rel="noopener noreferrer">AWS. Access control for vector stores using metadata filtering with Amazon Bedrock Knowledge Bases.</a></span></li>
+<li id="ref-32"><span class="ref-num">32</span><span><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-how.html" target="_blank" rel="noopener noreferrer">AWS. How Amazon Bedrock Guardrails works; input/output policies and continuing evaluation.</a></span></li>
+<li id="ref-33"><span class="ref-num">33</span><span><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html" target="_blank" rel="noopener noreferrer">AWS. Identity and credential management for agent applications with AgentCore Identity.</a></span></li>
+<li id="ref-34"><span class="ref-num">34</span><span><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-ds-custom-acl.html" target="_blank" rel="noopener noreferrer">AWS. Document-level access controls for Managed Knowledge Base custom data sources; ACL filtering limitations.</a></span></li>
+<li id="ref-35"><span class="ref-num">35</span><span><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html" target="_blank" rel="noopener noreferrer">AWS. Detect prompt attacks with Amazon Bedrock Guardrails.</a></span></li>
+</ol></details>
+<div class="mt-12 pt-8 border-t border-gray-300"><p class="text-center text-text_tertiary mb-4 font-semibold">Share this article</p><div class="flex justify-center gap-6"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmegpatakota.com%2Farticles%2Fbuilding-apps-organisations-security.html&amp;text=Building%20Apps%20Inside%20Organisations%3A%20The%20Security%20Work%20Beyond%20the%20Demo" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-buttons"><i class="fab fa-twitter text-2xl" aria-hidden="true"></i>Twitter</a></div></div></article></div></div></main>
     <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
         <i class="fas fa-chevron-up text-sm"></i>
     </button>
@@ -400,6 +365,15 @@ return generate_summary(context=chunks)</code></pre>
             progressBar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
             backToTop.style.display = window.scrollY > 600 ? 'flex' : 'none';
         }, { passive: true });
+
+        document.querySelectorAll('a.cite').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                document.getElementById('references-title').open = true;
+                const reference = document.getElementById(link.hash.slice(1));
+                if (reference) reference.scrollIntoView({ block: 'start' });
+            });
+        });
 
         const toc = document.getElementById('toc');
         const sections = document.querySelectorAll('[data-toc]');
