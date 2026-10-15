@@ -203,3 +203,20 @@
 @media (max-width: 760px) {
     .security-article .scenario-checks { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
 }
+
+/* Technical reference tables use the available width and scroll on small screens. */
+.security-article .technical-table-wrap { max-width: 100%; overflow-x: auto; margin: 1.5rem 0 2rem; -webkit-overflow-scrolling: touch; }
+.security-article .technical-table { width: 100%; min-width: 52rem; table-layout: fixed; margin: 0; }
+.security-article .technical-table caption { padding-bottom: .8rem; font-size: .8rem; line-height: 1.6; }
+.security-article .technical-table :is(th, td) { padding: 1rem; font-size: .875rem; line-height: 1.7; overflow-wrap: break-word; }
+.security-article .technical-table th:first-child { width: 23%; }
+.security-article .technical-table th:nth-child(2) { width: 37%; }
+.security-article .control-matrix .technical-table { min-width: 64rem; }
+.security-article .control-matrix th:first-child { width: 14%; }
+.security-article .control-matrix th:nth-child(2) { width: 19%; }
+.security-article .control-matrix th:nth-child(3) { width: 43%; }
+.security-article .control-matrix th:nth-child(4) { width: 24%; }
+.security-article .technical-table td > span[id] { display: block; scroll-margin-top: 1.5rem; }
+@media (max-width: 760px) {
+    .security-article .technical-table :is(th, td) { padding: .8rem; }
+}
