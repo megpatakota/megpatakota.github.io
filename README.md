@@ -97,6 +97,10 @@ This site is built with vanilla HTML/CSS/JS for simplicity and performance. The 
 - **Add Features**: Extend `assets/js/main.js` or `assets/js/article.js`
 - **Change Colors**: Update Tailwind config in `assets/js/site-style-config.js`
 
+## Article review
+
+Before committing a new or revised article, follow [ARTICLE_CHECKLIST.md](ARTICLE_CHECKLIST.md). Repository workflow and verification instructions are in [AGENTS.md](AGENTS.md).
+
 ## 📄 License
 
 © 2024 Meg Patakota. All rights reserved.
