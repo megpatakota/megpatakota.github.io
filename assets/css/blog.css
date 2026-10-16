@@ -107,3 +107,10 @@
 @media (prefers-reduced-motion: reduce) {
     .editorial-page *, .editorial-page *::before, .editorial-page *::after { scroll-behavior: auto; transition: none; animation: none; }
 }
+
+/* Latest article cover remains visible at every screen size. */
+.blog-index .featured-cover { width: min(100%, 19rem); margin-bottom: 1.5rem; }
+.blog-index .featured-cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--soft-line); }
+@media (min-width: 768px) {
+    .blog-index .featured-cover { width: 28%; margin-bottom: 0; }
+}
