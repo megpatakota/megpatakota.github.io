@@ -1,0 +1,137 @@
+/* Portfolio layout: keep each page's existing palette and content. */
+.portfolio-page :is(h1, h2, h3, .career-band-title, .project-title, .stat-grid dt,
+    .focus-number, .hero-proof strong, .record-stats dt, .evidence-heading strong) {
+    font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.035em;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+
+.portfolio-page .site-header {
+    min-height: 84px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+.portfolio-page .brand-divider { height: 40px; margin: 0 1.25rem; }
+.portfolio-page .brand-mark { font-size: 2.7rem; }
+.portfolio-page :is(.nav-link.contact-link, .primary-action, .menu-panel) { border-radius: 10px; }
+.portfolio-page .eyebrow { text-transform: none; letter-spacing: 0; }
+.portfolio-page :is(h1, .hero h1) { font-size: clamp(2.25rem, 4.4vw, 3.75rem); line-height: 1.12; }
+.portfolio-page :is(.about h2, .focus h2, .work h2, .testimonials h2, .contact h2,
+    .section-title, .credibility h2, .closing h2) { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.portfolio-page :is(.role-title, .career-band-title, .diagnostic-response h3, .fit-grid h3) {
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+}
+.portfolio-page .ucl-role-card h3 { font-size: 1.35rem; }
+.portfolio-page :is(.hero, .home-hero) { min-height: 0; padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.portfolio-page :is(.hero-inner, .hero-grid) { min-height: 0; align-items: center; gap: 3rem; }
+.portfolio-page .hero-copy { padding-bottom: 0; }
+.portfolio-page :is(.hero-intro, .hero-lead) { margin-top: 1.4rem; font-size: 1.05rem; line-height: 1.7; }
+.portfolio-page .portrait-stage {
+    height: 420px;
+    min-height: 0;
+    max-width: 440px;
+    margin-left: auto;
+    overflow: hidden;
+    border-radius: 18px;
+}
+.portfolio-page .portrait-stage img { inset: 0; width: 100%; mix-blend-mode: normal; }
+.portfolio-page .portrait-accent { display: none; }
+.portfolio-page :is(.about, .focus, .work, .testimonials, .experience-strip) { padding-top: 4rem; padding-bottom: 4rem; }
+.portfolio-page :is(.about-grid, .focus-heading) { gap: 3rem; }
+.portfolio-page :is(.strip-heading h2, .stat-grid dt) { font-size: 2rem; }
+
+/* Work is the first destination after the introduction. */
+.home-page .hero-inner { grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); }
+.home-page .hero-detail { font-size: .95rem; }
+.home-page .hero-facts { border-top: 0; gap: 1.25rem; }
+.home-page .hero-facts div { border-left: 0; padding: 0; }
+.home-page .hero-facts dt { font-size: .75rem; }
+.home-page .hero-facts dd { font-size: .8rem; }
+.home-page .latest-writing { font-size: .8rem; }
+.home-page :is(.work-heading, .focus-heading, .testimonial-heading) { margin-bottom: 2rem; }
+.home-page .project-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    border-top: 0;
+}
+.home-page .project-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    min-width: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--soft-line);
+    border-radius: 14px;
+}
+.home-page .project-meta { text-transform: none; font-size: .78rem; }
+.home-page .project-title { font-size: 1.35rem; line-height: 1.35; }
+.home-page .project-copy { font-size: .9rem; }
+.home-page .project-outcome {
+    margin-top: auto;
+    padding: 1rem 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--soft-line);
+    font-size: .8rem;
+}
+.home-page .project-outcome strong { text-transform: none; font-size: .8rem; }
+.home-page .focus-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; border-top: 0; }
+.home-page .focus-row {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: .6rem 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--soft-line);
+    border-radius: 14px;
+}
+.home-page .focus-number { font-size: .85rem; padding-top: .2rem; }
+.home-page .focus-row p { grid-column: 2; font-size: .9rem; }
+.home-page .focus-row h3 { font-size: 1.05rem; }
+.home-page .stat-grid { border: 0; gap: 1rem; margin-top: 2rem; }
+.home-page .stat-grid div { border: 0; padding: .75rem 0; }
+.home-page .stat-grid dd { font-size: .8rem; }
+.home-page .quote-grid { border: 0; gap: 1.25rem; }
+.home-page .quote, .home-page .quote + .quote {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid var(--soft-line);
+    border-radius: 14px;
+}
+.home-page .quote-mark { display: none; }
+.home-page .quote p { min-height: 0; margin-top: 0; font-size: .9rem; }
+.home-page .quote footer { margin-top: auto; }
+.home-page .contact { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+
+@media (max-width: 1100px) {
+    .home-page .project-list { grid-template-columns: 1fr; }
+    .home-page .project-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1rem 2rem; }
+    .home-page .project-meta { grid-column: 1 / -1; }
+    .home-page .project-outcome { margin-top: 0; padding: 0 0 0 1.25rem; border-top: 0; border-left: 1px solid var(--soft-line); }
+}
+@media (max-width: 900px) {
+    .portfolio-page :is(.hero-inner, .hero-grid) { gap: 2rem; }
+    .portfolio-page .portrait-stage { width: min(100%, 420px); height: 300px; margin: 0; }
+    .portfolio-page .portrait-stage img { object-position: 58% 35%; }
+    .home-page .quote-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+    .portfolio-page .site-header { min-height: 74px; }
+    .portfolio-page .brand-mark { font-size: 2.25rem; }
+    .portfolio-page :is(.hero, .home-hero) { padding-top: 2rem; padding-bottom: 2rem; }
+    .portfolio-page :is(.about, .focus, .work, .testimonials, .experience-strip) { padding-top: 3rem; padding-bottom: 3rem; }
+    .portfolio-page :is(.about-grid, .focus-heading) { gap: 1.5rem; }
+    .portfolio-page .portrait-stage { height: 240px; }
+    .portfolio-page .hero-detail { font-size: .9rem; }
+    .portfolio-page :is(.primary-action, .text-action) { font-size: .85rem; }
+    .home-page .project-list, .home-page .focus-list { grid-template-columns: 1fr; }
+    .home-page .project-row { display: flex; gap: 1rem; padding: 1.25rem; }
+    .home-page .project-outcome { margin-top: auto; padding: 1rem 0 0; border-left: 0; border-top: 1px solid var(--soft-line); }
+    .home-page .focus-row { padding: 1.25rem; }
+    .home-page .hero-facts { grid-template-columns: 1fr; gap: .75rem; }
+    .home-page .hero-facts div { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: .5rem; }
+    .home-page .hero-facts dt { margin-bottom: 0; }
+    .home-page :is(.about-copy > p, .work-heading p, .focus-heading p, .contact-copy) { font-size: .9rem; }
+}

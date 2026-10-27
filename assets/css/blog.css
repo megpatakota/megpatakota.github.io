@@ -1,9 +1,9 @@
-/* Editorial styling shared by the blog and every article.
-   Palette, type, navigation and footer follow index.html. */
+/* Shared blog and article styling.
+   Preserve the palette and use the portfolio typography. */
 .editorial-page {
     --ink: #11110f;
     --muted: #5d625f;
-    --paper: #fbf8f2;
+    --paper: #fdfcf9;
     --white: #fff;
     --teal: #007f79;
     --teal-dark: #006a66;
@@ -17,10 +17,10 @@
     line-height: 1.6;
 }
 .editorial-page :focus-visible { outline: 3px solid rgba(0,127,121,.35); outline-offset: 4px; }
-.editorial-page .site-header { position: relative; z-index: 20; min-height: 102px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 18px 3.2rem; background: var(--paper); }
+.editorial-page .site-header { position: relative; z-index: 20; min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 14px 3.2rem; background: var(--paper); }
 .editorial-page .brand { display: inline-flex; align-items: center; min-width: 0; color: var(--ink); text-decoration: none; }
-.editorial-page .brand-mark { flex: 0 0 auto; font-family: "Cormorant Garamond", Georgia, serif; font-size: 3.2rem; font-weight: 500; line-height: 1; }
-.editorial-page .brand-divider { width: 1px; height: 63px; margin: 0 1.8rem; background: #727b79; }
+.editorial-page .brand-mark { flex: 0 0 auto; font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.7rem; font-weight: 500; line-height: 1; }
+.editorial-page .brand-divider { width: 1px; height: 40px; margin: 0 1.25rem; background: #727b79; }
 .editorial-page .brand-copy { display: grid; min-width: 0; line-height: 1.3; }
 .editorial-page .brand-name { font-size: 1.15rem; font-weight: 700; }
 .editorial-page .brand-role { color: var(--muted); font-size: .88rem; font-weight: 500; }
@@ -29,42 +29,42 @@
 .editorial-page .nav-link:hover, .editorial-page .nav-menu summary:hover { color: var(--teal-dark); }
 .editorial-page .career-link { border-bottom: 2px solid var(--teal); }
 .editorial-page .nav-link[aria-current] { color: var(--teal-dark); }
-.editorial-page .contact-link { padding: .58rem .9rem; border: 1px solid var(--teal); background: var(--teal); color: var(--white); }
+.editorial-page .contact-link { border-radius: 10px; padding: .58rem .9rem; border: 1px solid var(--teal); background: var(--teal); color: var(--white); }
 .editorial-page .contact-link:hover { background: var(--teal-dark); color: var(--white); }
 .editorial-page .nav-menu { position: relative; }
 .editorial-page .nav-menu summary::-webkit-details-marker { display: none; }
 .editorial-page .menu-caret { display: inline-block; margin-left: .35rem; color: var(--teal); font-size: .72rem; }
-.editorial-page .menu-panel { position: absolute; z-index: 30; top: calc(100% + .7rem); right: 0; width: 190px; padding: .45rem 0; border: 1px solid var(--soft-line); background: var(--white); box-shadow: 0 14px 35px rgba(17,17,15,.11); }
+.editorial-page .menu-panel { position: absolute; z-index: 30; top: calc(100% + .7rem); right: 0; width: 190px; padding: .45rem 0; border-radius: 10px; border: 1px solid var(--soft-line); background: var(--white); box-shadow: 0 14px 35px rgba(17,17,15,.11); }
 .editorial-page .menu-panel a { display: block; padding: .65rem .9rem; color: #414744; font-size: .82rem; text-decoration: none; }
 .editorial-page .menu-panel a:hover { background: var(--mint); color: var(--teal-dark); }
 .editorial-page .site-footer { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem 3.2rem; border-top: 1px solid var(--soft-line); background: var(--paper); color: var(--muted); font-size: .75rem; }
 .editorial-page .footer-links { display: flex; align-items: center; flex-wrap: wrap; gap: 1.4rem; }
 .editorial-page .footer-links a { text-decoration: underline; text-decoration-color: var(--teal); text-underline-offset: .25rem; }
 .editorial-page > main, .editorial-page > section { padding: 3rem 8vw 5rem; }
-.editorial-page h1, .editorial-page .article-content h2, .blog-index .card-title { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; }
-.editorial-page h1, .editorial-page .article-content h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); line-height: 1.04; letter-spacing: -.025em; color: var(--ink); overflow-wrap: break-word; hyphens: none; }
-.blog-index h1 { font-size: clamp(3.5rem, 7vw, 5.1rem); }
-.blog-eyebrow { margin-bottom: 1rem; color: var(--teal-dark); font-size: .8rem; font-weight: 700; text-transform: uppercase; }
-.blog-intro { padding-bottom: 2rem; border-bottom: 1px solid var(--soft-line); }
-.blog-index .card-hover { border-radius: 0; border-color: var(--soft-line); background: transparent; box-shadow: none; transition: border-color .2s, background .2s; }
+.editorial-page h1, .editorial-page .article-content h2, .blog-index .card-title { font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; font-weight: 700; }
+.editorial-page h1, .editorial-page .article-content h1 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.15; letter-spacing: -.025em; color: var(--ink); overflow-wrap: break-word; hyphens: none; }
+.blog-index h1 { font-size: clamp(2.25rem, 4vw, 3.25rem); }
+.blog-eyebrow { margin-bottom: 1rem; color: var(--teal-dark); font-size: .8rem; font-weight: 700; text-transform: none; }
+.blog-intro { padding-bottom: 0; border-bottom: 0; }
+.blog-index .card-hover { border-radius: 14px; border-color: var(--soft-line); background: transparent; box-shadow: none; transition: border-color .2s, background .2s; }
 .blog-index .card-hover:hover { transform: none; background: var(--mint); box-shadow: none; }
 .blog-index .featured-post { background: var(--mint); border-color: #aeb4b1; }
-.blog-index .featured-post > div > div:first-child { border-radius: 0; background: var(--paper); }
-.blog-index .featured-post .card-title { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.1; }
-.blog-index .post-grid .card-hover { display: flex; flex-direction: column; border-width: 1px 0 0; padding: 1.5rem 0; }
-.blog-index .post-grid { column-gap: 2rem; row-gap: 1rem; }
-.blog-index .post-grid .card-title { font-size: 1.65rem; line-height: 1.15; }
+.blog-index .featured-post > div > div:first-child { border-radius: 10px; overflow: hidden; background: var(--paper); }
+.blog-index .featured-post .card-title { font-size: clamp(1.4rem, 2.5vw, 1.9rem); line-height: 1.35; }
+.blog-index .post-grid .card-hover { display: flex; flex-direction: column; border-width: 1px; padding: 1.5rem; }
+.blog-index .post-grid { gap: 1.25rem; }
+.blog-index .post-grid .card-title { font-size: 1.2rem; line-height: 1.4; }
 .blog-index .post-grid .card-hover > span:last-child { margin-top: auto; padding-top: .75rem; }
-.blog-index .rounded-full { border-radius: 0; }
+.blog-index .rounded-full { border-radius: 999px; }
 .editorial-page .article-reading-panel { padding: 0; min-width: 0; }
-.editorial-page .article-content h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.15; }
+.editorial-page .article-content h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.3; }
 .editorial-page .article-content h3 { font-size: 1.2rem; line-height: 1.4; }
 .editorial-page .article-content p, .editorial-page .article-content li { line-height: 1.85; }
 .editorial-page .article-content hr { border-color: var(--soft-line); }
 .editorial-page .article-content pre { background: var(--mint); border-color: var(--teal); border-radius: 0; max-width: 100%; }
 .editorial-page .article-content code { overflow-wrap: anywhere; }
 .editorial-page .article-content pre code { overflow-wrap: normal; }
-.editorial-page .section-num { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; color: #8eaaa5; }
+.editorial-page .section-num { font-family: "Manrope", "Helvetica Neue", Arial, sans-serif; font-weight: 700; color: #8eaaa5; }
 .editorial-page .toc-line { background: var(--soft-line); }
 .editorial-page .toc-dot { background: var(--paper); border-color: #aeb4b1; }
 .editorial-page .toc-link.active .toc-dot { box-shadow: none; }
@@ -94,8 +94,8 @@
     .editorial-page .main-nav > .blog-link { display: none; }
     .editorial-page .menu-panel { width: 176px; }
     .editorial-page > main, .editorial-page > section { padding: 1.5rem 1.15rem 3rem; }
-    .editorial-page h1, .editorial-page .article-content h1 { font-size: 2.6rem; line-height: 1.08; }
-    .blog-index h1 { font-size: 3.5rem; }
+    .editorial-page h1, .editorial-page .article-content h1 { font-size: 2rem; line-height: 1.2; }
+    .blog-index h1 { font-size: 2.25rem; }
     .blog-index .featured-post { padding: 1.5rem; }
     .editorial-page .site-footer { min-height: 0; align-items: flex-start; flex-direction: column; gap: .8rem; padding: 1.4rem 1.15rem; }
     .editorial-page .footer-links { gap: .75rem 1.2rem; }
